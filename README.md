@@ -130,7 +130,7 @@ streamlit run dashboard/app.py             # research dashboard (aggregates only
 - Africa/EAC/Uganda support gates, plus gated region and corridor aggregates and an anonymous provider distribution;
 - reproducibility.
 
-It reads only allowlisted aggregate CSVs. Deployment readiness and licence evidence are in [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md). No live URL is recorded until a deployment has been verified.
+It reads only allowlisted aggregate CSVs. Deployment readiness and licence evidence are in [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md). **[Open the live research dashboard](https://isaac-remittance-research.streamlit.app/)** — deployed from reviewed `main` on 17 October 2026, Python 3.11. The live overview and model-comparison chart were browser-verified; only safe aggregates are served.
 
 ## Limits and next gates
 - No untouched test period exists.
