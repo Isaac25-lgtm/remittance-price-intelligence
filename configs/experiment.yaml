@@ -1,0 +1,53 @@
+# R01 phase-1 experiment specification. FROZEN 2026-10-17 before any model metric was computed
+# in this repository (source audit and linkage counts had been viewed; outcomes by model had not).
+run_id: r01-phase1-2026-10-17
+seed: 20261017
+source:
+  url: https://datacatalogfiles.worldbank.org/ddh-published/0037898/DR0095523/rpw_dataset_2011_2025_q3.xlsx
+  sha256: f1d7265b1856d61812c158d3d03fae686dbff58735deabe016a6bfe23482d2a8
+  bytes: 50780339
+  sheet: "Dataset (from Q2 2016)"   # pre-2016 sheet has a different identity schema; not linked
+  observed_quarters: 2016Q2-2025Q3, 2025Q2 absent from source
+unit: corridor x provider x core service bundle x basket x origin quarter
+basket_primary: cc1            # USD 200; cc2 (USD 500) is a separate product (secondary)
+threshold_primary: 3.0         # percent, total cost incl. fee and FX margin
+threshold_secondary: 5.0
+horizon_primary: 1             # exactly the next calendar quarter (qidx + 1); 2 = secondary
+identity:
+  core: [corridor (source_code>destination_code), firm (NFKC/casefold/whitespace), payment instrument,
+         access point, pickup method, pickup location, basket USD amount]
+  strict: core + unchanged speed actual + unchanged receiving network coverage
+  duplicates: any key non-unique within a quarter is excluded (origin) or flagged ambiguous (target)
+  fuzzy_matching: none
+estimands:
+  E1: P(cost_{t+1} <= 3 | 0 <= cost_t <= 3, unique core service reobserved in t+1, cost_{t+1} >= 0)
+  E2: worst/best-case bounds for all eligible initially-cheap origins (unobserved -> fail / -> stay)
+  E3: P(corridor has >=1 surveyed <=3% quote at t+1 | it had one at t and was surveyed at t+1)
+  reobservation: P(core reobserved at t+1 | eligible, corridor surveyed at t+1) - separate model
+information_timing:
+  primary_scenario: release_lag_0  # quote at t and all transitions with target <= t known at prediction
+  sensitivity: release_lag_1       # history features use transitions with target <= t-1
+  note: true public release dates are not in the source; a prospective lead-time claim is NOT made
+splits:
+  scheme: expanding window, refit once per test target year
+  test_target_years: [2022, 2023, 2024, 2025]   # 2025 => only target 2025Q1 exists (2025Q2 absent)
+  train_rule: training target quarter < first test origin quarter
+  status: retrospective; 2022-2024 were inspected in the prior exploratory pilot; 2025Q1 targets
+          were present in the previously retrieved workbook, so NO year is untouched
+primary_metric: Brier score on identical pooled test rows (2022-2025)
+reproduction_comparison: pooled 2022-2024 test rows vs pilot (18,030 rows, GBM .136037, spline .144145)
+secondary_metrics: [log_loss, calibration intercept/slope, reliability bins, AUROC, AUPRC (failure),
+                    failures captured at 10/20/30% review capacity per origin quarter]
+uncertainty: paired differences, cluster bootstrap 1000 reps by corridor and separately by provider
+models:  # fixed hyperparameters, no search
+  B0_always_stay: p = 1
+  B1_prevalence: training prevalence
+  B2_history: hierarchical shrunk past continuity rate firm-in-corridor -> corridor -> global (m = 10)
+  B3_cost_logistic: logistic on current cost only
+  R_highest_cost_rule: ranking by current cost (review-capacity comparator only)
+  L1_ridge_logistic: L2 logistic C = 1.0, standardised numerics + one-hot categoricals
+  L2_spline_logistic: cubic B-splines (5 knots) on 6 numerics + one-hot, L2 C = 1.0
+  M1_hist_gbm: HistGradientBoostingClassifier lr 0.05, max_iter 300, max_leaf_nodes 15,
+               min_samples_leaf 50, l2 1.0, no early stopping, native categoricals
+  M2_random_forest: 300 trees, min_samples_leaf 20, max_features sqrt, n_jobs 2
+compute: OMP/BLAS threads <= 2, one heavy job at a time

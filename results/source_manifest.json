@@ -1,0 +1,55 @@
+{
+  "http": {
+    "http_status": 200,
+    "last_modified": "Mon, 28 Sep 2026 08:32:29 GMT",
+    "etag": "\"0x8DF1D3B089B51AA\"",
+    "content_length": "50780339",
+    "x_ms_version_id": "2026-09-28T08:32:29.4582458Z",
+    "fetched_at_utc": "2026-10-17T18:56:49Z",
+    "fetch_command": "curl -sS -m 300 -L -o data/raw/rpw_dataset_2011_2025_q3.xlsx <source_url> (single attempt)"
+  },
+  "catalogue_metadata_reported_by_coordinator": {
+    "size": "48.4 MB",
+    "file_updated": "2026-09-23",
+    "coverage": "2011-2025",
+    "license": "CC BY 4.0",
+    "note": "metadata only, as relayed; the fetched bytes/hash below are what was verified"
+  },
+  "sheets": [
+    "Terms of Use",
+    "Methodology",
+    "Legend",
+    "Countries",
+    "Dataset (up to Q1 2016)",
+    "Dataset (from Q2 2016)"
+  ],
+  "sheet_rows_excluding_header": {
+    "Dataset (up to Q1 2016)": 49491,
+    "Dataset (from Q2 2016)": 204469
+  },
+  "post2016_named_columns": 42,
+  "post2016_unnamed_helper_columns": "5 unnamed columns populated only on the 6,470 2025Q3 rows (year and ISO3+year lookup keys); ignored",
+  "earlier_failed_routes": [
+    {
+      "url": "https://datacatalogapi.worldbank.org/ddhxext/DatasetView?dataset_unique_id=0037898",
+      "result": "HTTP 429 rate limit (3 attempts, spaced); stopped"
+    },
+    {
+      "url": "https://remittanceprices.worldbank.org/data-download",
+      "result": "HTTP 403 Cloudflare challenge (curl and WebFetch); stopped"
+    },
+    {
+      "url": "https://ddh-openapi.worldbank.org/dataset/view?dataset_unique_id=0037898",
+      "result": "HTTP 404"
+    }
+  ],
+  "source_url": "https://datacatalogfiles.worldbank.org/ddh-published/0037898/DR0095523/rpw_dataset_2011_2025_q3.xlsx",
+  "catalogue_url": "https://datacatalog.worldbank.org/search/dataset/0037898/remittance-prices-worldwide",
+  "license_catalogue": "CC BY 4.0 (as stated on the World Bank Data Catalog page)",
+  "license_workbook_terms": "Workbook 'Terms of Use' sheet: free reuse with attribution 'The World Bank, Remittance Prices Worldwide, available at http://remittanceprices.worldbank.org'; links to a World Bank 'Restricted Data' list. Row-level data are therefore not redistributed in this repository.",
+  "bytes": 50780339,
+  "sha256": "f1d7265b1856d61812c158d3d03fae686dbff58735deabe016a6bfe23482d2a8",
+  "matches_frozen_checksum": true,
+  "verified_at_utc": "2026-10-17T19:04:27+00:00",
+  "code_commit": "d60e22d9715eb90898d92eeb245d5526cd051465"
+}

@@ -1,0 +1,45 @@
+variable,n,n_missing_or_blank,share_missing
+id,204469,0,0.0
+period,204469,0,0.0
+source_code,204469,0,0.0
+source_name,204469,0,0.0
+source_region,204469,0,0.0
+source_income,204469,0,0.0
+source_lending,204469,0,0.0
+source_G8G20,204469,0,0.0
+destination_code,204469,0,0.0
+destination_name,204469,0,0.0
+destination_region,204469,0,0.0
+destination_income,204469,0,0.0
+destination_lending,204469,0,0.0
+destination_G8G20,204469,0,0.0
+firm,204469,0,0.0
+firm_type,204469,0,0.0
+payment instrument,204469,0,0.0
+access point,204469,0,0.0
+speed actual,204469,0,0.0
+cc1 lcu amount,204469,0,0.0
+cc1 denomination amount,204469,0,0.0
+cc1 lcu code,204469,0,0.0
+cc1 lcu fee,204469,22,0.00010759577246428555
+cc1 lcu fx rate,204469,22,0.00010759577246428555
+cc1 fx margin,204469,18,8.803290474350635e-05
+cc1 total cost %,204469,18,8.803290474350635e-05
+cc2 lcu amount,204469,0,0.0
+cc2 denomination amount,204469,0,0.0
+cc2 lcu code,204469,0,0.0
+cc2 lcu fee,204469,1072,0.005242848549168823
+cc2 lcu fx rate,204469,1072,0.005242848549168823
+cc2 fx margin,204469,1071,0.0052379578322386275
+cc2 total cost %,204469,1072,0.005242848549168823
+inter lcu bank fx,204469,0,0.0
+transparent,204469,0,0.0
+Standard Note,204469,155892,0.7624236436819274
+note2,204469,204181,0.9985914735241039
+receiving network coverage,204469,0,0.0
+pickup location,204469,115614,0.5654353471675413
+pickup method,204469,0,0.0
+date,204469,0,0.0
+corridor,204469,0,0.0
+collection_date,204469,0,0.0
+corridor_key,204469,0,0.0
