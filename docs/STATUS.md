@@ -6,7 +6,7 @@ Updated 17 October 2026 from Claude Code cloud execution, phase 1 (branch `resea
 |---|---|
 | Data access | **VERIFIED.** Official World Bank file fetched (one attempt), 50,780,339 bytes, sha256 `f1d7265b1856d61812c158d3d03fae686dbff58735deabe016a6bfe23482d2a8`. |
 | Method validity | **CONDITIONAL.** Linkage, timing and leakage controls implemented and tested. Public release dates are unknown, so no prospective lead-time claim is made. |
-| Scientific novelty | **NOT ASSESSED.** The competitor audit (`PRIOR_ART.md`) has not been done yet. |
+| Scientific novelty | **PROVISIONAL.** A targeted audit (`PRIOR_ART.md`) checked 7 works. The closest same-data work (Beck, Janfils & Kpodar, IMF WP 2022/063; Beck & Martínez Pería, WBER 2011) is corridor-level and explanatory. No service-level continuity-prediction study was found, but the search was limited and is not proof of absence. |
 | AI incremental value | **SMALL, RETROSPECTIVE.** Tree ensembles beat spline/ridge logistic by 0.003–0.006 Brier. This is about a third of the pilot's reported gap. All test years were previously inspected. |
 | Readiness | **Not submission-ready.** |
 | **Scientific decision** | **CONDITIONAL**, unchanged. The code is now runnable, but that alone does not upgrade the decision. |
@@ -90,4 +90,14 @@ There are no corridors sending *from* Uganda.
 - **Release timing:** the workbook has no publication timestamps. If quarterly releases lag one quarter or more, the next-quarter "forecast" has no lead time. Next step: reconstruct the release history from archives, or keep the work as historical measurement.
 - **No untouched test period:** 2025Q2 is missing and 2025Q3 has no adjacent origin quarter. A genuinely prospective test needs future releases (2025Q4 onward), evaluated with the frozen spec.
 - **Identity drift:** core-unobserved spikes in 2021 targets (1,676) and 2022 (1,258). Row counts also jump at 2022Q4 while corridor counts stay flat. Both point to survey-scope or label changes; the mechanism is not asserted.
-- `PRIOR_ART.md` competitor audit still to do. The dashboard is deferred; see `dashboard/README.md`.
+- **Release dates** of RPW waves remain **unverified**: no archive or release-table evidence was obtained. The release-lag-1 run only delays history features. It does **not** show that a quote was publicly available before the next survey.
+- **Prior art:** full-text reading of the closest works and a wider search (Scholar/SSRN/GitHub) are still needed.
+
+## Final phase-1 checkpoint (dashboard + prior art)
+
+- **Dashboard:** `dashboard/app.py` is a Streamlit app reading **only committed aggregate tables** in `results/tables`. It has 9 sections: overview, provenance, cohort/linkage, bounds, models, calibration, hypothetical review capacity, African subgroups, limitations.
+  - Every page carries a retrospective/exploratory ribbon and a no-savings caveat.
+  - **Not deployed.**
+  - 13 AppTest tests (`tests/test_dashboard.py`) render every section and exercise its selectors.
+- **Prior art:** `docs/PRIOR_ART.md`, 7 works with verified DOIs and reading depth (no full text read).
+- **Scope of this checkpoint:** no models were refit and no data reruns were done; only tests were run.

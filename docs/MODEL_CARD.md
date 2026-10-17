@@ -14,5 +14,7 @@
   - Performance is worse for Sub-Saharan Africa receiving corridors (GBM Brier 0.162 vs 0.123 elsewhere).
   - Year-to-year ranking changes (the spline beat GBM in 2024).
   - The models depend on reobservation, which they do not predict.
+- **Timing caveat:** RPW release dates are unverified. The lag-1 sensitivity delays history features only; it does not establish that predictions could precede the next survey.
+- **Presentation:** aggregate results are viewable in the local dashboard (`dashboard/app.py`). No model artefacts are served.
 - **Explainability:** not yet produced. Any importance analysis would be associational, not causal.
 - **Licence of the training data:** CC BY 4.0 per the catalogue, with the attribution and restricted-data terms in the workbook. No model artefacts are published.

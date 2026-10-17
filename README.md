@@ -60,7 +60,8 @@ Full detail, including the pilot comparison, is in [`docs/STATUS.md`](docs/STATU
 
 - No consumer savings, market exit, or welfare effect.
 - No prospective forecasting value: public release dates are not established, so lead time may be zero.
-- No novelty claim yet: the competitor audit is pending.
+- No novelty claim yet. A targeted [prior-art matrix](docs/PRIOR_ART.md) found the closest same-data work to be corridor-level and explanatory (IMF WP 2022/063; WBER 2011), but the search was limited.
+- RPW release dates are unverified. The lag-1 run delays history features only, and does not show that quotes were available in time.
 - The service-level threshold rate is not the official SDG indicator.
 
 ## Reproduce
@@ -76,10 +77,12 @@ python scripts/run_phase1.py --release-lag 1
 python scripts/run_descriptive.py
 python scripts/subgroup_metrics.py
 python -m rpi.figures
-pytest -q                                         # synthetic fixtures only; no data needed
+pytest -q                                         # 32 tests: synthetic fixtures + dashboard AppTest on aggregates
 ```
 
-See [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md). No dashboard has been deployed.
+See [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md).
+
+**Research dashboard (local only, not deployed):** `pip install -e ".[dashboard]" && streamlit run dashboard/app.py`. It reads only the aggregate CSVs in `results/tables/`; every view is labelled retrospective and exploratory.
 
 ## Citation and acknowledgements
 

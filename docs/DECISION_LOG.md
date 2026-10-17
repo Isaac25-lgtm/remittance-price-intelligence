@@ -13,3 +13,7 @@
 | 2026-10-17 19:20 | Re-ran lag-0 at committed SHA 0de853b | The first run recorded a parent SHA because model code was uncommitted; results identical to ~1e-16 |
 | 2026-10-17 | No model "selected" for deployment | No lead time is established; RF has the best Brier but is under-confident; GBM gains over logistic models are small and unstable by year |
 | 2026-10-17 | Dashboard deferred | Phase-1 timebox spent on verified evidence |
+| 2026-10-17 (final checkpoint) | Built local Streamlit dashboard on committed aggregates only; no deployment | Investigator authorised a bounded phase; there is no public-safety review for deployment |
+| 2026-10-17 (final checkpoint) | Targeted prior-art matrix: Crossref metadata + abstracts; 7 works | Bounded; IMF eLibrary blocked (403), so the abstract was read via RePEc/IDEAS; the RPW site was blocked (403), so its reports are marked UNVERIFIED |
+| 2026-10-17 (final checkpoint) | No model refits or data reruns | Investigator instruction; credit preservation |
+| 2026-10-17 (final checkpoint) | Cancelled the autonomous PR check-in reminder | Investigator instruction |

@@ -16,7 +16,8 @@ python scripts/run_phase1.py --release-lag 1
 python scripts/run_descriptive.py
 python scripts/subgroup_metrics.py             # needs data/processed/test_predictions_lag0.parquet
 python -m rpi.figures
-pytest -q                                      # 19 tests, synthetic fixtures, ~3 s
+pytest -q                                      # 32 tests (19 synthetic-fixture + 13 dashboard AppTest), ~11 s
+streamlit run dashboard/app.py                 # local research dashboard (aggregates only)
 ```
 
-`results/tables/run_meta_lag*.json` records the code commit, source hash and versions for each model run. CI (`.github/workflows/ci.yml`) runs only the synthetic tests. It never downloads data or trains models.
+`results/tables/run_meta_lag*.json` records the code commit, source hash and versions for each model run. CI (`.github/workflows/ci.yml`) runs only the synthetic tests. It never downloads data or trains models. CI installs `.[dev,dashboard]` so the AppTest checks run on the committed aggregate tables.

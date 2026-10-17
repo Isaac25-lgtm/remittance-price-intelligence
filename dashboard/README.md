@@ -1,10 +1,13 @@
-# Dashboard: not built in phase 1
+# R01 research dashboard (local, not deployed)
 
-Phase 1 put its time into source verification, linkage and evaluation. No Streamlit app has been built, tested or deployed, and no URL exists. If built in phase 2, the app should read only the aggregate CSVs in `results/tables/` and show:
+`app.py` is a Streamlit research dashboard. It is **not** a consumer service.
 
-- the context ribbon: stage CONDITIONAL, data cutoff 2025Q3 (2025Q2 absent), retrospective-only, run `r01-phase1-2026-10-17`;
-- the conditional-outcome caveat and the missing-outcome bounds;
-- core vs strict identity and the 3%/5% sensitivity analyses;
-- model comparisons and review-capacity results.
-
-Missing data must display as missing. Any deployment needs separate investigator approval.
+- **Inputs:** only the committed aggregate tables in `results/tables/` and `results/source_manifest.json`. It does not read row-level RPW data or `data/raw`/`data/processed`, and it does no model training or live prices.
+- **Sections:** Overview → Data provenance → Study cohort & linkage → Missing-outcome bounds → Baselines and models → Calibration → Hypothetical review capacity → African subgroup support → Limitations & reproducibility.
+- **Labels:**
+  - A context ribbon on every page states the stage (CONDITIONAL), the data cutoff (2025Q3, with 2025Q2 absent), that results are RETROSPECTIVE and EXPLORATORY, and the run ID, commit and source hash.
+  - A caveat states that the outcome is conditional on reobservation and that no savings are observed.
+  - Missing quarters display as empty, not zero.
+- **Run:** `pip install -e ".[dashboard]" && streamlit run dashboard/app.py`
+- **Tests:** `pytest tests/test_dashboard.py` uses Streamlit AppTest to render every section and change its selectors (information scenario, test subset, threshold, capacity subset, subgroup, calibration models, record-flow spec).
+- **Deployment:** none. Public deployment needs separate investigator approval and a review of public-safe contents.
