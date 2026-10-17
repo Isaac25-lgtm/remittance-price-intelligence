@@ -30,6 +30,7 @@ from rpi.acquire import sha256
 
 ATOL, RTOL = 1e-9, 1e-9
 VOLATILE_JSON_KEYS = {"code_commit", "wall_seconds", "verified_at_utc"}
+TIMING_COLUMNS = {"fit_seconds"}  # wall-clock, expected to vary between runs
 OUT = config.RESULTS_DIR / "reproduction"
 SNAP = config.PROCESSED_DIR / "frozen_tables_snapshot"
 REGEN = config.PROCESSED_DIR / "repro_outputs"
@@ -62,9 +63,15 @@ def compare_csv(a: Path, b: Path) -> dict:
                 if not np.allclose(xa[~both_nan], ya[~both_nan], atol=ATOL, rtol=RTOL, equal_nan=True):
                     r.setdefault("numeric_columns_out_of_tolerance", []).append(c)
         else:
-            r["text_mismatches"] += int((x[c].astype(str) != y[c].astype(str)).sum())
-    r["status"] = "MATCH" if not r.get("numeric_columns_out_of_tolerance") and r["text_mismatches"] == 0 \
-        else "DIFFERS"
+            both_missing = x[c].isna() & y[c].isna()
+            r["text_mismatches"] += int(((x[c].astype(str) != y[c].astype(str)) & ~both_missing).sum())
+    bad = set(r.get("numeric_columns_out_of_tolerance", []))
+    if not bad and r["text_mismatches"] == 0:
+        r["status"] = "MATCH"
+    elif bad <= TIMING_COLUMNS and r["text_mismatches"] == 0:
+        r["status"] = "MATCH_EXCEPT_TIMING"
+    else:
+        r["status"] = "DIFFERS"
     return r
 
 
@@ -76,7 +83,44 @@ def compare_json(a: Path, b: Path) -> dict:
             "differing_keys": diff, "ignored_volatile_keys": sorted(VOLATILE_JSON_KEYS & (set(x) | set(y)))}
 
 
+def compare_all() -> list[dict]:
+    comps = []
+    for f in sorted(SNAP.iterdir()):
+        g = REGEN / f.name
+        if not g.exists():
+            comps.append({"file": f.name, "status": "NOT_REGENERATED"})
+        elif f.suffix == ".csv":
+            comps.append(compare_csv(f, g))
+        elif f.suffix == ".json":
+            comps.append(compare_json(f, g))
+    return comps
+
+
+def summarise(report: dict, comps: list[dict]) -> dict:
+    report.update({
+        "tolerance": {"atol": ATOL, "rtol": RTOL}, "timing_columns_ignored_for_status": sorted(TIMING_COLUMNS),
+        "n_tables": len(comps), "n_match": sum(c["status"] == "MATCH" for c in comps),
+        "n_match_except_timing": sum(c["status"] == "MATCH_EXCEPT_TIMING" for c in comps),
+        "n_differs": sum(c["status"] not in ("MATCH", "MATCH_EXCEPT_TIMING") for c in comps),
+        "non_matching": [c["file"] for c in comps if c["status"] != "MATCH"]})
+    OUT.mkdir(parents=True, exist_ok=True)
+    (OUT / "reproduction_report.json").write_text(json.dumps(report, indent=2) + "\n")
+    pd.DataFrame(comps).to_csv(OUT / "table_comparison.csv", index=False)
+    print(json.dumps({k: report[k] for k in ["n_tables", "n_match", "n_match_except_timing", "n_differs",
+                                             "non_matching"]}, indent=2))
+    return report
+
+
 def main() -> int:
+    if "--compare-only" in sys.argv:
+        prev = json.loads((OUT / "reproduction_report.json").read_text())
+        prev["comparison_recomputed_at_utc"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
+        prev["comparison_note"] = ("Comparison recomputed from the saved snapshot and regenerated outputs of the "
+                                   "same run after fixing a comparator bug (missing-vs-missing text cells counted "
+                                   "as mismatches under pandas 3 string dtype) and classifying wall-clock "
+                                   "fit_seconds separately. First-pass files kept as *_firstpass.*")
+        summarise(prev, compare_all())
+        return 0
     if not config.RAW_FILE.exists():
         print("MISSING INPUT: cached workbook not found; run `python -m rpi.acquire` first.")
         return 3
@@ -111,15 +155,7 @@ def main() -> int:
                 f.unlink()
         for f in SNAP.iterdir():
             shutil.copy2(f, config.TABLES_DIR / f.name)
-    comps = []
-    for f in sorted(SNAP.iterdir()):
-        g = REGEN / f.name
-        if not g.exists():
-            comps.append({"file": f.name, "status": "NOT_REGENERATED"})
-        elif f.suffix == ".csv":
-            comps.append(compare_csv(f, g))
-        elif f.suffix == ".json":
-            comps.append(compare_json(f, g))
+    comps = compare_all()
     import sklearn
     report = {
         "what": "raw-to-result reproduction from cached official workbook (real data, not synthetic)",
@@ -129,15 +165,9 @@ def main() -> int:
         "source_downloaded_in_this_run": False,
         "python": platform.python_version(), "pandas": pd.__version__, "numpy": np.__version__,
         "sklearn": sklearn.__version__, "seed": config.SEED, "threads": 2,
-        "tolerance": {"atol": ATOL, "rtol": RTOL}, "steps": log,
-        "n_tables": len(comps), "n_match": sum(c["status"] == "MATCH" for c in comps),
-        "non_matching": [c["file"] for c in comps if c["status"] != "MATCH"],
-        "frozen_tables_restored": True,
+        "steps": log, "frozen_tables_restored": True,
     }
-    OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / "reproduction_report.json").write_text(json.dumps(report, indent=2) + "\n")
-    pd.DataFrame(comps).to_csv(OUT / "table_comparison.csv", index=False)
-    print(json.dumps({k: report[k] for k in ["n_tables", "n_match", "non_matching"]}, indent=2))
+    summarise(report, comps)
     return 0 if all(s["returncode"] == 0 for s in log) and len(log) == len(STEPS) else 1
 
 

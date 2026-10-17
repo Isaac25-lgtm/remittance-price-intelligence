@@ -20,7 +20,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8"]
-dashboard = ["streamlit>=1.38"]
+dashboard = ["streamlit>=1.38", "altair>=5.0,<7"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
