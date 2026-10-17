@@ -1,5 +1,10 @@
 # Deployment readiness: R01 research dashboard
 
+## Verified deployment — 17 October 2026
+
+Live app: https://isaac-remittance-research.streamlit.app/ . Deployed by the coordinator from reviewed `main` after PR #2 merged (`7dd7281`), using Python 3.11 and no secrets. Browser verification confirmed the overview, retrospective context ribbon, World Bank attribution, all-eight-family model chart and aggregate download controls. CI at the reviewed head passed 96 tests. Source/row-level files were not uploaded. Scientific limitations remain unchanged.
+
+
 **Status: TECHNICALLY READY. Licence for aggregate display: CLEARED (CC BY 4.0, sources below).** Nothing has been deployed from this session. Deployment and merge are handled by the investigator/coordinator after review.
 
 ## App
