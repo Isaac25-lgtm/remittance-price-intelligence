@@ -1,0 +1,2 @@
+_all,n_eligible,n_stay,n_fail,n_unknown,n_core,n_strict,conditional_p_stay_core,lower_bound,upper_bound
+all,45343,29546,6883,8914,36891,30935,0.8110571248181394,0.6516110535253512,0.8482014864477427

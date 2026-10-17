@@ -1,0 +1,12 @@
+{
+  "run_id": "r01-phase1-2026-10-17",
+  "release_lag": 1,
+  "code_commit": "fc3a2ebe6defee2c9fe33c717eded6da7570f041",
+  "python": "3.13.16",
+  "sklearn": "1.9.1",
+  "source_sha256": "f1d7265b1856d61812c158d3d03fae686dbff58735deabe016a6bfe23482d2a8",
+  "n_test_rows": 19667,
+  "n_test_corridors": 329,
+  "n_test_providers": 284,
+  "wall_seconds": 119.9
+}
