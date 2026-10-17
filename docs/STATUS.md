@@ -101,3 +101,33 @@ There are no corridors sending *from* Uganda.
   - 13 AppTest tests (`tests/test_dashboard.py`) render every section and exercise its selectors.
 - **Prior art:** `docs/PRIOR_ART.md`, 7 works with verified DOIs and reading depth (no full text read).
 - **Scope of this checkpoint:** no models were refit and no data reruns were done; only tests were run.
+
+## Presentation and reproduction phase (17 Oct 2026, branch `research/presentation-repro-2026-10-17`, from main `8dc29dc`)
+
+- **Raw-to-result reproduction (real data, cached workbook, no re-download):**
+  - `scripts/reproduce_from_cache.py` re-ran parse → audit → models (lag 0, lag 1) → descriptive → subgroups at commit `a818ca6`.
+  - **28 of 30 frozen tables matched** within atol/rtol 1e-9 (largest numeric |Δ| ≈ 2e-16).
+  - 2 model-registry tables differ only in wall-clock `fit_seconds`.
+  - **No scientific differences.** The frozen tables were restored and never overwritten.
+  - A first-pass comparison flagged 2 further tables. The cause was a comparator bug (missing-vs-missing text cells under pandas 3), not data. Those first-pass files are preserved as `results/reproduction/*_firstpass.*`.
+- **Presentation aggregates** (`scripts/presentation_aggregates.py`, from cached frozen-run predictions, no fitting):
+  - per-model Brier with corridor- and provider-bootstrap intervals for all 8 families, both lags and all subsets;
+  - reliability deciles for all 7 non-constant families (the frozen run stored 4; the derived deciles reproduce those 4 exactly);
+  - gated receiving-region metrics (7 regions);
+  - gated corridor metrics (30 of 329 corridors meet n ≥ 100 and ≥ 20 failures; HistGBM < spline in 77% of them);
+  - an anonymous provider distribution (17 of 284 providers meet the gate; HistGBM < spline in 59%);
+  - 20%-capacity recall by year.
+  - These describe heterogeneity on the same test rows. **No held-out-corridor or held-out-provider validation was performed.**
+- **Dashboard:**
+  - 11 sections, an aggregate allowlist (34 files), a download for every allowlisted table, and interactive Altair charts with tooltips, denominators and intervals.
+  - Deployment readiness and licence evidence are in `docs/DEPLOYMENT.md`. Aggregate display is cleared under CC BY 4.0 per the catalogue metadata, the World Bank restricted-data page and the RPW download terms; raw and row-level data stay excluded.
+  - **Not deployed from this session.**
+- **Tests:** 96 pass:
+  - synthetic fixtures;
+  - integrity checks on the real committed tables;
+  - Streamlit AppTest over all sections, widget values and downloads.
+- **Unchanged conclusions:**
+  - decision CONDITIONAL;
+  - wave release dates unverified;
+  - the negative reobservation result stands;
+  - Uganda remains below the support gate.

@@ -16,5 +16,8 @@
   - The models depend on reobservation, which they do not predict.
 - **Timing caveat:** RPW release dates are unverified. The lag-1 sensitivity delays history features only; it does not establish that predictions could precede the next survey.
 - **Presentation:** aggregate results are viewable in the local dashboard (`dashboard/app.py`). No model artefacts are served.
+- **Calibration evidence:** reliability deciles for all seven non-constant families are in `results/tables/presentation_reliability_all_families.csv`. They were derived from the cached frozen-run test predictions, and integrity tests confirm they match the four families stored by the frozen run.
+- **Uncertainty vs validation:** corridor- and provider-cluster bootstrap intervals (`presentation_model_brier_ci.csv`) quantify sampling dependence on the same time-forward test rows. **No held-out-corridor or held-out-provider validation was performed.** Gated corridor/region aggregates and the anonymous provider distribution describe heterogeneity only.
+- **Reproduction:** see `results/reproduction/` (raw-to-result rerun from the cached official workbook).
 - **Explainability:** not yet produced. Any importance analysis would be associational, not causal.
 - **Licence of the training data:** CC BY 4.0 per the catalogue, with the attribution and restricted-data terms in the workbook. No model artefacts are published.

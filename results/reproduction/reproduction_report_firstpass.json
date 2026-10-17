@@ -1,0 +1,66 @@
+{
+  "what": "raw-to-result reproduction from cached official workbook (real data, not synthetic)",
+  "run_at_utc": "2026-10-17T20:37:17+00:00",
+  "code_commit": "a818ca6f840b8561022db7ffe74fd0672e04a65f",
+  "code_dirty_in_src_scripts_configs": false,
+  "source_file": "data/raw/rpw_dataset_2011_2025_q3.xlsx",
+  "source_sha256": "f1d7265b1856d61812c158d3d03fae686dbff58735deabe016a6bfe23482d2a8",
+  "source_downloaded_in_this_run": false,
+  "python": "3.13.16",
+  "pandas": "3.0.6",
+  "numpy": "2.5.4",
+  "sklearn": "1.9.1",
+  "seed": 20261017,
+  "threads": 2,
+  "tolerance": {
+    "atol": 1e-09,
+    "rtol": 1e-09
+  },
+  "steps": [
+    {
+      "command": "python -c from rpi.preprocess import load_clean; load_clean(rebuild=True)",
+      "returncode": 0,
+      "seconds": 78.6,
+      "stderr_tail": ""
+    },
+    {
+      "command": "python -m rpi.audit",
+      "returncode": 0,
+      "seconds": 6.3,
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/run_phase1.py --release-lag 0",
+      "returncode": 0,
+      "seconds": 133.6,
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/run_phase1.py --release-lag 1",
+      "returncode": 0,
+      "seconds": 124.9,
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/run_descriptive.py",
+      "returncode": 0,
+      "seconds": 58.7,
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/subgroup_metrics.py",
+      "returncode": 0,
+      "seconds": 2.5,
+      "stderr_tail": ""
+    }
+  ],
+  "n_tables": 30,
+  "n_match": 26,
+  "non_matching": [
+    "audit_quarter_coverage.csv",
+    "model_registry_lag0.csv",
+    "model_registry_lag1.csv",
+    "subgroup_model_metrics_lag0.csv"
+  ],
+  "frozen_tables_restored": true
+}

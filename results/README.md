@@ -12,6 +12,8 @@ Produced by run `r01-phase1-2026-10-17` at code commit `0de853b` on source sha25
 | `tables/model_*_lag0.csv` / `_lag1.csv` | metrics, paired cluster-bootstrap differences, capacity capture, reliability bins, registry |
 | `tables/reobservation_metrics_*` | separate reobservation model vs prevalence |
 | `tables/subgroup_*` | African subgroup support and globally-trained model metrics |
+| `tables/presentation_*` | Dashboard aggregates computed from cached frozen-run predictions (no fitting): per-model cluster-bootstrap intervals, all-family reliability, gated region/corridor metrics, anonymous provider distribution, capacity by year |
+| `reproduction/` | Raw-to-result reproduction report and per-table comparison (first-pass files kept) |
 | `figures/fig1–fig6` | coverage, linkage, bounds, Brier, reliability, review capacity |
 
 All model results are **retrospective backtests on previously inspected years**.
