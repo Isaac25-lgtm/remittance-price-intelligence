@@ -1,0 +1,4 @@
+subset,capacity,rule_a,rule_b,captured_diff,ci95_lo,ci95_hi,cluster,n_boot
+pooled_2022_2025,0.2,M1_hist_gbm,L2_spline_logistic,122,57.0,179.04999999999995,corridor_key,300
+pooled_2022_2025,0.2,M1_hist_gbm,R_highest_cost_rule,523,407.95,637.6749999999998,corridor_key,300
+pooled_2022_2025,0.2,M1_hist_gbm,B2_history,353,259.375,456.04999999999995,corridor_key,300

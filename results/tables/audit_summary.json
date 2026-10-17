@@ -1,0 +1,33 @@
+{
+  "rows": 204469,
+  "periods_present": 37,
+  "first_quarter": "2016Q2",
+  "last_quarter": "2025Q3",
+  "quarters_missing_in_span": [
+    "2025Q2"
+  ],
+  "corridors": 368,
+  "corridor_field_mismatch": 95,
+  "firms_raw": 713,
+  "firms_normalised": 699,
+  "normalised_firm_names_with_multiple_raw_spellings": 14,
+  "duplicate_id": 0,
+  "exact_duplicate_rows_excluding_id": 189,
+  "nonnumeric_cells_in_numeric_columns": {
+    "cc1 lcu amount": 0,
+    "cc1 denomination amount": 0,
+    "cc1 lcu fee": 0,
+    "cc1 lcu fx rate": 0,
+    "cc1 fx margin": 0,
+    "cc1 total cost %": 0,
+    "cc2 lcu amount": 0,
+    "cc2 denomination amount": 0,
+    "cc2 lcu fee": 0,
+    "cc2 lcu fx rate": 0,
+    "cc2 fx margin": 0,
+    "cc2 total cost %": 0,
+    "inter lcu bank fx": 0
+  },
+  "collection_date_missing": 0,
+  "collection_date_outside_period_quarter": 181
+}

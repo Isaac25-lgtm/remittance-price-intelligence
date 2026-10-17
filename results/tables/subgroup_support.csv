@@ -1,0 +1,11 @@
+group,scope,corridors,providers,all_quotes,eligible_cheap_origins,primary_rows,primary_corridors,primary_providers,observed_failures,conditional_p_stay
+global,all years,368,699,204469,45343,36429,359,444,6883,0.8110571248181394
+global,test targets 2022-2025,365,490,102705,24556,19667,329,284,3605,0.8166980220674226
+receiving Sub-Saharan Africa,all years,86,183,41536,5516,4239,81,87,1053,0.7515923566878981
+receiving Sub-Saharan Africa,test targets 2022-2025,83,119,23245,3646,2779,74,46,688,0.7524289312702411
+receiving East African Community (8),all years,27,98,12551,1322,1084,26,40,249,0.7702952029520295
+receiving East African Community (8),test targets 2022-2025,27,66,7013,895,731,25,23,137,0.8125854993160054
+receiving Uganda,all years,3,48,1869,251,201,3,16,37,0.8159203980099502
+receiving Uganda,test targets 2022-2025,3,32,997,167,140,3,11,20,0.8571428571428571
+sending Uganda,all years,0,0,0,0,0,0,0,0,
+sending Uganda,test targets 2022-2025,0,0,0,0,0,0,0,0,
