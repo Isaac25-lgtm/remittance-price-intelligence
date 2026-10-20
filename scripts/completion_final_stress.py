@@ -16,7 +16,8 @@ ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'research_completion';PRIVATE=
 def main():
     lk=pd.read_parquet(PRIVATE/'linked_core.parquet');X=pd.read_parquet(PRIVATE/'features_core.parquet')
     dev=X[X.primary & (X.target_year<2022)]
-    frames=[];registry=[]
+    frames=[];regpath=OUT/'models/final_stress_registry.json'
+    registry=json.loads(regpath.read_text(encoding='utf-8')) if regpath.exists() else []
     for label,field in [('provider','firm__n'),('corridor','corridor_key')]:
         largest=dev.groupby(field).size().idxmax();scenario='exclude_largest_development_'+label
         cache=PRIVATE/(scenario+'.parquet')
@@ -34,7 +35,7 @@ def main():
             a=F.build(linked_variant(df,scenario));P,reg=fixed_annual(a,scenario);registry+=reg;P.to_parquet(cache,index=False);del a;gc.collect()
         frames.append(metrics(P,['B2_history','L2_spline_logistic','M1_hist_gbm','M2_random_forest'],scenario))
     write(pd.concat(frames,ignore_index=True),'models/final_stress_metrics.csv')
-    (OUT/'models/final_stress_registry.json').write_text(json.dumps(registry,indent=2),encoding='utf-8')
+    regpath.write_text(json.dumps(registry,indent=2),encoding='utf-8')
     P=pd.read_parquet(PRIVATE/'phase2_predictions.parquet');P=P.merge(X[['source_row','n_firm_hist','lag_available']],on='source_row',suffixes=('','_source'),validate='one_to_one')
     rows=[]
     # Fixed support bands; do not tune cutpoints on performance. Prior own quote is an overlap proxy.
@@ -49,8 +50,9 @@ def main():
             rows.append(row)
     write(pd.DataFrame(rows),'models/history_overlap_support.csv')
     # Distribution tests are descriptive; IID p-values are invalid under this panel dependence.
+    df['derived_fee_pct']=100*df['cc1 lcu fee']/df['cc1 lcu amount']
     before=df[df.qidx<2022*4+2];after=df[df.qidx>=2022*4+2];shifts=[]
-    for col in ['cc1 total cost %','cc1 fee %','cc1 fx margin']:
+    for col in ['cc1 total cost %','derived_fee_pct','cc1 fx margin']:
         a=before[col].dropna();b=after[col].dropna()
         shifts.append(dict(variable=col,n_before=len(a),n_after=len(b),median_before=a.median(),median_after=b.median(),ks_statistic=ks_2samp(a,b).statistic,p_value_status='NOT_REPORTED_IID_INVALID',interpretation='survey composition and time change; no causal design-change attribution'))
     write(pd.DataFrame(shifts),'data/pre_post2022_distribution_shift.csv')
