@@ -1,0 +1,31 @@
+{
+  "url": "https://datacatalogfiles.worldbank.org/ddh-published/0037898/DR0095523/rpw_dataset_2011_2025_q3.xlsx",
+  "accessed_utc": "2026-10-20T20:15:40.330732+00:00",
+  "destination": "data\\raw\\rpw_dataset_2011_2025_q3.xlsx",
+  "http_status": 200,
+  "headers": {
+    "content-type": "application/octet-stream",
+    "content-length": "50780339",
+    "last-modified": "Mon, 28 Sep 2026 08:32:29 GMT",
+    "etag": "\"0x8DF1D3B089B51AA\""
+  },
+  "bytes": 50780339,
+  "sha256": "f1d7265b1856d61812c158d3d03fae686dbff58735deabe016a6bfe23482d2a8",
+  "matches_expected": true,
+  "license": "CC BY 4.0; World Bank attribution/no endorsement; verified catalogue 2026-10-20",
+  "observation_start": "2016-05-09 00:00:00",
+  "observation_end": "2025-09-10 00:00:00",
+  "audit": {
+    "n_quotes": 204469,
+    "rows_outside_label_quarter": 181,
+    "kosovo_code_mismatch": 95,
+    "normalised_providers": 699,
+    "corridors": 368,
+    "missing_2025q2": true,
+    "n_primary": 36429,
+    "n_eligible": 45343,
+    "n_right_censored": 2083,
+    "negative_origin_costs": 1308,
+    "transparent_no": 3361
+  }
+}

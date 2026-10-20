@@ -57,6 +57,7 @@ def inference():
         if 'destination_income' in P:
             masks.update({f'income:{v}':P.destination_income==v for v in P.destination_income.unique()})
             masks.update({'no_provider_history':P.n_firm_hist==0,'provider_history_available':P.n_firm_hist>0,'no_corridor_history':P.n_corr_hist==0})
+            masks.update({'remote_initiation':P['access point__n'].isin(['internet','mobile phone']),'other_initiation':~P['access point__n'].isin(['internet','mobile phone'])})
         for group,mask in masks.items():
             d=P[mask];failures=int((~d.y.astype(bool)).sum());supported=failures>=100 and len(d)>0
             for n in names:

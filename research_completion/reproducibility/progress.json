@@ -215,7 +215,21 @@
       "code_files_changed_during_run": [],
       "code_fingerprint_start": "620b2181cb2b4f7236476375739277aa79b70ebe23f8fb1f6af5553f219889eb",
       "code_fingerprint_end": "620b2181cb2b4f7236476375739277aa79b70ebe23f8fb1f6af5553f219889eb"
+    },
+    "independent_data_measurement": {
+      "stage": "independent_data_measurement",
+      "evidence_type": "REAL-DATA EXECUTION",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "scripts/completion_data.py"
+      ],
+      "started_utc": "2026-10-20T20:37:22.554865+00:00",
+      "ended_utc": "2026-10-20T20:47:22.523010+00:00",
+      "exit_code": 0,
+      "seconds": 599.97,
+      "peak_rss_mb": 1286.1,
+      "code_sha": "869af85479e43844d4a32fb7c5655906662dd46e"
     }
   },
-  "last_stage": "phase2_software_smoke"
+  "last_stage": "independent_data_measurement"
 }

@@ -6,6 +6,8 @@ from completion_run import run
 
 ROOT=Path(__file__).resolve().parents[1]
 STAGES=[
+ ('additional_identity_and_component_audit',['scripts/completion_diagnostics.py']),
+ ('independent_streaming_cohort_audit',['scripts/independent_raw_audit.py']),
  ('nested_model_selection',['scripts/completion_models.py','nested']),
  ('recent_history_reference',['scripts/completion_recent.py']),
  ('transfer_and_fitted_sensitivities',['scripts/completion_models.py','transfer']),

@@ -2,6 +2,7 @@
 from __future__ import annotations
 import argparse
 import gc
+import hashlib
 import json
 import pickle
 import time
@@ -60,11 +61,13 @@ def nested():
     X=pd.read_parquet(PRIVATE/'features_core.parquet');prim=X[X.primary].copy()
     predictions=[];registry=[];splits=[];calibration=[];selection=[]
     modeldir=OUT/'private_runtime/fit_models';modeldir.mkdir(parents=True,exist_ok=True)
+    signature=hashlib.sha256(b''.join(p.read_bytes() for p in [Path(__file__),ROOT/'src/rpi/features.py',ROOT/'src/rpi/models.py',ROOT/'configs/r01_phase2_publication.yaml'])).hexdigest()
     for year in [2022,2023,2024,2025]:
         cache=PRIVATE/f'nested_{year}.parquet'
         meta=PRIVATE/f'nested_{year}.json'
         if cache.exists() and meta.exists():
             predictions.append(pd.read_parquet(cache));m=json.loads(meta.read_text(encoding='utf-8'))
+            if m.get('signature')!=signature:raise ValueError('Nested checkpoint code/protocol mismatch; preserve old checkpoint and version a fresh run')
             registry+=m['registry'];splits+=m['splits'];calibration+=m['calibration'];selection+=m['selection'];print('CACHED',year,flush=True);continue
         reg=[];spl=[];ca=[];sel=[]
         test=prim[prim.target_year==year].copy();first=int(test.qidx.min())
@@ -114,7 +117,7 @@ def nested():
         out['S_selected']=out[chosen+'__cal']
         sel.append(dict(year=year,chosen_model=chosen,selection_brier=selected_scores[chosen],minimum_selection_brier=min(selected_scores.values()),tolerance=.002,operationally_selected=False))
         out.to_parquet(cache,index=False)
-        meta.write_text(json.dumps(dict(registry=reg,splits=spl,calibration=ca,selection=sel),indent=2),encoding='utf-8')
+        meta.write_text(json.dumps(dict(signature=signature,source_sha256=config.EXPECTED_SHA256,registry=reg,splits=spl,calibration=ca,selection=sel),indent=2),encoding='utf-8')
         predictions.append(out);registry+=reg;splits+=spl;calibration+=ca;selection+=sel
     P=pd.concat(predictions,ignore_index=True);P.to_parquet(PRIVATE/'phase2_predictions.parquet',index=False)
     names=list(MODELS)+[n+'__cal' for n in FAMILIES]+['S_selected']
