@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import hashlib
 import os
 from pathlib import Path
 import subprocess
@@ -15,6 +16,11 @@ OUT = ROOT / "research_completion"
 
 
 def run(command, stage, evidence_type="REAL-DATA EXECUTION"):
+    def code_hashes():
+        return {str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest()
+                for folder in ['src','scripts','configs'] for p in sorted((ROOT/folder).rglob('*'))
+                if p.is_file() and p.suffix in {'.py','.yaml'} and '__pycache__' not in p.parts}
+    before=code_hashes()
     env = dict(os.environ)
     env.update({k: "2" for k in ["OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS", "NUMEXPR_NUM_THREADS"]})
     env.update(PYTHONHASHSEED="0", PYTHONUTF8="1", PYTHONPATH=str(ROOT / "src"), PYTEST_DISABLE_PLUGIN_AUTOLOAD="1")
@@ -42,6 +48,10 @@ def run(command, stage, evidence_type="REAL-DATA EXECUTION"):
                   ended_utc=dt.datetime.now(dt.timezone.utc).isoformat(), exit_code=proc.returncode,
                   seconds=round(time.monotonic()-t0, 2), peak_rss_mb=round(peak_rss/2**20, 1),
                   code_sha=subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip())
+    after=code_hashes()
+    record['code_files_changed_during_run']=[p for p in set(before)|set(after) if before.get(p)!=after.get(p)]
+    record['code_fingerprint_start']=hashlib.sha256(json.dumps(before,sort_keys=True).encode()).hexdigest()
+    record['code_fingerprint_end']=hashlib.sha256(json.dumps(after,sort_keys=True).encode()).hexdigest()
     with (logs / "commands_executed.jsonl").open("a", encoding="utf-8") as f:
         f.write(json.dumps(record) + "\n")
     progress_path = logs / "progress.json"

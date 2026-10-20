@@ -1,0 +1,24 @@
+{
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "libraries": {
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.16.1",
+    "matplotlib": "3.10.5",
+    "openpyxl": "3.1.5",
+    "pyarrow": "20.0.0",
+    "PyYAML": "6.0.2",
+    "pytest": "8.3.4",
+    "streamlit": "1.66.0",
+    "altair": "6.3.0",
+    "joblib": "1.4.2",
+    "threadpoolctl": "3.6.0",
+    "pypdf": "5.8.0",
+    "PyMuPDF": "1.28.2",
+    "psutil": "7.0.0"
+  },
+  "threadpool_info": [],
+  "environment": "task .venv with inherited base packages; only listed scientific libraries used; unrelated inherited package incompatibilities are not imported"
+}

@@ -37,14 +37,16 @@ def _asof(events: pd.DataFrame, by: list[str], value: str, origins: pd.DataFrame
                          f"{prefix}_n": m["count"].fillna(0).to_numpy()}, index=origins.index)
 
 
-def build(linked: pd.DataFrame, release_lag: int = 0, threshold: float = config.THRESHOLD) -> pd.DataFrame:
+def build(linked: pd.DataFrame, release_lag: int = 0, threshold: float = config.THRESHOLD,
+          history_allowed=None) -> pd.DataFrame:
     """Return the modelling frame (eligible origins) with features and labels."""
     lk = linked.copy()
     lk["y"] = (lk["cost_next"] >= 0) & (lk["cost_next"] <= threshold)
     prim = primary_outcome_rows(lk, threshold)
     elig = eligible_origin(lk, threshold)
-    events = lk[prim].assign(y=lambda d: d["y"].astype(float))
-    reob_events = lk[elig & lk["status"].isin(["core_reobserved", "core_unobserved_corridor_surveyed"])]
+    allowed = pd.Series(True, index=lk.index) if history_allowed is None else pd.Series(np.asarray(history_allowed, bool), index=lk.index)
+    events = lk[prim & allowed].assign(y=lambda d: d["y"].astype(float))
+    reob_events = lk[elig & allowed & lk["status"].isin(["core_reobserved", "core_unobserved_corridor_surveyed"])]
     reob_events = reob_events.assign(r=reob_events["core_reobserved"].astype(float))
 
     o = lk[elig].copy()
