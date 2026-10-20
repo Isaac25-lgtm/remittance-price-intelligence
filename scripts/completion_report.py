@@ -16,6 +16,7 @@ def put(name,text):
     text=re.sub(r'(?<!\d):(?=[A-Za-z0-9])',': ',text)
     # Plain prose spacing; avoid changing identifiers and relative file links.
     text=re.sub(r'\b(with|about|only|than|from|through|including|for|of|by|before|after|below|across|per|October|September|April)(?=\d)',r'\1 ',text)
+    text=text.replace('CC BY4.0','CC BY 4.0').replace('SDG10.c','SDG 10.c').replace('clinicalTRIPOD','clinical TRIPOD')
     p=OUT/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(text.strip()+'\n',encoding='utf-8')
 def markdown(df):
     def val(v):
@@ -33,7 +34,8 @@ def main():
     metrics=load('models/model_comparison.csv').copy();recent=load('models/recent_history_reference.csv')
     metrics=pd.concat([metrics,recent],ignore_index=True)
     comparison=metrics[['model','n','brier','log_loss','auroc','auprc_failure','cal_intercept','cal_slope']].sort_values('brier')
-    paired=load('models/paired_dependence.csv');selection=load('models/annual_selection.csv')
+    paired=pd.concat([load('models/paired_dependence.csv'),load('models/joint_dependence_sensitivity.csv')],ignore_index=True);selection=load('models/annual_selection.csv')
+    allcap=load('models/all_origin_capacity_bounds.csv')
     capacity=load('models/decision_capacity.csv');capci=load('models/decision_capacity_ci.csv')
     transfer=load('models/transfer_sensitivity_metrics.csv');transfer=transfer[transfer.scope=='pooled']
     observation=load('models/reobservation_models.csv');ipw=load('models/ipw_mar_scenario.csv')
@@ -51,7 +53,7 @@ def main():
       ('G4','Forecast information timing','FAIL','data/release_availability_registry.csv','Report captures do not establish historical availability of every row-level feature before target collection; prospective claim rejected.'),
       ('G5','Validation and confirmation','UNRESOLVED','validation/split_registry.csv','Chronological retrospective selection and leakage-protected transfers executed; no new independent temporal wave found.'),
       ('G6','Strong conventional comparison','PASS','models/model_comparison.csv','Historical, rolling history, cost, ridge, spline, GBM/RF and chronological calibration/selection evaluated; no unrestricted search.'),
-      ('G7','Dependence and precision','UNRESOLVED','models/paired_dependence.csv','Corridor/provider, time-block and crossed sensitivities executed; only13 target waves constrain joint/time uncertainty and confirmation.'),
+      ('G7','Dependence and precision','UNRESOLVED','models/joint_dependence_sensitivity.csv','Joint corridor/provider/time sensitivity crosses zero for selected policy versus spline; stress coverage0.86 does not validate nominal95%; only13 waves.'),
       ('G8','Major scientific novelty','UNRESOLVED','literature/head_to_head_scientific_delta.md','Same-source service-level competitors exist; Lim2026 full text blocked; no first-in-literature or substantial-novelty claim established.'),
       ('G9','Meaningful contribution','PASS','models/sensitivity_grid.csv','Identity rules substantially widen population bounds despite stable conditional estimates. Monitoring remains a hypothetical observed-sample benchmark.'),
       ('G10','Reproducibility/transparency','PASS','reproducibility/source_to_results_comparison.csv','Source/cohort independently checked; code/versions/checkpoints public; strict numeric comparison failures and the diagnostic correction explicitly retained.'),
@@ -77,7 +79,7 @@ def main():
 2. **Forecasting:** historical quote-level release vintages and full-feature availability timestamps are missing. Archive report captures, nominal issue labels and present-file metadata cannot supply those clocks. Retain retrospective framing unless verifiable snapshots show positive lead time.
 3. **Independent confirmation:** no official successor beyond2025Q3 was found. The workbook still has no2025Q2 and no adjacent-origin2025Q3 E1 target. Use the frozen future-wave evaluator only on genuinely unseen, correctly timed data.
 4. **Service identity:** a stratified candidate sample is private; public historical bundle metadata was not established. Reduced keys increase collisions and are not promoted as corrected identity. No false-merge rate is identified.
-5. **Inference:**13 retrospective target waves provide limited time-block information. Crossed pigeonhole resampling is a sensitivity, not exact arbitrary crossed-provider/corridor/time inference. A larger genuinely future wave sequence is needed for strong stability claims.
+5. **Inference:**13 retrospective target waves provide limited time-block information. The amended joint corridor/provider/time interval for the selected policy versus spline includes zero. Its synthetic stress coverage is0.86, not validated95%. A larger genuinely future wave sequence is needed for strong stability claims.
 6. **Numerical reproduction:** cohort/measurement counts exactly reproduce; some Windows logistic/spline diagnostics and a pooled capture count differ from frozen Linux outputs. The strict1e-9 comparison failed. No tolerance was widened to conceal differences. The old +/-10 calibration-offset bracket was separately corrected for phase2.
 7. **Human sign-off:** confirm authorship, citations, funding/conflicts, relevant institutional requirements, attribution and final scientific wording. Journal submission/preprint publication is not authorised.
 
@@ -105,7 +107,9 @@ Paired Brier differences and absolute scores use1000 draws, seed20261020. Corrid
 
 Crossed pigeonhole sensitivity draws independent corridor and provider multiplicities and multiplies their row weights. It is not a naive nested bootstrap and is not claimed exact finite-sample multiway coverage. Empty draws are rejected if frequent. Structural synthetic checks verify whole-cell weights, crossed factorisation and fixed-wave resampling; zero paired differences produce zero intervals. A limited50-replicate synthetic stress test (200 bootstrap draws per replicate) uses sparse crossed groups and13 AR(0.6) quarterly shocks. Its empirical coverage is diagnostic with substantial Monte Carlo error, not a formal coverage proof. No procedure is promoted as exact joint inference from this test.
 
-Capacity intervals rerank both policies at the same20% within-quarter budget in300 corridor resamples. Alternative corridor/provider/quarter-equal averages change the target weighting; none estimates transaction-weighted consumer prices. No multiplicity-adjusted confirmatory significance claim is made.
+Following first-pass undercoverage, one explicitly post hoc amendment adds a joint corridor/provider multiplicity product times circular four-wave block weights. It was specified before computing its real-data interval, without searching multiple new procedures. Its synthetic stress coverage is0.86; it remains exploratory and does not validate nominal95% coverage. The selected-policy versus spline interval includes zero. See joint_dependence_sensitivity.csv and bootstrap_simulation.csv.
+
+Capacity intervals rerank both policies at the same20% within-quarter budget in300 corridor resamples. The original E1 ranking conditions on future reobservation membership and is not a deployable review queue. all_origin_capacity_bounds.csv additionally scores every eligible origin, retaining unknown future states and worst-case recall bounds without refitting. Alternative corridor/provider/quarter-equal averages change the target weighting; none estimates transaction-weighted consumer prices. No multiplicity-adjusted confirmatory significance claim is made.
 ''')
     put('models/inference_spec.md',(OUT/'validation/dependence_bootstrap_methods.md').read_text(encoding='utf-8'))
     put('models/model_selection.md',f'''# Research model selection
@@ -195,11 +199,19 @@ Limited synthetic coverage stress (not RPW evidence):
 
 The simulation deliberately includes crossed-group and serially correlated time shocks. Separate resampling axes cannot be assumed to capture every dependence component; the measured coverage rates have substantial Monte Carlo uncertainty and do not validate a universal95% coverage claim. Real-data intervals condition on fitted predictions and do not include full retraining/selection uncertainty.
 
+The amended joint corridor/provider/time sensitivity gives selected policy minus spline Brier difference -0.005388 with interval[-0.011730,+0.000457]. Thus even retrospective superiority of the predeclared selection policy is not robust across dependence assumptions. The joint method achieved0.86 coverage in the limited stress simulation, still below nominal0.95; no exact inferential guarantee is claimed.
+
 ## Hypothetical monitoring utility
 
 {markdown(capacity[(capacity.analysis=='phase2')&(capacity.capacity==.2)][['rule','reviewed','failures_total','failures_captured','recall','precision','false_alerts']])}
 
 Policies select equal numbers within each origin quarter at5/10/20/30% capacity. Capacity uncertainty reranks in300 corridor resamples. False alerts are observed stays selected for review, not harm measured in practice. Relative cost scenarios assume a review identifies an observed failure and cannot establish monetary saving, intervention effectiveness or consumer availability.
+
+The preceding E1 queue uses future valid-reobservation membership, which would be unavailable at an origin decision. The following correction scores **all eligible origin quotes**, preserving unknown outcomes instead of selecting the queue using future membership. These are E1-score extrapolation scenarios with partial-identification bounds, not validated joint observation/price forecasts:
+
+{markdown(allcap[allcap.capacity==.2][['rule','n_all_eligible','n_known_valid','n_unknown','reviewed','known_failures_captured','unknown_reviewed','all_failure_recall_lower','all_failure_recall_upper']])}
+
+Among24556 origins,4889 outcomes are unknown. At20% capacity the selected policy reviews4905 quotes, captures1611 known failures, and reviews1060 unknowns; all-failure recall can range from0.2167 to0.5726 under extreme allocations. Overlapping bounds prevent an identified population ranking of policies. Conditional matched-sample gains cannot be sold as operational benefit.
 
 ## Identity, source and missingness sensitivity
 
@@ -230,6 +242,8 @@ The official source, cohort, flow and descriptive quantities reproduce. The corr
 ## Recovered original pilot and score decomposition
 
 Local execution recovered the earlier pilot code and reference parquet that were inaccessible to the cloud session. Unchanged archived programs were rerun with a private I/O adapter; source fields were compared against the independently reacquired input. Pilot reproduction:GBM Brier{pilot['spline_results.json']['boost_brier']:.9f};spline Brier{pilot['spline_results.json']['spline_brier']:.9f};n={pilot['spline_results.json']['n']:,}. See[the recovery audit](../audits/recovered_pilot_reproduction.json).
+
+Rebuilding the old openpyxl/string encoding directly from the independently downloaded official workbook exactly reconstructs the old parquet bytes (SHA256 d371c8b2e09b3f7698803dbfc20b85550f6206e4d30a4974b7a6051060c3493f). GBM/count reproduce the reported pilot exactly; spline remains slightly different from its reported0.1441454123434313. The initially source-adapted pandas cache produced18032 rather than18030 test pairs and is retained separately. Blank-string versus missing-value semantics differ across encodings, so normalised value equality alone was insufficient. See pilot_cache_rebuild.json, pilot_source_content_comparison.csv and source_adapted_pilot_rerun.json under audits/.
 
 The pilot evaluates origin years2022-2024; phase1 evaluates target years2022-2024. Their net18-record count difference conceals different memberships:{pilot['cohort_overlap']['shared']:,} shared,{pilot['cohort_overlap']['pilot_only']:,} pilot-only,{pilot['cohort_overlap']['phase1_only']:,} phase1-only. Transparency filtering, duplicate handling, local-amount versus USD-basket identity, text normalisation, feature definitions, annual refit windows and hyperparameters also differ. Scores are not exact head-to-head algorithm comparisons. A prior exploratory corridor holdout was also recovered; its existence is preserved rather than misrepresented as absent from all earlier research.
 
@@ -307,6 +321,9 @@ Scientific files are reviewed through[PR3](https://github.com/Isaac25-lgtm/remit
 
 Confirm authorship, citations/competitor overlap, lawful attribution, funding/conflicts, institutional requirements, final scientific interpretation and venue before any submission. No journal submission or preprint posting was performed or authorised.
 '''
+    verdict=verdict.replace('FINAL DECISION:**CONDITIONAL_MORE_EVIDENCE**','FINAL DECISION:**CONDITIONAL GO / CONDITIONAL_MORE_EVIDENCE**')
+    verdict=verdict.replace('## Operational interpretation','The amended joint corridor/provider/time interval for selected policy minus spline is **[-0.011730,+0.000457]**, crossing zero (point -0.005388). Stress simulation coverage0.86 still fails to establish nominal95% coverage. See[joint sensitivity](../models/joint_dependence_sensitivity.csv). Robust superiority is not established.\n\n## Operational interpretation')
+    verdict=verdict.replace('Review-at-capacity results are hypothetical observed-sample triage.','Matched-sample review conditions on future reobservation membership. The corrected[all-origin scenario](../models/all_origin_capacity_bounds.csv) scores24556 eligible quotes,4889 with unknown outcomes. At20% budget selected-policy population recall bounds are0.2167-0.5726; no identified population policy ranking follows. Review-at-capacity results are hypothetical triage.')
     put('assessment/PUBLICATION_VERDICT.md',verdict)
     put('PUBLICATION_VERDICT.md','# Publication verdict\n\n**CONDITIONAL_MORE_EVIDENCE - NOT YET PUBLICATION-READY.**\n\nSee[the complete scientific verdict](assessment/PUBLICATION_VERDICT.md) and[conditional research report](manuscript/conditional_research_report.md).')
     put('assessment/reviewer_challenges.md','''# Independent scientific challenge checklist
@@ -341,10 +358,10 @@ Finance/development observational measurement reporting, not claimed clinicalTRI
     shutil.copy2(OUT/'literature/references.bib',OUT/'manuscript/references.bib')
     put('manuscript/supplementary_material.md','''# Supplementary material
 
-S1:docs/DATA_DICTIONARY.md plus validation/feature_asof_registry.csv and data/raw_data_audit.md.
+S1:data/variable_dictionary.csv plus docs/DATA_DICTIONARY.md, validation/feature_asof_registry.csv and data/raw_data_audit.md.
 S2:data/inclusion_exclusion_flow.csv, identity_collision_audit.csv, independent_raw_audit.json and source manifests.
 S3:models/model_registry.json, model_comparison.csv, calibration_selection.csv, annual_selection.csv, continuous_cost_metrics.csv and all negative reobservation results.
-S4:models/paired_dependence.csv, weighting_sensitivity.csv, decision_capacity_ci.csv and validation/dependence_bootstrap_methods.md.
+S4:models/paired_dependence.csv, joint_dependence_sensitivity.csv, weighting_sensitivity.csv, decision_capacity_ci.csv, all_origin_capacity_bounds.csv, brier_decomposition.csv, reliability_cluster_intervals.csv and validation/dependence_bootstrap_methods.md. Synthetic stress results are in validation/bootstrap_simulation.csv.
 S5:literature/closest_work_matrix.md, search_log.csv and head_to_head_scientific_delta.md.
 S6:reproducibility/environment_lock.txt, version_manifest.json, commands_executed.jsonl, source_to_results_comparison.csv and the public data attribution.
 

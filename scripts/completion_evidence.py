@@ -33,7 +33,9 @@ def main():
     bib=[]
     for r in df.to_dict('records'):
         year=re.search(r'20\d{2}',r['date'])
-        fields=[f"title = {{{r['title']}}}",f"author = {{{r['author']}}}",f"url = {{{r['url']}}}",f"note = {{{r['access_depth']}}}"]
+        author=r['author'].replace('; ',' and ')
+        if ';' not in r['author'] and ',' not in r['author']:author='{'+author+'}'
+        fields=[f"title = {{{r['title']}}}",f"author = {{{author}}}",f"url = {{{r['url']}}}",f"note = {{{r['access_depth']}}}"]
         if year:fields.append(f"year = {{{year.group()}}}")
         if r['doi']:fields.append(f"doi = {{{r['doi']}}}")
         bib.append('@misc{'+r['citation_id']+',\n  '+',\n  '.join(fields)+'\n}')
