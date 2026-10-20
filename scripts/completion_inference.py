@@ -124,11 +124,12 @@ def explain():
                     v=g.copy();v[cols]=g[cols].to_numpy()[rng.permutation(len(g))]
                     vals.append(brier(y,calibrated(m.predict_proba(v)[:,1],method,cal))-base)
                 rows.append(dict(model=name,origin_qidx=q,feature_group=group,n=len(g),mean_brier_increase=np.mean(vals),min_brier_increase=min(vals),max_brier_increase=max(vals),reps=3,interpretation='associative grouped permutation; correlated/off-manifold combinations possible'))
-        # Cost response moves distance consistently and reports local support.
-        lo,hi=d.cost.quantile([.05,.95])
-        for cost in np.linspace(lo,hi,12):
-            v=d.copy();v['cost']=cost;v['dist_to_threshold']=3-cost
-            curves.append(dict(model=name,current_cost=cost,mean_predicted_stay=calibrated(m.predict_proba(v)[:,1],method,cal).mean(),local_observed_n=int(((d.cost-cost).abs()<=.15).sum()),caveat='partial response; fee/FX/corridor rank held fixed; not causal'))
+        # Actual observed-price bins preserve the fee+FX accounting identity and
+        # corridor composition, avoiding impossible counterfactual price vectors.
+        response=d[['cost','y']].copy();response['pred']=calibrated(m.predict_proba(d)[:,1],method,cal)
+        response['bin']=pd.cut(response.cost,np.linspace(0,3,13),include_lowest=True)
+        for _,g in response.groupby('bin',observed=True):
+            curves.append(dict(model=name,current_cost=g.cost.mean(),mean_predicted_stay=g.pred.mean(),observed_stay=g.y.astype(float).mean(),local_observed_n=len(g),caveat='descriptive observed-cost bin; actual covariates; not a partial/causal effect'))
         del m;gc.collect();print('Explainability',name,flush=True)
     write(pd.DataFrame(rows),'models/permutation_importance.csv');write(pd.DataFrame(curves),'models/partial_response.csv')
 

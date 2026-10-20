@@ -1,0 +1,32 @@
+feature,input_source_wave,known_after_date,theoretical_availability_rule,retrospective,prospective,finding
+cost,origin or earlier,UNVERIFIED,entire source wave released before decision,retained,rejected until availability verified,no numeric lookahead under lag scenario; public availability unresolved
+fx_margin,origin or earlier,UNVERIFIED,entire source wave released before decision,retained,rejected until availability verified,no numeric lookahead under lag scenario; public availability unresolved
+fee_pct,origin or earlier,UNVERIFIED,entire source wave released before decision,retained,rejected until availability verified,no numeric lookahead under lag scenario; public availability unresolved
+cost_other_basket,origin or earlier,UNVERIFIED,entire source wave released before decision,retained,rejected until availability verified,no numeric lookahead under lag scenario; public availability unresolved
+dist_to_threshold,origin or earlier,UNVERIFIED,entire source wave released before decision,retained,rejected until availability verified,no numeric lookahead under lag scenario; public availability unresolved
+lag_cost,origin or earlier,UNVERIFIED,entire source wave released before decision,retained,rejected until availability verified,no numeric lookahead under lag scenario; public availability unresolved
+lag_available,origin or earlier,UNVERIFIED,entire source wave released before decision,retained,rejected until availability verified,no numeric lookahead under lag scenario; public availability unresolved
+lag_delta,origin or earlier,UNVERIFIED,entire source wave released before decision,retained,rejected until availability verified,no numeric lookahead under lag scenario; public availability unresolved
+transparent,origin or earlier,UNVERIFIED,entire source wave released before decision,retained,rejected until availability verified,no numeric lookahead under lag scenario; public availability unresolved
+h_global,target <= origin - lag,UNVERIFIED,entire source wave released before decision,retained,rejected until availability verified,no numeric lookahead under lag scenario; public availability unresolved
+h_corr,target <= origin - lag,UNVERIFIED,entire source wave released before decision,retained,rejected until availability verified,no numeric lookahead under lag scenario; public availability unresolved
+h_firm,target <= origin - lag,UNVERIFIED,entire source wave released before decision,retained,rejected until availability verified,no numeric lookahead under lag scenario; public availability unresolved
+h_corrfirm,target <= origin - lag,UNVERIFIED,entire source wave released before decision,retained,rejected until availability verified,no numeric lookahead under lag scenario; public availability unresolved
+n_corr_hist,target <= origin - lag,UNVERIFIED,entire source wave released before decision,retained,rejected until availability verified,no numeric lookahead under lag scenario; public availability unresolved
+n_firm_hist,target <= origin - lag,UNVERIFIED,entire source wave released before decision,retained,rejected until availability verified,no numeric lookahead under lag scenario; public availability unresolved
+reob_corr,target <= origin - lag,UNVERIFIED,entire source wave released before decision,retained,rejected until availability verified,no numeric lookahead under lag scenario; public availability unresolved
+corr_n_services,origin or earlier,UNVERIFIED,entire source wave released before decision,retained,rejected until availability verified,no numeric lookahead under lag scenario; public availability unresolved
+corr_share_cheap,origin or earlier,UNVERIFIED,entire source wave released before decision,retained,rejected until availability verified,no numeric lookahead under lag scenario; public availability unresolved
+corr_min_cost,origin or earlier,UNVERIFIED,entire source wave released before decision,retained,rejected until availability verified,no numeric lookahead under lag scenario; public availability unresolved
+cost_rank_in_corr,origin or earlier,UNVERIFIED,entire source wave released before decision,retained,rejected until availability verified,no numeric lookahead under lag scenario; public availability unresolved
+firm_type__n,origin or earlier,UNVERIFIED,entire source wave released before decision,retained,rejected until availability verified,no numeric lookahead under lag scenario; public availability unresolved
+payment instrument__n,origin or earlier,UNVERIFIED,entire source wave released before decision,retained,rejected until availability verified,no numeric lookahead under lag scenario; public availability unresolved
+access point__n,origin or earlier,UNVERIFIED,entire source wave released before decision,retained,rejected until availability verified,no numeric lookahead under lag scenario; public availability unresolved
+pickup method__n,origin or earlier,UNVERIFIED,entire source wave released before decision,retained,rejected until availability verified,no numeric lookahead under lag scenario; public availability unresolved
+speed actual__n,origin or earlier,UNVERIFIED,entire source wave released before decision,retained,rejected until availability verified,no numeric lookahead under lag scenario; public availability unresolved
+receiving network coverage__n,origin or earlier,UNVERIFIED,entire source wave released before decision,retained,rejected until availability verified,no numeric lookahead under lag scenario; public availability unresolved
+source_region,origin or earlier,UNVERIFIED,entire source wave released before decision,retained,rejected until availability verified,no numeric lookahead under lag scenario; public availability unresolved
+destination_region,origin or earlier,UNVERIFIED,entire source wave released before decision,retained,rejected until availability verified,no numeric lookahead under lag scenario; public availability unresolved
+source_income,origin or earlier,UNVERIFIED,entire source wave released before decision,retained,rejected until availability verified,no numeric lookahead under lag scenario; public availability unresolved
+destination_income,origin or earlier,UNVERIFIED,entire source wave released before decision,retained,rejected until availability verified,no numeric lookahead under lag scenario; public availability unresolved
+qtr_cat,origin or earlier,UNVERIFIED,entire source wave released before decision,retained,rejected until availability verified,no numeric lookahead under lag scenario; public availability unresolved

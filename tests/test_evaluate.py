@@ -47,3 +47,10 @@ def test_capacity_counts():
     score = np.array([0.9, 0.8] + [0.1] * 8)
     got, k, tot = capture_at_capacity(df, score, y, 0.2)
     assert (got, k, tot) == (2, 2, 2)
+
+
+def test_ties_respect_fixed_row_order_and_quarter_budgets():
+    df=pd.DataFrame({'qidx':[1,1,1,2,2,2]})
+    y=np.array([0,1,0,1,0,0])
+    # Each quarter reviews floor(3*.5)=1; tied scores select the first record.
+    assert capture_at_capacity(df,np.zeros(6),y,.5)==(1,2,4)

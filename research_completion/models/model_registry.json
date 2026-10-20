@@ -1,0 +1,702 @@
+[
+  {
+    "year": 2022,
+    "model": "B0_always_stay",
+    "stage": "outer_score",
+    "parameters": {},
+    "calibration": "none",
+    "n_train": 12508,
+    "n_test": 4566,
+    "seconds": 0.0
+  },
+  {
+    "year": 2022,
+    "model": "B1_prevalence",
+    "stage": "outer_score",
+    "parameters": {},
+    "calibration": "none",
+    "n_train": 12508,
+    "n_test": 4566,
+    "seconds": 0.0
+  },
+  {
+    "year": 2022,
+    "model": "B2_history",
+    "stage": "outer_score",
+    "parameters": {},
+    "calibration": "none",
+    "n_train": 12508,
+    "n_test": 4566,
+    "seconds": 0.0
+  },
+  {
+    "year": 2022,
+    "model": "B3_cost_logistic",
+    "stage": "outer_score",
+    "parameters": {},
+    "calibration": "none",
+    "n_train": 12508,
+    "n_test": 4566,
+    "seconds": 0.16
+  },
+  {
+    "year": 2022,
+    "model": "L1_ridge_logistic",
+    "stage": "tune",
+    "parameters": {
+      "clf__C": 0.1
+    },
+    "tuning_brier": 0.12824104161123756,
+    "n_train": 10679,
+    "seconds": 0.53
+  },
+  {
+    "year": 2022,
+    "model": "L1_ridge_logistic",
+    "stage": "tune",
+    "parameters": {
+      "clf__C": 1.0
+    },
+    "tuning_brier": 0.1287233804475693,
+    "n_train": 10679,
+    "seconds": 1.14
+  },
+  {
+    "year": 2022,
+    "model": "L1_ridge_logistic",
+    "stage": "tune",
+    "parameters": {
+      "clf__C": 10.0
+    },
+    "tuning_brier": 0.1287019329619894,
+    "n_train": 10679,
+    "seconds": 1.94
+  },
+  {
+    "year": 2022,
+    "model": "L1_ridge_logistic",
+    "stage": "outer_score",
+    "parameters": {
+      "clf__C": 0.1
+    },
+    "calibration": "sigmoid",
+    "n_train": 12508,
+    "n_test": 4566,
+    "seconds": 2.83
+  },
+  {
+    "year": 2022,
+    "model": "L2_spline_logistic",
+    "stage": "tune",
+    "parameters": {},
+    "tuning_brier": 0.12664589795187678,
+    "n_train": 10679,
+    "seconds": 0.62
+  },
+  {
+    "year": 2022,
+    "model": "L2_spline_logistic",
+    "stage": "outer_score",
+    "parameters": {},
+    "calibration": "sigmoid",
+    "n_train": 12508,
+    "n_test": 4566,
+    "seconds": 1.55
+  },
+  {
+    "year": 2022,
+    "model": "M1_hist_gbm",
+    "stage": "tune",
+    "parameters": {
+      "clf__max_leaf_nodes": 7,
+      "clf__max_iter": 150
+    },
+    "tuning_brier": 0.11655623352391577,
+    "n_train": 10679,
+    "seconds": 0.77
+  },
+  {
+    "year": 2022,
+    "model": "M1_hist_gbm",
+    "stage": "tune",
+    "parameters": {
+      "clf__max_leaf_nodes": 15,
+      "clf__max_iter": 300
+    },
+    "tuning_brier": 0.12087937348249532,
+    "n_train": 10679,
+    "seconds": 2.44
+  },
+  {
+    "year": 2022,
+    "model": "M1_hist_gbm",
+    "stage": "outer_score",
+    "parameters": {
+      "clf__max_leaf_nodes": 7,
+      "clf__max_iter": 150
+    },
+    "calibration": "sigmoid",
+    "n_train": 12508,
+    "n_test": 4566,
+    "seconds": 3.7
+  },
+  {
+    "year": 2022,
+    "model": "M2_random_forest",
+    "stage": "tune",
+    "parameters": {
+      "clf__min_samples_leaf": 20
+    },
+    "tuning_brier": 0.11973492319928593,
+    "n_train": 10679,
+    "seconds": 3.72
+  },
+  {
+    "year": 2022,
+    "model": "M2_random_forest",
+    "stage": "tune",
+    "parameters": {
+      "clf__min_samples_leaf": 50
+    },
+    "tuning_brier": 0.12071854998377075,
+    "n_train": 10679,
+    "seconds": 7.06
+  },
+  {
+    "year": 2022,
+    "model": "M2_random_forest",
+    "stage": "outer_score",
+    "parameters": {
+      "clf__min_samples_leaf": 20
+    },
+    "calibration": "sigmoid",
+    "n_train": 12508,
+    "n_test": 4566,
+    "seconds": 12.02
+  },
+  {
+    "year": 2023,
+    "model": "B0_always_stay",
+    "stage": "outer_score",
+    "parameters": {},
+    "calibration": "none",
+    "n_train": 15814,
+    "n_test": 6993,
+    "seconds": 0.0
+  },
+  {
+    "year": 2023,
+    "model": "B1_prevalence",
+    "stage": "outer_score",
+    "parameters": {},
+    "calibration": "none",
+    "n_train": 15814,
+    "n_test": 6993,
+    "seconds": 0.0
+  },
+  {
+    "year": 2023,
+    "model": "B2_history",
+    "stage": "outer_score",
+    "parameters": {},
+    "calibration": "none",
+    "n_train": 15814,
+    "n_test": 6993,
+    "seconds": 0.0
+  },
+  {
+    "year": 2023,
+    "model": "B3_cost_logistic",
+    "stage": "outer_score",
+    "parameters": {},
+    "calibration": "none",
+    "n_train": 15814,
+    "n_test": 6993,
+    "seconds": 0.05
+  },
+  {
+    "year": 2023,
+    "model": "L1_ridge_logistic",
+    "stage": "tune",
+    "parameters": {
+      "clf__C": 0.1
+    },
+    "tuning_brier": 0.1366936958621042,
+    "n_train": 14432,
+    "seconds": 0.73
+  },
+  {
+    "year": 2023,
+    "model": "L1_ridge_logistic",
+    "stage": "tune",
+    "parameters": {
+      "clf__C": 1.0
+    },
+    "tuning_brier": 0.13874548423580868,
+    "n_train": 14432,
+    "seconds": 1.69
+  },
+  {
+    "year": 2023,
+    "model": "L1_ridge_logistic",
+    "stage": "tune",
+    "parameters": {
+      "clf__C": 10.0
+    },
+    "tuning_brier": 0.13972638908702897,
+    "n_train": 14432,
+    "seconds": 2.53
+  },
+  {
+    "year": 2023,
+    "model": "L1_ridge_logistic",
+    "stage": "outer_score",
+    "parameters": {
+      "clf__C": 0.1
+    },
+    "calibration": "isotonic",
+    "n_train": 15814,
+    "n_test": 6993,
+    "seconds": 3.53
+  },
+  {
+    "year": 2023,
+    "model": "L2_spline_logistic",
+    "stage": "tune",
+    "parameters": {},
+    "tuning_brier": 0.13936305913919686,
+    "n_train": 14432,
+    "seconds": 0.84
+  },
+  {
+    "year": 2023,
+    "model": "L2_spline_logistic",
+    "stage": "outer_score",
+    "parameters": {},
+    "calibration": "isotonic",
+    "n_train": 15814,
+    "n_test": 6993,
+    "seconds": 2.11
+  },
+  {
+    "year": 2023,
+    "model": "M1_hist_gbm",
+    "stage": "tune",
+    "parameters": {
+      "clf__max_leaf_nodes": 7,
+      "clf__max_iter": 150
+    },
+    "tuning_brier": 0.13628680815969516,
+    "n_train": 14432,
+    "seconds": 1.14
+  },
+  {
+    "year": 2023,
+    "model": "M1_hist_gbm",
+    "stage": "tune",
+    "parameters": {
+      "clf__max_leaf_nodes": 15,
+      "clf__max_iter": 300
+    },
+    "tuning_brier": 0.13785669767428618,
+    "n_train": 14432,
+    "seconds": 3.17
+  },
+  {
+    "year": 2023,
+    "model": "M1_hist_gbm",
+    "stage": "outer_score",
+    "parameters": {
+      "clf__max_leaf_nodes": 7,
+      "clf__max_iter": 150
+    },
+    "calibration": "sigmoid",
+    "n_train": 15814,
+    "n_test": 6993,
+    "seconds": 4.64
+  },
+  {
+    "year": 2023,
+    "model": "M2_random_forest",
+    "stage": "tune",
+    "parameters": {
+      "clf__min_samples_leaf": 20
+    },
+    "tuning_brier": 0.1337086225228322,
+    "n_train": 14432,
+    "seconds": 5.0
+  },
+  {
+    "year": 2023,
+    "model": "M2_random_forest",
+    "stage": "tune",
+    "parameters": {
+      "clf__min_samples_leaf": 50
+    },
+    "tuning_brier": 0.13270580683580263,
+    "n_train": 14432,
+    "seconds": 9.31
+  },
+  {
+    "year": 2023,
+    "model": "M2_random_forest",
+    "stage": "outer_score",
+    "parameters": {
+      "clf__min_samples_leaf": 50
+    },
+    "calibration": "none",
+    "n_train": 15814,
+    "n_test": 6993,
+    "seconds": 15.22
+  },
+  {
+    "year": 2024,
+    "model": "B0_always_stay",
+    "stage": "outer_score",
+    "parameters": {},
+    "calibration": "none",
+    "n_train": 20565,
+    "n_test": 6489,
+    "seconds": 0.0
+  },
+  {
+    "year": 2024,
+    "model": "B1_prevalence",
+    "stage": "outer_score",
+    "parameters": {},
+    "calibration": "none",
+    "n_train": 20565,
+    "n_test": 6489,
+    "seconds": 0.0
+  },
+  {
+    "year": 2024,
+    "model": "B2_history",
+    "stage": "outer_score",
+    "parameters": {},
+    "calibration": "none",
+    "n_train": 20565,
+    "n_test": 6489,
+    "seconds": 0.0
+  },
+  {
+    "year": 2024,
+    "model": "B3_cost_logistic",
+    "stage": "outer_score",
+    "parameters": {},
+    "calibration": "none",
+    "n_train": 20565,
+    "n_test": 6489,
+    "seconds": 0.03
+  },
+  {
+    "year": 2024,
+    "model": "L1_ridge_logistic",
+    "stage": "tune",
+    "parameters": {
+      "clf__C": 0.1
+    },
+    "tuning_brier": 0.1466196943832462,
+    "n_train": 18048,
+    "seconds": 0.84
+  },
+  {
+    "year": 2024,
+    "model": "L1_ridge_logistic",
+    "stage": "tune",
+    "parameters": {
+      "clf__C": 1.0
+    },
+    "tuning_brier": 0.14865782330797683,
+    "n_train": 18048,
+    "seconds": 1.81
+  },
+  {
+    "year": 2024,
+    "model": "L1_ridge_logistic",
+    "stage": "tune",
+    "parameters": {
+      "clf__C": 10.0
+    },
+    "tuning_brier": 0.14893759154267483,
+    "n_train": 18048,
+    "seconds": 2.83
+  },
+  {
+    "year": 2024,
+    "model": "L1_ridge_logistic",
+    "stage": "outer_score",
+    "parameters": {
+      "clf__C": 0.1
+    },
+    "calibration": "sigmoid",
+    "n_train": 20565,
+    "n_test": 6489,
+    "seconds": 4.11
+  },
+  {
+    "year": 2024,
+    "model": "L2_spline_logistic",
+    "stage": "tune",
+    "parameters": {},
+    "tuning_brier": 0.14943118642129735,
+    "n_train": 18048,
+    "seconds": 1.19
+  },
+  {
+    "year": 2024,
+    "model": "L2_spline_logistic",
+    "stage": "outer_score",
+    "parameters": {},
+    "calibration": "isotonic",
+    "n_train": 20565,
+    "n_test": 6489,
+    "seconds": 2.8
+  },
+  {
+    "year": 2024,
+    "model": "M1_hist_gbm",
+    "stage": "tune",
+    "parameters": {
+      "clf__max_leaf_nodes": 7,
+      "clf__max_iter": 150
+    },
+    "tuning_brier": 0.14170966676682295,
+    "n_train": 18048,
+    "seconds": 1.12
+  },
+  {
+    "year": 2024,
+    "model": "M1_hist_gbm",
+    "stage": "tune",
+    "parameters": {
+      "clf__max_leaf_nodes": 15,
+      "clf__max_iter": 300
+    },
+    "tuning_brier": 0.14220792352545558,
+    "n_train": 18048,
+    "seconds": 3.52
+  },
+  {
+    "year": 2024,
+    "model": "M1_hist_gbm",
+    "stage": "outer_score",
+    "parameters": {
+      "clf__max_leaf_nodes": 7,
+      "clf__max_iter": 150
+    },
+    "calibration": "none",
+    "n_train": 20565,
+    "n_test": 6489,
+    "seconds": 5.31
+  },
+  {
+    "year": 2024,
+    "model": "M2_random_forest",
+    "stage": "tune",
+    "parameters": {
+      "clf__min_samples_leaf": 20
+    },
+    "tuning_brier": 0.13994197892972274,
+    "n_train": 18048,
+    "seconds": 7.88
+  },
+  {
+    "year": 2024,
+    "model": "M2_random_forest",
+    "stage": "tune",
+    "parameters": {
+      "clf__min_samples_leaf": 50
+    },
+    "tuning_brier": 0.1408045206502981,
+    "n_train": 18048,
+    "seconds": 14.14
+  },
+  {
+    "year": 2024,
+    "model": "M2_random_forest",
+    "stage": "outer_score",
+    "parameters": {
+      "clf__min_samples_leaf": 20
+    },
+    "calibration": "sigmoid",
+    "n_train": 20565,
+    "n_test": 6489,
+    "seconds": 23.42
+  },
+  {
+    "year": 2025,
+    "model": "B0_always_stay",
+    "stage": "outer_score",
+    "parameters": {},
+    "calibration": "none",
+    "n_train": 26541,
+    "n_test": 1619,
+    "seconds": 0.0
+  },
+  {
+    "year": 2025,
+    "model": "B1_prevalence",
+    "stage": "outer_score",
+    "parameters": {},
+    "calibration": "none",
+    "n_train": 26541,
+    "n_test": 1619,
+    "seconds": 0.01
+  },
+  {
+    "year": 2025,
+    "model": "B2_history",
+    "stage": "outer_score",
+    "parameters": {},
+    "calibration": "none",
+    "n_train": 26541,
+    "n_test": 1619,
+    "seconds": 0.0
+  },
+  {
+    "year": 2025,
+    "model": "B3_cost_logistic",
+    "stage": "outer_score",
+    "parameters": {},
+    "calibration": "none",
+    "n_train": 26541,
+    "n_test": 1619,
+    "seconds": 0.03
+  },
+  {
+    "year": 2025,
+    "model": "L1_ridge_logistic",
+    "stage": "tune",
+    "parameters": {
+      "clf__C": 0.1
+    },
+    "tuning_brier": 0.14601795698050934,
+    "n_train": 23010,
+    "seconds": 1.09
+  },
+  {
+    "year": 2025,
+    "model": "L1_ridge_logistic",
+    "stage": "tune",
+    "parameters": {
+      "clf__C": 1.0
+    },
+    "tuning_brier": 0.14649180266560083,
+    "n_train": 23010,
+    "seconds": 2.31
+  },
+  {
+    "year": 2025,
+    "model": "L1_ridge_logistic",
+    "stage": "tune",
+    "parameters": {
+      "clf__C": 10.0
+    },
+    "tuning_brier": 0.14657222808047216,
+    "n_train": 23010,
+    "seconds": 3.58
+  },
+  {
+    "year": 2025,
+    "model": "L1_ridge_logistic",
+    "stage": "outer_score",
+    "parameters": {
+      "clf__C": 0.1
+    },
+    "calibration": "none",
+    "n_train": 26541,
+    "n_test": 1619,
+    "seconds": 4.8
+  },
+  {
+    "year": 2025,
+    "model": "L2_spline_logistic",
+    "stage": "tune",
+    "parameters": {},
+    "tuning_brier": 0.14582248737214137,
+    "n_train": 23010,
+    "seconds": 1.52
+  },
+  {
+    "year": 2025,
+    "model": "L2_spline_logistic",
+    "stage": "outer_score",
+    "parameters": {},
+    "calibration": "none",
+    "n_train": 26541,
+    "n_test": 1619,
+    "seconds": 3.38
+  },
+  {
+    "year": 2025,
+    "model": "M1_hist_gbm",
+    "stage": "tune",
+    "parameters": {
+      "clf__max_leaf_nodes": 7,
+      "clf__max_iter": 150
+    },
+    "tuning_brier": 0.13699840935353694,
+    "n_train": 23010,
+    "seconds": 1.52
+  },
+  {
+    "year": 2025,
+    "model": "M1_hist_gbm",
+    "stage": "tune",
+    "parameters": {
+      "clf__max_leaf_nodes": 15,
+      "clf__max_iter": 300
+    },
+    "tuning_brier": 0.14007740533475982,
+    "n_train": 23010,
+    "seconds": 4.36
+  },
+  {
+    "year": 2025,
+    "model": "M1_hist_gbm",
+    "stage": "outer_score",
+    "parameters": {
+      "clf__max_leaf_nodes": 7,
+      "clf__max_iter": 150
+    },
+    "calibration": "none",
+    "n_train": 26541,
+    "n_test": 1619,
+    "seconds": 6.28
+  },
+  {
+    "year": 2025,
+    "model": "M2_random_forest",
+    "stage": "tune",
+    "parameters": {
+      "clf__min_samples_leaf": 20
+    },
+    "tuning_brier": 0.1375649483268382,
+    "n_train": 23010,
+    "seconds": 10.11
+  },
+  {
+    "year": 2025,
+    "model": "M2_random_forest",
+    "stage": "tune",
+    "parameters": {
+      "clf__min_samples_leaf": 50
+    },
+    "tuning_brier": 0.13783876801612263,
+    "n_train": 23010,
+    "seconds": 18.28
+  },
+  {
+    "year": 2025,
+    "model": "M2_random_forest",
+    "stage": "outer_score",
+    "parameters": {
+      "clf__min_samples_leaf": 20
+    },
+    "calibration": "none",
+    "n_train": 26541,
+    "n_test": 1619,
+    "seconds": 30.27
+  }
+]

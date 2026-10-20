@@ -1,0 +1,2 @@
+scenario,eligible,matched,newly_linked,changed_target_among_legacy_matches,ambiguous_origins,interpretation
+reduced_metadata_unique,45343,34305,563,0,5870,Unique reduced-key matches are not proof against false merges; none promoted

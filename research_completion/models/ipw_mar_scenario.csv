@@ -1,0 +1,5 @@
+year,n_eligible,n_observed,observed_stay,ipw_mar_p_stay,effective_sample_size,min_probability,max_probability,share_clipped,assumption
+2022,5900,4566,0.7923784494086727,0.7806768624579473,1189.5675323220173,0.0019374581932543502,0.9900760092860487,0.20423728813559322,MAR conditional on measured origin/history; corridor-surveyed unambiguous origin scope
+2023,7226,6993,0.8242528242528242,0.820580303895302,6554.755686650556,0.09072288290638668,0.9916029887724946,0.07168557985053972,MAR conditional on measured origin/history; corridor-surveyed unambiguous origin scope
+2024,6907,6489,0.82693789489906,0.8248426726880896,6447.630474592906,0.451448317918628,0.9942294737199576,0.2094976111191545,MAR conditional on measured origin/history; corridor-surveyed unambiguous origin scope
+2025,1702,1619,0.8116121062384187,0.8100209425781907,1617.9002487338817,0.690508206503462,0.9959703744508357,0.7532314923619271,MAR conditional on measured origin/history; corridor-surveyed unambiguous origin scope

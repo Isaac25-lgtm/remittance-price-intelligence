@@ -15,6 +15,7 @@ STAGES=[
  ('continuous_price_secondary',['scripts/completion_models.py','continuous']),
  ('paired_dependence_and_capacity',['scripts/completion_inference.py']),
  ('associative_explainability',['scripts/completion_inference.py','explain']),
+ ('bootstrap_simulation_stress',['scripts/bootstrap_simulation.py']),
 ]
 
 if __name__=='__main__':
@@ -23,5 +24,5 @@ if __name__=='__main__':
         status=json.loads(p.read_text(encoding='utf-8')) if p.exists() else {}
         if status.get('stages',{}).get(stage,{}).get('exit_code')==0:
             print('CHECKPOINT already completed:',stage,flush=True);continue
-        code=run([sys.executable]+args,stage)
+        code=run([sys.executable]+args,stage,'SYNTHETIC UNIT TEST' if stage=='bootstrap_simulation_stress' else 'REAL-DATA EXECUTION')
         if code:raise SystemExit(code)

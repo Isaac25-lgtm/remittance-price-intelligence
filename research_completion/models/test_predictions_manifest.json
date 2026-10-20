@@ -1,0 +1,110 @@
+[
+  {
+    "file": "cc2.parquet",
+    "sha256": "4577bc95f0ce2b4368c6f973eb4f05be7dcccedc09196d6672e21abd12416130",
+    "rows": 33547,
+    "classification": "PRIVATE ROW DATA; not distributed"
+  },
+  {
+    "file": "exclude_2021_date_anomaly.parquet",
+    "sha256": "e3ecfb0929f3ba7a9223fe0f7083b1456b0d026fc3601c15e70a7f2ce59df9c4",
+    "rows": 19667,
+    "classification": "PRIVATE ROW DATA; not distributed"
+  },
+  {
+    "file": "exclude_russia.parquet",
+    "sha256": "a9f775f913c126dbad3520680582c6ac36b5f3eca69c15b8d2e929008739be59",
+    "rows": 19667,
+    "classification": "PRIVATE ROW DATA; not distributed"
+  },
+  {
+    "file": "features_core.parquet",
+    "sha256": "03f1e633dd53eb970b682f9d6e4d0c46b88418a165c2de0129a1271b56fa2153",
+    "rows": 45343,
+    "classification": "PRIVATE ROW DATA; not distributed"
+  },
+  {
+    "file": "heldout_corridor.parquet",
+    "sha256": "5bfd30525da05c0c0e1ca32aa3d36eca9e9ceb73df0793ef7e57699cd9274d6d",
+    "rows": 4217,
+    "classification": "PRIVATE ROW DATA; not distributed"
+  },
+  {
+    "file": "heldout_provider.parquet",
+    "sha256": "b7192e118e786254748e5e91e501c3bf67ec493179f31e5bd032c79dfe817252",
+    "rows": 3719,
+    "classification": "PRIVATE ROW DATA; not distributed"
+  },
+  {
+    "file": "lag_1.parquet",
+    "sha256": "d6941ff389700d46156a233b5155c898627cb9d9fc125ac6c7c3a6390a110400",
+    "rows": 19667,
+    "classification": "PRIVATE ROW DATA; not distributed"
+  },
+  {
+    "file": "linked_core.parquet",
+    "sha256": "e83365151252a9d3119a819a23bbc8361ae0861be403be87bb931fc28e5343d9",
+    "rows": 204469,
+    "classification": "PRIVATE ROW DATA; not distributed"
+  },
+  {
+    "file": "manual_validation_sample.parquet",
+    "sha256": "1fda5da09b8651f65034a3755c19625e862a61112bf434fae8e02be2071f4c6a",
+    "rows": 30,
+    "classification": "PRIVATE ROW DATA; not distributed"
+  },
+  {
+    "file": "nested_2022.parquet",
+    "sha256": "033c910dacb61bba8c8223a81ca6e46b50bfd7ea873c0e86fec9985f766300c2",
+    "rows": 4566,
+    "classification": "PRIVATE ROW DATA; not distributed"
+  },
+  {
+    "file": "nested_2023.parquet",
+    "sha256": "46e0a3db486119dd9161967333c1b25822ecefb701b271a586da347cfb22a98c",
+    "rows": 6993,
+    "classification": "PRIVATE ROW DATA; not distributed"
+  },
+  {
+    "file": "nested_2024.parquet",
+    "sha256": "abb3c0b8a342079c2188ddd0935a27defa22730ffc86659612ceb99fb2966014",
+    "rows": 6489,
+    "classification": "PRIVATE ROW DATA; not distributed"
+  },
+  {
+    "file": "nested_2025.parquet",
+    "sha256": "4faa845b3792bf1f0dbf21973f203e3c662b6217f6c8f0b78eaea1d7058688b5",
+    "rows": 1619,
+    "classification": "PRIVATE ROW DATA; not distributed"
+  },
+  {
+    "file": "no_provider_history.parquet",
+    "sha256": "5c19ee611059e635e9792acf744d887145ded4e4363279ee53c65588df9c6f33",
+    "rows": 19667,
+    "classification": "PRIVATE ROW DATA; not distributed"
+  },
+  {
+    "file": "phase2_predictions.parquet",
+    "sha256": "8b1caacf7a32f499af273040213d5fe88ff799ffef296f8622897114c09b197d",
+    "rows": 19667,
+    "classification": "PRIVATE ROW DATA; not distributed"
+  },
+  {
+    "file": "stratified_identity_adjudication_sample.parquet",
+    "sha256": "7a7adfc54651ab487c7c766d7426bedd55d74202f4f4cf8c2cc549026c0c99b9",
+    "rows": 30,
+    "classification": "PRIVATE ROW DATA; not distributed"
+  },
+  {
+    "file": "strict.parquet",
+    "sha256": "0bf43aa708100ac5b6ed7971e56f75925f3d399c3e99b7ecdd03d4126561125c",
+    "rows": 14969,
+    "classification": "PRIVATE ROW DATA; not distributed"
+  },
+  {
+    "file": "threshold_5.parquet",
+    "sha256": "38dac7af8f7ba14cff4c3ce20e2f43a82f2ddb11e01fcdaf7d9672dcfab873e1",
+    "rows": 40438,
+    "classification": "PRIVATE ROW DATA; not distributed"
+  }
+]

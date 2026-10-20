@@ -1,0 +1,22 @@
+{
+  "method": "independently coded streaming Python dictionary; no rpi linkage imports",
+  "source_sha256": "f1d7265b1856d61812c158d3d03fae686dbff58735deabe016a6bfe23482d2a8",
+  "n_quotes": 204469,
+  "n_corridors": 368,
+  "n_cheap": 47426,
+  "n_eligible": 45343,
+  "n_valid_pairs": 36429,
+  "flow": {
+    "observed_stay": 29546,
+    "core_unobserved_corridor_surveyed": 4337,
+    "observed_fail": 6883,
+    "origin_key_ambiguous": 2290,
+    "reobserved_invalid_target": 462,
+    "target_key_ambiguous": 66,
+    "corridor_not_surveyed_next_quarter": 1759,
+    "right_censored_last_quarter": 2083
+  },
+  "mismatches": {},
+  "status": "PASS",
+  "caveat": "Implementation independence; same stated identity specification. Not external scientific peer review."
+}
