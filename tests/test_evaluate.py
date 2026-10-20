@@ -2,6 +2,8 @@ import numpy as np
 import pandas as pd
 
 from rpi.evaluate import brier, capture_at_capacity, cluster_bootstrap_diff, log_loss, metric_row
+from rpi.evaluate import calibration_intercept_slope
+import pytest
 
 
 def test_brier_and_logloss():
@@ -17,6 +19,21 @@ def test_calibration_perfect_model():
     y = (rng.uniform(size=p.size) < p).astype(int)
     r = metric_row(y, p)
     assert abs(r["cal_slope"] - 1) < 0.1 and abs(r["cal_intercept"]) < 0.1
+
+
+def test_extreme_constant_calibration_offset_is_not_truncated():
+    y=np.array([1,1,1,0])
+    p=np.full(4,1-1e-6)
+    intercept,slope=calibration_intercept_slope(y,p)
+    expected=np.log(3)-np.log((1-1e-6)/1e-6)
+    assert np.isclose(intercept,expected) and np.isnan(slope)
+    assert intercept < -10
+
+
+def test_single_class_calibration_and_invalid_probability():
+    r=metric_row(np.ones(3),np.array([.7,.8,.9]))
+    assert np.isnan(r['cal_slope']) and np.isnan(r['auroc'])
+    with pytest.raises(ValueError):metric_row([0,1],[.5,1.2])
 
 
 def test_cluster_bootstrap_zero_difference():
