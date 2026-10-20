@@ -1,3 +1,3 @@
-# Cloud research instructions
+# Current research instructions
 
-Read the complete `AGENTS.md` before any work. It contains the investigator's authoritative scientific context, engineering contract, data permissions and stop rules. Follow it along with direct session instructions. Preserve all prior exploratory findings as unverified until actually reproduced.
+Read AGENTS.md and research_completion/protocols/phase2_frozen_protocol.md. Local Windows CPU execution and safe tested PR/CI integration into main are authorised by the investigator on 20 October 2026. Archived cloud-only constraints are superseded. Preserve phase-1 evidence and resume from research_completion/reproducibility/progress.json.

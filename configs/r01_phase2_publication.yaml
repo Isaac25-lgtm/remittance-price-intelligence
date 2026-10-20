@@ -1,0 +1,42 @@
+run_id: r01-local-completion-2026-10-20
+status: DEVELOPMENT_RETROSPECTIVE
+seed: 20261020
+threads: 2
+source_sha256: f1d7265b1856d61812c158d3d03fae686dbff58735deabe016a6bfe23482d2a8
+primary_estimand: E1 conditional on unique valid next-quarter reobservation
+primary_scenario: retrospective end-of-survey information; no public lead-time assertion
+primary_metric: Brier
+test_years: [2022, 2023, 2024, 2025]
+training: targets strictly before first test origin of each target year
+inner_validation: last four available training target quarters; earlier proper training
+calibration: same chronological validation window, sigmoid and isotonic; never test outcomes
+selection: inner Brier; within 0.002 of best prefer spline, ridge, GBM, RF in that order
+models: [B0_always_stay, B1_prevalence, B2_history, B3_cost_logistic, L1_ridge_logistic, L2_spline_logistic, M1_hist_gbm, M2_random_forest]
+tuning:
+  ridge_C: [0.1, 1.0, 10.0]
+  gbm: [{max_leaf_nodes: 7, max_iter: 150}, {max_leaf_nodes: 15, max_iter: 300}]
+  rf_min_samples_leaf: [20, 50]
+  calibration: [none, sigmoid, isotonic]
+  no_added_libraries: no unmet need before timing/novelty gate
+transfer:
+  corridor_holdout: deterministic SHA256 modulo 5 equals 0
+  provider_holdout: deterministic SHA256 modulo 5 equals 0
+  history: rebuild all training-derived histories after removing held-out groups; zero-shot fallback
+  comparison: [L2_spline_logistic, M1_hist_gbm, M2_random_forest]
+uncertainty:
+  reps: 1000
+  paired: [corridor, provider, moving_block_4_quarters, crossed_pigeonhole_corridor_provider]
+  caveat: crossed pigeonhole is a sensitivity; few waves limit temporal inference
+capacity: [0.05, 0.1, 0.2, 0.3]
+subgroup_min_failures: 100
+sensitivity:
+  descriptive: [strict, reduced_metadata_unique, threshold_2.9, threshold_2.95, threshold_3.05, threshold_3.1, threshold_5, cc2, horizon_2, date_quarter, transparent_only, no_negative_fx]
+  fitted: [strict, threshold_5, cc2, lag_1, no_provider_history, exclude_2021_date_anomaly]
+  fitted_models: [B2_history, L2_spline_logistic, M1_hist_gbm, M2_random_forest]
+missingness:
+  models: [prevalence, corridor_history, ridge, gbm]
+  ipw: train-fold logistic; clip probabilities 0.05 to 0.95; MAR scenario only
+  mnar_failure_logodds_shift: [-2, -1, 0, 1, 2]
+explainability: permutation on held-out retrospective test; top models; predeclared grouped features; associative only
+new_holdout: do not inspect new outcome labels until new-vintage protocol committed; if none CONFIRMATION_NOT_AVAILABLE
+stop: no operational selection without proven positive lead time; no unrestricted algorithm search

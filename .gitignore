@@ -22,4 +22,6 @@ data/processed/
 checkpoints/
 models/
 .DS_Store
+research_completion/private_runtime/
+dist/
 *.egg-info/
