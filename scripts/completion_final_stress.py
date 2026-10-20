@@ -50,7 +50,7 @@ def main():
     write(pd.DataFrame(rows),'models/history_overlap_support.csv')
     # Distribution tests are descriptive; IID p-values are invalid under this panel dependence.
     before=df[df.qidx<2022*4+2];after=df[df.qidx>=2022*4+2];shifts=[]
-    for col in ['cost','fee_pct','fx_margin']:
+    for col in ['cc1 total cost %','cc1 fee %','cc1 fx margin']:
         a=before[col].dropna();b=after[col].dropna()
         shifts.append(dict(variable=col,n_before=len(a),n_after=len(b),median_before=a.median(),median_after=b.median(),ks_statistic=ks_2samp(a,b).statistic,p_value_status='NOT_REPORTED_IID_INVALID',interpretation='survey composition and time change; no causal design-change attribution'))
     write(pd.DataFrame(shifts),'data/pre_post2022_distribution_shift.csv')
