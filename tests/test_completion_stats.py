@@ -3,7 +3,7 @@ import pandas as pd
 import pytest
 from rpi.completion_stats import dependence_ci,resample_weights,stable_holdout
 
-@pytest.mark.parametrize('kind',['corridor','provider','crossed_corridor_provider','time_block_4'])
+@pytest.mark.parametrize('kind',['corridor','provider','crossed_corridor_provider','time_block_4','crossed_corridor_provider_time_block'])
 def test_whole_cells_and_zero_paired_loss(kind):
     f=pd.DataFrame({'corridor_key':np.tile(np.repeat(['a','a','b','b'],2),4),'firm__n':np.tile(np.repeat(['x','y','x','y'],2),4),'qidx':np.repeat(np.arange(4),8)})
     w=resample_weights(f.corridor_key,f['firm__n'],f.qidx,kind,np.random.default_rng(3))

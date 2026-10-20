@@ -19,11 +19,16 @@ def resample_weights(corridor, provider, quarter, kind, rng, block=4):
         i=0 if kind=='corridor' else 1
         draws=rng.integers(sizes[i],size=sizes[i])
         return np.bincount(draws,minlength=sizes[i])[codes[i]].astype(float)
-    if kind=='crossed_corridor_provider':
+    if kind in ('crossed_corridor_provider','crossed_corridor_provider_time_block'):
         w=np.ones(len(arrays[0]))
         for i in (0,1):
             draws=rng.integers(sizes[i],size=sizes[i])
             w*=np.bincount(draws,minlength=sizes[i])[codes[i]]
+        if kind=='crossed_corridor_provider_time_block':
+            n=sizes[2]
+            starts=rng.integers(n,size=int(np.ceil(n/block)))
+            draw=np.concatenate([(s+np.arange(block))%n for s in starts])[:n]
+            w*=np.bincount(draw,minlength=n)[codes[2]]
         return w
     if kind=='time_block_4':
         n=sizes[2]

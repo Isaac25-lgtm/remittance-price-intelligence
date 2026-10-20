@@ -10,7 +10,7 @@ def main():
     cells=np.argwhere(rng.uniform(size=(20,20))<.3)
     rows=[(c,p,q) for c,p in cells for q in range(13)]
     frame=pd.DataFrame(rows,columns=['corridor_key','firm__n','qidx'])
-    kinds=['corridor','provider','time_block_4','crossed_corridor_provider'];records=[]
+    kinds=['corridor','provider','time_block_4','crossed_corridor_provider','crossed_corridor_provider_time_block'];records=[]
     for sim in range(50):
         c=rng.normal(0,.002,20);p=rng.normal(0,.003,20);t=np.empty(13);t[0]=rng.normal(0,.004)
         for q in range(1,13):t[q]=.6*t[q-1]+rng.normal(0,.004*np.sqrt(1-.6**2))
