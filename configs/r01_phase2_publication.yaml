@@ -8,8 +8,8 @@ primary_scenario: retrospective end-of-survey information; no public lead-time a
 primary_metric: Brier
 test_years: [2022, 2023, 2024, 2025]
 training: targets strictly before first test origin of each target year
-inner_validation: last four available training target quarters; earlier proper training
-calibration: same chronological validation window, sigmoid and isotonic; never test outcomes
+inner_validation: last six available training target quarters; first two tuning, middle two calibration, last two method selection
+calibration: fit sigmoid/isotonic on middle two quarters; compare on final two quarters; never test outcomes
 selection: inner Brier; within 0.002 of best prefer spline, ridge, GBM, RF in that order
 models: [B0_always_stay, B1_prevalence, B2_history, B3_cost_logistic, L1_ridge_logistic, L2_spline_logistic, M1_hist_gbm, M2_random_forest]
 tuning:

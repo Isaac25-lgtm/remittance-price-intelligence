@@ -67,12 +67,12 @@ def table(name: str) -> pd.DataFrame:
 
 @st.cache_data
 def run_meta() -> dict:
-    return json.loads((RESULTS / "tables" / "run_meta_lag0.json").read_text())
+    return json.loads((RESULTS / "tables" / "run_meta_lag0.json").read_text(encoding="utf-8"))
 
 
 @st.cache_data
 def manifest() -> dict:
-    return json.loads((RESULTS / "source_manifest.json").read_text())
+    return json.loads((RESULTS / "source_manifest.json").read_text(encoding="utf-8"))
 
 
 def download(name: str, key: str):
@@ -475,7 +475,7 @@ def reproducibility():
     st.header("Reproducibility & limitations")
     rep = RESULTS / "reproduction" / "reproduction_report.json"
     if rep.exists():
-        r = json.loads(rep.read_text())
+        r = json.loads(rep.read_text(encoding="utf-8"))
         st.markdown(f"**Raw-to-result reproduction from the cached official workbook** (real data): "
                     f"{r['n_match']} of {r['n_tables']} frozen tables matched within atol/rtol "
                     f"{r['tolerance']['atol']:g}; run {r['run_at_utc']} at commit `{r['code_commit'][:7]}`, "

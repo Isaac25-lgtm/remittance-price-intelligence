@@ -59,7 +59,7 @@ def main(argv=None) -> int:
     digest = sha256(config.RAW_FILE)
     size = config.RAW_FILE.stat().st_size
     ok = digest == config.EXPECTED_SHA256 and size == config.EXPECTED_BYTES
-    prev = json.loads(MANIFEST.read_text()) if MANIFEST.exists() else {}
+    prev = json.loads(MANIFEST.read_text(encoding="utf-8")) if MANIFEST.exists() else {}
     manifest = {
         **prev,
         "source_url": config.SOURCE_URL,

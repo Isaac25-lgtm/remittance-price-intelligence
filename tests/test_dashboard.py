@@ -11,7 +11,7 @@ APP = str(ROOT / "dashboard" / "app.py")
 
 
 def _consts():
-    tree = ast.parse(Path(APP).read_text())
+    tree = ast.parse(Path(APP).read_text(encoding="utf-8"))
     out = {}
     for node in ast.walk(tree):
         if isinstance(node, ast.Assign) and getattr(node.targets[0], "id", None) in {
