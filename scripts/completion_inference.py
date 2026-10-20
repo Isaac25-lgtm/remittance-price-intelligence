@@ -17,14 +17,23 @@ ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'research_completion';PRIVATE=
 KINDS=['corridor','provider','time_block_4','crossed_corridor_provider']
 
 def inference():
-    tables=[];paired=[];weighted=[];capacity=[];subgroups=[];capacity_ci=[]
+    tables=[];paired=[];weighted=[];capacity=[];subgroups=[];capacity_ci=[];yearly=[];yearly_ci=[]
     for label,path in [('legacy',ROOT/'data/processed/test_predictions_lag0.parquet'),('phase2',PRIVATE/'phase2_predictions.parquet')]:
         P=pd.read_parquet(path);y=P.y.astype(int).to_numpy()
         names=[c for c in P if c.startswith(('B0_','B1_','B2_','B3_','B4_','L1_','L2_','M1_','M2_','S_selected'))]
         loss=np.column_stack([(P[n].to_numpy()-y)**2 for n in names])
+        probabilities=np.clip(P[names].to_numpy(float),1e-6,1-1e-6)
+        log_losses=-(y[:,None]*np.log(probabilities)+(1-y[:,None])*np.log(1-probabilities))
+        for year,part in P.groupby('target_year'):
+            ys=part.y.astype(int).to_numpy()
+            losses=np.column_stack([(part[n].to_numpy()-ys)**2 for n in names])
+            for j,n in enumerate(names):yearly.append(dict(analysis=label,target_year=int(year),model=n,n_quarters=part.qidx.nunique(),**metric_row(ys,part[n].to_numpy())))
+            for kind in ['corridor','provider']:
+                ci=dependence_ci(losses,part,kind)
+                for j,n in enumerate(names):yearly_ci.append(dict(analysis=label,target_year=int(year),model=n,brier=losses[:,j].mean(),resampling=kind,ci95_lo=ci[0,j],ci95_hi=ci[1,j],n_quarters=part.qidx.nunique()))
         for kind in KINDS:
-            ci=dependence_ci(loss,P,kind)
-            for j,n in enumerate(names):tables.append(dict(analysis=label,model=n,n=len(P),brier=loss[:,j].mean(),resampling=kind,ci95_lo=ci[0,j],ci95_hi=ci[1,j],n_corridors=P.corridor_key.nunique(),n_providers=P['firm__n'].nunique(),n_quarters=P.qidx.nunique()))
+            ci=dependence_ci(np.column_stack([loss,log_losses]),P,kind)
+            for j,n in enumerate(names):tables.append(dict(analysis=label,model=n,n=len(P),brier=loss[:,j].mean(),resampling=kind,ci95_lo=ci[0,j],ci95_hi=ci[1,j],log_loss=log_losses[:,j].mean(),log_loss_ci95_lo=ci[0,j+len(names)],log_loss_ci95_hi=ci[1,j+len(names)],n_corridors=P.corridor_key.nunique(),n_providers=P['firm__n'].nunique(),n_quarters=P.qidx.nunique()))
         pairs=[('M1_hist_gbm','L2_spline_logistic'),('M2_random_forest','L2_spline_logistic'),('M2_random_forest','M1_hist_gbm')]
         if label=='phase2':pairs += [('S_selected','L2_spline_logistic'),('S_selected','B2_history')]+[(n+'__cal',n) for n in ['L1_ridge_logistic','L2_spline_logistic','M1_hist_gbm','M2_random_forest']]
         if 'B4_recent_history' in names:pairs += [('S_selected','B4_recent_history'),('M2_random_forest','B4_recent_history')]
@@ -67,6 +76,25 @@ def inference():
                 subgroups.append(r)
         print('Inference completed',label,flush=True)
     for frame,path in [(tables,'models/absolute_brier_ci.csv'),(paired,'models/paired_dependence.csv'),(weighted,'models/weighting_sensitivity.csv'),(capacity,'models/decision_capacity.csv'),(capacity_ci,'models/decision_capacity_ci.csv'),(subgroups,'models/subgroups.csv')]:write(pd.DataFrame(frame),path)
+    write(pd.DataFrame(yearly),'models/performance_by_year.csv');write(pd.DataFrame(yearly_ci),'models/yearly_brier_ci.csv')
+    sensitivity_ci=[]
+    for scenario in ['heldout_corridor','heldout_provider','strict','threshold_5','cc2','lag_1','no_provider_history','exclude_2021_date_anomaly','exclude_russia']:
+        s=pd.read_parquet(PRIVATE/(scenario+'.parquet'));ys=s.y.astype(int).to_numpy()
+        ds=np.column_stack([(s[n].to_numpy()-ys)**2-(s.L2_spline_logistic.to_numpy()-ys)**2 for n in ['M1_hist_gbm','M2_random_forest']])
+        for kind in ['corridor','provider','time_block_4']:
+            ci=dependence_ci(ds,s,kind)
+            for j,n in enumerate(['M1_hist_gbm','M2_random_forest']):sensitivity_ci.append(dict(scenario=scenario,model_a=n,model_b='L2_spline_logistic',brier_diff=ds[:,j].mean(),resampling=kind,ci95_lo=ci[0,j],ci95_hi=ci[1,j],n=len(s)))
+    write(pd.DataFrame(sensitivity_ci),'models/transfer_sensitivity_paired_ci.csv')
+    # Dominance stress: remove the largest DEVELOPMENT group from outer evaluation.
+    # This is a cohort-weight sensitivity; actual no-history refits are the group holdouts.
+    X=pd.read_parquet(PRIVATE/'features_core.parquet');dev=X[X.primary & (X.target_year<2022)]
+    P=pd.read_parquet(PRIVATE/'phase2_predictions.parquet');stress=[]
+    for field,label in [('firm__n','provider'),('corridor_key','corridor')]:
+        largest=dev.groupby(field).size().sort_values(ascending=False).index[0]
+        s=P[P[field]!=largest]
+        for n in ['L2_spline_logistic','M1_hist_gbm','M2_random_forest','S_selected']:
+            stress.append(dict(omitted_development_unit=label,n_omitted=len(P)-len(s),model=n,scope='evaluation-cohort dominance; no refit; identifier withheld',**metric_row(s.y.astype(int),s[n])))
+    write(pd.DataFrame(stress),'models/major_group_dominance_stress.csv')
     # Normalised cost scenarios: no currency, savings, or intervention effect asserted.
     costs=[]
     for r in capacity:
