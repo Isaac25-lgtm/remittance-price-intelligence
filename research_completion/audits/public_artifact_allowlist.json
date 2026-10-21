@@ -1,5 +1,5 @@
 {
-  "reviewed_utc": "2026-10-21T02:18:12.600365+00:00",
+  "reviewed_utc": "2026-10-21T02:27:20.158820+00:00",
   "review": "Agent file/source/schema review; not an external human privacy or ethics approval",
   "basis": [
     "Explicit source roots only; private/raw/processed caches pruned before enumeration",
@@ -41,6 +41,7 @@
     "research_completion/assessment/final_execution_report.md",
     "research_completion/assessment/publication_gates.csv",
     "research_completion/assessment/reviewer_challenges.md",
+    "research_completion/audits/figure_visual_qa.md",
     "research_completion/audits/final_independent_audit.csv",
     "research_completion/audits/final_independent_audit.md",
     "research_completion/audits/independent_raw_audit.json",
@@ -181,6 +182,7 @@
     "research_completion/reproducibility/README.md",
     "research_completion/reproducibility/commands_executed.jsonl",
     "research_completion/reproducibility/environment_lock.txt",
+    "research_completion/reproducibility/github_science_ci.json",
     "research_completion/reproducibility/local_reproduction_report.json",
     "research_completion/reproducibility/local_table_comparison.csv",
     "research_completion/reproducibility/progress.json",

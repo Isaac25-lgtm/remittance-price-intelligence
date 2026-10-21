@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "members": 336,
+  "member_hashes_verified": 335,
+  "start_links": "PASS",
+  "forbidden_paths": "PASS",
+  "source_commit": "ae7c977d87c7cf03d54f3e499ba3ef25beffbe5c",
+  "source_tree_dirty_at_start": true,
+  "built_utc": "2026-10-21T02:27:22.620754+00:00",
+  "zip": "research_completion/deliverables/REMITTANCE_R01_PUBLICATION_HANDOFF_20261021_ae7c977.zip",
+  "zip_bytes": 4306591,
+  "zip_sha256": "34fa27be566300d2d2158f9ba929c25aeff644f88920899d79b7d2f87fde0d0e",
+  "deterministic_repeat_build": "PASS: two direct builds with unchanged input bytes yield identical ZIP SHA256",
+  "determinism_control_note": "Comparison leaves command/progress logs unchanged; final audit includes the now-present file manifest."
+}
