@@ -1,7 +1,7 @@
 """R01 research dashboard: World Bank RPW service-level quote continuity.
 
-Reads ONLY committed aggregate files listed in ALLOWLIST (results/tables, results/reproduction,
-results/source_manifest.json). No row-level quotes, services, provider names or predictions; no
+Reads ONLY committed aggregate files listed in ALLOWLIST (legacy results and COMPLETION_FILES),
+plus fixed source/run/notice metadata. No row-level quotes, services, provider names or predictions; no
 model training or source download at startup. Run: streamlit run dashboard/app.py
 """
 from __future__ import annotations
@@ -15,6 +15,15 @@ import streamlit as st
 
 ROOT = Path(__file__).resolve().parents[1]
 RESULTS = ROOT / "results"
+COMPLETION_FILES = {
+    "model_comparison.csv": "models/model_comparison.csv",
+    "joint_dependence_sensitivity.csv": "models/joint_dependence_sensitivity.csv",
+    "all_origin_capacity_bounds.csv": "models/all_origin_capacity_bounds.csv",
+    "sensitivity_grid.csv": "models/sensitivity_grid.csv",
+    "publication_gates.csv": "assessment/publication_gates.csv",
+    "recent_history_reference.csv": "models/recent_history_reference.csv",
+    "conventional_reference_comparisons.csv": "models/conventional_reference_comparisons.csv",
+}
 
 # Every file the app may read or offer for download (aggregate, public-safe; see docs/DEPLOYMENT.md).
 ALLOWLIST = {
@@ -32,10 +41,15 @@ ALLOWLIST = {
     "presentation_corridor_metrics_lag0.csv", "presentation_provider_distribution_lag0.csv",
     "presentation_capacity_by_year_lag0.csv", "presentation_reliability_all_families.csv",
     "table_comparison.csv",
+    "model_comparison.csv", "joint_dependence_sensitivity.csv", "all_origin_capacity_bounds.csv",
+    "sensitivity_grid.csv", "publication_gates.csv",
+    "recent_history_reference.csv",
+    "conventional_reference_comparisons.csv",
 }
 SECTIONS = ["Overview", "Data & provenance", "Linkage & identity", "Continuity & bounds",
             "Model comparison", "Time-forward & lag sensitivity", "Calibration", "Review capacity",
-            "Reobservation (negative result)", "Geography & support", "Reproducibility & limits"]
+            "Reobservation (negative result)", "Geography & support", "Reproducibility & limits",
+            "Publication completion"]
 MODELS = ["B0_always_stay", "B1_prevalence", "B2_history", "B3_cost_logistic", "L1_ridge_logistic",
           "L2_spline_logistic", "M1_hist_gbm", "M2_random_forest"]
 NAMES = {"B0_always_stay": "B0 Always stays ≤3%", "B1_prevalence": "B1 Training prevalence",
@@ -57,6 +71,8 @@ DEFAULT_MODELS = ["B2_history", "L2_spline_logistic", "M1_hist_gbm"]
 def path_of(name: str) -> Path:
     if name not in ALLOWLIST:
         raise ValueError(f"{name} is not on the public aggregate allowlist")
+    if name in COMPLETION_FILES:
+        return ROOT / "research_completion" / COMPLETION_FILES[name]
     return RESULTS / ("reproduction" if name == "table_comparison.csv" else "tables") / name
 
 
@@ -90,6 +106,8 @@ def show(chart):
 
 
 def ribbon():
+    st.warning("Publication completion: CONDITIONAL — NOT YET PUBLICATION-READY. No operational model. "
+               "The Publication completion section contains the new local analyses; other sections preserve the phase 1 tables.")
     m = run_meta()
     st.markdown(
         f"""<div style="border-left:6px solid #2a78d6;background:rgba(42,120,214,0.08);padding:0.6rem 0.9rem;
@@ -112,9 +130,8 @@ def overview():
         "**Question.** If a surveyed money-transfer quote costs ≤3% (the SDG 10.c reference level) in quarter *t*, "
         "does the same service still cost ≤3% when surveyed again in *t+1*? How much do identity rules and quotes "
         "that are never reobserved change the answer, and do models rank quotes for analyst re-checking better than "
-        "simple rules? **Gap (provisional):** the closest same-data studies (IMF WP 2022/063; WBER 2011) explain "
-        "corridor-average fees; no service-level continuity prediction study was found in a limited, abstract-level "
-        "search (see docs/PRIOR_ART.md).")
+        "simple rules? **Novelty remains unresolved:** the expanded review includes firm-level IMF analysis and "
+        "2026 same-source service-level studies. The earlier abstract-only review was incomplete. See Publication completion.")
     b = table("estimand_bounds_overall.csv").iloc[0]
     ci = table("presentation_model_brier_ci.csv")
     p = ci[(ci.release_lag == "lag0") & (ci.subset == "pooled_2022_2025")].set_index("model")
@@ -488,19 +505,59 @@ def reproducibility():
     st.caption("The dashboard's own automated tests (AppTest) check rendering and table consistency on the committed "
                "aggregates; they are not a data reproduction.")
     st.markdown("""
-**Limitations / next gates**
+**Archived phase 1 limitations / next gates**
 - Retrospective only; 2022–24 inspected in the pilot; 2025Q2 missing; no untouched test period.
 - RPW wave publication dates unverified → no lead time or operational forecasting claim.
 - Outcome conditional on reobservation; bounds wide in 2021 and 2025. Missing ≠ exit.
 - Exact-label identity probably under-links renamed services; bootstraps are one-way (corridor or provider), not crossed.
-- Prior art read at abstract level only; novelty provisional.
-- Historical pilot comparison is **not an exact replication** (pilot code/inputs unavailable; specifications differ).
+- The original review read abstracts; the completion dossier expands full-text assessment and retains a blocked competitor.
+- Local completion recovered the original pilot code/cache and independently rebuilt the same cache bytes. Counts/GBM reproduce; spline has a small residual mismatch. Specifications still differ.
 """)
+    st.info("The new completion section adds chronological selection/calibration, group transfers, joint dependence "
+            "sensitivities and all-origin capacity bounds. Historical phase 1 outputs above remain unchanged.")
     st.code("pip install -r dashboard/requirements.txt\nstreamlit run dashboard/app.py", language="bash")
 
 
+def publication_completion():
+    st.header("Publication completion")
+    notice=json.loads((ROOT/"research_completion/assessment/dashboard_notice.json").read_text(encoding="utf-8"))
+    st.caption(f"Analysis: {notice['analysis_date']} UTC; source cutoff: 2025Q3 (2025Q2 absent). "
+               f"Model status: {notice['operational_model']}; independent confirmation: {notice['confirmation']}. "
+               "Downloads serve committed aggregate files exactly; World Bank RPW, CC BY 4.0, no endorsement.")
+    st.markdown("**CONDITIONAL GO / NOT YET PUBLICATION-READY.** The source was independently reacquired and "
+                "the quote counts reproduced. Chronological selection/calibration and sensitivity analyses were executed locally. "
+                "No verified public predictor lead time or untouched temporal confirmation exists. "
+                "Closest-work novelty and true service identity remain unresolved. "
+                "[Read the scientific verdict](https://github.com/Isaac25-lgtm/remittance-price-intelligence/blob/main/research_completion/assessment/PUBLICATION_VERDICT.md).")
+    scores=pd.concat([table("model_comparison.csv"),table("recent_history_reference.csv")],ignore_index=True)
+    selected=scores[scores.model=="S_selected"].iloc[0]
+    st.metric("Retrospective selected-policy Brier",f"{selected.brier:.6f}",help=f"{int(selected.n):,} previously inspected outer test records")
+    st.dataframe(scores.sort_values("brier"),hide_index=True)
+    joint=table("joint_dependence_sensitivity.csv")
+    d=joint[(joint.model_a=="S_selected")&(joint.model_b=="L2_spline_logistic")].iloc[0]
+    st.warning(f"Selected policy minus spline Brier: {d.brier_diff:+.6f}; joint corridor/provider/time sensitivity "
+               f"[{d.ci95_lo:+.6f}, {d.ci95_hi:+.6f}] includes zero. Limited stress coverage was 0.86, "
+               "so nominal 95% coverage is unverified. No robust superiority claim.")
+    st.dataframe(joint,hide_index=True)
+    references=table("conventional_reference_comparisons.csv")
+    st.caption("All raw/calibrated ridge and spline references are retained. Calibrated ridge is the lowest pooled "
+               "conventional score, a post hoc description; the selected-policy joint interval versus it also includes zero. "
+               "Brier skill is 1 minus model/reference Brier. No confirmatory superiority claim.")
+    st.dataframe(references[(references.model=="S_selected")&(references.resampling=="crossed_corridor_provider_time_block")],hide_index=True)
+    st.subheader("All-origin review scenarios")
+    st.caption("The old matched-sample queue conditions on future reobservation. This correction scores all eligible "
+               "origins and preserves unknown outcomes. Recall bounds are extreme allocations, not confidence intervals or measured benefits.")
+    st.dataframe(table("all_origin_capacity_bounds.csv"),hide_index=True)
+    st.subheader("Identity and missingness sensitivity")
+    st.dataframe(table("sensitivity_grid.csv"),hide_index=True)
+    st.subheader("Publication gates")
+    st.dataframe(table("publication_gates.csv"),hide_index=True)
+    for name in COMPLETION_FILES:
+        download(name,"completion_"+name)
+
+
 PAGES = dict(zip(SECTIONS, [overview, provenance, linkage, bounds, model_comparison, time_forward, calibration,
-                            capacity, reobservation, geography, reproducibility]))
+                            capacity, reobservation, geography, reproducibility, publication_completion]))
 
 
 def main():

@@ -6,6 +6,7 @@ import datetime as dt
 import hashlib
 import io
 import json
+import os
 from pathlib import Path,PurePosixPath
 import re
 import subprocess
@@ -39,8 +40,12 @@ def payload():
     if not approved.exists():raise ValueError('missing reviewed explicit public artifact allowlist')
     allowed=set(json.loads(approved.read_text(encoding='utf-8'))['paths'])
     files=[]
-    for p in sorted(ROOT.rglob('*')):
-        if not p.is_file():continue
+    candidates=[]
+    for base,dirs,names in os.walk(ROOT):
+        dirs[:]=sorted(d for d in dirs if d not in FORBIDDEN_PARTS and not d.endswith('.egg-info') and not (Path(base)/d).is_symlink())
+        candidates.extend(Path(base)/n for n in names)
+    for p in sorted(candidates):
+        if not p.is_file() or p.is_symlink():continue
         rel=p.relative_to(ROOT);name=rel.as_posix()
         if set(rel.parts)&FORBIDDEN_PARTS or name in OMIT or p.suffix=='.zip':continue
         if name not in ROOT_FILES and not name.startswith(PREFIXES):continue
@@ -79,7 +84,7 @@ def build():
     files=payload();mapped={p.relative_to(ROOT).as_posix():p.read_bytes() for p in files}
     start='research_completion/deliverables/START_HERE.md'
     if start not in mapped:raise ValueError('create verified START_HERE content first')
-    mapped['START_HERE.md']=mapped.pop(start)
+    mapped['START_HERE.md']=mapped.pop(start).decode('utf-8').replace('](../../README.md)','](README.md)').replace('](../','](research_completion/').encode('utf-8')
     rows=[]
     for name,data in sorted(mapped.items()):rows.append(dict(archive_path=name,bytes=len(data),sha256=hashlib.sha256(data).hexdigest()))
     buf=io.StringIO();w=csv.DictWriter(buf,fieldnames=['archive_path','bytes','sha256']);w.writeheader();w.writerows(rows)

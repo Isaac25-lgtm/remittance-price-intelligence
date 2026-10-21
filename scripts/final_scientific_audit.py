@@ -15,7 +15,7 @@ REQUIRED={
  'P3':['data/inclusion_exclusion_flow.csv','data/identity_collision_audit.csv','models/mnar_sensitivity.csv','models/ipw_mar_scenario.csv','audits/independent_raw_audit.json'],
  'P4':['protocols/phase2_frozen_protocol.md','validation/feature_asof_registry.csv','validation/leakage_audit.md','validation/split_registry.csv'],
  'P5':['models/model_registry.json','models/model_comparison.csv','models/calibration.csv','models/annual_selection.csv'],
- 'P6':['models/paired_dependence.csv','models/transfer_sensitivity_metrics.csv','models/decision_capacity.csv','models/subgroups.csv','models/permutation_importance.csv'],
+ 'P6':['models/paired_dependence.csv','models/conventional_reference_comparisons.csv','models/subgroup_paired_uncertainty.csv','models/no_identity_history_metrics.csv','models/continuous_group_trend.csv','models/joint_dependence_sensitivity.csv','models/all_origin_capacity_bounds.csv','models/final_stress_metrics.csv','models/history_overlap_support.csv','data/pre_post2022_distribution_shift.csv','models/transfer_sensitivity_metrics.csv','models/decision_capacity.csv','models/subgroups.csv','models/permutation_importance.csv'],
  'P7':['validation/holdout_status.md'],
  'P8':['assessment/publication_gates.csv','assessment/claim_evidence_ledger.csv','assessment/PUBLICATION_VERDICT.md','manuscript/conditional_research_report.md'],
  'P9':['figures/figure_inventory.csv','manuscript/figure_legends.md','manuscript/table_legends.md','reproducibility/test_report.md'],
@@ -78,6 +78,30 @@ def audit():
         check('no_quote_columns:'+str(p.relative_to(OUT)),not (set(pd.read_csv(p,nrows=0).columns)&forbidden))
     source=json.loads((OUT/'data/source_manifest.json').read_text(encoding='utf-8'))
     check('source_hash',source['sha256']=='f1d7265b1856d61812c158d3d03fae686dbff58735deabe016a6bfe23482d2a8' and source['bytes']==50780339)
+    pilot=json.loads((OUT/'audits/pilot_cache_rebuild.json').read_text(encoding='utf-8'))
+    check('pilot_independent_cache_rebuild',pilot['matches_original_cache_sha256'] and pilot['n_rows']==204469)
+    joint=pd.read_csv(OUT/'models/joint_dependence_sensitivity.csv')
+    j=joint[(joint.model_a=='S_selected')&(joint.model_b=='L2_spline_logistic')].iloc[0]
+    check('joint_zero_crossing_disclosed',j.ci95_lo<0<j.ci95_hi and '0.000457' in verdict and '0.86' in verdict)
+    ac=pd.read_csv(OUT/'models/all_origin_capacity_bounds.csv')
+    check('all_origin_denominators',(ac.n_known_valid+ac.n_unknown==ac.n_all_eligible).all() and (ac.n_known_valid==19667).all())
+    check('all_origin_budget',ac.groupby('capacity').reviewed.nunique().eq(1).all())
+    lower=ac.known_failures_captured/(ac.known_failures_total+ac.n_unknown-ac.unknown_reviewed)
+    upper=(ac.known_failures_captured+ac.unknown_reviewed)/(ac.known_failures_total+ac.unknown_reviewed)
+    check('all_origin_bound_arithmetic',((lower-ac.all_failure_recall_lower).abs()<1e-12).all() and ((upper-ac.all_failure_recall_upper).abs()<1e-12).all())
+    check('future_membership_caveat','future reobservation membership' in verdict and 'unknown' in verdict)
+    readme=(ROOT/'README.md').read_text(encoding='utf-8').split('<!-- COMPLETION CURRENT END -->')[0]
+    notice=json.loads((OUT/'assessment/dashboard_notice.json').read_text(encoding='utf-8'))
+    check('root_readme_selected_score',f'{selected.brier:.6f}' in readme)
+    check('dashboard_notice_score',abs(notice['selected_policy_brier']-selected.brier)<1e-12 and notice['n_outer']==19667)
+    check('root_readme_measurement',f'{100*b.conditional_p_stay_core:.2f}%' in readme and f'{100*b.lower_bound:.2f}%' in readme and f'{100*b.upper_bound:.2f}%' in readme)
+    stable=json.loads((OUT/'audits/inference_code_stability.json').read_text(encoding='utf-8'))
+    check('inference_function_stability',stable['ast_unchanged'])
+    # Check the claimed evidence registry rather than treating unresolved requirements as passes.
+    requirement=pd.read_csv(OUT/'audits/master_requirement_ledger.csv')
+    for r in requirement.to_dict('records'):
+        check('master_evidence:'+r['requirement_id'],(OUT/r['evidence']).is_file(),r['status']+'; '+r['limitation'])
+    check('requirements_honest',requirement.status.isin(['EXECUTED','UNRESOLVED','NOT_AVAILABLE','NOT_JUSTIFIED','INTEGRATION_RECORDED_SEPARATELY']).all())
     result=pd.DataFrame(checks);result.to_csv(OUT/'audits/final_independent_audit.csv',index=False)
     failed=result[result.status=='FAIL']
     text='# Final independent implementation and scientific-claims audit\n\nThis is a separate second-pass programmatic/claims audit, not external human peer review.\n\n'

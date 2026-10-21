@@ -1,3 +1,5 @@
+> Current local completion: **CONDITIONAL_MORE_EVIDENCE / NOT YET PUBLICATION-READY**. The analyses, pilot recovery, calibration, transfers and dependence sensitivities have been executed. See [the scientific verdict](../research_completion/assessment/PUBLICATION_VERDICT.md) and [conditional report](../research_completion/manuscript/conditional_research_report.md). The text below preserves the 17 October phase-1 history; references to future work or unavailable local inputs there are historical.
+
 # Model card: R01 phase-1 retrospective benchmark
 
 - **Task:** for a surveyed RPW quote with cost ≤3% (USD 200 basket), predict P(the same core service, reobserved in exactly the next quarter, still costs ≤3%).

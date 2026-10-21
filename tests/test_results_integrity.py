@@ -29,7 +29,11 @@ def app_allowlist():
 
 
 def allowlisted_paths():
-    return [ROOT / "results" / ("reproduction" if n == "table_comparison.csv" else "tables") / n
+    tree=ast.parse(APP.read_text(encoding="utf-8"))
+    completion=next(ast.literal_eval(node.value) for node in ast.walk(tree)
+                    if isinstance(node,ast.Assign) and getattr(node.targets[0],"id",None)=="COMPLETION_FILES")
+    return [ROOT / "research_completion" / completion[n] if n in completion else
+            ROOT / "results" / ("reproduction" if n == "table_comparison.csv" else "tables") / n
             for n in sorted(app_allowlist())]
 
 

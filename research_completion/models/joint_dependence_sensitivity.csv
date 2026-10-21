@@ -1,0 +1,7 @@
+analysis,model_a,model_b,resampling,brier_diff,ci95_lo,ci95_hi,n_quarters,status
+legacy,M1_hist_gbm,L2_spline_logistic,crossed_corridor_provider_time_block,-0.003456409192110422,-0.009168688003574142,0.001969935861556668,13,AMENDED_EXPLORATORY; limited-period coverage not guaranteed
+legacy,M2_random_forest,L2_spline_logistic,crossed_corridor_provider_time_block,-0.005640331701045311,-0.011316257994895685,-0.0007162886554948802,13,AMENDED_EXPLORATORY; limited-period coverage not guaranteed
+phase2,M1_hist_gbm,L2_spline_logistic,crossed_corridor_provider_time_block,-0.00804563526751583,-0.01371503357550577,-0.0021908054619535753,13,AMENDED_EXPLORATORY; limited-period coverage not guaranteed
+phase2,M2_random_forest,L2_spline_logistic,crossed_corridor_provider_time_block,-0.008092396861269386,-0.014439315278593053,-0.0015487027659440173,13,AMENDED_EXPLORATORY; limited-period coverage not guaranteed
+phase2,S_selected,L2_spline_logistic,crossed_corridor_provider_time_block,-0.005388229896080114,-0.011729800937978749,0.0004569975453280253,13,AMENDED_EXPLORATORY; limited-period coverage not guaranteed
+phase2,S_selected,B2_history,crossed_corridor_provider_time_block,-0.008204052029761037,-0.01409608447829504,-0.0019426996696338698,13,AMENDED_EXPLORATORY; limited-period coverage not guaranteed

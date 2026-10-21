@@ -1,3 +1,5 @@
+Completion evidence is now available in research_completion/assessment/PUBLICATION_VERDICT.md and the conditional report. Read these and progress.json before resuming; do not refit completed checkpoints automatically. Decision remains conditional, with no operational model. Local calendar completion date:21 October2026 (Africa/Kampala).
+
 # Current local publication-completion instructions (20 October 2026)
 
 The investigator explicitly authorises local Windows computation, two CPU threads, one heavy job at a time, and verified safe PR/CI integration into main. The archived cloud-only, 25-minute, model-choice, credit and no-merge rules below apply only to the 17 October phase. Read research_completion/protocols/master_directive_2026-10-19.md, with its cloud-only requirement superseded by the direct user request, and the phase2 protocol/config. Preserve frozen historical results. No paid usage, submission, restricted rows or credentials. Resume from research_completion/reproducibility/progress.json; final verdict is research_completion/assessment/PUBLICATION_VERDICT.md.

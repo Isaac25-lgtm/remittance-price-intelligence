@@ -1,0 +1,58 @@
+period,field,group,n,share
+before_2022Q3,destination_region,..,2243,0.018742270797820784
+before_2022Q3,destination_region,East Asia & Pacific,31273,0.26131388081152446
+before_2022Q3,destination_region,Europe & Central Asia,13813,0.11541996724489455
+before_2022Q3,destination_region,Latin America & Caribbean,15122,0.12635783281526788
+before_2022Q3,destination_region,Middle East & North Africa,11264,0.09412079280724624
+before_2022Q3,destination_region,South Asia,23948,0.20010695544637186
+before_2022Q3,destination_region,Sub-Saharan Africa,22013,0.18393830007687423
+before_2022Q3,access point__n,agent,46289,0.38678598883652526
+before_2022Q3,access point__n,"agent,call center",2079,0.01737190414118119
+before_2022Q3,access point__n,"agent,call center,internet",685,0.005723787559744644
+before_2022Q3,access point__n,"agent,internet",2588,0.02162505431331261
+before_2022Q3,access point__n,"agent,internet,mobile phone",56,0.00046793007787693437
+before_2022Q3,access point__n,atm network,33,0.00027574451017747917
+before_2022Q3,access point__n,bank branch,7578,0.06332096660984658
+before_2022Q3,access point__n,"bank branch,call center",6116,0.05110464921955948
+before_2022Q3,access point__n,"bank branch,call center,internet",1527,0.012759450516394264
+before_2022Q3,access point__n,"bank branch,internet",1179,0.00985159931815903
+before_2022Q3,access point__n,call center,627,0.005239145693372104
+before_2022Q3,access point__n,"call center,internet",129,0.0010779103579665096
+before_2022Q3,access point__n,internet,48084,0.4017848190113306
+before_2022Q3,access point__n,"internet,post office branch",319,0.0026655302650489656
+before_2022Q3,access point__n,mobile phone,1056,0.008823824325679333
+before_2022Q3,access point__n,post office,45,0.000376015241151108
+before_2022Q3,access point__n,post office branch,1264,0.010561850329222234
+before_2022Q3,firm_type__n,bank,21140,0.17664360439854274
+before_2022Q3,firm_type__n,bank / money transfer operator,589,0.0049216217119556135
+before_2022Q3,firm_type__n,bank/post office,38,0.0003175239814164912
+before_2022Q3,firm_type__n,mobile operator,749,0.006258564791603997
+before_2022Q3,firm_type__n,money transfer operator,94218,0.7872756442394465
+before_2022Q3,firm_type__n,money transfer operator / post office,1393,0.011639760687188742
+before_2022Q3,firm_type__n,non-bank fi,129,0.0010779103579665096
+before_2022Q3,firm_type__n,post office,1392,0.01163140479294094
+2022Q3_onward,destination_region,..,1629,0.019211491514629746
+2022Q3_onward,destination_region,East Asia & Pacific,20498,0.24174165320250493
+2022Q3_onward,destination_region,Europe & Central Asia,9383,0.11065771938721357
+2022Q3_onward,destination_region,Latin America & Caribbean,10459,0.12334744613352518
+2022Q3_onward,destination_region,Middle East & North Africa,6567,0.07744743080207092
+2022Q3_onward,destination_region,"Middle East, North Africa, Afghanistan & Pakistan",784,0.009246046253818122
+2022Q3_onward,destination_region,South Asia,15950,0.1881051501892845
+2022Q3_onward,destination_region,Sub-Saharan Africa,19523,0.23024306251695306
+2022Q3_onward,access point__n,agent,23413,0.276119490995719
+2022Q3_onward,access point__n,"agent,internet",40,0.0004717370537662307
+2022Q3_onward,access point__n,atm network,56,0.000660431875272723
+2022Q3_onward,access point__n,bank branch,5807,0.06848442678051254
+2022Q3_onward,access point__n,"bank branch,call center",67,0.0007901595650584365
+2022Q3_onward,access point__n,call center,2393,0.028221669241564752
+2022Q3_onward,access point__n,internet,51885,0.611901925866522
+2022Q3_onward,access point__n,mobile phone,567,0.00668687273713632
+2022Q3_onward,access point__n,post office branch,488,0.005755192055948015
+2022Q3_onward,firm_type__n,bank,11335,0.13367848761100562
+2022Q3_onward,firm_type__n,bank / money transfer operator,794,0.009363980517259679
+2022Q3_onward,firm_type__n,bank/post office,50,0.0005896713172077884
+2022Q3_onward,firm_type__n,mobile operator,288,0.003396506787116861
+2022Q3_onward,firm_type__n,money transfer operator,71329,0.8412133077022868
+2022Q3_onward,firm_type__n,money transfer operator / post office,603,0.007111436085525928
+2022Q3_onward,firm_type__n,non-bank fi,53,0.0006250515962402557
+2022Q3_onward,firm_type__n,post office,331,0.003903624119915559

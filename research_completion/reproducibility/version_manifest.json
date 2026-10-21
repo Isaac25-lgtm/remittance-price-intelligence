@@ -17,7 +17,8 @@
     "threadpoolctl": "3.6.0",
     "pypdf": "5.8.0",
     "PyMuPDF": "1.28.2",
-    "psutil": "7.0.0"
+    "psutil": "7.0.0",
+    "Pillow": "11.3.0"
   },
   "threadpool_info": [],
   "environment": "task .venv with inherited base packages; only listed scientific libraries used; unrelated inherited package incompatibilities are not imported"

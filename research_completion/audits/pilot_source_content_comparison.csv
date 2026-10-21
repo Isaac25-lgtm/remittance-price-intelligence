@@ -1,0 +1,11 @@
+variable,n_mismatches_after_numeric_or_blank_normalisation,n_missing_flag_differences,pilot_dtype,current_typed_dtype
+id,0,0,string,str
+period,0,0,string,str
+corridor,0,0,string,str
+firm,0,0,string,str
+cc1 total cost %,0,15,string,float64
+cc1 lcu amount,0,0,string,float64
+payment instrument,0,0,string,str
+access point,0,0,string,str
+pickup method,0,0,string,str
+pickup location,0,109989,string,str

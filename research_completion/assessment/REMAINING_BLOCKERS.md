@@ -1,0 +1,13 @@
+# Remaining blockers and bounded resolution routes
+
+1. **Major novelty:** obtain a lawful accessible full text of Lim 2026 and check its identity, attrition, supplementary endpoints and exact overlap. The current session encountered403; no access control was bypassed and no author contacted. Extend the same-question literature audit if a venue requires a systematic search.
+2. **Forecasting:** historical quote-level release vintages and full-feature availability timestamps are missing. Archive report captures, nominal issue labels and present-file metadata cannot supply those clocks. Retain retrospective framing unless verifiable snapshots show positive lead time.
+3. **Independent confirmation:** no official successor beyond2025Q3 was found. The workbook still has no2025Q2 and no adjacent-origin2025Q3 E1 target. Use the frozen future-wave evaluator only on genuinely unseen, correctly timed data.
+4. **Service identity:** a stratified candidate sample is private; public historical bundle metadata was not established. Reduced keys increase collisions and are not promoted as corrected identity. No false-merge rate is identified.
+5. **Inference:**13 retrospective target waves provide limited time-block information. The amended joint corridor/provider/time interval for the selected policy versus spline includes zero. Its synthetic stress coverage is 0.86, not validated95%. A larger genuinely future wave sequence is needed for strong stability claims.
+6. **Numerical reproduction:** cohort/measurement counts exactly reproduce; some Windows logistic/spline diagnostics and a pooled capture count differ from frozen Linux outputs. The strict1e-9 comparison failed. No tolerance was widened to conceal differences. The old +/-10 calibration-offset bracket was separately corrected for phase2.
+7. **Human sign-off:** confirm authorship, citations, funding/conflicts, relevant institutional requirements, attribution and final scientific wording. Journal submission/preprint publication is not authorised.
+
+Not justified: causal savings claims, verified market/service exit modelling, survival analysis without exit labels, consumer advice, a Uganda-specific AI claim, or a doubly robust/MNAR-identification claim. MAR/IPW and pattern-mixture scenarios do not identify unknown outcomes without assumptions. No new paid data/API, additional ML library or deep model is warranted by the unresolved gates.
+
+Optional format conversions are not essential to the conditional report; Markdown is canonical. No submission manuscript is represented as ready. Source PDFs and fitted binaries remain private and are excluded from Git/ZIP.

@@ -1,0 +1,117 @@
+{
+  "source_sha256": "f1d7265b1856d61812c158d3d03fae686dbff58735deabe016a6bfe23482d2a8",
+  "artifacts": [
+    {
+      "file": "L1_ridge_logistic_2022.pkl",
+      "bytes": 9035,
+      "sha256": "9dbde7ea29e4623bc60ce56dc311ffde593ee5cac49f7ca3d15e89969495485c",
+      "distribution": "PRIVATE; omitted from Git and ZIP",
+      "save_reload_max_tolerance": 1e-12
+    },
+    {
+      "file": "L1_ridge_logistic_2023.pkl",
+      "bytes": 9664,
+      "sha256": "15ac89006743074ede0406c87e25d0e32415798cf128b545c9ca110956e8998a",
+      "distribution": "PRIVATE; omitted from Git and ZIP",
+      "save_reload_max_tolerance": 1e-12
+    },
+    {
+      "file": "L1_ridge_logistic_2024.pkl",
+      "bytes": 9434,
+      "sha256": "ec13d7151c6dd7ef2eb25bfadcd91abfc7b34603ba342c7d3697fcb6a04d1538",
+      "distribution": "PRIVATE; omitted from Git and ZIP",
+      "save_reload_max_tolerance": 1e-12
+    },
+    {
+      "file": "L1_ridge_logistic_2025.pkl",
+      "bytes": 9113,
+      "sha256": "dff2f5740c2d44119175cd3c4671d17b63c3cd3f0fff93ff329aa62a3c96e5c0",
+      "distribution": "PRIVATE; omitted from Git and ZIP",
+      "save_reload_max_tolerance": 1e-12
+    },
+    {
+      "file": "L2_spline_logistic_2022.pkl",
+      "bytes": 11186,
+      "sha256": "86c70826ef1ed1497a643e1f7f1d9ff9c0a4fa5bd315d3e0b5034ba73e86113f",
+      "distribution": "PRIVATE; omitted from Git and ZIP",
+      "save_reload_max_tolerance": 1e-12
+    },
+    {
+      "file": "L2_spline_logistic_2023.pkl",
+      "bytes": 12048,
+      "sha256": "9a0e6a25bf26a22a2aa264132144e7000664b90808b79e8c676c0470291ec018",
+      "distribution": "PRIVATE; omitted from Git and ZIP",
+      "save_reload_max_tolerance": 1e-12
+    },
+    {
+      "file": "L2_spline_logistic_2024.pkl",
+      "bytes": 12130,
+      "sha256": "828d8edea6fa860b5cee6f7f00c4d91788a333cf73a7be79ca698e2a3d952021",
+      "distribution": "PRIVATE; omitted from Git and ZIP",
+      "save_reload_max_tolerance": 1e-12
+    },
+    {
+      "file": "L2_spline_logistic_2025.pkl",
+      "bytes": 11267,
+      "sha256": "03c2693006a5df25f98d69f4637055a763f77047a31bda2748a025865d0454b9",
+      "distribution": "PRIVATE; omitted from Git and ZIP",
+      "save_reload_max_tolerance": 1e-12
+    },
+    {
+      "file": "M1_hist_gbm_2022.pkl",
+      "bytes": 177450,
+      "sha256": "a39b46465a84b338e861abeae80711887515c66606b3f650b1477015818da191",
+      "distribution": "PRIVATE; omitted from Git and ZIP",
+      "save_reload_max_tolerance": 1e-12
+    },
+    {
+      "file": "M1_hist_gbm_2023.pkl",
+      "bytes": 179759,
+      "sha256": "8aeb4e9da35c13dbf982e5589be1e8cc6ec29dfaeaf3e1dc113a2ff6a1e56b25",
+      "distribution": "PRIVATE; omitted from Git and ZIP",
+      "save_reload_max_tolerance": 1e-12
+    },
+    {
+      "file": "M1_hist_gbm_2024.pkl",
+      "bytes": 180352,
+      "sha256": "b0bd5f434720636407263598143d7abf7a009677989d6fb5aa9a1e1eeed29491",
+      "distribution": "PRIVATE; omitted from Git and ZIP",
+      "save_reload_max_tolerance": 1e-12
+    },
+    {
+      "file": "M1_hist_gbm_2025.pkl",
+      "bytes": 179804,
+      "sha256": "ef19ffd3611cce1994063f8c2375655db7a7b4fea25fcf4cc9da2090a7a50155",
+      "distribution": "PRIVATE; omitted from Git and ZIP",
+      "save_reload_max_tolerance": 1e-12
+    },
+    {
+      "file": "M2_random_forest_2022.pkl",
+      "bytes": 11708658,
+      "sha256": "5198c4c16550d20d7093ec5bb6c32edde1921346839227cbe1a3fc13d5c2a787",
+      "distribution": "PRIVATE; omitted from Git and ZIP",
+      "save_reload_max_tolerance": 1e-12
+    },
+    {
+      "file": "M2_random_forest_2023.pkl",
+      "bytes": 6534789,
+      "sha256": "7289cf79d48eb73815bc1f210acd12e7b91d29e7e8007fa8c84f499519c6b3ef",
+      "distribution": "PRIVATE; omitted from Git and ZIP",
+      "save_reload_max_tolerance": 1e-12
+    },
+    {
+      "file": "M2_random_forest_2024.pkl",
+      "bytes": 19530592,
+      "sha256": "5b65ab0cb645cf0adeff5d359503243590c5e8d7d95300ce05f1a18b2594c4e0",
+      "distribution": "PRIVATE; omitted from Git and ZIP",
+      "save_reload_max_tolerance": 1e-12
+    },
+    {
+      "file": "M2_random_forest_2025.pkl",
+      "bytes": 25159635,
+      "sha256": "79bcd48a17edc8a745f3605bb5845d3a512cdaaca933f539d1806ed51fdd5f21",
+      "distribution": "PRIVATE; omitted from Git and ZIP",
+      "save_reload_max_tolerance": 1e-12
+    }
+  ]
+}

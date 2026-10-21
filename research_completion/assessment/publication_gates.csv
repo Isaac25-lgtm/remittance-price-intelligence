@@ -1,0 +1,13 @@
+gate,requirement,status,supporting_artifact,reason
+G1,Scientific estimands,PASS,data/inclusion_exclusion_flow.csv,"E1/E2/E3/E4 kept separate; units are recorded surveyed quotes, not transactions."
+G2,Source integrity,PASS,data/source_manifest.json,"Independent official download matches bytes/hash; schema, gaps and anomalies audited; attribution recorded."
+G3,Linkage and attrition,UNRESOLVED,data/identity_collision_audit.csv,Counts independently reproduce and sensitivities are executed; historical bundle identity is not externally adjudicated; no uncertain links promoted.
+G4,Forecast information timing,FAIL,data/release_availability_registry.csv,Report captures do not establish historical availability of every row-level feature before target collection; prospective claim rejected.
+G5,Validation and confirmation,UNRESOLVED,validation/split_registry.csv,Chronological retrospective selection and leakage-protected transfers executed; no new independent temporal wave found.
+G6,Strong conventional comparison,PASS,models/model_comparison.csv,"Historical, rolling history, cost, ridge, spline, GBM/RF and chronological calibration/selection evaluated; no unrestricted search."
+G7,Dependence and precision,UNRESOLVED,models/joint_dependence_sensitivity.csv,Joint corridor/provider/time sensitivity crosses zero for selected policy versus spline; stress coverage0.86 does not validate nominal95%; only13 waves.
+G8,Major scientific novelty,UNRESOLVED,literature/head_to_head_scientific_delta.md,Same-source service-level competitors exist; Lim2026 full text blocked; no first-in-literature or substantial-novelty claim established.
+G9,Meaningful contribution,PASS,models/sensitivity_grid.csv,Identity rules substantially widen population bounds despite stable conditional estimates. Monitoring remains a hypothetical observed-sample benchmark.
+G10,Reproducibility/transparency,PASS,reproducibility/source_to_results_comparison.csv,Source/cohort independently checked; code/versions/checkpoints public; strict numeric comparison failures and the diagnostic correction explicitly retained.
+G11,Report accuracy,PASS,assessment/claim_evidence_ledger.csv,"Canonical report values are generated from locked tables and checked by final audit; conditional report, not submission manuscript."
+G12,Permissions and human approval,UNRESOLVED,manuscript/investigator_signoff_checklist.md,Public aggregate analysis authorised; investigator authorship/licence/institutional declarations and submission sign-off remain personal actions.

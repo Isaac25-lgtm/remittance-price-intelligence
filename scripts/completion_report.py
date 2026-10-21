@@ -15,7 +15,10 @@ def load(name):return pd.read_csv(OUT/name)
 def put(name,text):
     text=re.sub(r'(?<!\d):(?=[A-Za-z0-9])',': ',text)
     # Plain prose spacing; avoid changing identifiers and relative file links.
-    text=re.sub(r'\b(with|about|only|than|from|through|including|for|of|by|before|after|below|across|per|October|September|April)(?=\d)',r'\1 ',text)
+    text=re.sub(r'\b(with|about|only|than|from|through|including|for|of|by|before|after|below|across|per|October|September|April|is|costing|capacity|contains|nominal|coverage|threshold|seed|records|spline|GBM|RF|Lim|Issue|USD|NOT_ESTIMABLE)(?=\d)',r'\1 ',text)
+    text=re.sub(r'\b(continuity|bounds|near|quarters|years|wave|and|the|a|A|around|days|rates|sample|draws|bootstrap|corridor|provider|cases|population|tolerance|on|n=)(?=\d)',r'\1 ',text)
+    text=re.sub(r';(?=\S)','; ',text)
+    text=text.replace('See[','See [').replace('and[','and [').replace('coverage0.86','coverage 0.86')
     text=text.replace('CC BY4.0','CC BY 4.0').replace('SDG10.c','SDG 10.c').replace('clinicalTRIPOD','clinical TRIPOD')
     p=OUT/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(text.strip()+'\n',encoding='utf-8')
 def markdown(df):
@@ -69,9 +72,24 @@ def main():
       ('C5','Prediction precedes survey outcomes','timing','NO VERIFIED FULL-FEATURE LEAD TIME','Historical report captures are not quote release clocks','FAIL','data/historical_publication_timing.md','No early-warning or operational forecasting claim.'),
       ('C6','Uganda-specific superiority','E1 subgroup','20 observed test failures;3 corridors','Below100-failure gate','FAIL','models/subgroups.csv','Uganda support is insufficient for a model-performance claim.'),
       ('C7','Substantial novelty over closest work','novelty','UNRESOLVED','Lim full text inaccessible; exact same-question absence not proven','UNRESOLVED','literature/closest_work_matrix.csv','Plausible measurement contribution requires fuller competitor adjudication.'),
+      ('C8','Stable policy improvement over strong conventional references','E1','Joint selected-minus-spline interval includes zero','Nominal joint coverage unverified; calibrated ridge also compared','UNRESOLVED','models/conventional_reference_comparisons.csv','Report all raw/calibrated ridge/spline references; no robust superiority or confirmatory significance claim.'),
+      ('C9','Monitoring creates population benefit','E2 decision scenario','Selected all-origin recall bounds0.2167-0.5726 at20% review','4889 unknown outcomes; E1-score extrapolation unverified','UNRESOLVED','models/all_origin_capacity_bounds.csv','All-origin scenarios preserve missing states and do not identify an intervention benefit or policy ranking.'),
+      ('C10','Exact numerical reproduction succeeded','reproduction','14exact;2timing-only;14nonmatching tables','Strict1e-9 comparator retained','FAIL','reproducibility/local_table_comparison.csv','Source/cohort match; strict numerical legacy reproduction is not successful.'),
     ]
     cl=pd.DataFrame(claims,columns=['claim_id','claim','estimand','observed_result','uncertainty','pass_fail_unresolved','source_file_or_paper','eligible_manuscript_language'])
-    for col in ['required_evidence','method','test_population','alternative_explanation','caveat','figure_or_table']:cl[col]='See linked source and conditional report; all existing periods inspected'
+    details={
+      'C1':('Unique valid exact-quarter pairs; conditional scope','Deterministic core linkage;1000 corridor resamples','36429 valid initially-cheap USD200 origin/target pairs','Selection into reobservation; rounding near3%','Not transactions or all-origin continuity','Table3;Figure3'),
+      'C2':('Exclusive unknown states and fixed denominator','Extreme unknown stay/fail allocation; separate sampling intervals','45343 eligible origin records;8914 unknown','Duplicate/changed metadata and survey coverage, not service exit','Bounds identify quote-record cohort only','Table3;Figure9'),
+      'C3':('Release-aware clocks and independent confirmation','Annual chronological fixed-prediction comparisons','19667 previously inspected outer records;13 targetwaves','Current-wave availability, selection and limited time clusters','Prospective claim not established','Table5;Figure10'),
+      'C4':('No heldout target outcomes in any training history','Deterministic20% corridor/provider-label holdouts; history purged','Historical heldout-group records; per-scenario counts in source','Unresolved provider aliases and changing survey mix','Historical transfer, not legal-entity or temporal confirmation','models/transfer_sensitivity_metrics.csv'),
+      'C5':('All row-level predictors available before target collection','Official/public archive investigation and registry','37 observed surveywaves and report captures','Nominal issue labels and present metadata differ from release clocks','No verified public full-feature lead time','data/release_availability_registry.csv'),
+      'C6':('At least100 observed failures and adequate clusters','Predeclared subgroup support gate','Uganda receiving:140 outer rows;20 failures;3 corridors','Small sample and selected receiving routes','Unsupported scores withheld','Figure8;models/subgroups.csv'),
+      'C7':('Closest same-source/question full texts and material delta','13-work head-to-head/source-depth matrix','Published, preprint, registry, repository and commercial work','Same-data service-level results may already cover the claimed novelty','Lim full text not read; search not exhaustive','literature/closest_work_matrix.csv'),
+      'C8':('Paired improvement over strong raw/calibrated references','1000 corridor/provider/block/crossed/joint sensitivities','Same19667 outer records for every named family','Selection variance and sparse serial/crossed dependence','Intervals condition on fitted predictions; joint stress coverage0.86','Figure10;models/conventional_reference_comparisons.csv'),
+      'C9':('Origin-known queue and observed intervention outcomes','All-origin within-quarter budgets; adversarial unknown allocations','24556 origins;19667 known-valid outcomes;4889 unknown','Unknown outcomes can change apparent recall and ranking','No intervention was tested; no saving or true exit observed','Figure14;models/all_origin_capacity_bounds.csv'),
+      'C10':('Independent official source and strict numeric comparator','Remove stale generated targets; rerun; compare; restore original files','30 regenerated legacy tables including run metadata','Operating system/dependency/solver differences possible, not proved','No tolerance widened; exact tree/cohort and residual spline differences retained','reproducibility/source_to_results_comparison.csv'),
+    }
+    for j,col in enumerate(['required_evidence','method','test_population','alternative_explanation','caveat','figure_or_table']):cl[col]=cl.claim_id.map(lambda c:details[c][j])
     cl.to_csv(OUT/'assessment/claim_evidence_ledger.csv',index=False)
     put('assessment/REMAINING_BLOCKERS.md','''# Remaining blockers and bounded resolution routes
 
@@ -139,6 +157,8 @@ Exclusive initially cheap flow (including censoring):
 {markdown(flow)}
 
 The independent streaming implementation matches every count without importing the project linkage code. It does not externally validate true service identity. Reduced metadata adds563 candidate links but raises origin ambiguity; no links were promoted. A30-record stratified candidate sample is private, with zero externally confirmed/promoted links. Service label lifetimes and survey-label concentration are not provider survival or market shares.
+
+A bounded public-source feasibility investigation searched one candidate from each of three strata. Generic entity/network documents do not establish the complete contemporaneous economic bundle; zero links were confirmed or promoted, and the remaining27 candidates were not externally adjudicated. See[manual identity feasibility](manual_identity_feasibility.md); it is not a validated linkage-truth sample.
 
 Total cost is the published percentage, with rounding-aware fee/FX reconciliation from the audit. The USD200/500 columns are fixed basket identifiers; local currency amounts need not equal today\'s dollar conversion. Remote initiation in descriptive profiles means internet/mobile access only, not the full World Bank digital-remittance definition. Date-quarter, negative-FX, Russia, transparency, basket, threshold and identity alternatives retain their separate denominators.
 ''')
@@ -253,6 +273,8 @@ Brier diagnostics decompose the fixed-bin predictor into uncertainty, resolution
 
 The main limitations are unverified public timing, no new temporal holdout, uncertain real service identity, nonrandom/changed survey coverage, missing successors, limited independent waves and unresolved closest-work novelty. Neither a statistically favourable row-level score nor a dashboard clears those gates. The second implementation audit is not external human peer review.
 
+The later bounded public identity feasibility search examined three of the30 private stratified candidates. Entity/network context did not establish their historical economic bundles; zero links were confirmed/promoted and27 remain unadjudicated. See[the feasibility record](../data/manual_identity_feasibility.md). This does not estimate a false-merge rate.
+
 ## Conclusion and conditional manuscript outline
 
 The current evidence supports a reproducible retrospective measurement report: conditional affordability continuity is stable to several definitions, while population uncertainty depends materially on observation and identity. It does not validate prospective forecasting or prove substantial novelty. A narrower methods/measurement article may become defensible after full competitor adjudication and stronger linkage/inference review; a prediction-led article additionally needs release-aware independent confirmation.
@@ -267,6 +289,21 @@ Investigator:Isaac Omoding. Affiliations, funding, competing interests, author c
 
 Validated source links and access depths are in[closest_work_matrix.md](../literature/closest_work_matrix.md); bibliographic records are in[references.bib](references.bib). Numbered figures and tables have programmatic source inventories and legends. See[the final verdict](../assessment/PUBLICATION_VERDICT.md),[remaining blockers](../assessment/REMAINING_BLOCKERS.md) and[reproduction comparison](../reproducibility/source_to_results_comparison.csv).
 '''
+    if (OUT/'models/final_stress_metrics.csv').exists():
+        stress=load('models/final_stress_metrics.csv');stress=stress[stress.scope=='pooled']
+        extra='## Final audit-driven robustness checks\n\n'+markdown(stress[['scenario','model','n','brier','log_loss','cal_slope']])+'\n\nThese fixed annual full-training references exclude the largest pre-2022 development provider/corridor, purge its target histories, or change transparency/FX/date handling. They do not refit or tune the selected policy. Provider labels are withheld. Fixed prior-quote/history-support strata are in models/history_overlap_support.csv. Pre/post-2022Q3 KS statistics and channel/region composition are descriptive; dependent-panel IID p-values and causal design-change claims are not reported.\n\n'
+        report=report.replace('## Reproducibility and limitations',extra+'## Reproducibility and limitations')
+    if (OUT/'models/no_identity_history_metrics.csv').exists():
+        a=load('models/no_identity_history_metrics.csv');a=a[a.scope=='pooled']
+        extra='The stricter historical identity ablation removes provider target-rate history **and** own-service cost/change lags. Removed lag values are fixed zero with availability0, after an all-NaN sklearn histogram-binning failure. It retains the earlier provider-rate-only ablation as a separate result:\n\n'+markdown(a[['scenario','model','n','brier','log_loss']])+'\n\n'
+        report=report.replace('## Reproducibility and limitations',extra+'## Reproducibility and limitations')
+    if (OUT/'models/continuous_group_trend.csv').exists():
+        extra='Secondary continuous-price reference (not E1 probabilities), using annual past-only shrunk provider/corridor cost changes:\n\n'+markdown(load('models/continuous_group_trend.csv'))+'\n\nCompare continuous_cost_metrics.csv; these are matched initially cheap outcomes, not prices of missing services.\n\n'
+        report=report.replace('## Reproducibility and limitations',extra+'## Reproducibility and limitations')
+    if (OUT/'models/conventional_reference_comparisons.csv').exists():
+        a=load('models/conventional_reference_comparisons.csv');a=a[(a.model=='S_selected')&(a.resampling=='crossed_corridor_provider_time_block')]
+        extra='## Named conventional references and Brier skill\n\n'+markdown(a[['model','reference','brier_model','brier_reference','brier_skill','relative_brier_diff','brier_diff','ci95_lo','ci95_hi']])+'\n\nSkill is1 minus model/reference Brier, and relative difference is model-minus-reference divided by reference. All four references are reported. Calibrated ridge has the lowest pooled conventional Brier here; naming it best is a post hoc description, not independent selection. The already inspected outcomes are not a confirmatory leaderboard. The joint intervals retain their undercoverage limitation. Paired supported subgroup intervals versus calibrated ridge are in models/subgroup_paired_uncertainty.csv; Uganda remains NOT_ESTIMABLE.\n\n'
+        report=report.replace('## Reproducibility and limitations',extra+'## Reproducibility and limitations')
     put('manuscript/conditional_research_report.md',report)
     verdict=f'''# R01 - Scientific Publication Verdict
 
@@ -396,6 +433,8 @@ Reproduce locally with Python3.12 and research_completion/reproducibility/enviro
 
 The World Bank, Remittance Prices Worldwide, available at http://remittanceprices.worldbank.org (CC BY4.0). No endorsement. No raw data, provider quote records, predictions, fitted binaries, secrets or copyrighted source PDFs are included.
 ''')
+    start=OUT/'deliverables/START_HERE.md'
+    start.write_text(start.read_text(encoding='utf-8').replace('](research_completion/','](../').replace('](README.md)','](../../README.md)'),encoding='utf-8')
     put('deliverables/publication_brief.md',f'''# Publication brief
 
 For a nontechnical reader:an affordable surveyed quote often remains affordable next quarter when the same quote can be found again. The larger uncertainty is what missing or changed quote records mean. Our conditional estimate is{b.conditional_p_stay_core:.1%}; the all-origin range is{b.lower_bound:.1%}-{b.upper_bound:.1%},and strict identity widens it further. Missing records cannot be called provider exit.

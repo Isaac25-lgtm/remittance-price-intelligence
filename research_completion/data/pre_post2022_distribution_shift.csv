@@ -1,0 +1,4 @@
+variable,n_before,n_after,median_before,median_after,ks_statistic,p_value_status,interpretation
+cc1 total cost %,119669,84782,5.35,4.68,0.08059723570364663,NOT_REPORTED_IID_INVALID,survey composition and time change; no causal design-change attribution
+derived_fee_pct,119664,84783,3.5,2.7425,0.1464833585275458,NOT_REPORTED_IID_INVALID,survey composition and time change; no causal design-change attribution
+cc1 fx margin,119669,84782,1.41,1.55,0.04340264241392086,NOT_REPORTED_IID_INVALID,survey composition and time change; no causal design-change attribution

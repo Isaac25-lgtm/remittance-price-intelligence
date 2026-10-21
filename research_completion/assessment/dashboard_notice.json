@@ -1,0 +1,10 @@
+{
+  "analysis_date": "2026-10-21T02:15:34+00:00",
+  "verdict": "CONDITIONAL_MORE_EVIDENCE",
+  "operational_model": "NONE",
+  "confirmation": "NOT_AVAILABLE",
+  "timing": "NO VERIFIED PUBLIC LEAD TIME",
+  "report_url": "https://github.com/Isaac25-lgtm/remittance-price-intelligence/blob/main/research_completion/assessment/PUBLICATION_VERDICT.md",
+  "selected_policy_brier": 0.1307632677595734,
+  "n_outer": 19667
+}

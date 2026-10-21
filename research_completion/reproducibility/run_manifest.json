@@ -1,0 +1,23 @@
+{
+  "run_id": "r01-local-completion-2026-10-20",
+  "generated_utc": "2026-10-21T02:15:37.053483+00:00",
+  "code_commit": "aa42965775d5c3ce57c3752f2996b8eebb764282",
+  "source_sha256": "f1d7265b1856d61812c158d3d03fae686dbff58735deabe016a6bfe23482d2a8",
+  "threads": 2,
+  "peak_logged_rss_mb": 1286.1,
+  "stages": 53,
+  "status": "CONDITIONAL_MORE_EVIDENCE",
+  "execution": "LOCAL WINDOWS AUTHORISED",
+  "evidence_labels": [
+    "REAL-DATA EXECUTION",
+    "SYNTHETIC UNIT TEST",
+    "PUBLIC SOURCE INVESTIGATION",
+    "REUSED PRIOR OUTPUT"
+  ],
+  "limitations": [
+    "All old outcomes inspected; no untouched temporal confirmation",
+    "Strict legacy numerical comparison failed; immutable prior outputs preserved",
+    "Command logs record end-of-run commit and broad code fingerprints; unrelated files changed during some stages",
+    "One roughly seven-second overlap of exiting pilot driver and small joint-inference process; no concurrent memory-intensive fits"
+  ]
+}

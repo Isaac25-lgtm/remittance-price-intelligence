@@ -1,0 +1,8 @@
+{
+  "source_sha256": "f1d7265b1856d61812c158d3d03fae686dbff58735deabe016a6bfe23482d2a8",
+  "cache_sha256": "d371c8b2e09b3f7698803dbfc20b85550f6206e4d30a4974b7a6051060c3493f",
+  "n_rows": 204469,
+  "n_columns": 41,
+  "matches_original_cache_sha256": true,
+  "method": "unchanged original openpyxl rows -> pandas string -> parquet; no quote rows distributed"
+}

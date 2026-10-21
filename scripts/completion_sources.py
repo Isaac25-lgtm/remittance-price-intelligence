@@ -9,6 +9,8 @@ from completion_fetch import fetch
 ROOT=Path(__file__).resolve().parents[1]
 PRIVATE=ROOT/'research_completion/private_runtime/literature'
 SOURCES={
+ 'beck2009.pdf':'https://documents1.worldbank.org/curated/en/730331468338938197/pdf/WPS5072.pdf',
+ 'archive_directory.json':'https://web.archive.org/cdx/search/cdx?url=remittanceprices.worldbank.org/sites/default/files/&matchType=prefix&output=json&filter=statuscode:200&filter=original:.*[rR][pP][wW].*&fl=timestamp,original,digest&collapse=urlkey&limit=2000',
  'imf2022.pdf':'https://www.imf.org/-/media/files/publications/wp/2022/english/wpiea2022063-print-pdf.pdf',
  'beck2011.pdf':'https://documents1.worldbank.org/curated/en/651781468133101391/pdf/WPS5072.pdf',
  'rpw2025q3.pdf':'https://remittanceprices.worldbank.org/sites/default/files/2026-04/RPW_main_report_and_annex_Q325.pdf',

@@ -1,5 +1,11 @@
 # Deployment readiness: R01 research dashboard
 
+## Local completion update — 21 October 2026 (Kampala)
+
+The local app adds a Publication completion section with verified aggregate model scores, all named ridge/spline references, joint dependence sensitivity, all-origin capacity bounds and publication gates. The CSV allowlist in dashboard/app.py maps seven additional filenames into research_completion/models or assessment; tests verify the exact committed download bytes and every section/control. No raw data, training, predictions, provider input or secrets at startup. Analysis date/cutoff and no-operational-model/confirmation notices remain visible. Local Python3.12 tests use Streamlit1.66 and Altair6.3; GitHub CI checks Python3.11.
+
+Hosted new-page verification is **UNVERIFIED**: the browser tool has no browser and the web reader failed. This differs from the verified historical deployment below. See the [current integration ledger](../research_completion/deliverables/git_and_download_links.md) for actual CI/main/ZIP state. A commit does not prove hosted redeployment.
+
 ## Verified deployment — 17 October 2026
 
 Live app: https://isaac-remittance-research.streamlit.app/ . Deployed by the coordinator from reviewed `main` after PR #2 merged (`7dd7281`), using Python 3.11 and no secrets. Browser verification confirmed the overview, retrospective context ribbon, World Bank attribution, all-eight-family model chart and aggregate download controls. CI at the reviewed head passed 96 tests. Source/row-level files were not uploaded. Scientific limitations remain unchanged.

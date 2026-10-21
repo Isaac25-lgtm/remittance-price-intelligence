@@ -1,0 +1,5 @@
+year,model,n,mae,rmse,endpoint,scope
+2022,shrunk_past_provider_corridor_cost_change,4566,0.900648237163051,2.0133392488146167,continuous_next_cost_conditional_reobservation,Annual past-only labels before first origin; shrink10; no within-year refit
+2023,shrunk_past_provider_corridor_cost_change,6993,0.7615970075907829,1.429062997829998,continuous_next_cost_conditional_reobservation,Annual past-only labels before first origin; shrink10; no within-year refit
+2024,shrunk_past_provider_corridor_cost_change,6489,0.6643417728167009,1.2617652974484155,continuous_next_cost_conditional_reobservation,Annual past-only labels before first origin; shrink10; no within-year refit
+2025,shrunk_past_provider_corridor_cost_change,1619,0.7794514585593869,2.3446946234544734,continuous_next_cost_conditional_reobservation,Annual past-only labels before first origin; shrink10; no within-year refit
