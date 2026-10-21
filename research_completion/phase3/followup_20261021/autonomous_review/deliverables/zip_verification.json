@@ -1,0 +1,13 @@
+{
+  "members": 524,
+  "payload_hashes_verified": 523,
+  "crc_verified": true,
+  "sha256": "df059d06e122e3dcd464ccf49f3eef96223a68574931b30a72d18a5822f2fd3f",
+  "bytes": 12002478,
+  "source_commit": "0544aff83d620e11dfe759b0bc1c99a792577825",
+  "prior_followup_sha256": "6a7b7d0cfd837634ce3cda1906ab55c55c9804a1cd928dc4d9cca0682021c4fe",
+  "original_phase3_sha256": "a01def0d701aae0b7f19a89d5ebbf28f7b2b683b2d33eb4ae629d5ba59b5665c",
+  "public_private_separation": "PASS",
+  "downloads_copy_verified": true,
+  "older_archives_unchanged": true
+}
