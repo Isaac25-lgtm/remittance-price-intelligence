@@ -1,5 +1,7 @@
 # CONDITIONAL_HOLD - bounded follow-up decision
 
+> **Current decision:** [CONDITIONAL_HOLD_EXTERNAL_VALIDATION](autonomous_review/FINAL_PUBLICATION_DECISION.md), after completed autonomous investigation of all 60 cases. Human-review availability was withdrawn; no manual adjudication is requested. The pending-review workflow below records the earlier state, not an outstanding execution task.
+
 21 October 2026. This additive assessment supersedes the *current access status* in the original Phase 3 dossier, not its frozen measurements or adverse reproduction results. No operational model and no submission-ready original article.
 
 | Requirement | Current evidence | Decision |

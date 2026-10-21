@@ -1,0 +1,57 @@
+identity_rule,group_field,group,n_eligible,reported,minimum_reported_n
+core,source_era,after_target_2022Q4,18294,True,30
+core,source_era,before_target_2021Q2,16726,True,30
+core,source_era,between_classification_transitions,7595,True,30
+core,source_era,transition_target_2021Q2,1247,True,30
+core,source_era,transition_target_2022Q4,1481,True,30
+core,region,..,1425,True,30
+core,region,east asia & pacific,10837,True,30
+core,region,europe & central asia,5741,True,30
+core,region,latin america & caribbean,3969,True,30
+core,region,middle east & north africa,3326,True,30
+core,region,south asia,14529,True,30
+core,region,sub-saharan africa,5516,True,30
+core,provider_type,bank,4742,True,30
+core,provider_type,bank / money transfer operator,226,True,30
+core,provider_type,bank/post office,20,False,30
+core,provider_type,mobile operator,557,True,30
+core,provider_type,money transfer operator,39079,True,30
+core,provider_type,money transfer operator / post office,267,True,30
+core,provider_type,post office,452,True,30
+core,funding_group,bank_transfer,15035,True,30
+core,funding_group,card,12955,True,30
+core,funding_group,cash,10486,True,30
+core,funding_group,combined_instruments,6236,True,30
+core,funding_group,mobile_money,631,True,30
+core,payout_group,bank_account,22196,True,30
+core,payout_group,cash,20205,True,30
+core,payout_group,mobile_wallet,2882,True,30
+core,payout_group,other,60,True,30
+strict,source_era,after_target_2022Q4,18294,True,30
+strict,source_era,before_target_2021Q2,16726,True,30
+strict,source_era,between_classification_transitions,7595,True,30
+strict,source_era,transition_target_2021Q2,1247,True,30
+strict,source_era,transition_target_2022Q4,1481,True,30
+strict,region,..,1425,True,30
+strict,region,east asia & pacific,10837,True,30
+strict,region,europe & central asia,5741,True,30
+strict,region,latin america & caribbean,3969,True,30
+strict,region,middle east & north africa,3326,True,30
+strict,region,south asia,14529,True,30
+strict,region,sub-saharan africa,5516,True,30
+strict,provider_type,bank,4742,True,30
+strict,provider_type,bank / money transfer operator,226,True,30
+strict,provider_type,bank/post office,20,False,30
+strict,provider_type,mobile operator,557,True,30
+strict,provider_type,money transfer operator,39079,True,30
+strict,provider_type,money transfer operator / post office,267,True,30
+strict,provider_type,post office,452,True,30
+strict,funding_group,bank_transfer,15035,True,30
+strict,funding_group,card,12955,True,30
+strict,funding_group,cash,10486,True,30
+strict,funding_group,combined_instruments,6236,True,30
+strict,funding_group,mobile_money,631,True,30
+strict,payout_group,bank_account,22196,True,30
+strict,payout_group,cash,20205,True,30
+strict,payout_group,mobile_wallet,2882,True,30
+strict,payout_group,other,60,True,30

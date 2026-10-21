@@ -116,3 +116,36 @@ def test_reader_hash_never_implies_full_period_coverage():
     source = exact_source(); source.update(access_status="BROWSER_PARSED_SOURCE_TEXT", origin_coverage="NOT_ESTABLISHED")
     result = r.audit_proposal(dict(target_multiplicity="1"), proposal(), [source])
     assert result["machine_status"] == r.UNRESOLVED
+
+
+def test_public_completion_audit_has_independent_conservation_path():
+    spec = importlib.util.spec_from_file_location("completion_audit", HERE / "audit_completion.py")
+    module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+    assert module.public_checks()["denominator_checks"] == "PASS"
+    legacy = module.legacy_checks()
+    assert legacy["differs"] == 14 and legacy["numeric_or_rank_tables"] == 12
+
+
+def test_reported_documentary_counts_match_frozen_aggregate():
+    import csv
+    from collections import Counter
+    with (HERE/"AUTOMATED_FINDINGS_AGGREGATED.csv").open(encoding="utf8") as f:
+        rows = list(csv.DictReader(f))
+    grades = Counter()
+    for row in rows: grades[row["support_grade"]] += int(row["cases"])
+    assert grades == Counter(B=2,C=47,D=11)
+    text = (HERE/"REVIEW_FEASIBILITY.md").read_text(encoding="utf8")
+    for phrase in ["0/60 (0%)", "2/60 (3.33%)", "47/60 (78.33%)", "11/60 (18.33%)"]:
+        assert phrase in text
+
+
+@pytest.mark.parametrize("name,data", [
+    ("public/cases.csv", b"case_id,origin_firm\nSYNTHETIC-1,Example\n"),
+    ("research_completion/phase3/private_runtime/evidence.txt", b"private"),
+    ("public/reading_copy.pdf", b"%PDF-test"),
+    ("public/summary.md", b"R01P3-999 confidential association"),
+    ("../outside.txt", b"unsafe path")])
+def test_new_public_package_rejects_confidential_payloads(name, data):
+    spec=importlib.util.spec_from_file_location("autonomous_package", HERE/"build_handoff.py")
+    package=importlib.util.module_from_spec(spec);spec.loader.exec_module(package)
+    with pytest.raises(AssertionError):package.check_public({name:data})

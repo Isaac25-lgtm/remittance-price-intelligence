@@ -31,6 +31,7 @@
 > not necessarily left the market. The analysis is retrospective: every test year was inspected before the final
 > model selection, and the historical release dates of survey waves cannot be verified. **No operational model is
 > claimed, the work has not been peer reviewed, and the current decision is `CONDITIONAL_HOLD`.**
+> Matching refers to explicit recorded keys; the historical investigation did not verify stable economic products.
 
 ---
 
@@ -38,7 +39,7 @@
 
 | | Result | What it is |
 |---|---|---|
-| **81.1%** | 29,546 of 36,429 matched quotes stay ≤3% | Continuity among cheap quotes whose exact service is found again next quarter |
+| **81.1%** | 29,546 of 36,429 matched quotes stay ≤3% | Continuity among cheap quotes linked by the specified recorded key next quarter |
 | **65.2% – 84.8%** | 8,914 of 45,343 cheap quotes have no observable successor | Range the all-quote share must lie in, with no assumption about the missing |
 | **+12.9 pp** | Strict identity: 54.6% – 87.2% | Extra width when a change in speed or network breaks the link; the matched estimate barely moves (81.0%) |
 | **92.2%** | 8,189 of 8,879 resurveyed corridor-quarters | Corridors still showing at least one surveyed quote ≤3%: a monitoring quantity, not the same offer |
@@ -183,9 +184,10 @@ flowchart LR
 ## Verdict and publication gates
 
 **`CONDITIONAL_HOLD`.** Historical service identity and substantial scientific contribution remain unresolved.
-The [21 October external-evidence follow-up](research_completion/phase3/followup_20261021/HANDOFF.md)
-locates and reviews Lim's author v1.1 full text and code, and verifies official Q2 2021/Q4 2022
-classification changes. These resolve specific access/context questions without establishing economic-product identity.
+The [completed autonomous evidence investigation](research_completion/phase3/followup_20261021/autonomous_review/README.md)
+retains all 60 cases as unresolved after historical-source assessment and adversarial software checks.
+Documentary grades A/B/C/D are 0/2/47/11; human adjudications remain zero. Lim's author v1.1 and official
+classification changes have been reviewed, but economic-product identity and substantial novelty remain unconfirmed.
 
 | Gate | Status |
 |---|---|
@@ -197,14 +199,14 @@ classification changes. These resolve specific access/context questions without 
 | Robust model superiority and operational value | ❌ Not established |
 | Lim author v1.1 full-text access and exact overlap assessment | ✅ Reviewed; exact endpoint not found in inspected version |
 | Substantial claim-specific novelty | ⏳ Unconfirmed; different endpoint alone is insufficient |
-| External economic-service identity validation (60 blinded cases prepared) | ⏳ Unresolved, needs human review |
+| Historical documentary investigation (all 60 cases completed) | Unresolved: no full two-quarter bundle support; no human validation |
 | Submission-ready manuscript | ⏳ Not justified yet |
 
-**Next step:** the investigator has volunteered to review the 60 blinded identity cases using historical
-evidence. Then assess whether a consequential original measurement contribution survives. If it does,
-develop a measurement-focused manuscript from the [conditional dossier](research_completion/phase3/manuscript/conditional_research_dossier.md).
-The [current follow-up verdict](research_completion/phase3/followup_20261021/PUBLICATION_VERDICT.md)
-updates the [original Phase 3 gate snapshot](research_completion/phase3/assessment/PUBLICATION_GATE_MATRIX.csv).
+**Current decision:** `CONDITIONAL_HOLD_EXTERNAL_VALIDATION`; **do not submit the original article now**.
+The feasible autonomous investigation is complete at its evidentiary limit; no manual case review is requested.
+Read the [final decision](research_completion/phase3/followup_20261021/autonomous_review/FINAL_PUBLICATION_DECISION.md)
+and [updated conditional dossier](research_completion/phase3/followup_20261021/autonomous_review/conditional_research_dossier.md).
+The [original Phase 3 gate snapshot](research_completion/phase3/assessment/PUBLICATION_GATE_MATRIX.csv) remains a dated record.
 
 ## Research dashboard
 

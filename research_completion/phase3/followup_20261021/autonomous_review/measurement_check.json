@@ -1,0 +1,12 @@
+{
+  "phase3_raw_source_hash": "f1d7265b1856d61812c158d3d03fae686dbff58735deabe016a6bfe23482d2a8",
+  "cached_records": 204469,
+  "primary_counts_unchanged": true,
+  "n_origins": 45343,
+  "core_valid": 36429,
+  "strict_valid": 30570,
+  "newly_unknown": 5859,
+  "new_classifier_fits": 0,
+  "estimates_replaced_by_machine_labels": false,
+  "scope": "POST_FREEZE_FINITE_PANEL_DESCRIPTIONS_NO_CAUSAL_TEST"
+}

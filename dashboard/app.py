@@ -982,26 +982,27 @@ def verdict():
                "substantially widen all-origin bounds while leaving matched continuity almost unchanged. Substantial "
                "novelty and externally validated service identity are not yet demonstrated. No operational model is "
                "selected and no submission-ready manuscript is claimed. "
-               f"<a href='{REPO_URL}/blob/main/research_completion/phase3/followup_20261021/PUBLICATION_VERDICT.md'>"
+               f"<a href='{REPO_URL}/blob/main/research_completion/phase3/followup_20261021/autonomous_review/FINAL_PUBLICATION_DECISION.md'>"
                "Read the current follow-up verdict</a>.", "caution")
     ui.callout("<b>External-evidence update, 21 October:</b> Lim's complete author v1.1 manuscript and code "
                "have now been reviewed; the exact continuity/bounds contrast was not found. Official Q2 2021 and "
-               "Q4 2022 classification changes were verified. Substantial novelty remains unconfirmed and the "
-               "investigator's blinded historical identity review is pending.", "info")
+               "Q4 2022 classification changes were verified. The autonomous historical investigation is complete: "
+               "all 60 cases remain unresolved (grades A/B/C/D: 0/2/47/11). No human validation occurred. "
+               "Substantial novelty remains unconfirmed; no manual case review is requested.", "info")
     st.subheader("Original Phase 3 gate snapshot (before external-evidence follow-up)")
     ui.gate_rows(table("PUBLICATION_GATE_MATRIX.csv"))
     download("PUBLICATION_GATE_MATRIX.csv", "gates3")
-    st.subheader("What would change the decision")
+    st.subheader("Evidence and remaining limits")
     ui.cards([
         ("Evidence obtained", "Author v1.1 reviewed",
          "<p>Lim's full manuscript, replication code and reported outputs were read. Exact endpoint overlap was "
          "not found in that version; this does not establish substantial novelty.</p>"),
-        ("Next step 2", "Blinded human identity review",
-         "<p>Adjudicate the prepared 60-case blinded sample. If links cannot represent comparable offers, the "
-         "measurement claim falls.</p>"),
-        ("Next step 3", "Author decision",
-         "<p>Assess historical comparability and substantial contribution after review. Develop a narrowly framed "
-         "measurement manuscript only if supported; otherwise retain a documented negative.</p>"),
+        ("Investigation complete", "60 unresolved cases",
+         "<p>Historical documents give partial or contextual support. None establishes the full bundle in both "
+         "quarters. Machine consistency checks are not independent human validation.</p>"),
+        ("Publication decision", "Conditional hold",
+         "<p>Do not submit the original article now. Product interpretation and substantial originality remain "
+         "unconfirmed. The completed conditional dossier preserves the defensible record-based findings.</p>"),
     ], accent=YELLOW)
     st.subheader("Phase 2 completion record")
     st.caption(f"Analysis: {notice['analysis_date']} UTC; source cutoff: 2025Q3 (2025Q2 absent). "
@@ -1055,7 +1056,7 @@ def reproducibility():
          "made. All test years were inspected before Phase 2.</p>"),
         ("Identity", "Exact keys only",
          "<p>Normalised exact matching probably under-links renamed services and may merge distinct offerings. No "
-         "human adjudication has been done yet.</p>"),
+         "human adjudication occurred; all 60 autonomous documentary assessments remain unresolved.</p>"),
         ("Missingness", "Unknown ≠ exit",
          "<p>Bounds are wide because missing successors can reflect coverage, metadata changes or price availability. "
          "None is assumed.</p>"),

@@ -1,0 +1,37 @@
+{
+  "audit_type": "INDEPENDENT_CODE_PATH_NOT_INDEPENDENT_HUMAN_REVIEW",
+  "public": {
+    "sample_cases": 60,
+    "strata": 5,
+    "grades": {
+      "C": 47,
+      "D": 11,
+      "B": 2
+    },
+    "denominator_checks": "PASS",
+    "source_era_and_group_reconciliation": "PASS",
+    "human_validation": false
+  },
+  "legacy": {
+    "tables": 30,
+    "exact": 14,
+    "timing_only": 2,
+    "differs": 14,
+    "numeric_or_rank_tables": 12,
+    "metadata_tables": 2,
+    "root_numeric_cause": "UNRESOLVED",
+    "refits": 0,
+    "files": {
+      "STRICT_LEGACY_COMPARISON.csv": "b5b8e7f5a1efc381f3af8fb6d7d324b3c5960a877422aedfbd522f9a70d05981",
+      "LEGACY_DIFFERENCE_CAUSES.csv": "3b9babff378e16cbb44d940c7d0ad77533fcc4946e60c6244bfa40e43e915eed",
+      "LEGACY_FIELD_DIFFERENCES.csv": "5086aaf06ddeced88272b81efbf97e48dee4a297cfb33e141af3b97413c7816b"
+    }
+  },
+  "private": {
+    "case_ids_conserved": 60,
+    "case_source_rows": 185,
+    "source_records": 65,
+    "sealed_file_and_reading_copy_hashes": "PASS",
+    "human_fields_untouched": true
+  }
+}

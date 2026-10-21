@@ -1,0 +1,16 @@
+{
+  "case_count": 60,
+  "status_counts": {
+    "UNRESOLVED_INSUFFICIENT_HISTORICAL_EVIDENCE": 60
+  },
+  "grade_counts": {
+    "C": 47,
+    "D": 11,
+    "B": 2
+  },
+  "frozen_manifest_sha256": "c89988e86d756ce562b5b68715114dca2d6a903498d52ad54dd32f23d4a782df",
+  "evidence_table_sha256": "6cccafb325a22d23189b988f4b6c4737df2482755c610c6f46e0140b613cbf3c",
+  "script_commit": "524d5a17a12e9c0b8fb7011876126e4d8d860c35",
+  "human_adjudications": 0,
+  "external_validation": false
+}

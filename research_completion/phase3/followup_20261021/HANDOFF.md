@@ -1,5 +1,7 @@
 # Remittance AI: bounded external-evidence handoff
 
+> **Superseded execution instructions:** the investigator withdrew availability for manual reviews. The [completed autonomous handoff](autonomous_review/HANDOFF.md) and [final decision](autonomous_review/FINAL_PUBLICATION_DECISION.md) are current. All 60 machine documentary assessments remain unresolved; no human validation. The manual-review requests below are a historical snapshot, not current instructions. The earlier ZIP remains immutable.
+
 **21 October 2026. Verdict: CONDITIONAL_HOLD.** Continue the completed Phase 3 investigation; do not restart or refit the model searches. [Current evidence-based verdict](PUBLICATION_VERDICT.md).
 
 ## What advanced
