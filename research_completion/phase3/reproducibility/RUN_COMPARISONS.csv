@@ -1,0 +1,9 @@
+comparison,model,n,same_input,same_transformed_input,exact_predictions,max_abs_probability_difference,brier_difference,strict_atol,strict_rtol
+locked_real,ridge,4566,True,True,True,0.0,0.0,0.0,0.0
+locked_real,spline,4566,True,True,True,0.0,0.0,0.0,0.0
+locked_fixture,ridge,80,True,True,True,0.0,0.0,0.0,0.0
+locked_fixture,spline,80,True,True,True,0.0,0.0,0.0,0.0
+base_fixture,ridge,80,True,True,True,0.0,0.0,0.0,0.0
+base_fixture,spline,80,True,True,True,0.0,0.0,0.0,0.0
+cross_dependency_fixture_only,ridge,80,,,True,0.0,0.0,1e-09,1e-09
+cross_dependency_fixture_only,spline,80,,,True,0.0,0.0,1e-09,1e-09

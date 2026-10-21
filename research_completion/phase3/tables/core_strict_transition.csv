@@ -1,0 +1,11 @@
+state_core,state_strict,n
+corridor_not_surveyed,corridor_not_surveyed,1759
+fail,fail,5794
+fail,strict_attributes_changed,1089
+invalid_target_cost,invalid_target_cost,365
+invalid_target_cost,strict_attributes_changed,97
+origin_key_ambiguous,origin_key_ambiguous,2290
+service_not_observed,service_not_observed,4337
+stay,stay,24776
+stay,strict_attributes_changed,4770
+target_key_ambiguous,target_key_ambiguous,66

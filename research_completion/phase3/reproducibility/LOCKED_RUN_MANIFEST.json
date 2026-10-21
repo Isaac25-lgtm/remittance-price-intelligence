@@ -1,0 +1,510 @@
+{
+  "generated_utc": "2026-10-21T03:34:40.828257+00:00",
+  "source_commit": "4400b27ded7d01b90c3f02ec16cbbb862f348c3b",
+  "baseline_commit": "c0ef4fddbef78a47f9f274df78ab68d622da8d8e",
+  "source_sha256": "f1d7265b1856d61812c158d3d03fae686dbff58735deabe016a6bfe23482d2a8",
+  "code_hashes": {
+    "research_completion/phase3/code/dossier.py": "4b1cdba08f655615070845b43cdeec57b680cf30da42f03a5c01e635ce2ac522",
+    "research_completion/phase3/code/figures.py": "c3816aa27e7fdd45f077e978fb0c35c87e29dc1462ca4b455a6fed56e50bc172",
+    "research_completion/phase3/code/final_audit.py": "6eeb28828d947811e91d09bba29d409c86f724614c0032edbf1429bbc5707271",
+    "research_completion/phase3/code/identity_audit.py": "1d492fefcb64e86408533e3bbdb0c08bd9ab43714bce308e76dd70cc5dab0d49",
+    "research_completion/phase3/code/inference.py": "60e8e5f8ba285ca67c4f8ae51779c564e1afccb8f4b56ba6b4dc6dd4b562b717",
+    "research_completion/phase3/code/literature.py": "f926179df3af9403bae1a95dac7392ae25894d52930f65c1b18c428ac329af6a",
+    "research_completion/phase3/code/measurement.py": "273194fdf680f2da5599c78ef4d54e40cfa8e5628d3dabeba0e27f5eb127792f",
+    "research_completion/phase3/code/package.py": "71f12800a6c88b65fe5f65c28aa90e01d8218e64ee6114f97d5b313124a78215",
+    "research_completion/phase3/code/reproduction.py": "321bf4e2f70d0f162af1fa6887eacf67ec56d4931642a253c099d80d00719c43",
+    "research_completion/phase3/code/run.py": "79300a6ae7df6283f59754902d85404a5e842bfac7bf39ece42151406517cdff",
+    "research_completion/phase3/code/sources.py": "847f08594c42c4823fd75917a594e7d6cd2b3d6794416ca5c824dddd2bcb329b",
+    "research_completion/phase3/code/test_science.py": "1760ba0d85af79bbf2a6419b55286ed84cbeca35ebf3fcb2196953d890f52ec1",
+    "src/rpi/linkage.py": "3231f93a8ab4ea5fa4e9ef917bc448c24e20433a75f081534e0b21cb6c0b7d15",
+    "configs/experiment.yaml": "22f0bae692db34bb8d44e1d8f650fb9e76ef7d08b2a310832367538ed565ebb7"
+  },
+  "commands": [
+    {
+      "stage": "independent_measurement",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "research_completion/phase3/code/measurement.py"
+      ],
+      "start_utc": "2026-10-21T03:02:33.677798+00:00",
+      "code_commit": "4400b27ded7d01b90c3f02ec16cbbb862f348c3b",
+      "code_hashes": {
+        "research_completion\\phase3\\code\\measurement.py": "c3121f544093e904338b81566a7b9141726724b7f7931233db908fc1425da4fd",
+        "research_completion\\phase3\\code\\run.py": "79300a6ae7df6283f59754902d85404a5e842bfac7bf39ece42151406517cdff"
+      },
+      "available_mb": 1425.1,
+      "exit_code": 0,
+      "seconds": 143.7,
+      "peak_rss_mb": 377.9,
+      "end_utc": "2026-10-21T03:04:57.428129+00:00",
+      "code_changed": false
+    },
+    {
+      "stage": "locked_real_1",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "research_completion/phase3/code/reproduction.py",
+        "locked_real_1"
+      ],
+      "start_utc": "2026-10-21T03:06:01.164939+00:00",
+      "code_commit": "4400b27ded7d01b90c3f02ec16cbbb862f348c3b",
+      "code_hashes": {
+        "research_completion\\phase3\\code\\measurement.py": "c3121f544093e904338b81566a7b9141726724b7f7931233db908fc1425da4fd",
+        "research_completion\\phase3\\code\\reproduction.py": "0b590360538ad0eb931d79494437cfddc17f60c85f49a7355b0a18a7737da546",
+        "research_completion\\phase3\\code\\run.py": "79300a6ae7df6283f59754902d85404a5e842bfac7bf39ece42151406517cdff",
+        "research_completion\\phase3\\code\\sources.py": "847f08594c42c4823fd75917a594e7d6cd2b3d6794416ca5c824dddd2bcb329b"
+      },
+      "available_mb": 1311.5,
+      "exit_code": 0,
+      "seconds": 8.72,
+      "peak_rss_mb": 282.7,
+      "end_utc": "2026-10-21T03:06:09.940517+00:00",
+      "code_changed": false
+    },
+    {
+      "stage": "locked_real_2",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "research_completion/phase3/code/reproduction.py",
+        "locked_real_2"
+      ],
+      "start_utc": "2026-10-21T03:06:19.276955+00:00",
+      "code_commit": "4400b27ded7d01b90c3f02ec16cbbb862f348c3b",
+      "code_hashes": {
+        "research_completion\\phase3\\code\\measurement.py": "c3121f544093e904338b81566a7b9141726724b7f7931233db908fc1425da4fd",
+        "research_completion\\phase3\\code\\reproduction.py": "0b590360538ad0eb931d79494437cfddc17f60c85f49a7355b0a18a7737da546",
+        "research_completion\\phase3\\code\\run.py": "79300a6ae7df6283f59754902d85404a5e842bfac7bf39ece42151406517cdff",
+        "research_completion\\phase3\\code\\sources.py": "847f08594c42c4823fd75917a594e7d6cd2b3d6794416ca5c824dddd2bcb329b"
+      },
+      "available_mb": 1318.9,
+      "exit_code": 0,
+      "seconds": 7.17,
+      "peak_rss_mb": 302.4,
+      "end_utc": "2026-10-21T03:06:26.501264+00:00",
+      "code_changed": false
+    },
+    {
+      "stage": "locked_fixture_1",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "research_completion/phase3/code/reproduction.py",
+        "locked_fixture_1",
+        "--fixture"
+      ],
+      "start_utc": "2026-10-21T03:06:27.369540+00:00",
+      "code_commit": "4400b27ded7d01b90c3f02ec16cbbb862f348c3b",
+      "code_hashes": {
+        "research_completion\\phase3\\code\\measurement.py": "c3121f544093e904338b81566a7b9141726724b7f7931233db908fc1425da4fd",
+        "research_completion\\phase3\\code\\reproduction.py": "0b590360538ad0eb931d79494437cfddc17f60c85f49a7355b0a18a7737da546",
+        "research_completion\\phase3\\code\\run.py": "79300a6ae7df6283f59754902d85404a5e842bfac7bf39ece42151406517cdff",
+        "research_completion\\phase3\\code\\sources.py": "847f08594c42c4823fd75917a594e7d6cd2b3d6794416ca5c824dddd2bcb329b"
+      },
+      "available_mb": 1329.6,
+      "exit_code": 0,
+      "seconds": 5.66,
+      "peak_rss_mb": 166.9,
+      "end_utc": "2026-10-21T03:06:33.089382+00:00",
+      "code_changed": false
+    },
+    {
+      "stage": "source_verification",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "research_completion/phase3/code/sources.py"
+      ],
+      "start_utc": "2026-10-21T03:05:35.752093+00:00",
+      "code_commit": "4400b27ded7d01b90c3f02ec16cbbb862f348c3b",
+      "code_hashes": {
+        "research_completion\\phase3\\code\\measurement.py": "c3121f544093e904338b81566a7b9141726724b7f7931233db908fc1425da4fd",
+        "research_completion\\phase3\\code\\reproduction.py": "0b590360538ad0eb931d79494437cfddc17f60c85f49a7355b0a18a7737da546",
+        "research_completion\\phase3\\code\\run.py": "79300a6ae7df6283f59754902d85404a5e842bfac7bf39ece42151406517cdff",
+        "research_completion\\phase3\\code\\sources.py": "847f08594c42c4823fd75917a594e7d6cd2b3d6794416ca5c824dddd2bcb329b"
+      },
+      "available_mb": 1462.5,
+      "exit_code": 0,
+      "seconds": 60.02,
+      "peak_rss_mb": 118.1,
+      "end_utc": "2026-10-21T03:06:35.812420+00:00",
+      "code_changed": false
+    },
+    {
+      "stage": "locked_fixture_2",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "research_completion/phase3/code/reproduction.py",
+        "locked_fixture_2",
+        "--fixture"
+      ],
+      "start_utc": "2026-10-21T03:06:33.844520+00:00",
+      "code_commit": "4400b27ded7d01b90c3f02ec16cbbb862f348c3b",
+      "code_hashes": {
+        "research_completion\\phase3\\code\\measurement.py": "c3121f544093e904338b81566a7b9141726724b7f7931233db908fc1425da4fd",
+        "research_completion\\phase3\\code\\reproduction.py": "0b590360538ad0eb931d79494437cfddc17f60c85f49a7355b0a18a7737da546",
+        "research_completion\\phase3\\code\\run.py": "79300a6ae7df6283f59754902d85404a5e842bfac7bf39ece42151406517cdff",
+        "research_completion\\phase3\\code\\sources.py": "847f08594c42c4823fd75917a594e7d6cd2b3d6794416ca5c824dddd2bcb329b"
+      },
+      "available_mb": 1280.3,
+      "exit_code": 0,
+      "seconds": 5.14,
+      "peak_rss_mb": 166.6,
+      "end_utc": "2026-10-21T03:06:39.030890+00:00",
+      "code_changed": false
+    },
+    {
+      "stage": "base_fixture_1",
+      "command": [
+        "python",
+        "research_completion/phase3/code/reproduction.py",
+        "base_fixture_1",
+        "--fixture"
+      ],
+      "start_utc": "2026-10-21T03:06:39.859823+00:00",
+      "code_commit": "4400b27ded7d01b90c3f02ec16cbbb862f348c3b",
+      "code_hashes": {
+        "research_completion\\phase3\\code\\measurement.py": "c3121f544093e904338b81566a7b9141726724b7f7931233db908fc1425da4fd",
+        "research_completion\\phase3\\code\\reproduction.py": "0b590360538ad0eb931d79494437cfddc17f60c85f49a7355b0a18a7737da546",
+        "research_completion\\phase3\\code\\run.py": "79300a6ae7df6283f59754902d85404a5e842bfac7bf39ece42151406517cdff",
+        "research_completion\\phase3\\code\\sources.py": "847f08594c42c4823fd75917a594e7d6cd2b3d6794416ca5c824dddd2bcb329b"
+      },
+      "available_mb": 1390.8,
+      "exit_code": 0,
+      "seconds": 5.62,
+      "peak_rss_mb": 155.2,
+      "end_utc": "2026-10-21T03:06:45.619696+00:00",
+      "code_changed": false
+    },
+    {
+      "stage": "base_fixture_2",
+      "command": [
+        "python",
+        "research_completion/phase3/code/reproduction.py",
+        "base_fixture_2",
+        "--fixture"
+      ],
+      "start_utc": "2026-10-21T03:06:46.421505+00:00",
+      "code_commit": "4400b27ded7d01b90c3f02ec16cbbb862f348c3b",
+      "code_hashes": {
+        "research_completion\\phase3\\code\\measurement.py": "c3121f544093e904338b81566a7b9141726724b7f7931233db908fc1425da4fd",
+        "research_completion\\phase3\\code\\reproduction.py": "0b590360538ad0eb931d79494437cfddc17f60c85f49a7355b0a18a7737da546",
+        "research_completion\\phase3\\code\\run.py": "79300a6ae7df6283f59754902d85404a5e842bfac7bf39ece42151406517cdff",
+        "research_completion\\phase3\\code\\sources.py": "847f08594c42c4823fd75917a594e7d6cd2b3d6794416ca5c824dddd2bcb329b"
+      },
+      "available_mb": 1391.6,
+      "exit_code": 0,
+      "seconds": 4.64,
+      "peak_rss_mb": 152.1,
+      "end_utc": "2026-10-21T03:06:51.115256+00:00",
+      "code_changed": false
+    },
+    {
+      "stage": "strict_and_repeat_comparison",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "research_completion/phase3/code/reproduction.py",
+        "compare"
+      ],
+      "start_utc": "2026-10-21T03:06:51.892312+00:00",
+      "code_commit": "4400b27ded7d01b90c3f02ec16cbbb862f348c3b",
+      "code_hashes": {
+        "research_completion\\phase3\\code\\measurement.py": "c3121f544093e904338b81566a7b9141726724b7f7931233db908fc1425da4fd",
+        "research_completion\\phase3\\code\\reproduction.py": "0b590360538ad0eb931d79494437cfddc17f60c85f49a7355b0a18a7737da546",
+        "research_completion\\phase3\\code\\run.py": "79300a6ae7df6283f59754902d85404a5e842bfac7bf39ece42151406517cdff",
+        "research_completion\\phase3\\code\\sources.py": "847f08594c42c4823fd75917a594e7d6cd2b3d6794416ca5c824dddd2bcb329b"
+      },
+      "available_mb": 1403.3,
+      "exit_code": 0,
+      "seconds": 5.64,
+      "peak_rss_mb": 165.6,
+      "end_utc": "2026-10-21T03:06:57.584280+00:00",
+      "code_changed": false
+    },
+    {
+      "stage": "paired_measurement_and_model_inference",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "research_completion/phase3/code/inference.py"
+      ],
+      "start_utc": "2026-10-21T03:08:46.176960+00:00",
+      "code_commit": "4400b27ded7d01b90c3f02ec16cbbb862f348c3b",
+      "code_hashes": {
+        "research_completion\\phase3\\code\\inference.py": "60e8e5f8ba285ca67c4f8ae51779c564e1afccb8f4b56ba6b4dc6dd4b562b717",
+        "research_completion\\phase3\\code\\measurement.py": "273194fdf680f2da5599c78ef4d54e40cfa8e5628d3dabeba0e27f5eb127792f",
+        "research_completion\\phase3\\code\\reproduction.py": "799bfd57fb41bb76098cf6392a823bb777e14e40ddf3a06bb32fbe1e1e69eeee",
+        "research_completion\\phase3\\code\\run.py": "79300a6ae7df6283f59754902d85404a5e842bfac7bf39ece42151406517cdff",
+        "research_completion\\phase3\\code\\sources.py": "847f08594c42c4823fd75917a594e7d6cd2b3d6794416ca5c824dddd2bcb329b"
+      },
+      "available_mb": 1107.4,
+      "exit_code": 0,
+      "seconds": 3.61,
+      "peak_rss_mb": 134.4,
+      "end_utc": "2026-10-21T03:08:49.835647+00:00",
+      "code_changed": false
+    },
+    {
+      "stage": "review_form_completion",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "-c",
+        "import sys; sys.path.insert(0,'research_completion/phase3/code'); import measurement as m; r=m.load_source(); d,e,c,v=m.construct(r); m.make_review(r,v); print('60 blinded cases; alternate metadata candidates and separate private stratum key; no adjudication')"
+      ],
+      "start_utc": "2026-10-21T03:08:36.094986+00:00",
+      "code_commit": "4400b27ded7d01b90c3f02ec16cbbb862f348c3b",
+      "code_hashes": {
+        "research_completion\\phase3\\code\\inference.py": "60e8e5f8ba285ca67c4f8ae51779c564e1afccb8f4b56ba6b4dc6dd4b562b717",
+        "research_completion\\phase3\\code\\measurement.py": "273194fdf680f2da5599c78ef4d54e40cfa8e5628d3dabeba0e27f5eb127792f",
+        "research_completion\\phase3\\code\\reproduction.py": "799bfd57fb41bb76098cf6392a823bb777e14e40ddf3a06bb32fbe1e1e69eeee",
+        "research_completion\\phase3\\code\\run.py": "79300a6ae7df6283f59754902d85404a5e842bfac7bf39ece42151406517cdff",
+        "research_completion\\phase3\\code\\sources.py": "847f08594c42c4823fd75917a594e7d6cd2b3d6794416ca5c824dddd2bcb329b"
+      },
+      "available_mb": 1417.6,
+      "exit_code": 0,
+      "seconds": 15.89,
+      "peak_rss_mb": 321.8,
+      "end_utc": "2026-10-21T03:08:52.037539+00:00",
+      "code_changed": false
+    },
+    {
+      "stage": "strict_comparator_expected_failure",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "research_completion/phase3/code/reproduction.py",
+        "compare"
+      ],
+      "start_utc": "2026-10-21T03:08:50.627031+00:00",
+      "code_commit": "4400b27ded7d01b90c3f02ec16cbbb862f348c3b",
+      "code_hashes": {
+        "research_completion\\phase3\\code\\inference.py": "60e8e5f8ba285ca67c4f8ae51779c564e1afccb8f4b56ba6b4dc6dd4b562b717",
+        "research_completion\\phase3\\code\\measurement.py": "273194fdf680f2da5599c78ef4d54e40cfa8e5628d3dabeba0e27f5eb127792f",
+        "research_completion\\phase3\\code\\reproduction.py": "799bfd57fb41bb76098cf6392a823bb777e14e40ddf3a06bb32fbe1e1e69eeee",
+        "research_completion\\phase3\\code\\run.py": "79300a6ae7df6283f59754902d85404a5e842bfac7bf39ece42151406517cdff",
+        "research_completion\\phase3\\code\\sources.py": "847f08594c42c4823fd75917a594e7d6cd2b3d6794416ca5c824dddd2bcb329b"
+      },
+      "available_mb": 1091.6,
+      "exit_code": 1,
+      "seconds": 5.12,
+      "peak_rss_mb": 165.5,
+      "end_utc": "2026-10-21T03:08:55.816744+00:00",
+      "code_changed": false
+    },
+    {
+      "stage": "identity_field_audit",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "research_completion/phase3/code/identity_audit.py"
+      ],
+      "start_utc": "2026-10-21T03:13:06.123605+00:00",
+      "code_commit": "4400b27ded7d01b90c3f02ec16cbbb862f348c3b",
+      "code_hashes": {
+        "research_completion\\phase3\\code\\identity_audit.py": "1d492fefcb64e86408533e3bbdb0c08bd9ab43714bce308e76dd70cc5dab0d49",
+        "research_completion\\phase3\\code\\inference.py": "60e8e5f8ba285ca67c4f8ae51779c564e1afccb8f4b56ba6b4dc6dd4b562b717",
+        "research_completion\\phase3\\code\\measurement.py": "273194fdf680f2da5599c78ef4d54e40cfa8e5628d3dabeba0e27f5eb127792f",
+        "research_completion\\phase3\\code\\reproduction.py": "799bfd57fb41bb76098cf6392a823bb777e14e40ddf3a06bb32fbe1e1e69eeee",
+        "research_completion\\phase3\\code\\run.py": "79300a6ae7df6283f59754902d85404a5e842bfac7bf39ece42151406517cdff",
+        "research_completion\\phase3\\code\\sources.py": "847f08594c42c4823fd75917a594e7d6cd2b3d6794416ca5c824dddd2bcb329b",
+        "research_completion\\phase3\\code\\test_science.py": "faa8d27f1933bb22da6be5bb5295a25f66c4ea98a0509ae1cbe8ebde2824801c"
+      },
+      "available_mb": 1239.7,
+      "exit_code": 0,
+      "seconds": 28.64,
+      "peak_rss_mb": 320.5,
+      "end_utc": "2026-10-21T03:13:34.816523+00:00",
+      "code_changed": false
+    },
+    {
+      "stage": "base_real_numerical_probe",
+      "command": [
+        "python",
+        "research_completion/phase3/code/reproduction.py",
+        "base_real_1"
+      ],
+      "start_utc": "2026-10-21T03:15:02.843782+00:00",
+      "code_commit": "4400b27ded7d01b90c3f02ec16cbbb862f348c3b",
+      "code_hashes": {
+        "research_completion\\phase3\\code\\identity_audit.py": "1d492fefcb64e86408533e3bbdb0c08bd9ab43714bce308e76dd70cc5dab0d49",
+        "research_completion\\phase3\\code\\inference.py": "60e8e5f8ba285ca67c4f8ae51779c564e1afccb8f4b56ba6b4dc6dd4b562b717",
+        "research_completion\\phase3\\code\\measurement.py": "273194fdf680f2da5599c78ef4d54e40cfa8e5628d3dabeba0e27f5eb127792f",
+        "research_completion\\phase3\\code\\reproduction.py": "321bf4e2f70d0f162af1fa6887eacf67ec56d4931642a253c099d80d00719c43",
+        "research_completion\\phase3\\code\\run.py": "79300a6ae7df6283f59754902d85404a5e842bfac7bf39ece42151406517cdff",
+        "research_completion\\phase3\\code\\sources.py": "847f08594c42c4823fd75917a594e7d6cd2b3d6794416ca5c824dddd2bcb329b",
+        "research_completion\\phase3\\code\\test_science.py": "61bcf2f86eb12c2e0d1f8e5ab11f2d0f8f8326896820a084fba7c146bb95a8f1"
+      },
+      "available_mb": 1339.2,
+      "exit_code": 0,
+      "seconds": 6.67,
+      "peak_rss_mb": 254.7,
+      "end_utc": "2026-10-21T03:15:09.561559+00:00",
+      "code_changed": false
+    },
+    {
+      "stage": "tight_solver_probe",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "research_completion/phase3/code/reproduction.py",
+        "tight_real_1",
+        "--tight"
+      ],
+      "start_utc": "2026-10-21T03:15:36.287678+00:00",
+      "code_commit": "4400b27ded7d01b90c3f02ec16cbbb862f348c3b",
+      "code_hashes": {
+        "research_completion\\phase3\\code\\identity_audit.py": "1d492fefcb64e86408533e3bbdb0c08bd9ab43714bce308e76dd70cc5dab0d49",
+        "research_completion\\phase3\\code\\inference.py": "60e8e5f8ba285ca67c4f8ae51779c564e1afccb8f4b56ba6b4dc6dd4b562b717",
+        "research_completion\\phase3\\code\\measurement.py": "273194fdf680f2da5599c78ef4d54e40cfa8e5628d3dabeba0e27f5eb127792f",
+        "research_completion\\phase3\\code\\reproduction.py": "321bf4e2f70d0f162af1fa6887eacf67ec56d4931642a253c099d80d00719c43",
+        "research_completion\\phase3\\code\\run.py": "79300a6ae7df6283f59754902d85404a5e842bfac7bf39ece42151406517cdff",
+        "research_completion\\phase3\\code\\sources.py": "847f08594c42c4823fd75917a594e7d6cd2b3d6794416ca5c824dddd2bcb329b",
+        "research_completion\\phase3\\code\\test_science.py": "61bcf2f86eb12c2e0d1f8e5ab11f2d0f8f8326896820a084fba7c146bb95a8f1"
+      },
+      "available_mb": 1348.2,
+      "exit_code": 0,
+      "seconds": 12.88,
+      "peak_rss_mb": 280.5,
+      "end_utc": "2026-10-21T03:15:49.221287+00:00",
+      "code_changed": false
+    },
+    {
+      "stage": "literature_dossier",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "research_completion/phase3/code/literature.py"
+      ],
+      "start_utc": "2026-10-21T03:26:14.771256+00:00",
+      "code_commit": "4400b27ded7d01b90c3f02ec16cbbb862f348c3b",
+      "code_hashes": {
+        "research_completion\\phase3\\code\\dossier.py": "47346874e6b11fcde6c4e7555b5bb9e1cf08ab5f604417155ef05f9c55d5c450",
+        "research_completion\\phase3\\code\\identity_audit.py": "1d492fefcb64e86408533e3bbdb0c08bd9ab43714bce308e76dd70cc5dab0d49",
+        "research_completion\\phase3\\code\\inference.py": "60e8e5f8ba285ca67c4f8ae51779c564e1afccb8f4b56ba6b4dc6dd4b562b717",
+        "research_completion\\phase3\\code\\literature.py": "908f5ea93232a236b7c34a5c830885fc4e2e298c23d335c53478bd0912d84135",
+        "research_completion\\phase3\\code\\measurement.py": "273194fdf680f2da5599c78ef4d54e40cfa8e5628d3dabeba0e27f5eb127792f",
+        "research_completion\\phase3\\code\\reproduction.py": "321bf4e2f70d0f162af1fa6887eacf67ec56d4931642a253c099d80d00719c43",
+        "research_completion\\phase3\\code\\run.py": "79300a6ae7df6283f59754902d85404a5e842bfac7bf39ece42151406517cdff",
+        "research_completion\\phase3\\code\\sources.py": "847f08594c42c4823fd75917a594e7d6cd2b3d6794416ca5c824dddd2bcb329b",
+        "research_completion\\phase3\\code\\test_science.py": "61bcf2f86eb12c2e0d1f8e5ab11f2d0f8f8326896820a084fba7c146bb95a8f1"
+      },
+      "available_mb": 1267.2,
+      "exit_code": 0,
+      "seconds": 2.06,
+      "peak_rss_mb": 80.2,
+      "end_utc": "2026-10-21T03:26:16.881506+00:00",
+      "code_changed": false
+    },
+    {
+      "stage": "dossier_dossier",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "research_completion/phase3/code/dossier.py"
+      ],
+      "start_utc": "2026-10-21T03:26:17.655243+00:00",
+      "code_commit": "4400b27ded7d01b90c3f02ec16cbbb862f348c3b",
+      "code_hashes": {
+        "research_completion\\phase3\\code\\dossier.py": "47346874e6b11fcde6c4e7555b5bb9e1cf08ab5f604417155ef05f9c55d5c450",
+        "research_completion\\phase3\\code\\identity_audit.py": "1d492fefcb64e86408533e3bbdb0c08bd9ab43714bce308e76dd70cc5dab0d49",
+        "research_completion\\phase3\\code\\inference.py": "60e8e5f8ba285ca67c4f8ae51779c564e1afccb8f4b56ba6b4dc6dd4b562b717",
+        "research_completion\\phase3\\code\\literature.py": "908f5ea93232a236b7c34a5c830885fc4e2e298c23d335c53478bd0912d84135",
+        "research_completion\\phase3\\code\\measurement.py": "273194fdf680f2da5599c78ef4d54e40cfa8e5628d3dabeba0e27f5eb127792f",
+        "research_completion\\phase3\\code\\reproduction.py": "321bf4e2f70d0f162af1fa6887eacf67ec56d4931642a253c099d80d00719c43",
+        "research_completion\\phase3\\code\\run.py": "79300a6ae7df6283f59754902d85404a5e842bfac7bf39ece42151406517cdff",
+        "research_completion\\phase3\\code\\sources.py": "847f08594c42c4823fd75917a594e7d6cd2b3d6794416ca5c824dddd2bcb329b",
+        "research_completion\\phase3\\code\\test_science.py": "61bcf2f86eb12c2e0d1f8e5ab11f2d0f8f8326896820a084fba7c146bb95a8f1"
+      },
+      "available_mb": 1233.8,
+      "exit_code": 0,
+      "seconds": 2.62,
+      "peak_rss_mb": 118.9,
+      "end_utc": "2026-10-21T03:26:20.325289+00:00",
+      "code_changed": false
+    },
+    {
+      "stage": "measurement_figures",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "research_completion/phase3/code/figures.py"
+      ],
+      "start_utc": "2026-10-21T03:28:09.495140+00:00",
+      "code_commit": "4400b27ded7d01b90c3f02ec16cbbb862f348c3b",
+      "code_hashes": {
+        "research_completion\\phase3\\code\\dossier.py": "e216fa934b71ec34b93dbebb2bdf9c41e1ec25aa9f6a2e37dd754ca87221fc97",
+        "research_completion\\phase3\\code\\figures.py": "090d9a972b6581cffda6adedd1808cca375a22315d2311e52d09d2fbee32daef",
+        "research_completion\\phase3\\code\\identity_audit.py": "1d492fefcb64e86408533e3bbdb0c08bd9ab43714bce308e76dd70cc5dab0d49",
+        "research_completion\\phase3\\code\\inference.py": "60e8e5f8ba285ca67c4f8ae51779c564e1afccb8f4b56ba6b4dc6dd4b562b717",
+        "research_completion\\phase3\\code\\literature.py": "908f5ea93232a236b7c34a5c830885fc4e2e298c23d335c53478bd0912d84135",
+        "research_completion\\phase3\\code\\measurement.py": "273194fdf680f2da5599c78ef4d54e40cfa8e5628d3dabeba0e27f5eb127792f",
+        "research_completion\\phase3\\code\\reproduction.py": "321bf4e2f70d0f162af1fa6887eacf67ec56d4931642a253c099d80d00719c43",
+        "research_completion\\phase3\\code\\run.py": "79300a6ae7df6283f59754902d85404a5e842bfac7bf39ece42151406517cdff",
+        "research_completion\\phase3\\code\\sources.py": "847f08594c42c4823fd75917a594e7d6cd2b3d6794416ca5c824dddd2bcb329b",
+        "research_completion\\phase3\\code\\test_science.py": "61bcf2f86eb12c2e0d1f8e5ab11f2d0f8f8326896820a084fba7c146bb95a8f1"
+      },
+      "available_mb": 1240.5,
+      "exit_code": 0,
+      "seconds": 6.66,
+      "peak_rss_mb": 173.0,
+      "end_utc": "2026-10-21T03:28:16.231037+00:00",
+      "code_changed": false
+    },
+    {
+      "stage": "full_scientific_tests",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests",
+        "research_completion/phase3/code/test_science.py",
+        "-q",
+        "--tb=short",
+        "--junitxml=research_completion/phase3/reproducibility/tests.xml"
+      ],
+      "start_utc": "2026-10-21T03:32:22.421667+00:00",
+      "code_commit": "4400b27ded7d01b90c3f02ec16cbbb862f348c3b",
+      "code_hashes": {
+        "research_completion\\phase3\\code\\dossier.py": "4b1cdba08f655615070845b43cdeec57b680cf30da42f03a5c01e635ce2ac522",
+        "research_completion\\phase3\\code\\figures.py": "c3816aa27e7fdd45f077e978fb0c35c87e29dc1462ca4b455a6fed56e50bc172",
+        "research_completion\\phase3\\code\\final_audit.py": "6eeb28828d947811e91d09bba29d409c86f724614c0032edbf1429bbc5707271",
+        "research_completion\\phase3\\code\\identity_audit.py": "1d492fefcb64e86408533e3bbdb0c08bd9ab43714bce308e76dd70cc5dab0d49",
+        "research_completion\\phase3\\code\\inference.py": "60e8e5f8ba285ca67c4f8ae51779c564e1afccb8f4b56ba6b4dc6dd4b562b717",
+        "research_completion\\phase3\\code\\literature.py": "f926179df3af9403bae1a95dac7392ae25894d52930f65c1b18c428ac329af6a",
+        "research_completion\\phase3\\code\\measurement.py": "273194fdf680f2da5599c78ef4d54e40cfa8e5628d3dabeba0e27f5eb127792f",
+        "research_completion\\phase3\\code\\reproduction.py": "321bf4e2f70d0f162af1fa6887eacf67ec56d4931642a253c099d80d00719c43",
+        "research_completion\\phase3\\code\\run.py": "79300a6ae7df6283f59754902d85404a5e842bfac7bf39ece42151406517cdff",
+        "research_completion\\phase3\\code\\sources.py": "847f08594c42c4823fd75917a594e7d6cd2b3d6794416ca5c824dddd2bcb329b",
+        "research_completion\\phase3\\code\\test_science.py": "61bcf2f86eb12c2e0d1f8e5ab11f2d0f8f8326896820a084fba7c146bb95a8f1"
+      },
+      "available_mb": 1341.3,
+      "exit_code": 0,
+      "seconds": 95.69,
+      "peak_rss_mb": 255.9,
+      "end_utc": "2026-10-21T03:33:58.171038+00:00",
+      "code_changed": false
+    },
+    {
+      "stage": "final_literature",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "research_completion/phase3/code/literature.py"
+      ],
+      "start_utc": "2026-10-21T03:34:36.479430+00:00",
+      "code_commit": "4400b27ded7d01b90c3f02ec16cbbb862f348c3b",
+      "code_hashes": {
+        "research_completion\\phase3\\code\\dossier.py": "4b1cdba08f655615070845b43cdeec57b680cf30da42f03a5c01e635ce2ac522",
+        "research_completion\\phase3\\code\\figures.py": "c3816aa27e7fdd45f077e978fb0c35c87e29dc1462ca4b455a6fed56e50bc172",
+        "research_completion\\phase3\\code\\final_audit.py": "6eeb28828d947811e91d09bba29d409c86f724614c0032edbf1429bbc5707271",
+        "research_completion\\phase3\\code\\identity_audit.py": "1d492fefcb64e86408533e3bbdb0c08bd9ab43714bce308e76dd70cc5dab0d49",
+        "research_completion\\phase3\\code\\inference.py": "60e8e5f8ba285ca67c4f8ae51779c564e1afccb8f4b56ba6b4dc6dd4b562b717",
+        "research_completion\\phase3\\code\\literature.py": "f926179df3af9403bae1a95dac7392ae25894d52930f65c1b18c428ac329af6a",
+        "research_completion\\phase3\\code\\measurement.py": "273194fdf680f2da5599c78ef4d54e40cfa8e5628d3dabeba0e27f5eb127792f",
+        "research_completion\\phase3\\code\\package.py": "71f12800a6c88b65fe5f65c28aa90e01d8218e64ee6114f97d5b313124a78215",
+        "research_completion\\phase3\\code\\reproduction.py": "321bf4e2f70d0f162af1fa6887eacf67ec56d4931642a253c099d80d00719c43",
+        "research_completion\\phase3\\code\\run.py": "79300a6ae7df6283f59754902d85404a5e842bfac7bf39ece42151406517cdff",
+        "research_completion\\phase3\\code\\sources.py": "847f08594c42c4823fd75917a594e7d6cd2b3d6794416ca5c824dddd2bcb329b",
+        "research_completion\\phase3\\code\\test_science.py": "1760ba0d85af79bbf2a6419b55286ed84cbeca35ebf3fcb2196953d890f52ec1"
+      },
+      "available_mb": 1307.5,
+      "exit_code": 0,
+      "seconds": 2.06,
+      "peak_rss_mb": 79.3,
+      "end_utc": "2026-10-21T03:34:38.591546+00:00",
+      "code_changed": false
+    }
+  ],
+  "legacy_strict_status": "FAIL_RETAINED_14_DIFFERING_TABLES",
+  "within_environment_status": "EXACT_SELECTED_2022_FOLDS_AND_FIXTURES",
+  "external_peer_review": false
+}

@@ -1,0 +1,17 @@
+date,portal,query,result
+2026-10-21,web,"""The Digital Discount in Cross-Border Remittances"" Lim 6830281",SSRN abstract; author catalogue found
+2026-10-21,web,"""6830281"" Lim remittances full text",no separate accessible full text found
+2026-10-21,author,https://singapore.to/research/ssrn-6830281/,bibliography only; SSRN sole work link
+2026-10-21,RePEc targeted web,"site.ideas.repec.org ""Digital Discount"" remittances",no lawful alternate full text located
+2026-10-21,web,"""Boon Chuan Lim"" remittances research",author catalogue and SSRN author record
+2026-10-21,web,"""remittance"" ""price persistence"" World Bank quotes panel",no exact E1/E2 report established in reviewed hits
+2026-10-21,web,"""remittance"" ""quote"" ""attrition"" study",bounded negative search; not proof of absence
+2026-10-21,web,"""remittance"" ""cheap"" ""persistence"" World Bank paper",bounded negative search; not proof of absence
+2026-10-21,web,"""remittance"" ""threshold"" ""transition"" prices worldwide",no exact same-estimand source established
+2026-10-21,conceptual,Nakamura Steinsson product substitutions missing price quotes,Five Facts and Lost in Transit; existing replacement-bias methods
+2026-10-21,conceptual,Horowitz Manski 1998 censoring outcomes missing data nonparametric bounds,publisher abstract verified; no novel R01 bounding theory
+2026-10-21,IMF cited-work followup,"""Bersch"" ""2021"" remittance prices competitors",IMF21/175; annex access incomplete
+2026-10-21,official,"site.remittanceprices.worldbank.org ""2025Q4"" OR ""Q4 2025"" OR ""2026Q1"" OR ""Q1 2026""",no verified new row vintage
+2026-10-21,official,"site.remittanceprices.worldbank.org ""2026Q2"" OR ""2026Q3"" OR ""Q2 2026"" OR ""Q3 2026""",no verified new row vintage
+2026-10-21,official,"site.datacatalog.worldbank.org ""Remittance Prices Worldwide"" ""2026"" dataset",catalogue ends2025; source checksum unchanged
+2026-10-21,journal,site.iospress.com Statistical Journal IAOS scope official statistics,current society page confirms use/production of official statistics scope; publisher now Sage

@@ -1,0 +1,88 @@
+{
+  "environment": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scipy": "1.16.1",
+    "sklearn": "1.9.1",
+    "executable": "F:\\MY FILES\\DATA SCIENCE\\PUBLISHING\\Remittance AI\\remittance-price-intelligence\\.venv\\Scripts\\python.exe",
+    "thread_settings": {
+      "OMP_NUM_THREADS": "2",
+      "OPENBLAS_NUM_THREADS": "2",
+      "MKL_NUM_THREADS": "2",
+      "PYTHONHASHSEED": "0"
+    },
+    "threadpools": [
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 2,
+        "prefix": "libscipy_openblas",
+        "filepath": "F:\\MY FILES\\DATA SCIENCE\\PUBLISHING\\Remittance AI\\remittance-price-intelligence\\.venv\\Lib\\site-packages\\numpy.libs\\libscipy_openblas64_-ed4f167a5330424524f45258e7ca2c8d.dll",
+        "version": "0.3.34.106.0",
+        "threading_layer": "pthreads",
+        "architecture": "SkylakeX"
+      },
+      {
+        "user_api": "openmp",
+        "internal_api": "openmp",
+        "num_threads": 2,
+        "prefix": "vcomp",
+        "filepath": "F:\\MY FILES\\DATA SCIENCE\\PUBLISHING\\Remittance AI\\remittance-price-intelligence\\.venv\\Lib\\site-packages\\sklearn\\.libs\\vcomp140.dll",
+        "version": null
+      },
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 2,
+        "prefix": "libscipy_openblas",
+        "filepath": "C:\\Users\\USER\\AppData\\Roaming\\Python\\Python312\\site-packages\\scipy.libs\\libscipy_openblas-6b2103f2ae4d8547998b5d188e9801fb.dll",
+        "version": "0.3.28",
+        "threading_layer": "pthreads",
+        "architecture": "SkylakeX"
+      }
+    ]
+  },
+  "results": [
+    {
+      "run": "locked_real_2",
+      "scope": "real_2022_legacy_fold",
+      "model": "ridge",
+      "n_train": 15814,
+      "n_test": 4566,
+      "train_input_hash": "aa2bea2b102372707ed7e86760786527eb751476404a0b75aea2c310b959bbf0",
+      "test_input_hash": "dfa0b2e903afbb086f63a7ab11c402a4c063a1dd5a011230bc6e6882c4b827ed",
+      "train_y_hash": "1618279d6f9e0d734e82c7815bdbe9e33c1c90214d55e327c17fc07a7b85760b",
+      "transformed_train_hash": "3bc2c0b30c67c108037b1f8eb288f85d8e00314841072d6d256185d65c55d7ce",
+      "transformed_test_hash": "07955d8123bffa5914b93d4f4a9c3b6652b4520e56857364ebe6576cd43f94b9",
+      "prediction_hash": "5e1f69360c7e66d713a387669ce07b8c7f1184ed06da9846187a913f32776c4e",
+      "brier": 0.156476195865518,
+      "solver": "lbfgs",
+      "tol": 0.0001,
+      "n_iter": 92,
+      "transformed_columns": 98,
+      "max_prediction_difference_phase2_legacy_rerun": 0.0
+    },
+    {
+      "run": "locked_real_2",
+      "scope": "real_2022_legacy_fold",
+      "model": "spline",
+      "n_train": 15814,
+      "n_test": 4566,
+      "train_input_hash": "aa2bea2b102372707ed7e86760786527eb751476404a0b75aea2c310b959bbf0",
+      "test_input_hash": "dfa0b2e903afbb086f63a7ab11c402a4c063a1dd5a011230bc6e6882c4b827ed",
+      "train_y_hash": "1618279d6f9e0d734e82c7815bdbe9e33c1c90214d55e327c17fc07a7b85760b",
+      "transformed_train_hash": "aa75b464a90a4525b0636112a7d800ebb3e4e806a51e647819a42ce11045bc71",
+      "transformed_test_hash": "5aa820703ec25887fbb3f5216d4e14eebe81e2d66e6c8085858d398d6a89f692",
+      "prediction_hash": "3efa9eaf68c0f5c9491f62d418be93a8dec07a9cd8dcb1211adcd52602e78e68",
+      "brier": 0.15441443283118464,
+      "solver": "lbfgs",
+      "tol": 0.0001,
+      "n_iter": 110,
+      "transformed_columns": 133,
+      "max_prediction_difference_phase2_legacy_rerun": 0.0
+    }
+  ]
+}

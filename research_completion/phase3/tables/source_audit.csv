@@ -1,0 +1,2 @@
+source_sha256,n_quotes,n_observed_waves,n_eligible,raw_parser,imports_primary_pipeline
+f1d7265b1856d61812c158d3d03fae686dbff58735deabe016a6bfe23482d2a8,204469,37,45343,openpyxl stream and independent tuple dictionary,False

@@ -1,0 +1,217 @@
+check,pass_check,detail
+cc1_3_core_flow,True,exact integer reconciliation
+cc1_3_core_bounds,True,independent arithmetic from integer aggregates
+cc1_3_strict_flow,True,exact integer reconciliation
+cc1_3_strict_bounds,True,independent arithmetic from integer aggregates
+cc1_3_same_origins,True,core/strict cohort identical
+cc1_3_monotone,True,restriction increases unknown allocation
+cc1_5_core_flow,True,exact integer reconciliation
+cc1_5_core_bounds,True,independent arithmetic from integer aggregates
+cc1_5_strict_flow,True,exact integer reconciliation
+cc1_5_strict_bounds,True,independent arithmetic from integer aggregates
+cc1_5_same_origins,True,core/strict cohort identical
+cc1_5_monotone,True,restriction increases unknown allocation
+cc2_3_core_flow,True,exact integer reconciliation
+cc2_3_core_bounds,True,independent arithmetic from integer aggregates
+cc2_3_strict_flow,True,exact integer reconciliation
+cc2_3_strict_bounds,True,independent arithmetic from integer aggregates
+cc2_3_same_origins,True,core/strict cohort identical
+cc2_3_monotone,True,restriction increases unknown allocation
+cc2_5_core_flow,True,exact integer reconciliation
+cc2_5_core_bounds,True,independent arithmetic from integer aggregates
+cc2_5_strict_flow,True,exact integer reconciliation
+cc2_5_strict_bounds,True,independent arithmetic from integer aggregates
+cc2_5_same_origins,True,core/strict cohort identical
+cc2_5_monotone,True,restriction increases unknown allocation
+paired_width_count,True,same-origin paired unknown increment
+origin_waves,True,"source37 observed waves, not model13 or36 independent IID seasons"
+unknown_subtypes,True,unknowns partition without last-wave censoring
+independent_count_comparison,True,all20 comparisons to unchanged Phase2
+e3_rate,True,corridor survey denominator preserved; final censor separately excluded
+strict_failure_retained,True,not disguised by rounding/tolerance widening
+locked_repeatability,True,"selected2022 real ridge/spline, two separate processes"
+source_nonfinite_zero,True,zero actual source result changes after finite-cost guard
+external_review_not_invented,True,human task pending
+public_template_schema_only,True,"explicit empty review schema, no source/provider cases"
+verdict_consistency,True,no deployable model or submission readiness
+no_fake_manuscript,True,conditional branch supplies a complete dossier instead
+claim_M01,True,label present in canonical dossier
+claim_source_M01_timing/source_acquisition.csv,True,exact cited evidence path exists
+claim_M02,True,label present in canonical dossier
+claim_source_M02_identity/LINKAGE_SCENARIO_RESULTS.csv,True,exact cited evidence path exists
+claim_M03,True,label present in canonical dossier
+claim_source_M03_identity/LINKAGE_SCENARIO_RESULTS.csv,True,exact cited evidence path exists
+claim_M04,True,label present in canonical dossier
+claim_source_M04_identity/LINKAGE_SCENARIO_RESULTS.csv,True,exact cited evidence path exists
+claim_M05,True,label present in canonical dossier
+claim_source_M05_inference/PAIRED_MEASUREMENT_EFFECTS.csv,True,exact cited evidence path exists
+claim_source_M05_tables/paired_wave_identity.csv,True,exact cited evidence path exists
+claim_M06,True,label present in canonical dossier
+claim_source_M06_identity/LINKAGE_SCENARIO_RESULTS.csv,True,exact cited evidence path exists
+claim_source_M06_../tables/supplementary_corridor_estimand.csv,True,exact cited evidence path exists
+claim_M07,True,label present in canonical dossier
+claim_source_M07_identity/LINKAGE_SCENARIO_RESULTS.csv,True,exact cited evidence path exists
+claim_M08,True,label present in canonical dossier
+claim_source_M08_tables/independent_unit_support.csv,True,exact cited evidence path exists
+claim_M09,True,label present in canonical dossier
+claim_source_M09_tables/measurement_sensitivities.csv,True,exact cited evidence path exists
+claim_M10,True,label present in canonical dossier
+claim_source_M10_tables/measurement_sensitivities.csv,True,exact cited evidence path exists
+claim_P01,True,label present in canonical dossier
+claim_source_P01_inference/DEFINITIVE_MODEL_COMPARISONS.csv,True,exact cited evidence path exists
+claim_P02,True,label present in canonical dossier
+claim_source_P02_tables/phase2_joint_dependence_sensitivity.csv,True,exact cited evidence path exists
+claim_source_P02_../validation/bootstrap_simulation.csv,True,exact cited evidence path exists
+claim_P03,True,label present in canonical dossier
+claim_source_P03_tables/phase2_all_origin_capacity_bounds.csv,True,exact cited evidence path exists
+claim_R01,True,label present in canonical dossier
+claim_source_R01_reproducibility/STRICT_LEGACY_COMPARISON.csv,True,exact cited evidence path exists
+claim_source_R01_reproducibility/RUN_COMPARISONS.csv,True,exact cited evidence path exists
+claim_source_R01_assessment/independent_count_comparison.csv,True,exact cited evidence path exists
+claim_R02,True,label present in canonical dossier
+claim_source_R02_reproducibility/locked_real_1.json,True,exact cited evidence path exists
+claim_source_R02_reproducibility/tight_real_1.json,True,exact cited evidence path exists
+claim_R03,True,label present in canonical dossier
+claim_source_R03_identity/source_nonfinite_audit.json,True,exact cited evidence path exists
+claim_I01,True,label present in canonical dossier
+claim_source_I01_identity/review_sample_design.csv,True,exact cited evidence path exists
+claim_source_I01_identity/identity_audit.json,True,exact cited evidence path exists
+claim_L01,True,label present in canonical dossier
+claim_source_L01_literature/closest_work_matrix_v3.csv,True,exact cited evidence path exists
+claim_source_L01_literature/contribution_classification.csv,True,exact cited evidence path exists
+baseline_preservation,True,"intentional current pointers/CI/ignore/finite-cost source fix only: ['.github/workflows/ci.yml', 'AGENTS.md', 'CLAUDE.md', 'README.md', 'docs/STATUS.md', 'research_completion/README.md', 'src/rpi/linkage.py']"
+frozen_results_unchanged,True,Phase1/2 numerical/config/package artifacts preserved
+safe_AMENDMENTS.md,True,approved suffix/size/schema/credential scan
+safe_assessment\artifact_checks.csv,True,approved suffix/size/schema/credential scan
+safe_assessment\audit_summary.json,True,approved suffix/size/schema/credential scan
+safe_assessment\claim_evidence_ledger.csv,True,approved suffix/size/schema/credential scan
+safe_assessment\FIGURE_VISUAL_QA.md,True,approved suffix/size/schema/credential scan
+safe_assessment\FINAL_SCIENTIFIC_VERDICT.md,True,approved suffix/size/schema/credential scan
+safe_assessment\independent_count_comparison.csv,True,approved suffix/size/schema/credential scan
+safe_assessment\MASTER_REQUIREMENT_LEDGER.csv,True,approved suffix/size/schema/credential scan
+safe_assessment\public_artifact_allowlist.json,True,approved suffix/size/schema/credential scan
+safe_assessment\PUBLICATION_GATE_MATRIX.csv,True,approved suffix/size/schema/credential scan
+safe_assessment\REMAINING_EXTERNAL_DEPENDENCIES.md,True,approved suffix/size/schema/credential scan
+safe_assessment\SCIENTIFIC_AUDIT.md,True,approved suffix/size/schema/credential scan
+safe_code\dossier.py,True,approved suffix/size/schema/credential scan
+safe_code\figures.py,True,approved suffix/size/schema/credential scan
+safe_code\final_audit.py,True,approved suffix/size/schema/credential scan
+safe_code\identity_audit.py,True,approved suffix/size/schema/credential scan
+safe_code\inference.py,True,approved suffix/size/schema/credential scan
+safe_code\literature.py,True,approved suffix/size/schema/credential scan
+safe_code\measurement.py,True,approved suffix/size/schema/credential scan
+safe_code\package.py,True,approved suffix/size/schema/credential scan
+safe_code\reproduction.py,True,approved suffix/size/schema/credential scan
+safe_code\run.py,True,approved suffix/size/schema/credential scan
+safe_code\sources.py,True,approved suffix/size/schema/credential scan
+safe_code\test_science.py,True,approved suffix/size/schema/credential scan
+safe_deliverables\README.md,True,approved suffix/size/schema/credential scan
+safe_EXECUTION_LEDGER.md,True,approved suffix/size/schema/credential scan
+safe_figures\figure_01_identity_bounds.png,True,approved suffix/size/schema/credential scan
+safe_figures\figure_01_identity_bounds.svg,True,approved suffix/size/schema/credential scan
+safe_figures\figure_02_wave_series.png,True,approved suffix/size/schema/credential scan
+safe_figures\figure_02_wave_series.svg,True,approved suffix/size/schema/credential scan
+safe_figures\figure_03_width_by_wave.png,True,approved suffix/size/schema/credential scan
+safe_figures\figure_03_width_by_wave.svg,True,approved suffix/size/schema/credential scan
+safe_figures\figure_04_unknown_states.png,True,approved suffix/size/schema/credential scan
+safe_figures\figure_04_unknown_states.svg,True,approved suffix/size/schema/credential scan
+safe_figures\figure_05_weighting.png,True,approved suffix/size/schema/credential scan
+safe_figures\figure_05_weighting.svg,True,approved suffix/size/schema/credential scan
+safe_identity\canonicalisation_audit.csv,True,approved suffix/size/schema/credential scan
+safe_identity\identity_audit.json,True,approved suffix/size/schema/credential scan
+safe_identity\IDENTITY_VALIDITY.md,True,approved suffix/size/schema/credential scan
+safe_identity\label_turnover_by_wave.csv,True,approved suffix/size/schema/credential scan
+safe_identity\LINKAGE_SCENARIO_RESULTS.csv,True,approved suffix/size/schema/credential scan
+safe_identity\MATCH_REVIEW_PROTOCOL.md,True,approved suffix/size/schema/credential scan
+safe_identity\MEASUREMENT_CLAIM_AUDIT.md,True,approved suffix/size/schema/credential scan
+safe_identity\PRIVATE_REVIEW_TEMPLATE.csv,True,approved suffix/size/schema/credential scan
+safe_identity\review_sample_design.csv,True,approved suffix/size/schema/credential scan
+safe_identity\source_nonfinite_audit.json,True,approved suffix/size/schema/credential scan
+safe_inference\DECISION_VALUE_BOUNDARIES.md,True,approved suffix/size/schema/credential scan
+safe_inference\DEFINITIVE_MODEL_COMPARISONS.csv,True,approved suffix/size/schema/credential scan
+safe_inference\INFERENCE_ROBUSTNESS.md,True,approved suffix/size/schema/credential scan
+safe_inference\MODEL_WAVE_HAC_SENSITIVITY.csv,True,approved suffix/size/schema/credential scan
+safe_inference\PAIRED_MEASUREMENT_EFFECTS.csv,True,approved suffix/size/schema/credential scan
+safe_inference\PRIMARY_CLAIM_ESTIMATES.csv,True,approved suffix/size/schema/credential scan
+safe_inference\UNCERTAINTY_METHODS.md,True,approved suffix/size/schema/credential scan
+safe_literature\bersch_access.json,True,approved suffix/size/schema/credential scan
+safe_literature\closest_work_matrix_v3.csv,True,approved suffix/size/schema/credential scan
+safe_literature\contribution_classification.csv,True,approved suffix/size/schema/credential scan
+safe_literature\fulltext_access_ledger.csv,True,approved suffix/size/schema/credential scan
+safe_literature\imf_access.json,True,approved suffix/size/schema/credential scan
+safe_literature\NOVELTY_DECISION.md,True,approved suffix/size/schema/credential scan
+safe_literature\references.bib,True,approved suffix/size/schema/credential scan
+safe_literature\search_log_v3.csv,True,approved suffix/size/schema/credential scan
+safe_manuscript\checklist.md,True,approved suffix/size/schema/credential scan
+safe_manuscript\conditional_research_dossier.md,True,approved suffix/size/schema/credential scan
+safe_manuscript\figure_legends.md,True,approved suffix/size/schema/credential scan
+safe_manuscript\JOURNAL_SUITABILITY.md,True,approved suffix/size/schema/credential scan
+safe_manuscript\references.bib,True,approved suffix/size/schema/credential scan
+safe_manuscript\source_to_claim_audit.csv,True,approved suffix/size/schema/credential scan
+safe_manuscript\supplementary_methods.md,True,approved suffix/size/schema/credential scan
+safe_manuscript\supplementary_tables.md,True,approved suffix/size/schema/credential scan
+safe_MASTER_DIRECTIVE.md,True,approved suffix/size/schema/credential scan
+safe_PROTOCOL.md,True,approved suffix/size/schema/credential scan
+safe_PUBLICATION_VERDICT.md,True,approved suffix/size/schema/credential scan
+safe_reproducibility\base_fixture_1.json,True,approved suffix/size/schema/credential scan
+safe_reproducibility\base_fixture_2.json,True,approved suffix/size/schema/credential scan
+safe_reproducibility\base_real_1.json,True,approved suffix/size/schema/credential scan
+safe_reproducibility\BASELINE_INVENTORY.json,True,approved suffix/size/schema/credential scan
+safe_reproducibility\commands.jsonl,True,approved suffix/size/schema/credential scan
+safe_reproducibility\ENVIRONMENT_MATRIX.md,True,approved suffix/size/schema/credential scan
+safe_reproducibility\FIXES_AND_REGRESSIONS.md,True,approved suffix/size/schema/credential scan
+safe_reproducibility\LEGACY_DIFFERENCE_CAUSES.csv,True,approved suffix/size/schema/credential scan
+safe_reproducibility\LEGACY_FIELD_DIFFERENCES.csv,True,approved suffix/size/schema/credential scan
+safe_reproducibility\locked_fixture_1.json,True,approved suffix/size/schema/credential scan
+safe_reproducibility\locked_fixture_2.json,True,approved suffix/size/schema/credential scan
+safe_reproducibility\locked_real_1.json,True,approved suffix/size/schema/credential scan
+safe_reproducibility\locked_real_2.json,True,approved suffix/size/schema/credential scan
+safe_reproducibility\LOCKED_RUN_MANIFEST.json,True,approved suffix/size/schema/credential scan
+safe_reproducibility\RUN_COMPARISONS.csv,True,approved suffix/size/schema/credential scan
+safe_reproducibility\STRICT_LEGACY_COMPARISON.csv,True,approved suffix/size/schema/credential scan
+safe_reproducibility\test_summary.json,True,approved suffix/size/schema/credential scan
+safe_reproducibility\tight_real_1.json,True,approved suffix/size/schema/credential scan
+safe_START_HERE_PHASE3.md,True,approved suffix/size/schema/credential scan
+safe_tables\core_strict_transition.csv,True,approved suffix/size/schema/credential scan
+safe_tables\corridor_monitoring.csv,True,approved suffix/size/schema/credential scan
+safe_tables\independent_unit_support.csv,True,approved suffix/size/schema/credential scan
+safe_tables\measurement_sensitivities.csv,True,approved suffix/size/schema/credential scan
+safe_tables\paired_wave_identity.csv,True,approved suffix/size/schema/credential scan
+safe_tables\phase2_all_origin_capacity_bounds.csv,True,approved suffix/size/schema/credential scan
+safe_tables\phase2_conventional_reference_comparisons.csv,True,approved suffix/size/schema/credential scan
+safe_tables\phase2_decision_capacity.csv,True,approved suffix/size/schema/credential scan
+safe_tables\phase2_ipw_mar_scenario.csv,True,approved suffix/size/schema/credential scan
+safe_tables\phase2_joint_dependence_sensitivity.csv,True,approved suffix/size/schema/credential scan
+safe_tables\phase2_mnar_tipping_points.csv,True,approved suffix/size/schema/credential scan
+safe_tables\phase2_performance_by_year.csv,True,approved suffix/size/schema/credential scan
+safe_tables\phase2_recent_history_reference.csv,True,approved suffix/size/schema/credential scan
+safe_tables\phase2_reobservation_models.csv,True,approved suffix/size/schema/credential scan
+safe_tables\phase2_weighting_sensitivity.csv,True,approved suffix/size/schema/credential scan
+safe_tables\source_audit.csv,True,approved suffix/size/schema/credential scan
+safe_tables\unknown_flow.csv,True,approved suffix/size/schema/credential scan
+safe_tables\wave_measurement.csv,True,approved suffix/size/schema/credential scan
+safe_timing\FEATURE_AVAILABLE_BY.csv,True,approved suffix/size/schema/credential scan
+safe_timing\HOLDOUT_DECISION.md,True,approved suffix/size/schema/credential scan
+safe_timing\INFORMATION_SET_AUDIT.md,True,approved suffix/size/schema/credential scan
+safe_timing\source_acquisition.csv,True,approved suffix/size/schema/credential scan
+safe_timing\UPDATED_SOURCE_INVENTORY.csv,True,approved suffix/size/schema/credential scan
+image_figure_01_identity_bounds,True,high-resolution source figure; visual QA separately recorded
+image_figure_02_wave_series,True,high-resolution source figure; visual QA separately recorded
+image_figure_03_width_by_wave,True,high-resolution source figure; visual QA separately recorded
+image_figure_04_unknown_states,True,high-resolution source figure; visual QA separately recorded
+image_figure_05_weighting,True,high-resolution source figure; visual QA separately recorded
+link_START_HERE_PHASE3.md_assessment/FINAL_SCIENTIFIC_VERDICT.md,True,relative link resolves
+link_START_HERE_PHASE3.md_manuscript/conditional_research_dossier.md,True,relative link resolves
+link_START_HERE_PHASE3.md_literature/NOVELTY_DECISION.md,True,relative link resolves
+link_START_HERE_PHASE3.md_identity/MATCH_REVIEW_PROTOCOL.md,True,relative link resolves
+link_START_HERE_PHASE3.md_identity/LINKAGE_SCENARIO_RESULTS.csv,True,relative link resolves
+link_START_HERE_PHASE3.md_inference/PAIRED_MEASUREMENT_EFFECTS.csv,True,relative link resolves
+link_START_HERE_PHASE3.md_reproducibility/RUN_COMPARISONS.csv,True,relative link resolves
+link_START_HERE_PHASE3.md_assessment/SCIENTIFIC_AUDIT.md,True,relative link resolves
+link_START_HERE_PHASE3.md_assessment/PUBLICATION_GATE_MATRIX.csv,True,relative link resolves
+link_START_HERE_PHASE3.md_assessment/REMAINING_EXTERNAL_DEPENDENCIES.md,True,relative link resolves
+link_START_HERE_PHASE3.md_EXECUTION_LEDGER.md,True,relative link resolves
+link_START_HERE_PHASE3.md_manuscript/supplementary_methods.md,True,relative link resolves
+link_START_HERE_PHASE3.md_manuscript/figure_legends.md,True,relative link resolves
+link_START_HERE_PHASE3.md_assessment/claim_evidence_ledger.csv,True,relative link resolves
+link_START_HERE_PHASE3.md_deliverables/README.md,True,relative link resolves

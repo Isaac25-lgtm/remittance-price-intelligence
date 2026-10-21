@@ -1,0 +1,9 @@
+# Remaining external dependencies and stop rule
+
+1. **Closest-overlap full text:** lawful Lim 2026 manuscript/supplements, SSRN6830281. Author catalogue inspected; sole full-work link remains denied. Needed for measurement originality. A human with legitimate access can provide/read the paper; do not infer its contents from the abstract. No author was contacted.
+2. **Historical product comparability:** qualified human review with historical documentary evidence of the private 60-case form; record unresolved cases, disagreements and exclusions. Needed for economic same-service wording; no universal ground-truth error rate is currently identified. Agent inspection is insufficient.
+3. **Independent expert judgement on contribution:** assess whether the measured 12.92-point widening and denominator distinction provide consequential original domain insight after those two checks. A positive software audit is not scientific novelty approval.
+4. **Author/institutional declarations:** affiliations, contributions, funding/conflicts, appropriate secondary-public-data determination and final attribution/wording. No approval or exemption is assumed.
+5. **Only if pursuing TrackB:** authentic historical predictor vintages and positive decision lead time; genuinely new outcomes; independently validated uncertainty and decision value; cross-platform split/transformed-row/prediction fingerprints and convergence precision. These are not automatic barriers to a finite-panel measurement paper and are not resolved by a newer upload date.
+
+Recommendation: do one bounded external overlap/identity round, then decide. Archive the original-article route if exact overlap is found, comparable identities cannot be defended, or only a routine application remains. No further classifier search is recommended. Neither journal acceptance likelihood nor review duration can be inferred from these data.

@@ -1,0 +1,9 @@
+# Figure legends
+
+1. **Identity bounds.** Actual E1 points and E2 finite-panel identification bounds for each USD200/USD500 basket and3%/5% threshold. Core/strict share origins within each basket/threshold, not across different products. Bars are not confidence intervals. Source: identity/LINKAGE_SCENARIO_RESULTS.csv.
+2. **Every eligible-origin wave.** Primary-basket core/strict conditional continuity and all-origin bounds across 36 origin waves. One origin has no valid successor pairs; the point is missing there, not zero. There are 37 observed source waves and 35 valid-pair origin waves. Missing 2025Q2 is never bridged; final 2025Q3 is right-censored. Source: tables/wave_measurement.csv.
+3. **Paired width.** Strict-minus-core unknown fraction for the same origins, in percentage points. All widths are nonnegative mechanically because strict restricts core matches; magnitude and temporal heterogeneity are the substantive observations. Dashed 2022Q3 boundary is a fixed sensitivity split, not a causal event estimate. Source: tables/paired_wave_identity.csv.
+4. **Unknown mechanisms.** Source-record counts separate ambiguity, unresurveyed corridor, absent key in surveyed corridor and invalid target cost. Missing is not exit or unaffordability. Total 8,914 excludes 2,083 last-wave right-censored affordable origins. Source: tables/unknown_flow.csv.
+5. **Weighting.** Record-weighted versus equally weighted corridor/provider-label conditional means under each identity rule. Equal-group means exclude zero-valid groups; these are different estimands and have sparse-group uncertainty, not identified market averages. Source: tables/measurement_sensitivities.csv and independent_unit_support.csv.
+
+All five new figures are supplied as editable SVG and 300 dpi PNG with editable source CSVs. The prior Phase 2 figure/model package is preserved rather than redrawn. No simulated values appear in these figures.

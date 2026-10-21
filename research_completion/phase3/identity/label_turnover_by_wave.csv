@@ -1,0 +1,260 @@
+field,quarter,n_labels,n_labels_absent_previous_calendar_wave,previous_calendar_wave_present
+firm,2016Q2,484,,False
+firm,2016Q3,490,16.0,True
+firm,2016Q4,494,8.0,True
+firm,2017Q1,490,8.0,True
+firm,2017Q2,491,12.0,True
+firm,2017Q3,501,19.0,True
+firm,2017Q4,506,21.0,True
+firm,2018Q1,502,8.0,True
+firm,2018Q2,494,5.0,True
+firm,2018Q3,473,5.0,True
+firm,2018Q4,479,14.0,True
+firm,2019Q1,486,15.0,True
+firm,2019Q2,487,8.0,True
+firm,2019Q3,483,7.0,True
+firm,2019Q4,479,0.0,True
+firm,2020Q1,482,6.0,True
+firm,2020Q2,464,6.0,True
+firm,2020Q3,461,9.0,True
+firm,2020Q4,460,6.0,True
+firm,2021Q1,457,9.0,True
+firm,2021Q2,419,3.0,True
+firm,2021Q3,424,24.0,True
+firm,2021Q4,433,16.0,True
+firm,2022Q1,415,4.0,True
+firm,2022Q2,404,5.0,True
+firm,2022Q3,398,7.0,True
+firm,2022Q4,397,8.0,True
+firm,2023Q1,389,8.0,True
+firm,2023Q2,390,10.0,True
+firm,2023Q3,390,11.0,True
+firm,2023Q4,393,15.0,True
+firm,2024Q1,390,5.0,True
+firm,2024Q2,389,6.0,True
+firm,2024Q3,395,17.0,True
+firm,2024Q4,396,13.0,True
+firm,2025Q1,391,8.0,True
+firm,2025Q3,400,,False
+payment instrument,2016Q2,9,,False
+payment instrument,2016Q3,10,1.0,True
+payment instrument,2016Q4,8,0.0,True
+payment instrument,2017Q1,9,1.0,True
+payment instrument,2017Q2,8,0.0,True
+payment instrument,2017Q3,11,3.0,True
+payment instrument,2017Q4,10,1.0,True
+payment instrument,2018Q1,11,1.0,True
+payment instrument,2018Q2,10,0.0,True
+payment instrument,2018Q3,10,0.0,True
+payment instrument,2018Q4,10,0.0,True
+payment instrument,2019Q1,10,0.0,True
+payment instrument,2019Q2,10,0.0,True
+payment instrument,2019Q3,10,0.0,True
+payment instrument,2019Q4,10,0.0,True
+payment instrument,2020Q1,10,0.0,True
+payment instrument,2020Q2,10,0.0,True
+payment instrument,2020Q3,10,0.0,True
+payment instrument,2020Q4,10,0.0,True
+payment instrument,2021Q1,11,1.0,True
+payment instrument,2021Q2,16,10.0,True
+payment instrument,2021Q3,15,2.0,True
+payment instrument,2021Q4,17,3.0,True
+payment instrument,2022Q1,16,0.0,True
+payment instrument,2022Q2,16,1.0,True
+payment instrument,2022Q3,14,1.0,True
+payment instrument,2022Q4,5,0.0,True
+payment instrument,2023Q1,5,0.0,True
+payment instrument,2023Q2,5,0.0,True
+payment instrument,2023Q3,5,0.0,True
+payment instrument,2023Q4,5,0.0,True
+payment instrument,2024Q1,5,0.0,True
+payment instrument,2024Q2,5,0.0,True
+payment instrument,2024Q3,5,0.0,True
+payment instrument,2024Q4,5,0.0,True
+payment instrument,2025Q1,5,0.0,True
+payment instrument,2025Q3,5,,False
+access point,2016Q2,16,,False
+access point,2016Q3,14,2.0,True
+access point,2016Q4,14,0.0,True
+access point,2017Q1,14,0.0,True
+access point,2017Q2,14,0.0,True
+access point,2017Q3,14,0.0,True
+access point,2017Q4,14,0.0,True
+access point,2018Q1,15,1.0,True
+access point,2018Q2,15,0.0,True
+access point,2018Q3,15,0.0,True
+access point,2018Q4,15,0.0,True
+access point,2019Q1,15,0.0,True
+access point,2019Q2,15,0.0,True
+access point,2019Q3,16,1.0,True
+access point,2019Q4,16,0.0,True
+access point,2020Q1,17,1.0,True
+access point,2020Q2,16,0.0,True
+access point,2020Q3,15,0.0,True
+access point,2020Q4,15,0.0,True
+access point,2021Q1,15,0.0,True
+access point,2021Q2,15,0.0,True
+access point,2021Q3,15,0.0,True
+access point,2021Q4,15,1.0,True
+access point,2022Q1,13,0.0,True
+access point,2022Q2,14,2.0,True
+access point,2022Q3,14,1.0,True
+access point,2022Q4,7,0.0,True
+access point,2023Q1,7,0.0,True
+access point,2023Q2,7,0.0,True
+access point,2023Q3,7,0.0,True
+access point,2023Q4,7,0.0,True
+access point,2024Q1,7,0.0,True
+access point,2024Q2,7,0.0,True
+access point,2024Q3,7,0.0,True
+access point,2024Q4,7,0.0,True
+access point,2025Q1,7,0.0,True
+access point,2025Q3,7,,False
+pickup method,2016Q2,5,,False
+pickup method,2016Q3,5,0.0,True
+pickup method,2016Q4,4,0.0,True
+pickup method,2017Q1,4,0.0,True
+pickup method,2017Q2,5,1.0,True
+pickup method,2017Q3,6,1.0,True
+pickup method,2017Q4,4,0.0,True
+pickup method,2018Q1,4,0.0,True
+pickup method,2018Q2,4,0.0,True
+pickup method,2018Q3,4,0.0,True
+pickup method,2018Q4,4,0.0,True
+pickup method,2019Q1,4,1.0,True
+pickup method,2019Q2,5,1.0,True
+pickup method,2019Q3,6,1.0,True
+pickup method,2019Q4,6,0.0,True
+pickup method,2020Q1,6,0.0,True
+pickup method,2020Q2,6,0.0,True
+pickup method,2020Q3,4,0.0,True
+pickup method,2020Q4,4,0.0,True
+pickup method,2021Q1,4,0.0,True
+pickup method,2021Q2,5,1.0,True
+pickup method,2021Q3,4,0.0,True
+pickup method,2021Q4,4,0.0,True
+pickup method,2022Q1,4,0.0,True
+pickup method,2022Q2,4,0.0,True
+pickup method,2022Q3,4,0.0,True
+pickup method,2022Q4,4,0.0,True
+pickup method,2023Q1,5,1.0,True
+pickup method,2023Q2,5,0.0,True
+pickup method,2023Q3,5,0.0,True
+pickup method,2023Q4,5,0.0,True
+pickup method,2024Q1,5,0.0,True
+pickup method,2024Q2,5,0.0,True
+pickup method,2024Q3,5,0.0,True
+pickup method,2024Q4,5,0.0,True
+pickup method,2025Q1,5,0.0,True
+pickup method,2025Q3,5,,False
+pickup location,2016Q2,5,,False
+pickup location,2016Q3,6,1.0,True
+pickup location,2016Q4,7,2.0,True
+pickup location,2017Q1,9,2.0,True
+pickup location,2017Q2,6,0.0,True
+pickup location,2017Q3,6,0.0,True
+pickup location,2017Q4,6,0.0,True
+pickup location,2018Q1,6,0.0,True
+pickup location,2018Q2,6,0.0,True
+pickup location,2018Q3,6,0.0,True
+pickup location,2018Q4,6,0.0,True
+pickup location,2019Q1,6,0.0,True
+pickup location,2019Q2,6,0.0,True
+pickup location,2019Q3,6,0.0,True
+pickup location,2019Q4,9,3.0,True
+pickup location,2020Q1,7,0.0,True
+pickup location,2020Q2,7,0.0,True
+pickup location,2020Q3,6,0.0,True
+pickup location,2020Q4,7,1.0,True
+pickup location,2021Q1,6,0.0,True
+pickup location,2021Q2,6,0.0,True
+pickup location,2021Q3,6,0.0,True
+pickup location,2021Q4,6,0.0,True
+pickup location,2022Q1,6,0.0,True
+pickup location,2022Q2,6,0.0,True
+pickup location,2022Q3,5,0.0,True
+pickup location,2022Q4,3,0.0,True
+pickup location,2023Q1,3,0.0,True
+pickup location,2023Q2,3,0.0,True
+pickup location,2023Q3,3,0.0,True
+pickup location,2023Q4,3,0.0,True
+pickup location,2024Q1,3,0.0,True
+pickup location,2024Q2,3,0.0,True
+pickup location,2024Q3,3,0.0,True
+pickup location,2024Q4,3,0.0,True
+pickup location,2025Q1,3,0.0,True
+pickup location,2025Q3,3,,False
+speed actual,2016Q2,6,,False
+speed actual,2016Q3,6,0.0,True
+speed actual,2016Q4,6,0.0,True
+speed actual,2017Q1,6,0.0,True
+speed actual,2017Q2,6,0.0,True
+speed actual,2017Q3,6,0.0,True
+speed actual,2017Q4,6,0.0,True
+speed actual,2018Q1,6,0.0,True
+speed actual,2018Q2,6,0.0,True
+speed actual,2018Q3,6,0.0,True
+speed actual,2018Q4,6,0.0,True
+speed actual,2019Q1,6,0.0,True
+speed actual,2019Q2,6,0.0,True
+speed actual,2019Q3,6,0.0,True
+speed actual,2019Q4,6,0.0,True
+speed actual,2020Q1,6,0.0,True
+speed actual,2020Q2,6,0.0,True
+speed actual,2020Q3,7,1.0,True
+speed actual,2020Q4,6,0.0,True
+speed actual,2021Q1,6,0.0,True
+speed actual,2021Q2,6,0.0,True
+speed actual,2021Q3,6,0.0,True
+speed actual,2021Q4,6,0.0,True
+speed actual,2022Q1,6,0.0,True
+speed actual,2022Q2,6,0.0,True
+speed actual,2022Q3,6,0.0,True
+speed actual,2022Q4,6,0.0,True
+speed actual,2023Q1,6,0.0,True
+speed actual,2023Q2,6,0.0,True
+speed actual,2023Q3,6,0.0,True
+speed actual,2023Q4,6,0.0,True
+speed actual,2024Q1,6,0.0,True
+speed actual,2024Q2,6,0.0,True
+speed actual,2024Q3,6,0.0,True
+speed actual,2024Q4,6,0.0,True
+speed actual,2025Q1,6,0.0,True
+speed actual,2025Q3,6,,False
+receiving network coverage,2016Q2,3,,False
+receiving network coverage,2016Q3,3,0.0,True
+receiving network coverage,2016Q4,3,0.0,True
+receiving network coverage,2017Q1,3,0.0,True
+receiving network coverage,2017Q2,3,0.0,True
+receiving network coverage,2017Q3,3,0.0,True
+receiving network coverage,2017Q4,3,0.0,True
+receiving network coverage,2018Q1,3,0.0,True
+receiving network coverage,2018Q2,3,0.0,True
+receiving network coverage,2018Q3,3,0.0,True
+receiving network coverage,2018Q4,3,0.0,True
+receiving network coverage,2019Q1,3,0.0,True
+receiving network coverage,2019Q2,3,0.0,True
+receiving network coverage,2019Q3,3,0.0,True
+receiving network coverage,2019Q4,3,0.0,True
+receiving network coverage,2020Q1,3,0.0,True
+receiving network coverage,2020Q2,3,0.0,True
+receiving network coverage,2020Q3,3,0.0,True
+receiving network coverage,2020Q4,3,0.0,True
+receiving network coverage,2021Q1,3,0.0,True
+receiving network coverage,2021Q2,3,0.0,True
+receiving network coverage,2021Q3,3,0.0,True
+receiving network coverage,2021Q4,3,0.0,True
+receiving network coverage,2022Q1,3,0.0,True
+receiving network coverage,2022Q2,3,0.0,True
+receiving network coverage,2022Q3,3,0.0,True
+receiving network coverage,2022Q4,3,0.0,True
+receiving network coverage,2023Q1,3,0.0,True
+receiving network coverage,2023Q2,3,0.0,True
+receiving network coverage,2023Q3,3,0.0,True
+receiving network coverage,2023Q4,3,0.0,True
+receiving network coverage,2024Q1,3,0.0,True
+receiving network coverage,2024Q2,3,0.0,True
+receiving network coverage,2024Q3,3,0.0,True
+receiving network coverage,2024Q4,3,0.0,True
+receiving network coverage,2025Q1,3,0.0,True
+receiving network coverage,2025Q3,3,,False

@@ -1,0 +1,13 @@
+# Identity validity: mechanically reproduced, externally unvalidated
+
+Strict matching keeps the same 45,343 origins, retains 30,570 valid pairs, and gives conditional continuity 0.81046778. Its bounds are [0.54641290, 0.87221842]. The width increases by 12.9215 percentage points, although the conditional point changes by -0.0589 points. [M04]
+
+Core identity: ordered source/destination ISO labels, NFKC/case/space/comma-normalised provider, payment instrument, access point, pickup method/location and basket. Strict requires unchanged speed and receiving-network coverage. It is a restriction of core matching on identical origin records; neither rule is established economic-product ground truth. Canonicalisation is intentionally non-reversible: original strings stay in the private raw/cache, and applying canonicalisation twice is idempotent. Source provider labels reduce 713 raw spellings to 699 canonical labels; this does not verify common legal entities.
+
+The field audit found no observed pipe separator, so delimiter concatenation in the legacy implementation does not create observed source collisions. The independent implementation uses tuples. Missing pickup-location fields are common and become an explicit empty token, not fabricated known locations. See canonicalisation_audit.csv and label_turnover_by_wave.csv. New or missing labels can reflect sample composition; they are not adjudicated renames or exits.
+
+A private seed 20261021 stratified review form contains 60 cases:12 each from unchanged matches, changed speed/network, nonmatches, ambiguous keys and potential metadata drift. Prices/automated verdicts are hidden, alternate candidates supplied and stratum key separate. External human adjudications remain 0. [I01]
+
+There are 5,956 unique core links with changed strict attributes, including 97 already invalid-cost outcomes; only 5,859 previously valid pairs become additionally unknown. This reconciles the apparent difference between changed-link and added-unknown counts. The core-to-strict transition table accounts for every origin. The prior reduced-key sensitivity has 563 additional candidate links but 5,870 ambiguous origins; uniqueness after metadata collapse is not validation, and no such links were promoted.
+
+Conditional-on-recorded-key E2 bounds account for outcome missingness, not arbitrary false-positive links. If recorded matches may all be wrong with no restriction, true economic-service continuity can range from 0 to 1. The strict/core scenario envelope is not a validated latent-identity identification set. A human/provider-supported validation of product comparability remains necessary for stronger same-economic-service wording.

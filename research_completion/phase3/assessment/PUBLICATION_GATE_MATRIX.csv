@@ -1,0 +1,14 @@
+gate,requirement,status,evidence,reason
+A,Substantial claim-specific novelty,UNRESOLVED,literature/NOVELTY_DECISION.md,Exact narrow RPW application survives inspected sources; Lim full-text overlap and consequential novelty not cleared.
+B1,Independent source/count reproduction,PASS,assessment/independent_count_comparison.csv,Twenty independent count comparisons exact.
+B2,Within-environment numerical repeatability,PASS_SELECTED_FOLDS,reproducibility/RUN_COMPARISONS.csv,Two ridge/spline real2022 repeats and fixtures exact; no universal cross-platform assertion.
+B3,Strict legacy numeric identity,FAIL_RETAINED,reproducibility/STRICT_LEGACY_COMPARISON.csv,"Fourteen differing tables remain, causal platform attribution unresolved."
+C1,Recorded-key measurement definitions,PASS_CONDITIONAL_ON_RULE,identity/MEASUREMENT_CLAIM_AUDIT.md,E1/E2/E3/E4 separate; finite-cost bug corrected with zero source cells affected.
+C2,External economic-service identity validation,UNRESOLVED_EXTERNAL,identity/MATCH_REVIEW_PROTOCOL.md,Sixty blinded cases ready; zero human adjudications or validated mislink rates.
+D1,Historical public information clocks,FAIL_PREDICTIVE_TRACK,timing/INFORMATION_SET_AUDIT.md,No full-feature availability before target; not an automatic TrackA gate.
+D2,Untouched later outcomes,ABSENT_NOT_AUTOMATIC_TRACK_A_GATE,timing/HOLDOUT_DECISION.md,Current official workbook byte-identical; no new wave evaluated.
+E1,Finite-panel measurement robustness,PASS_WITH_SCOPE_LIMITS,tables/measurement_sensitivities.csv,Paired identity widening persists; weighting materially changes target.
+E2,Robust model superiority and operational value,NOT_ESTABLISHED,inference/INFERENCE_ROBUSTNESS.md,"Joint interval crosses0, prior stress coverage inadequate, recall bounds overlap."
+F,Implementation-independent scientific audit,EXECUTED,assessment/SCIENTIFIC_AUDIT.md,"Separate parser, adversarial fixtures and claim/file checks; not external peer review."
+G,Submission-ready original manuscript,NOT_JUSTIFIED,manuscript/conditional_research_dossier.md,Conditional dossier supplied; scientific GO not manufactured.
+H,Human author/institutional declarations,PENDING_HUMAN,manuscript/checklist.md,Cannot invent declarations or final scientific sign-off.

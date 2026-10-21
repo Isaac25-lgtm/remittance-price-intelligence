@@ -1,0 +1,11 @@
+# Blinded historical bundle review protocol
+
+A private seed 20261021 stratified review form contains 60 cases:12 each from unchanged matches, changed speed/network, nonmatches, ambiguous keys and potential metadata drift. Prices/automated verdicts are hidden, alternate candidates supplied and stratum key separate. External human adjudications remain 0. [I01]
+
+Open the ignored local `research_completion/phase3/private_runtime/BLINDED_IDENTITY_REVIEW.csv`. Keep `IDENTITY_REVIEW_KEY.csv` inaccessible to the reviewer until decisions are sealed. The public PRIVATE_REVIEW_TEMPLATE.csv is header-only by design, not a completed review. Do not upload the private cases.
+
+The sample excludes entirely unresurveyed corridors from adjudicable match strata. Stratum sizes/seed and selection counts are public. Selection is reproducible but deliberately stratified; an unweighted fraction of 60 is not a population mislink rate. Candidate alternatives are exact same-provider/corridor/payment candidates with changed remaining metadata, at most three; their inclusion is not endorsement. No fuzzy alias is promoted.
+
+For each case inspect original provider/payment/access/pickup/speed/network fields at both exact calendar quarters; note multiple target candidates and any absent target. Check a historical provider document or official survey definition where lawful evidence exists. Do not use current provider reputation or presence as historical ground truth. Record one of SAME_BUNDLE, DIFFERENT_BUNDLE, UNRESOLVED, NOT_REVIEWABLE, together with evidence URL/page/effective date, reason, reviewer and review date. No outcome-price columns are supplied.
+
+Use a second qualified reviewer or adjudicator where available and document conflicts rather than majority-infer identity. Freeze both decisions and sources before opening the private stratum key or comparing outcome groups. Report nonresponse, unresolved and disagreement counts. Only externally evidenced decisions may be described as identity validation. A reviewer without historical corroboration can provide expert plausibility assessment, not a proven gold standard. Weight only within the actual sampled strata, disclose excluded strata and uncertainty; never infer a universal error rate from convenient cases. No human decisions have yet been supplied.

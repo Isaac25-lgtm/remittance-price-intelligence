@@ -1,5 +1,9 @@
 # Remittance AI: affordable quote continuity
 
+**Phase 3, 21 October 2026: CONDITIONAL_HOLD.** The [Phase 3 entry point](research_completion/phase3/START_HERE_PHASE3.md) contains the independent measurement audit, controlled numerical repeats, identity review, five new figures and [complete conditional dossier](research_completion/phase3/manuscript/conditional_research_dossier.md). Core/strict bounds widen by **12.92 percentage points** despite almost identical conditional continuity. Substantial novelty and externally supported service identity remain unresolved; no operational model or submission-ready manuscript is claimed. See the [final scientific verdict](research_completion/phase3/assessment/FINAL_SCIENTIFIC_VERDICT.md).
+
+The following section preserves the completed Phase 2 findings and links.
+
 **Current decision: CONDITIONAL GO / CONDITIONAL_MORE_EVIDENCE — NOT YET PUBLICATION-READY.** Local investigation completed in October 2026; no operational model selected.
 
 We study whether a surveyed remittance quote costing 0–3% remains affordable in the exactly next calendar quarter, and how service identity and missing successors change that measurement. The independently reacquired World Bank RPW workbook contains 204,469 quotes, 368 corridors and 699 normalised provider labels, 2016Q2–2025Q3; 2025Q2 is absent. Quotes are offers, not transactions or market exits.
