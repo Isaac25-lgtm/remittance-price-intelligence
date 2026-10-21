@@ -1,0 +1,8 @@
+field,n_raw_distinct,n_canonical_distinct,n_canonical_multiple_raw,missing_rows,pipe_separator_rows,non_idempotent_rows
+firm,713,699,14,0,0,0
+payment instrument,26,25,1,0,0,0
+access point,22,22,0,0,0,0
+pickup method,10,9,1,0,0,0
+pickup location,17,14,3,115614,0,0
+speed actual,9,7,2,0,0,0
+receiving network coverage,4,3,1,0,0,0

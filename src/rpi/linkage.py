@@ -94,7 +94,7 @@ def eligible_origin(linked: pd.DataFrame, threshold: float = config.THRESHOLD) -
 def primary_outcome_rows(linked: pd.DataFrame, threshold: float = config.THRESHOLD) -> pd.Series:
     """Rows defining estimand 1: eligible, core-reobserved, unique, valid non-negative target cost."""
     return (eligible_origin(linked, threshold) & linked["core_reobserved"]
-            & linked["cost_next"].notna() & (linked["cost_next"] >= 0))
+            & np.isfinite(linked["cost_next"]) & (linked["cost_next"] >= 0))
 
 
 def bounds_table(linked: pd.DataFrame, threshold: float = config.THRESHOLD, by=None) -> pd.DataFrame:
@@ -102,7 +102,7 @@ def bounds_table(linked: pd.DataFrame, threshold: float = config.THRESHOLD, by=N
     initially-cheap origins, allocating every non-reobserved/invalid outcome to fail/success."""
     e = linked[eligible_origin(linked, threshold)].copy()
     e["stay"] = e["core_reobserved"] & (e["cost_next"] >= 0) & (e["cost_next"] <= threshold)
-    e["fail_obs"] = e["core_reobserved"] & e["cost_next"].notna() & (e["cost_next"] > threshold)
+    e["fail_obs"] = e["core_reobserved"] & np.isfinite(e["cost_next"]) & (e["cost_next"] > threshold)
     e["unknown"] = ~(e["stay"] | e["fail_obs"])
     g = e.groupby(by) if by else e.assign(_all="all").groupby("_all")
     t = g.agg(n_eligible=("stay", "size"), n_stay=("stay", "sum"), n_fail=("fail_obs", "sum"),

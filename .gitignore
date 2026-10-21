@@ -27,5 +27,6 @@ models/
 !research_completion/models/*.md
 .DS_Store
 research_completion/private_runtime/
+research_completion/phase3/private_runtime/
 dist/
 *.egg-info/

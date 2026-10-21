@@ -1,0 +1,6 @@
+stratum,eligible_cases,sampled,seed,externally_adjudicated
+ambiguous,2356,12,20261021,0
+changed_attributes,5956,12,20261021,0
+nonmatch,3131,12,20261021,0
+potential_metadata_drift,1206,12,20261021,0
+unchanged_match,30935,12,20261021,0

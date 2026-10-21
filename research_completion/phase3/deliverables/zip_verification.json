@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "members": 455,
+  "member_hashes_verified": 454,
+  "relative_entry_links": "PASS",
+  "forbidden_paths_and_columns": "PASS",
+  "source_commit": "34ba4ca9fb540de0339d8e4bf10c0b8a2957bb2a",
+  "zip": "research_completion/phase3/deliverables/REMITTANCE_R01_PHASE3_PUBLICATION_HANDOFF_20261021_34ba4ca.zip",
+  "zip_sha256": "a01def0d701aae0b7f19a89d5ebbf28f7b2b683b2d33eb4ae629d5ba59b5665c",
+  "zip_bytes": 5463547,
+  "utc": "2026-10-21T03:46:15.889040+00:00",
+  "source_tree_dirty": true,
+  "deterministic_unchanged_input_repeat": true,
+  "downloads_copy": "C:\\Users\\USER\\Downloads\\REMITTANCE_R01_PHASE3_PUBLICATION_HANDOFF_20261021_34ba4ca.zip",
+  "downloads_sha256": "a01def0d701aae0b7f19a89d5ebbf28f7b2b683b2d33eb4ae629d5ba59b5665c",
+  "downloads_archive_audit": "PASS"
+}

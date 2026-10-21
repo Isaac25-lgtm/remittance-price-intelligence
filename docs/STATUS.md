@@ -1,3 +1,5 @@
+> **Phase 3 current status (21 October 2026): CONDITIONAL_HOLD.** See [Phase 3 entry](../research_completion/phase3/START_HERE_PHASE3.md) and [final scientific verdict](../research_completion/phase3/assessment/FINAL_SCIENTIFIC_VERDICT.md). Independent measurements and within-Windows selected-fold repeats pass; strict Linux numeric identity, substantial novelty and economic-product identity remain unresolved. No operational model. The Phase 2/1 narrative below is historical.
+
 > Current local completion: **CONDITIONAL_MORE_EVIDENCE / NOT YET PUBLICATION-READY**. The analyses, pilot recovery, calibration, transfers and dependence sensitivities have been executed. See [the scientific verdict](../research_completion/assessment/PUBLICATION_VERDICT.md) and [conditional report](../research_completion/manuscript/conditional_research_report.md). The text below preserves the 17 October phase-1 history; references to future work or unavailable local inputs there are historical.
 
 # R01 evidence status

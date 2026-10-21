@@ -13,5 +13,19 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install -e ".[dev,dashboard]"
-      # Synthetic fixtures only: no downloads, no RPW data, no model training.
-      - run: pytest -q
+      # Synthetic fixtures/public aggregates only; no downloads or real research fits.
+      - run: pytest -q tests research_completion/phase3/code/test_science.py
+      - name: Small Linux numerical fixture
+        env:
+          OMP_NUM_THREADS: "2"
+          OPENBLAS_NUM_THREADS: "2"
+          MKL_NUM_THREADS: "2"
+          NUMEXPR_NUM_THREADS: "2"
+          PYTHONHASHSEED: "0"
+        run: |
+          python research_completion/phase3/code/reproduction.py ci_fixture_1 --fixture
+          python research_completion/phase3/code/reproduction.py ci_fixture_2 --fixture
+      - uses: actions/upload-artifact@v4
+        with:
+          name: phase3-linux-synthetic-numerical-fixture
+          path: research_completion/phase3/reproducibility/ci_fixture_*.json

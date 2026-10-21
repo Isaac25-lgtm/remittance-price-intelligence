@@ -1,0 +1,9 @@
+{
+  "external_adjudications": 0,
+  "private_blinded_cases": 60,
+  "stratum_key_separate": true,
+  "costs_and_automated_verdict_hidden": true,
+  "canonicalisation_idempotent": true,
+  "no_observed_separator_collision": true,
+  "implementation_audit_only": true
+}

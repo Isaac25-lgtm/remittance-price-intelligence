@@ -1,5 +1,7 @@
 # R01 local publication-completion dossier
 
+**Current: Phase 3 CONDITIONAL_HOLD, 21 October 2026.** Open [START_HERE_PHASE3](phase3/START_HERE_PHASE3.md), the [final verdict](phase3/assessment/FINAL_SCIENTIFIC_VERDICT.md) and [conditional dossier](phase3/manuscript/conditional_research_dossier.md). Earlier Phase 2 outputs below remain preserved. No broad model search was repeated; human identity/source-overlap evidence remains external.
+
 Run: r01-local-completion-2026-10-20.**CONDITIONAL_MORE_EVIDENCE - NOT YET PUBLICATION-READY.** Operational model:**none**.
 
 Start with[the verdict](assessment/PUBLICATION_VERDICT.md),[complete evidence report](manuscript/conditional_research_report.md),[executed-stage report](assessment/final_execution_report.md),[blockers](assessment/REMAINING_BLOCKERS.md) and [ZIP/Git retrieval](deliverables/git_and_download_links.md).

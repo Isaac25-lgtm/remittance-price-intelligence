@@ -1,0 +1,90 @@
+{
+  "environment": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+    "numpy": "2.2.5",
+    "pandas": "2.2.3",
+    "scipy": "1.16.1",
+    "sklearn": "1.6.1",
+    "executable": "C:\\Users\\USER\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "thread_settings": {
+      "OMP_NUM_THREADS": "2",
+      "OPENBLAS_NUM_THREADS": "2",
+      "MKL_NUM_THREADS": "2",
+      "PYTHONHASHSEED": "0"
+    },
+    "threadpools": [
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 2,
+        "prefix": "libscipy_openblas",
+        "filepath": "C:\\Users\\USER\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy.libs\\libscipy_openblas64_-43e11ff0749b8cbe0a615c9cf6737e0e.dll",
+        "version": "0.3.28",
+        "threading_layer": "pthreads",
+        "architecture": "SkylakeX"
+      },
+      {
+        "user_api": "openmp",
+        "internal_api": "openmp",
+        "num_threads": 2,
+        "prefix": "vcomp",
+        "filepath": "C:\\Users\\USER\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\sklearn\\.libs\\vcomp140.dll",
+        "version": null
+      },
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 2,
+        "prefix": "libscipy_openblas",
+        "filepath": "C:\\Users\\USER\\AppData\\Roaming\\Python\\Python312\\site-packages\\scipy.libs\\libscipy_openblas-6b2103f2ae4d8547998b5d188e9801fb.dll",
+        "version": "0.3.28",
+        "threading_layer": "pthreads",
+        "architecture": "SkylakeX"
+      }
+    ]
+  },
+  "results": [
+    {
+      "run": "base_real_1",
+      "scope": "real_2022_legacy_fold",
+      "model": "ridge",
+      "n_train": 15814,
+      "n_test": 4566,
+      "train_input_hash": "aa2bea2b102372707ed7e86760786527eb751476404a0b75aea2c310b959bbf0",
+      "test_input_hash": "dfa0b2e903afbb086f63a7ab11c402a4c063a1dd5a011230bc6e6882c4b827ed",
+      "train_y_hash": "1618279d6f9e0d734e82c7815bdbe9e33c1c90214d55e327c17fc07a7b85760b",
+      "transformed_train_hash": "1e50467f61a4d5ab37b18b0cfa3e827671f3d1428c29ba751dbb3c6d2cafe336",
+      "transformed_test_hash": "dce24eedd2ba01423e568aa0958ae62e725177fff3eaeeaa2f940c65bc354d7a",
+      "prediction_hash": "7f20e46665fadbd417bfe538eb667c0ffe7fb971d96521f114639bbcdfdedc8a",
+      "brier": 0.1564761951858966,
+      "solver": "lbfgs",
+      "tol": 0.0001,
+      "n_iter": 92,
+      "transformed_columns": 98,
+      "max_abs_objective_gradient": 8.581692529147738e-05,
+      "max_prediction_difference_phase2_legacy_rerun": 1.3857962966046244e-07
+    },
+    {
+      "run": "base_real_1",
+      "scope": "real_2022_legacy_fold",
+      "model": "spline",
+      "n_train": 15814,
+      "n_test": 4566,
+      "train_input_hash": "aa2bea2b102372707ed7e86760786527eb751476404a0b75aea2c310b959bbf0",
+      "test_input_hash": "dfa0b2e903afbb086f63a7ab11c402a4c063a1dd5a011230bc6e6882c4b827ed",
+      "train_y_hash": "1618279d6f9e0d734e82c7815bdbe9e33c1c90214d55e327c17fc07a7b85760b",
+      "transformed_train_hash": "77cf7dc707f2d8431808b1324cffd82a9983e9cc212170a009d229017ec43d71",
+      "transformed_test_hash": "bf4b9dc4c9aa634c7b596b83066f4eb1a34954222c2bf9799f0c99add6310d42",
+      "prediction_hash": "0a357c884dea1025fb0d9641d13baa407fe6c7b49fac17b54792b462930661ad",
+      "brier": 0.15441442348969647,
+      "solver": "lbfgs",
+      "tol": 0.0001,
+      "n_iter": 110,
+      "transformed_columns": 133,
+      "max_abs_objective_gradient": 9.585059606388504e-05,
+      "max_prediction_difference_phase2_legacy_rerun": 8.816374827524953e-06
+    }
+  ]
+}

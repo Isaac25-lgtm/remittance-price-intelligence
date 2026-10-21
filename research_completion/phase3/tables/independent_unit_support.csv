@@ -1,0 +1,9 @@
+scope,n_origins,n_corridors,n_provider_labels,provider_labels_with_valid_pairs,corridors_with_valid_pairs
+all,45343,359,474,444,359
+..,1425,8,30,30,8
+east asia & pacific,10837,72,190,177,72
+europe & central asia,5741,51,69,63,51
+latin america & caribbean,3969,40,81,74,40
+middle east & north africa,3326,38,98,91,38
+south asia,14529,69,223,211,69
+sub-saharan africa,5516,81,96,87,81

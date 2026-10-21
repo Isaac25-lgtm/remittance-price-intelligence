@@ -1,0 +1,9 @@
+# Phase 3 handoff
+
+Archive: `REMITTANCE_R01_PHASE3_PUBLICATION_HANDOFF_20261021_34ba4ca.zip`, built from source checkpoint `34ba4ca9fb540de0339d8e4bf10c0b8a2957bb2a` plus the explicitly hashed final documentation/package snapshot. [GitHub download](https://github.com/Isaac25-lgtm/remittance-price-intelligence/raw/refs/heads/main/research_completion/phase3/deliverables/REMITTANCE_R01_PHASE3_PUBLICATION_HANDOFF_20261021_34ba4ca.zip). The verified local copy is saved in `C:\Users\USER\Downloads\` with the same filename. Exact archive SHA256 and read-back evidence are recorded in zip_verification.json alongside this file.
+
+The dated REMITTANCE_R01_PHASE3_PUBLICATION_HANDOFF ZIP contains the actual safe repository code, Phase1/2 supporting aggregate evidence and additive Phase 3 dossier. START_HERE_PHASE3.md at the archive root opens the new package. Paths inside preserve repository structure, so relative evidence links work. Source workbooks, private reviewer cases, per-service records/predictions, binaries, source PDFs and environment caches are excluded.
+
+SHA256 SUMS.txt and file_manifest.csv cover canonical archive bytes (UTF8 text with LF). zip_verification.json outside the archive records actual ZIP hash/member integrity and local Downloads copy read-back; it is excluded from its own payload to prevent self-reference. Final integration is independently verified after build. Preserve the older Phase 2 ZIP unchanged.
+
+The scientific outcome is CONDITIONAL_HOLD; the package is a complete conditional dossier, not an accepted/ready manuscript. Replication from raw data requires a lawful separate workbook download and the recorded locked environment. The final response supplies the independently verified integrated main SHA; the archive source checkpoint is deliberately a separate pre-merge snapshot.

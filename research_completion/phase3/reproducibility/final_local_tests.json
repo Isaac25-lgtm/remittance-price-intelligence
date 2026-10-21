@@ -1,0 +1,12 @@
+{
+  "full_suite_passed": 167,
+  "full_suite_command": "pytest tests research_completion/phase3/code/test_science.py -q",
+  "latest_targeted_passed": 30,
+  "latest_targeted_skipped": 0,
+  "exit_codes": [
+    0,
+    0
+  ],
+  "strict_legacy_exit": 1,
+  "strict_legacy_status": "FAIL_RETAINED"
+}
