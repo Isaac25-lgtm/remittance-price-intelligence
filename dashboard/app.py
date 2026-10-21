@@ -982,22 +982,26 @@ def verdict():
                "substantially widen all-origin bounds while leaving matched continuity almost unchanged. Substantial "
                "novelty and externally validated service identity are not yet demonstrated. No operational model is "
                "selected and no submission-ready manuscript is claimed. "
-               f"<a href='{REPO_URL}/blob/main/research_completion/phase3/assessment/FINAL_SCIENTIFIC_VERDICT.md'>"
-               "Read the final scientific verdict</a>.", "caution")
-    st.subheader("Phase 3 gate matrix")
+               f"<a href='{REPO_URL}/blob/main/research_completion/phase3/followup_20261021/PUBLICATION_VERDICT.md'>"
+               "Read the current follow-up verdict</a>.", "caution")
+    ui.callout("<b>External-evidence update, 21 October:</b> Lim's complete author v1.1 manuscript and code "
+               "have now been reviewed; the exact continuity/bounds contrast was not found. Official Q2 2021 and "
+               "Q4 2022 classification changes were verified. Substantial novelty remains unconfirmed and the "
+               "investigator's blinded historical identity review is pending.", "info")
+    st.subheader("Original Phase 3 gate snapshot (before external-evidence follow-up)")
     ui.gate_rows(table("PUBLICATION_GATE_MATRIX.csv"))
     download("PUBLICATION_GATE_MATRIX.csv", "gates3")
     st.subheader("What would change the decision")
     ui.cards([
-        ("Next step 1", "Lawful full-text overlap review",
-         "<p>Read Lim (2026) in full. If it already reports the same continuity/bounds contrast, the original-article "
-         "route closes.</p>"),
+        ("Evidence obtained", "Author v1.1 reviewed",
+         "<p>Lim's full manuscript, replication code and reported outputs were read. Exact endpoint overlap was "
+         "not found in that version; this does not establish substantial novelty.</p>"),
         ("Next step 2", "Blinded human identity review",
          "<p>Adjudicate the prepared 60-case blinded sample. If links cannot represent comparable offers, the "
          "measurement claim falls.</p>"),
         ("Next step 3", "Author decision",
-         "<p>If both clear, write a measurement-focused manuscript from the conditional dossier; otherwise archive as "
-         "a documented negative.</p>"),
+         "<p>Assess historical comparability and substantial contribution after review. Develop a narrowly framed "
+         "measurement manuscript only if supported; otherwise retain a documented negative.</p>"),
     ], accent=YELLOW)
     st.subheader("Phase 2 completion record")
     st.caption(f"Analysis: {notice['analysis_date']} UTC; source cutoff: 2025Q3 (2025Q2 absent). "
@@ -1061,7 +1065,8 @@ def reproducibility():
         ("Scope", "Survey offers",
          "<p>Quotes are not transactions; quote weights are not volumes; Uganda subgroups are below support gates.</p>"),
         ("Novelty", "Unresolved",
-         "<p>Same-source firm/service analyses exist; one 2026 competitor's full text could not be obtained.</p>"),
+         "<p>Same-source firm/service analyses exist. Lim's author v1.1 is now reviewed; exact endpoint overlap "
+         "was not found, but substantial contribution remains unconfirmed.</p>"),
     ], accent=ui.RED)
     st.subheader("Run it locally")
     st.code("pip install -r dashboard/requirements.txt\nstreamlit run dashboard/app.py", language="bash")

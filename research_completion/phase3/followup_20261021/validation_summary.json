@@ -1,0 +1,32 @@
+{
+  "validated_utc": "2026-10-21T05:56:21.229119+00:00",
+  "python": "3.12.10",
+  "execution": "LOCAL_WINDOWS",
+  "parallel_library_threads": 2,
+  "test_suite": {
+    "tests": 200,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "elapsed_seconds": 128.119
+  },
+  "focused_followup_tests": 15,
+  "reviewer_ui": {
+    "cases": 60,
+    "initial_decisions": 0,
+    "csv_export_rows": 60,
+    "checkpoint_restore_checked": true,
+    "local_autosave_checked": true,
+    "synthetic_test_state_cleared": true,
+    "console_errors": []
+  },
+  "original_archive_sha256_unchanged": "a01def0d701aae0b7f19a89d5ebbf28f7b2b683b2d33eb4ae629d5ba59b5665c",
+  "original_scientific_paths_unchanged": true,
+  "successful_reading_copy_hashes_rechecked": true,
+  "followup_markdown_links_checked": true,
+  "new_model_fits": 0,
+  "completed_human_adjudications": 0,
+  "stratum_key_opened": false,
+  "external_peer_review": false,
+  "verdict": "CONDITIONAL_HOLD"
+}

@@ -14,7 +14,7 @@ jobs:
           python-version: "3.11"
       - run: pip install -e ".[dev,dashboard]"
       # Synthetic fixtures/public aggregates only; no downloads or real research fits.
-      - run: pytest -q tests research_completion/phase3/code/test_science.py
+      - run: pytest -q tests research_completion/phase3/code/test_science.py research_completion/phase3/followup_20261021/test_followup.py
       - name: Small Linux numerical fixture
         env:
           OMP_NUM_THREADS: "2"

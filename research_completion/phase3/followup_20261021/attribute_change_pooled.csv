@@ -1,0 +1,2 @@
+n_eligible,n_core_valid,n_unchanged_valid,n_changed_valid,unchanged_stay,changed_stay,unchanged_continuity,changed_continuity,changed_share_all_origins,changed_share_core_valid
+45343,36429,30570,5859,24776,4770,0.8104677788681715,0.8141321044546851,0.12921509384028407,0.16083340195997695

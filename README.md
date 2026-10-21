@@ -137,7 +137,7 @@ prevalence in 2022 or 2023. That negative result is kept.
 | Beck & Martínez Pería 2011, *World Bank Econ. Rev.* [doi:10.1093/wber/lhr017](https://doi.org/10.1093/wber/lhr017) | Explained corridor-level remittance prices across 119 corridors | Corridor averages, not same-service continuity |
 | Beck, Janfils & Kpodar 2022, IMF WP 2022/063 [doi:10.5089/9798400205439.001.a001](https://doi.org/10.5089/9798400205439.001.a001) | Firm-level panel regressions on RPW fees | Explanatory, contemporaneous; no linked continuity panel |
 | Borra & Saritha 2026 | Provider and channel composition in the Kuwait–India corridor | Single corridor; pricing levels, not persistence |
-| Lim 2026, SSRN [doi:10.2139/ssrn.6830281](https://doi.org/10.2139/ssrn.6830281) | Digital discount in RPW, 2016–2025 | **Full text not obtained, so overlap is unverified.** This is the main open novelty gate |
+| Lim 2026, SSRN [doi:10.2139/ssrn.6830281](https://doi.org/10.2139/ssrn.6830281) | Digital discount in RPW, 2016–2025 | **Author v1.1 full text and code reviewed:** exact continuity/bounds contrast not found; substantial novelty still unconfirmed. [Follow-up assessment](research_completion/phase3/followup_20261021/LIM_OVERLAP_REVIEW.md) |
 | Nakamura & Steinsson 2012, *AER* [doi:10.1257/aer.102.7.3277](https://doi.org/10.1257/aer.102.7.3277) | Product-replacement bias in matched-item price indices | Closest conceptual precedent; the matched-item selection lesson is theirs |
 | Horowitz & Manski 1998, *J. Econometrics* [doi:10.1016/S0304-4076(97)00077-8](https://doi.org/10.1016/S0304-4076(97)00077-8) | Worst-case bounds under survey nonresponse | The bounding method is established; this project applies it |
 
@@ -182,7 +182,10 @@ flowchart LR
 
 ## Verdict and publication gates
 
-**`CONDITIONAL_HOLD`.** The measurement result is real and reproducible, but two external gates stay open:
+**`CONDITIONAL_HOLD`.** Historical service identity and substantial scientific contribution remain unresolved.
+The [21 October external-evidence follow-up](research_completion/phase3/followup_20261021/HANDOFF.md)
+locates and reviews Lim's author v1.1 full text and code, and verifies official Q2 2021/Q4 2022
+classification changes. These resolve specific access/context questions without establishing economic-product identity.
 
 | Gate | Status |
 |---|---|
@@ -192,14 +195,16 @@ flowchart LR
 | Strict 1e-9 numerical identity with the legacy run | ❌ Fail, retained and documented |
 | Historical information clocks (forecast lead time) | ❌ Fail, so there is no predictive track |
 | Robust model superiority and operational value | ❌ Not established |
-| Substantial claim-specific novelty (Lim 2026 full text) | ⏳ Unresolved |
+| Lim author v1.1 full-text access and exact overlap assessment | ✅ Reviewed; exact endpoint not found in inspected version |
+| Substantial claim-specific novelty | ⏳ Unconfirmed; different endpoint alone is insufficient |
 | External economic-service identity validation (60 blinded cases prepared) | ⏳ Unresolved, needs human review |
 | Submission-ready manuscript | ⏳ Not justified yet |
 
-**Next step:** a lawful full-text overlap review of Lim (2026) and a blinded human review of the 60 prepared
-identity cases. If either fails, archive the original-article route; if both clear, write a measurement-focused
-manuscript from the [conditional dossier](research_completion/phase3/manuscript/conditional_research_dossier.md).
-The full matrix is in [`PUBLICATION_GATE_MATRIX.csv`](research_completion/phase3/assessment/PUBLICATION_GATE_MATRIX.csv).
+**Next step:** the investigator has volunteered to review the 60 blinded identity cases using historical
+evidence. Then assess whether a consequential original measurement contribution survives. If it does,
+develop a measurement-focused manuscript from the [conditional dossier](research_completion/phase3/manuscript/conditional_research_dossier.md).
+The [current follow-up verdict](research_completion/phase3/followup_20261021/PUBLICATION_VERDICT.md)
+updates the [original Phase 3 gate snapshot](research_completion/phase3/assessment/PUBLICATION_GATE_MATRIX.csv).
 
 ## Research dashboard
 

@@ -1,5 +1,7 @@
 # Remittance AI: Phase 3 completed conditional dossier
 
+**Current additive update, 21 October:** [external-evidence handoff](followup_20261021/HANDOFF.md) and [updated verdict](followup_20261021/PUBLICATION_VERDICT.md). Lim's complete author v1.1 manuscript/code have now been reviewed; exact endpoint overlap was not found. Official survey-classification changes were verified. The investigator volunteered for the prepared blinded review; completed human adjudications remain pending. Original files and ZIP below remain a dated snapshot.
+
 **CONDITIONAL_HOLD. No operational model. No submission-ready original manuscript.** Continue from merged Phase 2; no broad model search was repeated.
 
 - [Final scientific verdict](assessment/FINAL_SCIENTIFIC_VERDICT.md)
