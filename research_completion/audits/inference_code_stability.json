@@ -1,0 +1,7 @@
+{
+  "compared_commit": "2a25992e75cc2c364bd86b67f35e1ad2dab99e67",
+  "function": "inference",
+  "ast_unchanged": true,
+  "ast_sha256": "a1c1c8b9af1a3f98f74e0b530a2b1e3598060f461d5fa34fa3e450c174f96f5f",
+  "finding": "Only the nonexecuted explain function changed during paired inference; inference body is unchanged. Python functions were loaded at process start. Broad file fingerprints remain in command logs."
+}

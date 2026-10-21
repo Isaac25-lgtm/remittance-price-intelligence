@@ -21,5 +21,11 @@ data/processed/
 *.pickle
 checkpoints/
 models/
+!research_completion/models/
+!research_completion/models/*.csv
+!research_completion/models/*.json
+!research_completion/models/*.md
 .DS_Store
+research_completion/private_runtime/
+dist/
 *.egg-info/

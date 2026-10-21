@@ -1,3 +1,28 @@
+# Remittance AI: affordable quote continuity
+
+**Current decision: CONDITIONAL GO / CONDITIONAL_MORE_EVIDENCE — NOT YET PUBLICATION-READY.** Local investigation completed in October 2026; no operational model selected.
+
+We study whether a surveyed remittance quote costing 0–3% remains affordable in the exactly next calendar quarter, and how service identity and missing successors change that measurement. The independently reacquired World Bank RPW workbook contains 204,469 quotes, 368 corridors and 699 normalised provider labels, 2016Q2–2025Q3; 2025Q2 is absent. Quotes are offers, not transactions or market exits.
+
+- Conditional continuity: **81.11%** among 36,429 uniquely valid successor pairs; corridor interval 79.60%–82.56%.
+- Among all 45,343 eligible origins, missing-outcome bounds are **65.16%–84.82%**. Strict identity widens them to **54.64%–87.22%**, despite a similar conditional point estimate.
+- Chronological tuning/calibration/selection was executed. The selected research policy Brier is **0.130763** on 19,667 previously inspected outer records; raw spline is 0.136151 and history 0.138967. Raw RF/GBM score about 0.1281, but are not operationally promoted.
+- Selected policy minus spline: **−0.005388**, amended joint corridor/provider/time interval **[−0.011730,+0.000457]**. Only 13 target waves; simulation coverage does not validate nominal 95%. Superiority remains uncertain.
+- A corrected all-origin 20% review budget includes 4,889 unknown outcomes; policy recall bounds **21.67%–57.26%**. Conditional matched-sample gains do not establish monitoring benefit.
+- Independent source/cohort audits pass. Strict numerical legacy reproduction has small logistic/spline mismatches; recovered pilot counts/GBM match, spline retains a residual. All negative results remain available.
+
+Historical report captures do not establish quote-level public lead time. No untouched new temporal wave was found. The expanded 13-work literature assessment includes firm/service-level competitors; Lim 2026 full text remains inaccessible, so substantial novelty is unresolved. The original corridor-only/abstract-only description below is archived history, not the current literature verdict.
+
+Start with the [scientific verdict](research_completion/assessment/PUBLICATION_VERDICT.md), [complete conditional report and outline](research_completion/manuscript/conditional_research_report.md), [figures](research_completion/figures/figure_inventory.csv), [tables](research_completion/manuscript/table_legends.md), [blockers](research_completion/assessment/REMAINING_BLOCKERS.md), [audit](research_completion/audits/final_independent_audit.md) and [one-file ZIP / Git state](research_completion/deliverables/git_and_download_links.md). A submission manuscript is not justified by the unresolved gates.
+
+Reproduce using the [recorded environment and commands](research_completion/reproducibility/README.md); original experiments remain frozen under results/. Raw rows, private predictions, fitted models and copyrighted source PDFs are excluded from Git and the handoff. Public data attribution: The World Bank, Remittance Prices Worldwide, http://remittanceprices.worldbank.org (CC BY 4.0); no endorsement.
+
+[Aggregate-only dashboard](https://isaac-remittance-research.streamlit.app/) includes a Publication completion section. Hosted redeployment is verified separately in the Git/download ledger; local tests are not proof of redeployment.
+
+<!-- COMPLETION CURRENT END -->
+
+## Archived phase 1 report (17 October 2026)
+
 # Global remittance quote continuity (R01)
 
 [![ci](https://github.com/Isaac25-lgtm/remittance-price-intelligence/actions/workflows/ci.yml/badge.svg)](https://github.com/Isaac25-lgtm/remittance-price-intelligence/actions/workflows/ci.yml)

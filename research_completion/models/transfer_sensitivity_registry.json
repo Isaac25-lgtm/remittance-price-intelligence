@@ -1,0 +1,1154 @@
+[
+  {
+    "scenario": "heldout_corridor",
+    "year": 2022,
+    "model": "B2_history",
+    "n_train": 12700,
+    "n_test": 970,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "heldout_corridor",
+    "year": 2022,
+    "model": "L2_spline_logistic",
+    "n_train": 12700,
+    "n_test": 970,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "heldout_corridor",
+    "year": 2022,
+    "model": "M1_hist_gbm",
+    "n_train": 12700,
+    "n_test": 970,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "heldout_corridor",
+    "year": 2022,
+    "model": "M2_random_forest",
+    "n_train": 12700,
+    "n_test": 970,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "heldout_corridor",
+    "year": 2023,
+    "model": "B2_history",
+    "n_train": 16430,
+    "n_test": 1539,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "heldout_corridor",
+    "year": 2023,
+    "model": "L2_spline_logistic",
+    "n_train": 16430,
+    "n_test": 1539,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "heldout_corridor",
+    "year": 2023,
+    "model": "M1_hist_gbm",
+    "n_train": 16430,
+    "n_test": 1539,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "heldout_corridor",
+    "year": 2023,
+    "model": "M2_random_forest",
+    "n_train": 16430,
+    "n_test": 1539,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "heldout_corridor",
+    "year": 2024,
+    "model": "B2_history",
+    "n_train": 21129,
+    "n_test": 1395,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "heldout_corridor",
+    "year": 2024,
+    "model": "L2_spline_logistic",
+    "n_train": 21129,
+    "n_test": 1395,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "heldout_corridor",
+    "year": 2024,
+    "model": "M1_hist_gbm",
+    "n_train": 21129,
+    "n_test": 1395,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "heldout_corridor",
+    "year": 2024,
+    "model": "M2_random_forest",
+    "n_train": 21129,
+    "n_test": 1395,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "heldout_corridor",
+    "year": 2025,
+    "model": "B2_history",
+    "n_train": 26440,
+    "n_test": 313,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "heldout_corridor",
+    "year": 2025,
+    "model": "L2_spline_logistic",
+    "n_train": 26440,
+    "n_test": 313,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "heldout_corridor",
+    "year": 2025,
+    "model": "M1_hist_gbm",
+    "n_train": 26440,
+    "n_test": 313,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "heldout_corridor",
+    "year": 2025,
+    "model": "M2_random_forest",
+    "n_train": 26440,
+    "n_test": 313,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "heldout_provider",
+    "year": 2022,
+    "model": "B2_history",
+    "n_train": 12916,
+    "n_test": 746,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "heldout_provider",
+    "year": 2022,
+    "model": "L2_spline_logistic",
+    "n_train": 12916,
+    "n_test": 746,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "heldout_provider",
+    "year": 2022,
+    "model": "M1_hist_gbm",
+    "n_train": 12916,
+    "n_test": 746,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "heldout_provider",
+    "year": 2022,
+    "model": "M2_random_forest",
+    "n_train": 12916,
+    "n_test": 746,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "heldout_provider",
+    "year": 2023,
+    "model": "B2_history",
+    "n_train": 16910,
+    "n_test": 1238,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "heldout_provider",
+    "year": 2023,
+    "model": "L2_spline_logistic",
+    "n_train": 16910,
+    "n_test": 1238,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "heldout_provider",
+    "year": 2023,
+    "model": "M1_hist_gbm",
+    "n_train": 16910,
+    "n_test": 1238,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "heldout_provider",
+    "year": 2023,
+    "model": "M2_random_forest",
+    "n_train": 16910,
+    "n_test": 1238,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "heldout_provider",
+    "year": 2024,
+    "model": "B2_history",
+    "n_train": 21790,
+    "n_test": 1376,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "heldout_provider",
+    "year": 2024,
+    "model": "L2_spline_logistic",
+    "n_train": 21790,
+    "n_test": 1376,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "heldout_provider",
+    "year": 2024,
+    "model": "M1_hist_gbm",
+    "n_train": 21790,
+    "n_test": 1376,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "heldout_provider",
+    "year": 2024,
+    "model": "M2_random_forest",
+    "n_train": 21790,
+    "n_test": 1376,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "heldout_provider",
+    "year": 2025,
+    "model": "B2_history",
+    "n_train": 27312,
+    "n_test": 359,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "heldout_provider",
+    "year": 2025,
+    "model": "L2_spline_logistic",
+    "n_train": 27312,
+    "n_test": 359,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "heldout_provider",
+    "year": 2025,
+    "model": "M1_hist_gbm",
+    "n_train": 27312,
+    "n_test": 359,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "heldout_provider",
+    "year": 2025,
+    "model": "M2_random_forest",
+    "n_train": 27312,
+    "n_test": 359,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "strict",
+    "year": 2022,
+    "model": "B2_history",
+    "n_train": 14889,
+    "n_test": 3190,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "strict",
+    "year": 2022,
+    "model": "L2_spline_logistic",
+    "n_train": 14889,
+    "n_test": 3190,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "strict",
+    "year": 2022,
+    "model": "M1_hist_gbm",
+    "n_train": 14889,
+    "n_test": 3190,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "strict",
+    "year": 2022,
+    "model": "M2_random_forest",
+    "n_train": 14889,
+    "n_test": 3190,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "strict",
+    "year": 2023,
+    "model": "B2_history",
+    "n_train": 18237,
+    "n_test": 5378,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "strict",
+    "year": 2023,
+    "model": "L2_spline_logistic",
+    "n_train": 18237,
+    "n_test": 5378,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "strict",
+    "year": 2023,
+    "model": "M1_hist_gbm",
+    "n_train": 18237,
+    "n_test": 5378,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "strict",
+    "year": 2023,
+    "model": "M2_random_forest",
+    "n_train": 18237,
+    "n_test": 5378,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "strict",
+    "year": 2024,
+    "model": "B2_history",
+    "n_train": 22785,
+    "n_test": 5100,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "strict",
+    "year": 2024,
+    "model": "L2_spline_logistic",
+    "n_train": 22785,
+    "n_test": 5100,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "strict",
+    "year": 2024,
+    "model": "M1_hist_gbm",
+    "n_train": 22785,
+    "n_test": 5100,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "strict",
+    "year": 2024,
+    "model": "M2_random_forest",
+    "n_train": 22785,
+    "n_test": 5100,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "strict",
+    "year": 2025,
+    "model": "B2_history",
+    "n_train": 28127,
+    "n_test": 1301,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "strict",
+    "year": 2025,
+    "model": "L2_spline_logistic",
+    "n_train": 28127,
+    "n_test": 1301,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "strict",
+    "year": 2025,
+    "model": "M1_hist_gbm",
+    "n_train": 28127,
+    "n_test": 1301,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "strict",
+    "year": 2025,
+    "model": "M2_random_forest",
+    "n_train": 28127,
+    "n_test": 1301,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "threshold_5",
+    "year": 2022,
+    "model": "B2_history",
+    "n_train": 35032,
+    "n_test": 9014,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "threshold_5",
+    "year": 2022,
+    "model": "L2_spline_logistic",
+    "n_train": 35032,
+    "n_test": 9014,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "threshold_5",
+    "year": 2022,
+    "model": "M1_hist_gbm",
+    "n_train": 35032,
+    "n_test": 9014,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "threshold_5",
+    "year": 2022,
+    "model": "M2_random_forest",
+    "n_train": 35032,
+    "n_test": 9014,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "threshold_5",
+    "year": 2023,
+    "model": "B2_history",
+    "n_train": 44542,
+    "n_test": 14680,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "threshold_5",
+    "year": 2023,
+    "model": "L2_spline_logistic",
+    "n_train": 44542,
+    "n_test": 14680,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "threshold_5",
+    "year": 2023,
+    "model": "M1_hist_gbm",
+    "n_train": 44542,
+    "n_test": 14680,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "threshold_5",
+    "year": 2023,
+    "model": "M2_random_forest",
+    "n_train": 44542,
+    "n_test": 14680,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "threshold_5",
+    "year": 2024,
+    "model": "B2_history",
+    "n_train": 57036,
+    "n_test": 13455,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "threshold_5",
+    "year": 2024,
+    "model": "L2_spline_logistic",
+    "n_train": 57036,
+    "n_test": 13455,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "threshold_5",
+    "year": 2024,
+    "model": "M1_hist_gbm",
+    "n_train": 57036,
+    "n_test": 13455,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "threshold_5",
+    "year": 2024,
+    "model": "M2_random_forest",
+    "n_train": 57036,
+    "n_test": 13455,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "threshold_5",
+    "year": 2025,
+    "model": "B2_history",
+    "n_train": 71000,
+    "n_test": 3289,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "threshold_5",
+    "year": 2025,
+    "model": "L2_spline_logistic",
+    "n_train": 71000,
+    "n_test": 3289,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "threshold_5",
+    "year": 2025,
+    "model": "M1_hist_gbm",
+    "n_train": 71000,
+    "n_test": 3289,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "threshold_5",
+    "year": 2025,
+    "model": "M2_random_forest",
+    "n_train": 71000,
+    "n_test": 3289,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "cc2",
+    "year": 2022,
+    "model": "B2_history",
+    "n_train": 32608,
+    "n_test": 7682,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "cc2",
+    "year": 2022,
+    "model": "L2_spline_logistic",
+    "n_train": 32608,
+    "n_test": 7682,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "cc2",
+    "year": 2022,
+    "model": "M1_hist_gbm",
+    "n_train": 32608,
+    "n_test": 7682,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "cc2",
+    "year": 2022,
+    "model": "M2_random_forest",
+    "n_train": 32608,
+    "n_test": 7682,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "cc2",
+    "year": 2023,
+    "model": "B2_history",
+    "n_train": 40673,
+    "n_test": 12083,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "cc2",
+    "year": 2023,
+    "model": "L2_spline_logistic",
+    "n_train": 40673,
+    "n_test": 12083,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "cc2",
+    "year": 2023,
+    "model": "M1_hist_gbm",
+    "n_train": 40673,
+    "n_test": 12083,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "cc2",
+    "year": 2023,
+    "model": "M2_random_forest",
+    "n_train": 40673,
+    "n_test": 12083,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "cc2",
+    "year": 2024,
+    "model": "B2_history",
+    "n_train": 51016,
+    "n_test": 11052,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "cc2",
+    "year": 2024,
+    "model": "L2_spline_logistic",
+    "n_train": 51016,
+    "n_test": 11052,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "cc2",
+    "year": 2024,
+    "model": "M1_hist_gbm",
+    "n_train": 51016,
+    "n_test": 11052,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "cc2",
+    "year": 2024,
+    "model": "M2_random_forest",
+    "n_train": 51016,
+    "n_test": 11052,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "cc2",
+    "year": 2025,
+    "model": "B2_history",
+    "n_train": 62514,
+    "n_test": 2730,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "cc2",
+    "year": 2025,
+    "model": "L2_spline_logistic",
+    "n_train": 62514,
+    "n_test": 2730,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "cc2",
+    "year": 2025,
+    "model": "M1_hist_gbm",
+    "n_train": 62514,
+    "n_test": 2730,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "cc2",
+    "year": 2025,
+    "model": "M2_random_forest",
+    "n_train": 62514,
+    "n_test": 2730,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "lag_1",
+    "year": 2022,
+    "model": "B2_history",
+    "n_train": 15814,
+    "n_test": 4566,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "lag_1",
+    "year": 2022,
+    "model": "L2_spline_logistic",
+    "n_train": 15814,
+    "n_test": 4566,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "lag_1",
+    "year": 2022,
+    "model": "M1_hist_gbm",
+    "n_train": 15814,
+    "n_test": 4566,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "lag_1",
+    "year": 2022,
+    "model": "M2_random_forest",
+    "n_train": 15814,
+    "n_test": 4566,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "lag_1",
+    "year": 2023,
+    "model": "B2_history",
+    "n_train": 20565,
+    "n_test": 6993,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "lag_1",
+    "year": 2023,
+    "model": "L2_spline_logistic",
+    "n_train": 20565,
+    "n_test": 6993,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "lag_1",
+    "year": 2023,
+    "model": "M1_hist_gbm",
+    "n_train": 20565,
+    "n_test": 6993,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "lag_1",
+    "year": 2023,
+    "model": "M2_random_forest",
+    "n_train": 20565,
+    "n_test": 6993,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "lag_1",
+    "year": 2024,
+    "model": "B2_history",
+    "n_train": 26541,
+    "n_test": 6489,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "lag_1",
+    "year": 2024,
+    "model": "L2_spline_logistic",
+    "n_train": 26541,
+    "n_test": 6489,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "lag_1",
+    "year": 2024,
+    "model": "M1_hist_gbm",
+    "n_train": 26541,
+    "n_test": 6489,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "lag_1",
+    "year": 2024,
+    "model": "M2_random_forest",
+    "n_train": 26541,
+    "n_test": 6489,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "lag_1",
+    "year": 2025,
+    "model": "B2_history",
+    "n_train": 33364,
+    "n_test": 1619,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "lag_1",
+    "year": 2025,
+    "model": "L2_spline_logistic",
+    "n_train": 33364,
+    "n_test": 1619,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "lag_1",
+    "year": 2025,
+    "model": "M1_hist_gbm",
+    "n_train": 33364,
+    "n_test": 1619,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "lag_1",
+    "year": 2025,
+    "model": "M2_random_forest",
+    "n_train": 33364,
+    "n_test": 1619,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "no_provider_history",
+    "year": 2022,
+    "model": "B2_history",
+    "n_train": 15814,
+    "n_test": 4566,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "no_provider_history",
+    "year": 2022,
+    "model": "L2_spline_logistic",
+    "n_train": 15814,
+    "n_test": 4566,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "no_provider_history",
+    "year": 2022,
+    "model": "M1_hist_gbm",
+    "n_train": 15814,
+    "n_test": 4566,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "no_provider_history",
+    "year": 2022,
+    "model": "M2_random_forest",
+    "n_train": 15814,
+    "n_test": 4566,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "no_provider_history",
+    "year": 2023,
+    "model": "B2_history",
+    "n_train": 20565,
+    "n_test": 6993,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "no_provider_history",
+    "year": 2023,
+    "model": "L2_spline_logistic",
+    "n_train": 20565,
+    "n_test": 6993,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "no_provider_history",
+    "year": 2023,
+    "model": "M1_hist_gbm",
+    "n_train": 20565,
+    "n_test": 6993,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "no_provider_history",
+    "year": 2023,
+    "model": "M2_random_forest",
+    "n_train": 20565,
+    "n_test": 6993,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "no_provider_history",
+    "year": 2024,
+    "model": "B2_history",
+    "n_train": 26541,
+    "n_test": 6489,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "no_provider_history",
+    "year": 2024,
+    "model": "L2_spline_logistic",
+    "n_train": 26541,
+    "n_test": 6489,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "no_provider_history",
+    "year": 2024,
+    "model": "M1_hist_gbm",
+    "n_train": 26541,
+    "n_test": 6489,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "no_provider_history",
+    "year": 2024,
+    "model": "M2_random_forest",
+    "n_train": 26541,
+    "n_test": 6489,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "no_provider_history",
+    "year": 2025,
+    "model": "B2_history",
+    "n_train": 33364,
+    "n_test": 1619,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "no_provider_history",
+    "year": 2025,
+    "model": "L2_spline_logistic",
+    "n_train": 33364,
+    "n_test": 1619,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "no_provider_history",
+    "year": 2025,
+    "model": "M1_hist_gbm",
+    "n_train": 33364,
+    "n_test": 1619,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "no_provider_history",
+    "year": 2025,
+    "model": "M2_random_forest",
+    "n_train": 33364,
+    "n_test": 1619,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "exclude_2021_date_anomaly",
+    "year": 2022,
+    "model": "B2_history",
+    "n_train": 15738,
+    "n_test": 4566,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "exclude_2021_date_anomaly",
+    "year": 2022,
+    "model": "L2_spline_logistic",
+    "n_train": 15738,
+    "n_test": 4566,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "exclude_2021_date_anomaly",
+    "year": 2022,
+    "model": "M1_hist_gbm",
+    "n_train": 15738,
+    "n_test": 4566,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "exclude_2021_date_anomaly",
+    "year": 2022,
+    "model": "M2_random_forest",
+    "n_train": 15738,
+    "n_test": 4566,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "exclude_2021_date_anomaly",
+    "year": 2023,
+    "model": "B2_history",
+    "n_train": 20432,
+    "n_test": 6993,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "exclude_2021_date_anomaly",
+    "year": 2023,
+    "model": "L2_spline_logistic",
+    "n_train": 20432,
+    "n_test": 6993,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "exclude_2021_date_anomaly",
+    "year": 2023,
+    "model": "M1_hist_gbm",
+    "n_train": 20432,
+    "n_test": 6993,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "exclude_2021_date_anomaly",
+    "year": 2023,
+    "model": "M2_random_forest",
+    "n_train": 20432,
+    "n_test": 6993,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "exclude_2021_date_anomaly",
+    "year": 2024,
+    "model": "B2_history",
+    "n_train": 26408,
+    "n_test": 6489,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "exclude_2021_date_anomaly",
+    "year": 2024,
+    "model": "L2_spline_logistic",
+    "n_train": 26408,
+    "n_test": 6489,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "exclude_2021_date_anomaly",
+    "year": 2024,
+    "model": "M1_hist_gbm",
+    "n_train": 26408,
+    "n_test": 6489,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "exclude_2021_date_anomaly",
+    "year": 2024,
+    "model": "M2_random_forest",
+    "n_train": 26408,
+    "n_test": 6489,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "exclude_2021_date_anomaly",
+    "year": 2025,
+    "model": "B2_history",
+    "n_train": 33231,
+    "n_test": 1619,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "exclude_2021_date_anomaly",
+    "year": 2025,
+    "model": "L2_spline_logistic",
+    "n_train": 33231,
+    "n_test": 1619,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "exclude_2021_date_anomaly",
+    "year": 2025,
+    "model": "M1_hist_gbm",
+    "n_train": 33231,
+    "n_test": 1619,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "exclude_2021_date_anomaly",
+    "year": 2025,
+    "model": "M2_random_forest",
+    "n_train": 33231,
+    "n_test": 1619,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "exclude_russia",
+    "year": 2022,
+    "model": "B2_history",
+    "n_train": 14724,
+    "n_test": 4566,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "exclude_russia",
+    "year": 2022,
+    "model": "L2_spline_logistic",
+    "n_train": 14724,
+    "n_test": 4566,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "exclude_russia",
+    "year": 2022,
+    "model": "M1_hist_gbm",
+    "n_train": 14724,
+    "n_test": 4566,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "exclude_russia",
+    "year": 2022,
+    "model": "M2_random_forest",
+    "n_train": 14724,
+    "n_test": 4566,
+    "train_last_target": "2021Q3"
+  },
+  {
+    "scenario": "exclude_russia",
+    "year": 2023,
+    "model": "B2_history",
+    "n_train": 19442,
+    "n_test": 6993,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "exclude_russia",
+    "year": 2023,
+    "model": "L2_spline_logistic",
+    "n_train": 19442,
+    "n_test": 6993,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "exclude_russia",
+    "year": 2023,
+    "model": "M1_hist_gbm",
+    "n_train": 19442,
+    "n_test": 6993,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "exclude_russia",
+    "year": 2023,
+    "model": "M2_random_forest",
+    "n_train": 19442,
+    "n_test": 6993,
+    "train_last_target": "2022Q3"
+  },
+  {
+    "scenario": "exclude_russia",
+    "year": 2024,
+    "model": "B2_history",
+    "n_train": 25418,
+    "n_test": 6489,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "exclude_russia",
+    "year": 2024,
+    "model": "L2_spline_logistic",
+    "n_train": 25418,
+    "n_test": 6489,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "exclude_russia",
+    "year": 2024,
+    "model": "M1_hist_gbm",
+    "n_train": 25418,
+    "n_test": 6489,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "exclude_russia",
+    "year": 2024,
+    "model": "M2_random_forest",
+    "n_train": 25418,
+    "n_test": 6489,
+    "train_last_target": "2023Q3"
+  },
+  {
+    "scenario": "exclude_russia",
+    "year": 2025,
+    "model": "B2_history",
+    "n_train": 32241,
+    "n_test": 1619,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "exclude_russia",
+    "year": 2025,
+    "model": "L2_spline_logistic",
+    "n_train": 32241,
+    "n_test": 1619,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "exclude_russia",
+    "year": 2025,
+    "model": "M1_hist_gbm",
+    "n_train": 32241,
+    "n_test": 1619,
+    "train_last_target": "2024Q3"
+  },
+  {
+    "scenario": "exclude_russia",
+    "year": 2025,
+    "model": "M2_random_forest",
+    "n_train": 32241,
+    "n_test": 1619,
+    "train_last_target": "2024Q3"
+  }
+]

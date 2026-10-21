@@ -1,0 +1,7 @@
+# Leakage and availability audit
+
+Executed adversarial tests replace future outcomes while checking admissible features, exclude heldout-provider outcomes from cumulative histories, enforce no heldout-group train/test identity overlap and require unknown-group historical fallback. Imputers/encoders/scalers/splines are fit inside each training partition. Calibration uses separate chronologically earlier calibration and selection windows; outer labels are not used for selection.
+
+Annual model-selection windows are recorded in split_registry.csv. Six reserved target quarters are divided two/two/two for tuning/calibration/method selection; the base refit uses only proper+tuning observations and remains fixed for calibration/selection/outer scoring. The finite family policy is selected using a 0.002 Brier tolerance with a predeclared conventional-first preference. This is retrospective development evidence, not independent confirmation.
+
+Within-quarter quote composition and current prices require the whole origin wave. They are admissible in the declared retrospective end-of-survey scenario, but rejected for a public early-warning claim without availability evidence. A numeric history lag does not solve that problem. Direct outcome/status columns are retained privately for cohort construction but excluded by explicit feature selectors. Observation-conditioned E1 selection remains an estimand limitation, not a solved missing-data problem.

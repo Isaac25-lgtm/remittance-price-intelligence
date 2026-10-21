@@ -1,0 +1,31 @@
+file,kind,rows_frozen,rows_regenerated,same_columns,max_abs_diff,text_mismatches,status,differing_keys,ignored_volatile_keys,numeric_columns_out_of_tolerance
+audit_cost_anomalies.csv,csv,2.0,2.0,True,0.0,0.0,MATCH,,,
+audit_missingness.csv,csv,44.0,44.0,True,0.0,0.0,MATCH,,,
+audit_quarter_coverage.csv,csv,38.0,38.0,True,0.0,0.0,MATCH,,,
+audit_summary.json,json,,,,,,MATCH,[],[],
+estimand3_corridor_level_by_year.csv,csv,10.0,10.0,True,0.0,0.0,MATCH,,,
+estimand_bounds_by_year.csv,csv,10.0,10.0,True,0.0,0.0,MATCH,,,
+estimand_bounds_by_year_5pct.csv,csv,10.0,10.0,True,0.0,0.0,MATCH,,,
+estimand_bounds_overall.csv,csv,1.0,1.0,True,0.0,0.0,MATCH,,,
+linkage_core_only_attribute_changes.csv,csv,1.0,1.0,True,0.0,0.0,MATCH,,,
+linkage_core_vs_strict_by_year.csv,csv,10.0,10.0,True,0.0,0.0,MATCH,,,
+linkage_status_by_origin_quarter.csv,csv,37.0,37.0,True,0.0,0.0,MATCH,,,
+model_capacity_diff_lag0.csv,csv,3.0,3.0,True,0.0,0.0,MATCH,,,
+model_capacity_diff_lag1.csv,csv,3.0,3.0,True,1.0,0.0,DIFFERS,,,"['captured_diff', 'ci95_lo']"
+model_capacity_lag0.csv,csv,42.0,42.0,True,1.0,0.0,DIFFERS,,,['failures_captured_pooled']
+model_capacity_lag1.csv,csv,42.0,42.0,True,3.0,0.0,DIFFERS,,,"['failures_captured_per_quarter', 'recall_per_quarter', 'failures_captured_pooled']"
+model_metrics_lag0.csv,csv,48.0,48.0,True,1.8411313772614957e-05,0.0,DIFFERS,,,"['brier', 'log_loss', 'cal_intercept', 'cal_slope', 'mean_pred', 'auroc', 'auprc_failure']"
+model_metrics_lag1.csv,csv,48.0,48.0,True,0.002443405903166093,0.0,DIFFERS,,,"['brier', 'log_loss', 'cal_intercept', 'cal_slope', 'mean_pred', 'auroc', 'auprc_failure']"
+model_paired_diffs_lag0.csv,csv,28.0,28.0,True,1.597855753005667e-07,0.0,DIFFERS,,,"['brier_diff_a_minus_b', 'ci95_lo', 'ci95_hi']"
+model_paired_diffs_lag1.csv,csv,28.0,28.0,True,2.1715525793400414e-05,0.0,DIFFERS,,,"['brier_diff_a_minus_b', 'ci95_lo', 'ci95_hi']"
+model_registry_lag0.csv,csv,32.0,32.0,True,6.35,0.0,MATCH_EXCEPT_TIMING,,,['fit_seconds']
+model_registry_lag1.csv,csv,32.0,32.0,True,6.82,0.0,MATCH_EXCEPT_TIMING,,,['fit_seconds']
+model_reliability_lag0.csv,csv,40.0,40.0,True,2.927475309943972e-07,0.0,DIFFERS,,,['mean_pred']
+model_reliability_lag1.csv,csv,40.0,40.0,True,0.0020345879959308144,0.0,DIFFERS,,,"['mean_pred', 'obs_rate']"
+record_flow.csv,csv,42.0,42.0,True,0.0,0.0,MATCH,,,
+reobservation_metrics_lag0.csv,csv,12.0,12.0,True,9.93240995006417e-07,0.0,DIFFERS,,,"['brier', 'log_loss', 'cal_intercept', 'cal_slope', 'mean_pred', 'auroc', 'auprc_failure']"
+reobservation_metrics_lag1.csv,csv,12.0,12.0,True,9.511637093506664e-07,0.0,DIFFERS,,,"['brier', 'log_loss', 'cal_intercept', 'cal_slope', 'mean_pred']"
+run_meta_lag0.json,json,,,,,,DIFFERS,['python'],"['code_commit', 'wall_seconds']",
+run_meta_lag1.json,json,,,,,,DIFFERS,['python'],"['code_commit', 'wall_seconds']",
+subgroup_model_metrics_lag0.csv,csv,28.0,28.0,True,1.019427305665177e-05,0.0,DIFFERS,,,"['brier', 'log_loss', 'cal_intercept', 'cal_slope', 'mean_pred', 'auroc', 'auprc_failure', 'ci95_lo', 'ci95_hi']"
+subgroup_support.csv,csv,10.0,10.0,True,0.0,0.0,MATCH,,,

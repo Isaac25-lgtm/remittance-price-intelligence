@@ -22,7 +22,7 @@ from rpi.evaluate import (capture_at_capacity, capture_pooled, cluster_bootstrap
 from rpi.models import MODELS
 from rpi.preprocess import load_clean, qlabel
 
-SPEC = yaml.safe_load((config.ROOT / "configs" / "experiment.yaml").read_text())
+SPEC = yaml.safe_load((config.ROOT / "configs" / "experiment.yaml").read_text(encoding="utf-8"))
 TEST_YEARS = SPEC["splits"]["test_target_years"]
 CAPACITIES = [0.10, 0.20, 0.30]
 

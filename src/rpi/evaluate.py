@@ -20,13 +20,20 @@ def log_loss(y, p):
 
 def calibration_intercept_slope(y, p):
     """Logistic recalibration: slope = coef on logit(p); intercept from offset-only model."""
+    y = np.asarray(y, float)
+    p = np.asarray(p, float)
+    if len(np.unique(y)) < 2:
+        return np.nan, np.nan
     lp = np.log(np.clip(p, EPS, 1 - EPS) / (1 - np.clip(p, EPS, 1 - EPS)))
     if np.std(lp) < 1e-9:
         slope = np.nan
     else:
         slope = float(LogisticRegression(C=1e6, max_iter=1000).fit(lp[:, None], y).coef_[0, 0])
     # calibration-in-the-large: solve mean(sigmoid(a + lp)) = mean(y) by bisection
-    lo, hi = -10.0, 10.0
+    # A near-certain constant prediction can require an offset beyond +/-10.
+    # With probabilities clipped at EPS, these bounds bracket any nondegenerate
+    # empirical rate at feasible sample sizes; the old range silently hit -10.
+    lo, hi = -50.0, 50.0
     for _ in range(80):
         mid = (lo + hi) / 2
         if np.mean(1 / (1 + np.exp(-(mid + lp)))) < np.mean(y):
@@ -39,6 +46,8 @@ def calibration_intercept_slope(y, p):
 def metric_row(y, p):
     y = np.asarray(y, float)
     p = np.asarray(p, float)
+    if len(y) == 0 or len(y) != len(p) or not np.isfinite(p).all() or ((p < 0) | (p > 1)).any():
+        raise ValueError("metrics require nonempty matched rows and finite probabilities in [0, 1]")
     fail = 1 - y
     a, s = calibration_intercept_slope(y, p)
     out = {"n": len(y), "prevalence_stay": float(y.mean()), "brier": brier(y, p),

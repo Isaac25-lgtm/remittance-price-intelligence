@@ -1,0 +1,48 @@
+group,observed_valid,n,mean_origin_cost,median_origin_cost,field
+..,False,243,1.5307818930041153,1.51,destination_region
+..,True,1182,1.408595600676819,1.455,destination_region
+East Asia & Pacific,False,2342,1.9898462852263024,2.17,destination_region
+East Asia & Pacific,True,8495,2.002727486756916,2.17,destination_region
+Europe & Central Asia,False,1303,1.9210897927858785,2.14,destination_region
+Europe & Central Asia,True,4438,1.6694682289319513,1.7,destination_region
+Latin America & Caribbean,False,867,2.1945905420991925,2.5,destination_region
+Latin America & Caribbean,True,3102,2.2670245003223726,2.5,destination_region
+Middle East & North Africa,False,638,2.203542319749216,2.425,destination_region
+Middle East & North Africa,True,2688,2.2090848214285717,2.4,destination_region
+South Asia,False,2244,1.795155971479501,1.9300000000000002,destination_region
+South Asia,True,12285,1.9171273911273912,2.07,destination_region
+Sub-Saharan Africa,False,1277,2.0014565387627252,2.18,destination_region
+Sub-Saharan Africa,True,4239,2.020502476999292,2.21,destination_region
+bank,False,749,1.7078104138851804,1.79,firm_type__n
+bank,True,3993,1.6196468820435763,1.79,firm_type__n
+bank / money transfer operator,False,61,1.9998360655737704,2.29,firm_type__n
+bank / money transfer operator,True,165,2.1215151515151516,2.43,firm_type__n
+mobile operator,False,90,1.891111111111111,1.8650000000000002,firm_type__n
+mobile operator,True,467,1.9146895074946466,1.99,firm_type__n
+money transfer operator,False,7948,1.9795923502767991,2.16,firm_type__n
+money transfer operator,True,31131,2.009870225819922,2.17,firm_type__n
+money transfer operator / post office,False,55,1.9412727272727273,2.07,firm_type__n
+money transfer operator / post office,True,212,1.967311320754717,2.1500000000000004,firm_type__n
+post office,True,441,0.985873015873016,1.07,firm_type__n
+agent,False,2031,2.1140128015755786,2.36,access point__n
+agent,True,9865,2.1728332488596047,2.36,access point__n
+"agent,call center",False,31,2.189032258064516,2.7,access point__n
+"agent,call center",True,183,2.2592349726775955,2.51,access point__n
+"agent,call center,internet",False,33,1.9654545454545453,2.02,access point__n
+"agent,call center,internet",True,49,1.9924489795918365,1.96,access point__n
+"agent,internet",False,176,1.9929545454545454,2.115,access point__n
+"agent,internet",True,517,1.9330947775628626,2.01,access point__n
+bank branch,False,272,1.6822794117647057,1.79,access point__n
+bank branch,True,1499,1.8213942628418947,2.0,access point__n
+"bank branch,call center",False,65,1.128,1.07,access point__n
+"bank branch,call center",True,633,1.0811532385466034,1.07,access point__n
+"bank branch,call center,internet",True,100,1.4809999999999999,1.415,access point__n
+"bank branch,internet",False,69,1.6269565217391304,1.73,access point__n
+"bank branch,internet",True,356,1.3082022471910113,1.5,access point__n
+call center,False,97,1.6268041237113404,1.5599999999999998,access point__n
+call center,True,407,1.7791891891891891,1.79,access point__n
+internet,False,5975,1.929173221757322,2.12,access point__n
+internet,True,22167,1.9023318446339152,2.05,access point__n
+mobile phone,False,121,2.0259504132231405,2.11,access point__n
+mobile phone,True,558,2.0069713261648747,2.12,access point__n
+post office branch,True,45,2.1544444444444446,2.36,access point__n

@@ -1,0 +1,67 @@
+requirement_id,directive_section,requirement,status,evidence,limitation
+R01,0-1,Local execution overrides cloud restriction; existing research retained,EXECUTED,protocols/phase2_frozen_protocol.md,Retrospective evidence; see canonical report
+R02,1,"Inventory original Git, files and outputs before changing",EXECUTED,audits/initial_repo_inventory.json,Retrospective evidence; see canonical report
+R03,2,"Distinguish E1 E2 E3 E4, quote/transaction and dates",EXECUTED,manuscript/conditional_research_report.md,Retrospective evidence; see canonical report
+R04,3,Same-data/question literature and preprint/code/commercial searches,EXECUTED,literature/search_log.csv,Search not claimed exhaustive; some web query timestamps only date-level
+R05,3,Full-text closest-work head-to-head and substantial novelty,UNRESOLVED,literature/head_to_head_scientific_delta.md,Lim2026 full text inaccessible; IMF firm-level overlap corrected; no first-ever claim
+R06,3,No citation laundering; evidence depth and metadata,EXECUTED,literature/closest_work_matrix.csv,Retrospective evidence; see canonical report
+R07,4,"Official reacquisition, bytes/hash, licence/attribution",EXECUTED,data/source_manifest.json,Retrospective evidence; see canonical report
+R08,4,Source-vintage comparison and latest data search,EXECUTED,data/historical_publication_timing.md,Official source hash unchanged; no newer source or independent wave located
+R09,4,Historical archive/release investigation,EXECUTED,data/archive_report_captures.csv,"125 report captures are public-by evidence, not first-release clocks"
+R10,4,Historical quote-level positive public lead time,UNRESOLVED,data/release_availability_registry.csv,No public feature-vintage clocks; early-warning claim FAIL
+R11,4-5,"Schema, costs, negatives, Kosovo, dates and 2025Q2 gap",EXECUTED,data/raw_data_audit.md,Retrospective evidence; see canonical report
+R12,5.1,"Types, units, coverage, variable availability",EXECUTED,data/variable_dictionary.csv,Public release timing explicitly unverified
+R13,5.1,"Exclusive flow, censoring, denominators; independent implementation",EXECUTED,audits/independent_raw_audit.json,Retrospective evidence; see canonical report
+R14,5.2,Core/strict/reduced unique identity and collision audit,EXECUTED,data/identity_collision_audit.csv,Retrospective evidence; see canonical report
+R15,5.2,External historical bundle/rebrand adjudication,UNRESOLVED,data/manual_identity_validation_disposition.csv,30 private candidates; zero externally confirmed or promoted; no true false-merge rate
+R16,5.2,Linkage rule stability and threshold/basket/horizon alternatives,EXECUTED,models/sensitivity_grid.csv,Retrospective evidence; see canonical report
+R17,5.3,"Separate reobservation comparison, keep old negative years",EXECUTED,models/reobservation_models.csv,Retrospective evidence; see canonical report
+R18,5.3,"Train-only MAR IPW, clipping, positivity/ESS scope",EXECUTED,models/ipw_mar_scenario.csv,"Corridor-surveyed unambiguous-origin scope; MAR is untestable, not all E2 identified"
+R19,5.3,Augmented/doubly robust or survival if identified,NOT_JUSTIFIED,assessment/REMAINING_BLOCKERS.md,No genuine exit label or justified causal/MNAR identification; no false survival analysis
+R20,5.3,MNAR pattern-mixture scenarios and tipping points,EXECUTED,models/mnar_tipping_points.csv,"Assumption scenarios, not recovered outcomes; 2025Q1 no-observed wave remains NOT_ESTIMABLE"
+R21,5.4,"Descriptive groups, fee/FX, margin, lifetime and selection",EXECUTED,tables/supplementary_descriptive_groups.csv,Survey labels not market shares or survival
+R22,5.4,Quote/corridor/provider/wave weighting,EXECUTED,models/weighting_sensitivity.csv,Retrospective evidence; see canonical report
+R23,6.1,Exact legacy rerun and immutable outputs,EXECUTED,reproducibility/local_table_comparison.csv,"Strict numeric success NOT achieved:14 exact,2 timing-only,14 nonmatching; no widened tolerance"
+R24,6.1,Recover original pilot and explain cohort/specification gap,EXECUTED,audits/recovered_pilot_reproduction.json,Raw cache reconstructed byte-exact; count/GBM match; spline residual retained
+R25,6.1,Feature clocks/DAG; current cross-section only retrospective,EXECUTED,validation/feature_dag.md,Retrospective evidence; see canonical report
+R26,6.1,Adversarial future-label and heldout-history guards,EXECUTED,reproducibility/test_report.md,Synthetic software tests distinct from real-data timing evidence
+R27,6.2,Committed finite protocol/amendments before affected metrics,EXECUTED,protocols/protocol_amendments.md,Joint resampler and all-origin correction explicitly post hoc amendments
+R28,6.2,Chronological train/tune/calibrate/select/test registry,EXECUTED,validation/split_registry.csv,Every outer period previously inspected; retrospective development
+R29,6.2,Heldout corridor/provider zero-outcome-history transfer,EXECUTED,models/transfer_sensitivity_metrics.csv,Provider normalised labels are not verified legal-entity aliases
+R30,6.3,"Mandatory constant, history, cost, ridge/spline, tree ladder",EXECUTED,models/model_comparison.csv,Retrospective evidence; see canonical report
+R31,6.3,Last state / shrunk empirical Bayes and recent-k baseline,EXECUTED,models/recent_history_reference.csv,Last cheap binary state duplicates always-stay; history is a partial-pooling proxy
+R32,6.3,Cost-change fixed-capacity ranking,EXECUTED,models/recent_change_capacity.csv,Retrospective evidence; see canonical report
+R33,6.3,"Extra ML libraries, deep models or causal models",NOT_JUSTIFIED,assessment/REMAINING_BLOCKERS.md,Timing/novelty stop gate reached; no unmet need warrants extra model search
+R34,6.3,Continuous price secondary baselines and robust regression,EXECUTED,models/continuous_cost_metrics.csv,Conditional next cost; distinct from E1 probability endpoint
+R35,6.4,Bounded nested hyperparameters and train-only calibrators,EXECUTED,models/model_registry.json,Retrospective evidence; see canonical report
+R36,6.5,Brier/logloss/discrimination/calibration incl undefined cases,EXECUTED,models/model_comparison.csv,Retrospective evidence; see canonical report
+R37,6.5,All named raw/calibrated conventional references and Brier skill,EXECUTED,models/conventional_reference_comparisons.csv,Lowest conventional pooled score is post hoc; selected policy joint interval crosses zero versus every named reference
+R38,6.5,Paired supported subgroup differences and event/cluster gates,EXECUTED,models/subgroup_paired_uncertainty.csv,Uganda NOT_ESTIMABLE; nominal joint coverage unverified
+R39,6.5,Reliability support and Brier decomposition,EXECUTED,models/brier_decomposition.csv,Fixed-bin decomposition has explicit continuous-score residual
+R40,6.5,Paired and absolute corridor/provider/time/crossed uncertainty,EXECUTED,models/paired_dependence.csv,Only13 target waves; fitted-prediction uncertainty excludes full retraining
+R41,6.5,Joint dependence coverage validity,UNRESOLVED,validation/bootstrap_simulation.csv,Sparse crossed/time stress undercovers; joint0.86; selected-policy interval crosses0
+R42,6.5,Within-quarter5/10/20/30 capacity and burden/cost assumptions,EXECUTED,models/decision_capacity.csv,Matched E1 queue uses future membership; descriptive conditional benchmark only
+R43,6.5,"All-origin review budget, unknown states and recall bounds",EXECUTED,models/all_origin_capacity_bounds.csv,E1 extrapolation scenario; no identified population policy ranking or benefit
+R44,6.6,Associative grouped feature importance/response support,EXECUTED,models/permutation_importance.csv,Three repeats across2024 waves; correlated/off-manifold permutation caveats
+R45,6.6,Pre/post2022 composition/distribution and calibration shifts,EXECUTED,data/pre_post2022_distribution_shift.csv,Descriptive KS effect; IID p-values and causal change attribution withheld
+R46,6.6,SSA/EAC/Uganda/income/channel/new-history support gates,EXECUTED,models/subgroups.csv,Uganda20 failures/3 corridors; no score or superiority claim
+R47,6.6,"High/low history, prior-own-quote overlap strata",EXECUTED,models/history_overlap_support.csv,Fixed cutpoints; no performance-optimised strata
+R48,6.6,Source date/transparency/FX/Russia and no-history fitted sensitivity,EXECUTED,models/final_stress_metrics.csv,Retrospective evidence; see canonical report
+R49,6.6,Provider target history plus own-service lag ablation,EXECUTED,models/no_identity_history_metrics.csv,Fixed zero/availability0 removes own-lag information; original rate-only ablation preserved
+R50,6.6,Largest-development provider/corridor refits and evaluation dominance,EXECUTED,models/final_stress_registry.json,Private identifiers withheld; full target histories purged
+R51,6.7,Private models metadata/checksums and save/reload parity,EXECUTED,models/fitted_artifact_manifest.json,No pickles/predictions distributed; hashes supplied for local artifacts
+R52,7,Frozen future evaluator / genuinely unseen new wave,NOT_AVAILABLE,validation/holdout_status.md,Evaluator synthetic clocks tested; no real future data fabricated
+R53,7,Claim falsification and all12 publication gates,EXECUTED,assessment/claim_evidence_ledger.csv,Multiple substantive gates FAIL/UNRESOLVED; conditional verdict
+R54,7.2,Stop unbounded algorithm search when fatal gates persist,EXECUTED,assessment/REMAINING_BLOCKERS.md,Retrospective evidence; see canonical report
+R55,8.1,"Numbered300dpiPNG/vector figures, legacy comparison and visual QA",EXECUTED,figures/figure_inventory.csv,Retrospective evidence; see canonical report
+R56,8.2,"Eight primary tables, supplements and variable metadata",EXECUTED,manuscript/table_legends.md,Retrospective evidence; see canonical report
+R57,8.3,"Conditional evidence report/outline, no submission-ready claim",EXECUTED,manuscript/conditional_research_report.md,No full submission manuscript or format conversions warranted under conditional verdict
+R58,8.4,Authorship/affiliations/funding/ethics/AI statements,UNRESOLVED,manuscript/investigator_signoff_checklist.md,Human declarations explicitly INVESTIGATOR TO CONFIRM; no invented approval
+R59,9.1,README/current instructions and archived historical results,EXECUTED,README.md,Retrospective evidence; see canonical report
+R60,9.2,Aggregate-only dashboard and all-control local tests,EXECUTED,reproducibility/test_report.md,Python3.11 deployed dependency compatibility checked by CI; local analysis Python3.12
+R61,9.2,Verify actual hosted dashboard redeployment,INTEGRATION_RECORDED_SEPARATELY,deliverables/git_and_download_links.md,Local AppTest is not proof of hosted state
+R62,9.3-9.4,"Reviewed safe public allowlist, manifests, ZIP and download",INTEGRATION_RECORDED_SEPARATELY,deliverables/git_and_download_links.md,ZIP generated after source lock; excludes private/raw/row files/sourcePDFs/models
+R63,9.5,Safe PR/green CI/main integration and exact SHA,INTEGRATION_RECORDED_SEPARATELY,deliverables/git_and_download_links.md,"No force-push, bypass or formal release"
+R64,10,Synthetic/integrity/adversarial/Streamlit and scientific audit,EXECUTED,reproducibility/test_report.md,Passing software is not passing scientific gates
+R65,11,"Serial memory limits, checkpoints, commands, failures preserved",EXECUTED,reproducibility/run_manifest.json,One brief small-process overlap disclosed; no concurrent heavy fits; peak about1.29GB
+R66,12-13,Clear evidence-based conditional verdict and usable handoff,EXECUTED,assessment/PUBLICATION_VERDICT.md,Retrospective evidence; see canonical report

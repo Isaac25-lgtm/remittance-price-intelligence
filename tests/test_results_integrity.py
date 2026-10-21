@@ -21,7 +21,7 @@ MODELS = ["B0_always_stay", "B1_prevalence", "B2_history", "B3_cost_logistic", "
 
 
 def app_allowlist():
-    tree = ast.parse(APP.read_text())
+    tree = ast.parse(APP.read_text(encoding="utf-8"))
     for node in ast.walk(tree):
         if isinstance(node, ast.Assign) and getattr(node.targets[0], "id", None) == "ALLOWLIST":
             return set(ast.literal_eval(node.value))
@@ -29,7 +29,11 @@ def app_allowlist():
 
 
 def allowlisted_paths():
-    return [ROOT / "results" / ("reproduction" if n == "table_comparison.csv" else "tables") / n
+    tree=ast.parse(APP.read_text(encoding="utf-8"))
+    completion=next(ast.literal_eval(node.value) for node in ast.walk(tree)
+                    if isinstance(node,ast.Assign) and getattr(node.targets[0],"id",None)=="COMPLETION_FILES")
+    return [ROOT / "research_completion" / completion[n] if n in completion else
+            ROOT / "results" / ("reproduction" if n == "table_comparison.csv" else "tables") / n
             for n in sorted(app_allowlist())]
 
 
@@ -134,7 +138,7 @@ def test_negative_reobservation_finding_preserved():
 
 
 def test_reproduction_report_consistent():
-    rep = json.loads((ROOT / "results" / "reproduction" / "reproduction_report.json").read_text())
+    rep = json.loads((ROOT / "results" / "reproduction" / "reproduction_report.json").read_text(encoding="utf-8"))
     tc = pd.read_csv(ROOT / "results" / "reproduction" / "table_comparison.csv")
     assert rep["source_sha256"] == "f1d7265b1856d61812c158d3d03fae686dbff58735deabe016a6bfe23482d2a8"
     assert rep["source_downloaded_in_this_run"] is False
@@ -143,7 +147,7 @@ def test_reproduction_report_consistent():
 
 
 def test_app_reads_no_row_level_sources():
-    src = APP.read_text()
+    src = APP.read_text(encoding="utf-8")
     for bad in ["data/raw", "data/processed", ".parquet", "read_excel", "rpi."]:
         assert bad not in src
 

@@ -1,0 +1,5 @@
+method,n_simulations,empirical_coverage,mean_width,evidence_type,bootstrap_reps,dgp
+corridor,50,0.38,0.002497877344805882,SYNTHETIC UNIT TEST; not observed RPW data,200,20x20 sparse crossed groups;13 AR(0.6) quarters;fixed loss-gap mean -0.003
+crossed_corridor_provider,50,0.6,0.004523659812979992,SYNTHETIC UNIT TEST; not observed RPW data,200,20x20 sparse crossed groups;13 AR(0.6) quarters;fixed loss-gap mean -0.003
+provider,50,0.48,0.0031971040699104603,SYNTHETIC UNIT TEST; not observed RPW data,200,20x20 sparse crossed groups;13 AR(0.6) quarters;fixed loss-gap mean -0.003
+time_block_4,50,0.58,0.004505546949119481,SYNTHETIC UNIT TEST; not observed RPW data,200,20x20 sparse crossed groups;13 AR(0.6) quarters;fixed loss-gap mean -0.003

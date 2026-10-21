@@ -1,0 +1,13 @@
+{
+  "n_quotes": 204469,
+  "rows_outside_label_quarter": 181,
+  "kosovo_code_mismatch": 95,
+  "normalised_providers": 699,
+  "corridors": 368,
+  "missing_2025q2": true,
+  "n_primary": 36429,
+  "n_eligible": 45343,
+  "n_right_censored": 2083,
+  "negative_origin_costs": 1308,
+  "transparent_no": 3361
+}

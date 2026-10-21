@@ -1,0 +1,239 @@
+{
+  "model_result.json": {
+    "evaluation": "EXPLORATORY_BACKTEST; aggregate-inspected periods and unverified public dataset-release chronology",
+    "test_origins": 18030,
+    "corridors": 326,
+    "paired_boost_minus_logistic_brier": -0.009722993621368694,
+    "corridor_bootstrap_interval": [
+      -0.012649901157719301,
+      -0.007006296275456677
+    ],
+    "operational_utility_demonstrated": false,
+    "independent_provider_time_validation": false,
+    "scope": "Model predicts price among exactly reobserved core service quotes, not market exit or population welfare."
+  },
+  "spline_results.json": {
+    "evaluation": "SECONDARY_EXPLORATORY_STRONGER_BASELINE",
+    "n": 18030,
+    "spline_brier": 0.1441307516537366,
+    "boost_brier": 0.13603687179081203,
+    "boost_minus_spline": -0.00809387986292456,
+    "corridor_interval": [
+      -0.010600519431489567,
+      -0.005850081411214947
+    ],
+    "year_metrics": [
+      {
+        "year": 2022,
+        "n": 4948,
+        "spline_brier": 0.14718097943708347,
+        "boost_brier": 0.1398357123994759,
+        "delta": -0.007345267037607575
+      },
+      {
+        "year": 2023,
+        "n": 7007,
+        "spline_brier": 0.13919342454887645,
+        "boost_brier": 0.1291037690720529,
+        "delta": -0.01008965547682354
+      },
+      {
+        "year": 2024,
+        "n": 6075,
+        "spline_brier": 0.14734117534949864,
+        "boost_brier": 0.14093951992557355,
+        "delta": -0.0064016554239251025
+      }
+    ]
+  },
+  "corridor_holdout_results.json": {
+    "evaluation": "SECONDARY_EXPLORATORY_GROUP_TEMPORAL_SENSITIVITY",
+    "train_n": 20248,
+    "test_n": 1598,
+    "test_corridors": 74,
+    "train_test_corridor_overlap": 0,
+    "brier": {
+      "persistence": 0.17521902377972465,
+      "prevalence": 0.1449540903404044,
+      "provider_historical": 0.14175417512987668,
+      "logistic": 0.14220592599279053,
+      "boost": 0.13336748027626283
+    },
+    "boost_minus_logistic": -0.0088384457165277,
+    "corridor_interval": [
+      -0.017112389523154217,
+      -0.001532842821438633
+    ],
+    "independent_confirmation": false
+  },
+  "data_audit.json": {
+    "raw_rows": 204469,
+    "views": [
+      {
+        "definition": "core",
+        "valid_source_rows": 199782,
+        "duplicate_source_rows_excluded": 14426,
+        "adjacent_origins": 172689
+      },
+      {
+        "definition": "strict",
+        "valid_source_rows": 199782,
+        "duplicate_source_rows_excluded": 11753,
+        "adjacent_origins": 175351
+      }
+    ],
+    "common_support": [
+      {
+        "period": "all",
+        "threshold": 3,
+        "common_origins": 40568,
+        "core_observed": 35391,
+        "strict_observed": 29647,
+        "strict_missing_but_core_observed": 5764,
+        "speed_changed_among_recovered": 5522,
+        "network_changed_among_recovered": 255,
+        "either_attribute_changed": 5764,
+        "core_missing": 5177
+      },
+      {
+        "period": "all",
+        "threshold": 5,
+        "common_origins": 85755,
+        "core_observed": 75275,
+        "strict_observed": 64259,
+        "strict_missing_but_core_observed": 11050,
+        "speed_changed_among_recovered": 10520,
+        "network_changed_among_recovered": 558,
+        "either_attribute_changed": 11050,
+        "core_missing": 10480
+      },
+      {
+        "period": "2023_on",
+        "threshold": 3,
+        "common_origins": 14081,
+        "core_observed": 13082,
+        "strict_observed": 10150,
+        "strict_missing_but_core_observed": 2934,
+        "speed_changed_among_recovered": 2928,
+        "network_changed_among_recovered": 6,
+        "either_attribute_changed": 2934,
+        "core_missing": 999
+      },
+      {
+        "period": "2023_on",
+        "threshold": 5,
+        "common_origins": 28977,
+        "core_observed": 26959,
+        "strict_observed": 21469,
+        "strict_missing_but_core_observed": 5492,
+        "speed_changed_among_recovered": 5483,
+        "network_changed_among_recovered": 9,
+        "either_attribute_changed": 5492,
+        "core_missing": 2018
+      }
+    ],
+    "corridor_availability": {
+      "initial_cheap_corridor_periods": 8672,
+      "next_has_surveyed_cheap": 7976,
+      "conditional": 0.9197416974169742,
+      "not_population_availability": true
+    },
+    "source_fields_reviewed": "30 stratified records exported for inspection; no stable-identity/market-exit truth available",
+    "asof_release_limitation": "Historical public RPW release dates not reconstructed; model is a quote-information exploratory backtest."
+  },
+  "source_code_sha256": {
+    "common.py": "15d201854a344e1072760ae9858ccee928c931c1033cf37d3cc4e914055adb3a",
+    "remittance_deep.py": "583dc07253e8fb55bc77f6affab189eac359c77158a53257cbacf0e187b2cf7f",
+    "remittance_group_holdout.py": "42dd1f9d739c11cfc1b09bbfd789ee18480e643ea4b457919a742ea54326b666",
+    "remittance_spline_baseline.py": "215ff791308683651ab5f45cdc6d4befc9c4cb77ff134d0f0f01553f8ca710c0"
+  },
+  "input_processed_sha256": "d371c8b2e09b3f7698803dbfc20b85550f6206e4d30a4974b7a6051060c3493f",
+  "input_kind": "INDEPENDENT_WORKBOOK_REBUILD_ORIGINAL_ENCODING",
+  "encoding_caveat": "Canonical numeric/blank comparison does not prove raw-string/missingness equivalence; original-cache reproduction is distinct from a rerun on the current typed cache.",
+  "source_comparison": [
+    {
+      "variable": "id",
+      "n_mismatches_after_numeric_or_blank_normalisation": 0,
+      "n_missing_flag_differences": 0,
+      "pilot_dtype": "string",
+      "current_typed_dtype": "str"
+    },
+    {
+      "variable": "period",
+      "n_mismatches_after_numeric_or_blank_normalisation": 0,
+      "n_missing_flag_differences": 0,
+      "pilot_dtype": "string",
+      "current_typed_dtype": "str"
+    },
+    {
+      "variable": "corridor",
+      "n_mismatches_after_numeric_or_blank_normalisation": 0,
+      "n_missing_flag_differences": 0,
+      "pilot_dtype": "string",
+      "current_typed_dtype": "str"
+    },
+    {
+      "variable": "firm",
+      "n_mismatches_after_numeric_or_blank_normalisation": 0,
+      "n_missing_flag_differences": 0,
+      "pilot_dtype": "string",
+      "current_typed_dtype": "str"
+    },
+    {
+      "variable": "cc1 total cost %",
+      "n_mismatches_after_numeric_or_blank_normalisation": 0,
+      "n_missing_flag_differences": 15,
+      "pilot_dtype": "string",
+      "current_typed_dtype": "float64"
+    },
+    {
+      "variable": "cc1 lcu amount",
+      "n_mismatches_after_numeric_or_blank_normalisation": 0,
+      "n_missing_flag_differences": 0,
+      "pilot_dtype": "string",
+      "current_typed_dtype": "float64"
+    },
+    {
+      "variable": "payment instrument",
+      "n_mismatches_after_numeric_or_blank_normalisation": 0,
+      "n_missing_flag_differences": 0,
+      "pilot_dtype": "string",
+      "current_typed_dtype": "str"
+    },
+    {
+      "variable": "access point",
+      "n_mismatches_after_numeric_or_blank_normalisation": 0,
+      "n_missing_flag_differences": 0,
+      "pilot_dtype": "string",
+      "current_typed_dtype": "str"
+    },
+    {
+      "variable": "pickup method",
+      "n_mismatches_after_numeric_or_blank_normalisation": 0,
+      "n_missing_flag_differences": 0,
+      "pilot_dtype": "string",
+      "current_typed_dtype": "str"
+    },
+    {
+      "variable": "pickup location",
+      "n_mismatches_after_numeric_or_blank_normalisation": 0,
+      "n_missing_flag_differences": 109989,
+      "pilot_dtype": "string",
+      "current_typed_dtype": "str"
+    }
+  ],
+  "evidence_type": "REAL-DATA EXECUTION; unchanged archived pilot programs with private I/O adapter",
+  "python_runtime": "{\"python\": \"3.12.10\", \"numpy\": \"2.2.5\", \"pandas\": \"2.2.3\", \"sklearn\": \"1.6.1\"}",
+  "cohort_overlap": {
+    "pilot_origin_years": "2022-2024",
+    "phase1_target_years": "2022-2024",
+    "pilot_n": 18030,
+    "phase1_n": 18048,
+    "shared": 16709,
+    "pilot_only": 1321,
+    "phase1_only": 1339,
+    "warning": "Different calendar windows, transparency/source filters, local-amount vs USD-basket identity, text normalisation, features and model hyperparameters; the net18 difference is not a single-row cleaning discrepancy."
+  },
+  "spline_brier_matches_reported": false,
+  "gbm_brier_matches_reported": true
+}

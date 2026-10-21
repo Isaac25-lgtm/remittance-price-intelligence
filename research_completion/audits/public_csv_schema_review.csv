@@ -1,0 +1,115 @@
+file,n_aggregate_rows,columns
+research_completion/assessment/claim_evidence_ledger.csv,10,claim_id | claim | estimand | observed_result | uncertainty | pass_fail_unresolved | source_file_or_paper | eligible_manuscript_language | required_evidence | method | test_population | alternative_explanation | caveat | figure_or_table
+research_completion/assessment/publication_gates.csv,12,gate | requirement | status | supporting_artifact | reason
+research_completion/audits/final_independent_audit.csv,348,check | status | detail
+research_completion/audits/master_requirement_ledger.csv,66,requirement_id | directive_section | requirement | status | evidence | limitation
+research_completion/audits/pilot_source_content_comparison.csv,10,variable | n_mismatches_after_numeric_or_blank_normalisation | n_missing_flag_differences | pilot_dtype | current_typed_dtype
+research_completion/audits/public_csv_schema_review.csv,114,file | n_aggregate_rows | columns
+research_completion/data/archive_report_captures.csv,125,timestamp | original | digest
+research_completion/data/cohort_by_wave.csv,37,qidx | n_quotes | n_corridors | n_providers | sample_start | sample_end | mean_cost | median_cost | share_transparent | negative_cost | negative_fx | digital_access_share | quarter | initially_cheap
+research_completion/data/identity_collision_audit.csv,1,scenario | eligible | matched | newly_linked | changed_target_among_legacy_matches | ambiguous_origins | interpretation
+research_completion/data/inclusion_exclusion_flow.csv,199,qidx | state | count | origin_quarter
+research_completion/data/manual_identity_validation_disposition.csv,3,stratum | n_sampled | public_historical_bundle_confirmation | links_promoted | status | reason
+research_completion/data/observation_selection_profile.csv,47,group | observed_valid | n | mean_origin_cost | median_origin_cost | field
+research_completion/data/pre_post2022_composition.csv,57,period | field | group | n | share
+research_completion/data/pre_post2022_distribution_shift.csv,3,variable | n_before | n_after | median_before | median_after | ks_statistic | p_value_status | interpretation
+research_completion/data/release_availability_registry.csv,38,wave | present_in_workbook | sample_start | sample_end | nominal_quarter_end | report_issue_date | report_page_url | report_pdf_hash | website_announcement_date | web_archived_first_public_by_date | archived_report_url | databank_available_by_date | downloaded_complete_dataset_first_seen | earliest_proven_public_date | timing_evidence_type | timing_source_url | evidence_grade | caveats
+research_completion/data/survey_label_concentration.csv,37,qidx | n_providers | largest_label_quote_share | top5_label_quote_share | quote_label_hhi | interpretation
+research_completion/data/variable_dictionary.csv,42,variable | dtype | unit | n_source | n_nonblank | n_distinct_nonblank | first_observed_wave | last_observed_wave | availability
+research_completion/figures/figure_inventory.csv,16,figure | title | source | note | status
+research_completion/literature/closest_work_matrix.csv,13,citation_id | author | date | title | doi | url | type | dataset_period_sample | unit | outcome_analysis | access_depth | independent_overlap_critique | evidence_locator_limitations
+research_completion/literature/search_log.csv,20,query | engine | execution_date | execution_timestamp_utc | timestamp_precision | hit_count | screening | evidence_file
+research_completion/models/absolute_brier_ci.csv,88,analysis | model | n | brier | resampling | ci95_lo | ci95_hi | log_loss | log_loss_ci95_lo | log_loss_ci95_hi | n_corridors | n_providers | n_quarters
+research_completion/models/all_origin_capacity_bounds.csv,16,rule | capacity | n_all_eligible | n_known_valid | n_unknown | reviewed | known_failures_total | known_failures_captured | unknown_reviewed | known_stays_reviewed | recall_of_known_failures | all_failure_recall_lower | all_failure_recall_upper | interpretation
+research_completion/models/annual_selection.csv,4,year | chosen_model | selection_brier | minimum_selection_brier | tolerance | operationally_selected
+research_completion/models/brier_decomposition.csv,14,model | raw_brier | binned_brier | reliability | resolution | uncertainty | binning_residual | method
+research_completion/models/calibration.csv,120,bin | n | mean_pred | obs_rate | model | observed_stays | observed_failures
+research_completion/models/calibration_selection.csv,64,year | model | method | selection_n | selection_brier | calibration_n
+research_completion/models/continuous_cost_metrics.csv,12,year | model | n | mae | rmse | endpoint
+research_completion/models/continuous_group_trend.csv,4,year | model | n | mae | rmse | endpoint | scope
+research_completion/models/conventional_reference_comparisons.csv,120,model | reference | n | brier_model | brier_reference | brier_diff | brier_skill | relative_brier_diff | resampling | ci95_lo | ci95_hi | status
+research_completion/models/decision_capacity.csv,80,analysis | rule | capacity | n | reviewed | failures_total | failures_captured | recall | precision | lift | false_alerts | missed_failures | scope
+research_completion/models/decision_capacity_ci.csv,6,analysis | rule_a | rule_b | capacity | captured_difference | ci95_lo | ci95_hi | resampling | reps
+research_completion/models/decision_cost_scenarios.csv,240,analysis | rule | capacity | review_cost | miss_cost | total_hypothetical_cost | assumption
+research_completion/models/final_stress_metrics.csv,280,scenario | scope | model | status | failures | ece | n | prevalence_stay | brier | log_loss | cal_intercept | cal_slope | mean_pred | auroc | auprc_failure
+research_completion/models/history_overlap_support.csv,20,group | model | n | failures | n_corridors | supported | prevalence_stay | brier | log_loss | cal_intercept | cal_slope | mean_pred | auroc | auprc_failure
+research_completion/models/ipw_mar_scenario.csv,4,year | n_eligible | n_observed | observed_stay | ipw_mar_p_stay | effective_sample_size | min_probability | max_probability | share_clipped | assumption
+research_completion/models/joint_dependence_sensitivity.csv,6,analysis | model_a | model_b | resampling | brier_diff | ci95_lo | ci95_hi | n_quarters | status
+research_completion/models/major_group_dominance_stress.csv,8,omitted_development_unit | n_omitted | model | scope | n | prevalence_stay | brier | log_loss | cal_intercept | cal_slope | mean_pred | auroc | auprc_failure
+research_completion/models/mnar_sensitivity.csv,180,origin_quarter | delta_failure_logodds | n_eligible | n_unknown | assumed_unknown_failure | scenario_p_stay | status
+research_completion/models/mnar_tipping_points.csv,146,field | group | n_eligible | n_unknown | stay_target | required_unknown_stay_fraction | status | interpretation
+research_completion/models/model_comparison.csv,13,scenario | scope | model | status | failures | ece | n | prevalence_stay | brier | log_loss | cal_intercept | cal_slope | mean_pred | auroc | auprc_failure
+research_completion/models/no_identity_history_metrics.csv,56,scenario | scope | model | status | failures | ece | n | prevalence_stay | brier | log_loss | cal_intercept | cal_slope | mean_pred | auroc | auprc_failure
+research_completion/models/paired_dependence.csv,56,analysis | model_a | model_b | brier_diff | resampling | ci95_lo | ci95_hi | n_quarters | caveat
+research_completion/models/partial_response.csv,36,model | current_cost | mean_predicted_stay | observed_stay | local_observed_n | caveat
+research_completion/models/performance_by_wave.csv,169,scenario | scope | model | status | failures | ece | n | prevalence_stay | brier | log_loss | cal_intercept | cal_slope | mean_pred | auroc | auprc_failure
+research_completion/models/performance_by_year.csv,88,analysis | target_year | model | n_quarters | n | prevalence_stay | brier | log_loss | cal_intercept | cal_slope | mean_pred | auroc | auprc_failure
+research_completion/models/permutation_importance.csv,84,model | origin_qidx | feature_group | n | mean_brier_increase | min_brier_increase | max_brier_increase | reps | interpretation
+research_completion/models/recent_change_capacity.csv,8,rule | capacity | reviewed | failures_captured | failures_total | recall | precision
+research_completion/models/recent_history_reference.csv,1,model | scope | n | prevalence_stay | brier | log_loss | cal_intercept | cal_slope | mean_pred | auroc | auprc_failure
+research_completion/models/reliability_cluster_intervals.csv,45,model | probability_bin | n | observed_stay | mean_pred | n_corridors | method | status | ci95_lo | ci95_hi
+research_completion/models/reobservation_models.csv,16,year | model | endpoint | n | prevalence_stay | brier | log_loss | cal_intercept | cal_slope | mean_pred | auroc | auprc_failure
+research_completion/models/sensitivity_grid.csv,15,_all | n_eligible | n_stay | n_fail | n_unknown | n_core | n_strict | conditional_p_stay_core | lower_bound | upper_bound | scenario | threshold | origin_collision_rows | n_valid_pairs
+research_completion/models/subgroup_paired_uncertainty.csv,85,group | n | failures | n_corridors | model | reference | brier_diff | resampling | ci95_lo | ci95_hi | n_quarters | status
+research_completion/models/subgroups.csv,206,analysis | group | model | n | failures | n_corridors | supported | prevalence_stay | brier | log_loss | cal_intercept | cal_slope | mean_pred | auroc | auprc_failure | status
+research_completion/models/transfer_sensitivity_metrics.csv,504,scenario | scope | model | status | failures | ece | n | prevalence_stay | brier | log_loss | cal_intercept | cal_slope | mean_pred | auroc | auprc_failure
+research_completion/models/transfer_sensitivity_paired_ci.csv,54,scenario | model_a | model_b | brier_diff | resampling | ci95_lo | ci95_hi | n
+research_completion/models/weighting_sensitivity.csv,66,analysis | model | equal_weight_unit | brier
+research_completion/models/yearly_brier_ci.csv,176,analysis | target_year | model | brier | resampling | ci95_lo | ci95_hi | n_quarters
+research_completion/reproducibility/local_table_comparison.csv,30,file | kind | rows_frozen | rows_regenerated | same_columns | max_abs_diff | text_mismatches | status | differing_keys | ignored_volatile_keys | numeric_columns_out_of_tolerance
+research_completion/reproducibility/source_to_results_comparison.csv,30,file | kind | rows_frozen | rows_regenerated | same_columns | max_abs_diff | text_mismatches | status | differing_keys | ignored_volatile_keys | numeric_columns_out_of_tolerance
+research_completion/reproducibility/test_summary.csv,15,module | status | count
+research_completion/tables/supplementary_corridor_estimand.csv,10,target_year | n_origin_corridor_quarters | n_surveyed_next | n_cheap_next | conditional_p_cheap_next
+research_completion/tables/supplementary_cost_transitions.csv,8,delta_band | n
+research_completion/tables/supplementary_descriptive_groups.csv,36,_all | n_eligible | n_stay | n_fail | n_unknown | n_core | n_strict | conditional_p_stay_core | lower_bound | upper_bound | field | group
+research_completion/tables/supplementary_fee_fx_changes.csv,2,endpoint | n | mean_fee_delta | mean_fx_delta | mean_total_delta | median_total_delta
+research_completion/tables/supplementary_overall_bounds.csv,1,_all | n_eligible | n_stay | n_fail | n_unknown | n_core | n_strict | conditional_p_stay_core | lower_bound | upper_bound | corridor_ci95_lo | corridor_ci95_hi | lower_ci95_lo | lower_ci95_hi | upper_ci95_lo | upper_ci95_hi
+research_completion/tables/supplementary_threshold_margin.csv,6,margin_band | n | stay_rate | mean_next_cost
+research_completion/tables/table_01_source_flow.csv,199,qidx | state | count | origin_quarter
+research_completion/tables/table_02_profile.csv,37,qidx | n_quotes | n_corridors | n_providers | sample_start | sample_end | mean_cost | median_cost | share_transparent | negative_cost | negative_fx | digital_access_share | quarter | initially_cheap
+research_completion/tables/table_03_persistence_bounds.csv,36,qidx | n_eligible | n_stay | n_fail | n_unknown | n_core | n_strict | conditional_p_stay_core | lower_bound | upper_bound | origin_quarter | ci95_lo | ci95_hi | n_corridors
+research_completion/tables/table_04_split_features.csv,24,year | role | n | target_start | target_end | failures | n_corridors | n_providers | previously_inspected | decision_date
+research_completion/tables/table_05_models.csv,88,analysis | model | n | brier | resampling | ci95_lo | ci95_hi | log_loss | log_loss_ci95_lo | log_loss_ci95_hi | n_corridors | n_providers | n_quarters
+research_completion/tables/table_06_decision_capacity.csv,80,analysis | rule | capacity | n | reviewed | failures_total | failures_captured | recall | precision | lift | false_alerts | missed_failures | scope
+research_completion/tables/table_07_transfer_subgroups.csv,206,analysis | group | model | n | failures | n_corridors | supported | prevalence_stay | brier | log_loss | cal_intercept | cal_slope | mean_pred | auroc | auprc_failure | status
+research_completion/tables/table_08_sensitivities.csv,15,_all | n_eligible | n_stay | n_fail | n_unknown | n_core | n_strict | conditional_p_stay_core | lower_bound | upper_bound | scenario | threshold | origin_collision_rows | n_valid_pairs
+research_completion/tables/table_inventory.csv,14,table | rows | source | units
+research_completion/validation/bootstrap_simulation.csv,5,method | n_simulations | empirical_coverage | mean_width | evidence_type | bootstrap_reps | dgp
+research_completion/validation/bootstrap_simulation_firstpass.csv,4,method | n_simulations | empirical_coverage | mean_width | evidence_type | bootstrap_reps | dgp
+research_completion/validation/feature_asof_registry.csv,31,feature | input_source_wave | known_after_date | theoretical_availability_rule | retrospective | prospective | finding
+research_completion/validation/split_registry.csv,24,year | role | n | target_start | target_end | failures | n_corridors | n_providers | previously_inspected | decision_date
+results/reproduction/table_comparison.csv,30,file | kind | rows_frozen | rows_regenerated | same_columns | max_abs_diff | text_mismatches | status | differing_keys | ignored_volatile_keys | numeric_columns_out_of_tolerance
+results/reproduction/table_comparison_firstpass.csv,30,file | kind | rows_frozen | rows_regenerated | same_columns | max_abs_diff | text_mismatches | status | differing_keys | ignored_volatile_keys | numeric_columns_out_of_tolerance
+results/tables/audit_cost_anomalies.csv,2,basket | n | missing | negative | zero | gt_20pct | gt_50pct | le_3pct | fx_margin_negative | fee_negative | denomination_values | abs_diff_total_vs_fee_plus_fx_gt_0.05 | abs_diff_total_vs_fee_plus_fx_median
+results/tables/audit_missingness.csv,44,variable | n | n_missing_or_blank | share_missing
+results/tables/audit_quarter_coverage.csv,38,qidx | period | rows | corridors | sending_countries | receiving_countries | firms_normalised | collection_date_min | collection_date_max | cc1_cost_le3_share | quarter | present_in_source
+results/tables/estimand3_corridor_level_by_year.csv,10,target_year | corridor_quarters_with_cheap | surveyed_next | still_cheap_next | p_still_cheap_given_surveyed
+results/tables/estimand_bounds_by_year.csv,10,target_year | n_eligible | n_stay | n_fail | n_unknown | n_core | n_strict | conditional_p_stay_core | lower_bound | upper_bound | conditional_p_stay_strict
+results/tables/estimand_bounds_by_year_5pct.csv,10,target_year | n_eligible | n_stay | n_fail | n_unknown | n_core | n_strict | conditional_p_stay_core | lower_bound | upper_bound
+results/tables/estimand_bounds_overall.csv,1,_all | n_eligible | n_stay | n_fail | n_unknown | n_core | n_strict | conditional_p_stay_core | lower_bound | upper_bound
+results/tables/linkage_core_only_attribute_changes.csv,1,core_only_records | speed_changed | coverage_changed
+results/tables/linkage_core_vs_strict_by_year.csv,10,target_year | eligible | core_reobserved | strict_reobserved | core_unobserved_corridor_surveyed | corridor_not_surveyed | ambiguous
+results/tables/linkage_status_by_origin_quarter.csv,37,origin_quarter | qidx | quotes | core_reobserved | core_unobserved_corridor_surveyed | corridor_not_surveyed_next_quarter | target_key_ambiguous | origin_key_ambiguous | right_censored_last_quarter
+results/tables/model_capacity_diff_lag0.csv,3,subset | capacity | rule_a | rule_b | captured_diff | ci95_lo | ci95_hi | cluster | n_boot
+results/tables/model_capacity_diff_lag1.csv,3,subset | capacity | rule_a | rule_b | captured_diff | ci95_lo | ci95_hi | cluster | n_boot
+results/tables/model_capacity_lag0.csv,42,subset | rule | capacity | reviewed_per_quarter_sum | failures_captured_per_quarter | failures_total | recall_per_quarter | reviewed_pooled | failures_captured_pooled
+results/tables/model_capacity_lag1.csv,42,subset | rule | capacity | reviewed_per_quarter_sum | failures_captured_per_quarter | failures_total | recall_per_quarter | reviewed_pooled | failures_captured_pooled
+results/tables/model_metrics_lag0.csv,48,subset | model | n | prevalence_stay | brier | log_loss | cal_intercept | cal_slope | mean_pred | auroc | auprc_failure
+results/tables/model_metrics_lag1.csv,48,subset | model | n | prevalence_stay | brier | log_loss | cal_intercept | cal_slope | mean_pred | auroc | auprc_failure
+results/tables/model_paired_diffs_lag0.csv,28,subset | model_a | model_b | cluster | n_clusters | brier_diff_a_minus_b | ci95_lo | ci95_hi
+results/tables/model_paired_diffs_lag1.csv,28,subset | model_a | model_b | cluster | n_clusters | brier_diff_a_minus_b | ci95_lo | ci95_hi
+results/tables/model_registry_lag0.csv,32,model | test_target_year | release_lag | n_train | train_first_origin | train_last_target | n_test | test_first_origin | fit_seconds
+results/tables/model_registry_lag1.csv,32,model | test_target_year | release_lag | n_train | train_first_origin | train_last_target | n_test | test_first_origin | fit_seconds
+results/tables/model_reliability_lag0.csv,40,bin | n | mean_pred | obs_rate | model
+results/tables/model_reliability_lag1.csv,40,bin | n | mean_pred | obs_rate | model
+results/tables/presentation_capacity_by_year_lag0.csv,28,target_year | rule | capacity | reviewed | failures_captured | failures_total | recall
+results/tables/presentation_corridor_metrics_lag0.csv,329,corridor | n | observed_failures | observed_stay_rate | supported | brier_B0_always_stay | brier_B1_prevalence | brier_B2_history | brier_B3_cost_logistic | brier_L1_ridge_logistic | brier_L2_spline_logistic | brier_M1_hist_gbm | brier_M2_random_forest | gbm_minus_spline
+results/tables/presentation_model_brier_ci.csv,96,release_lag | subset | model | n | brier | corridor_boot_lo | corridor_boot_hi | provider_boot_lo | provider_boot_hi | n_corridors | n_providers
+results/tables/presentation_provider_distribution_lag0.csv,28,statistic | value
+results/tables/presentation_region_metrics_lag0.csv,7,destination_region | n | observed_failures | observed_stay_rate | supported | brier_B0_always_stay | brier_B1_prevalence | brier_B2_history | brier_B3_cost_logistic | brier_L1_ridge_logistic | brier_L2_spline_logistic | brier_M1_hist_gbm | brier_M2_random_forest | gbm_minus_spline
+results/tables/presentation_reliability_all_families.csv,140,bin | n | mean_pred | obs_rate | model | release_lag
+results/tables/record_flow.csv,42,step | count | spec
+results/tables/reobservation_metrics_lag0.csv,12,test_target_year | model | n | prevalence_stay | brier | log_loss | cal_intercept | cal_slope | mean_pred | auroc | auprc_failure
+results/tables/reobservation_metrics_lag1.csv,12,test_target_year | model | n | prevalence_stay | brier | log_loss | cal_intercept | cal_slope | mean_pred | auroc | auprc_failure
+results/tables/subgroup_model_metrics_lag0.csv,28,group | model | failures | corridors | n | prevalence_stay | brier | log_loss | cal_intercept | cal_slope | mean_pred | auroc | auprc_failure | ci95_lo | ci95_hi | note
+results/tables/subgroup_support.csv,10,group | scope | corridors | providers | all_quotes | eligible_cheap_origins | primary_rows | primary_corridors | primary_providers | observed_failures | conditional_p_stay

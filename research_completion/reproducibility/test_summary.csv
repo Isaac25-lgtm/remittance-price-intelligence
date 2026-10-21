@@ -1,0 +1,16 @@
+module,status,count
+tests.test_brier_decomposition,PASS,1
+tests.test_completion_identity,PASS,2
+tests.test_completion_leakage,PASS,6
+tests.test_completion_reproduction,PASS,3
+tests.test_completion_results,PASS,6
+tests.test_completion_stats,PASS,8
+tests.test_dashboard,PASS,32
+tests.test_evaluate,PASS,7
+tests.test_features_leakage,PASS,3
+tests.test_future_wave,PASS,3
+tests.test_linkage,PASS,5
+tests.test_preprocess,PASS,7
+tests.test_publication_package,PASS,3
+tests.test_publication_package,SKIP,1
+tests.test_results_integrity,PASS,53

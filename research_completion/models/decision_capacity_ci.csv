@@ -1,0 +1,7 @@
+analysis,rule_a,rule_b,capacity,captured_difference,ci95_lo,ci95_hi,resampling,reps
+legacy,M1_hist_gbm,R_highest_cost_rule,0.2,523,408.0,647.7249999999998,corridor reranking,300
+legacy,M1_hist_gbm,L2_spline_logistic,0.2,122,61.95,181.52499999999998,corridor reranking,300
+legacy,M1_hist_gbm,B2_history,0.2,353,263.475,466.0,corridor reranking,300
+phase2,S_selected,R_highest_cost_rule,0.2,418,317.325,549.05,corridor reranking,300
+phase2,S_selected,L2_spline_logistic,0.2,92,30.950000000000003,146.67499999999984,corridor reranking,300
+phase2,S_selected,B2_history,0.2,248,174.9,362.525,corridor reranking,300

@@ -5,7 +5,7 @@ from pathlib import Path
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
-r = json.loads((ROOT / "results/reproduction/reproduction_report.json").read_text())
+r = json.loads((ROOT / "results/reproduction/reproduction_report.json").read_text(encoding="utf-8"))
 tc = pd.read_csv(ROOT / "results/reproduction/table_comparison.csv")
 steps = "\n".join(f"| `{s['command']}` | {s['returncode']} | {s['seconds']} |" for s in r["steps"])
 nonmatch = tc[tc.status != "MATCH"]

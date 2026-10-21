@@ -1,0 +1,43 @@
+variable,dtype,unit,n_source,n_nonblank,n_distinct_nonblank,first_observed_wave,last_observed_wave,availability
+id,str,source identifier; not exported as quote records,204469,204469,204469,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+period,str,survey-assigned calendar quarter,204469,204469,37,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+source_code,str,text/category,204469,204469,49,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+source_name,str,text/category,204469,204469,51,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+source_region,str,text/category,204469,204469,8,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+source_income,str,text/category,204469,204469,5,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+source_lending,str,text/category,204469,204469,4,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+source_G8G20,str,text/category,204469,204469,3,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+destination_code,str,text/category,204469,204469,105,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+destination_name,str,text/category,204469,204469,108,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+destination_region,str,text/category,204469,204469,8,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+destination_income,str,text/category,204469,204469,5,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+destination_lending,str,text/category,204469,204469,4,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+destination_G8G20,str,text/category,204469,204469,2,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+firm,str,text/category,204469,204469,713,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+firm_type,str,text/category,204469,204469,11,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+payment instrument,str,text/category,204469,204469,26,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+access point,str,text/category,204469,204469,22,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+speed actual,str,text/category,204469,204469,9,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+cc1 lcu amount,float64,sending local currency,204469,204469,35,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+cc1 denomination amount,float64,USD basket identifier,204469,204469,1,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+cc1 lcu code,str,text/category,204469,204469,43,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+cc1 lcu fee,float64,sending local currency,204469,204447,3267,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+cc1 lcu fx rate,float64,exchange rate; see workbook Legend,204469,204447,78413,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+cc1 fx margin,float64,percentage points of transfer value,204469,204451,2830,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+cc1 total cost %,float64,percentage points of transfer value,204469,204451,4485,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+cc2 lcu amount,float64,sending local currency,204469,204469,40,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+cc2 denomination amount,float64,USD basket identifier,204469,204469,1,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+cc2 lcu code,str,text/category,204469,204469,43,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+cc2 lcu fee,float64,sending local currency,204469,203397,3829,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+cc2 lcu fx rate,float64,exchange rate; see workbook Legend,204469,203397,78067,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+cc2 fx margin,float64,percentage points of transfer value,204469,203398,2816,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+cc2 total cost %,float64,percentage points of transfer value,204469,203397,3343,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+inter lcu bank fx,float64,exchange rate; see workbook Legend,204469,204469,52207,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+transparent,str,text/category,204469,204469,3,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+Standard Note,str,text/category,204469,48577,184,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+note2,str,text/category,204469,288,37,2016Q2,2021Q1,collection clock observed; historical public availability UNVERIFIED
+receiving network coverage,str,text/category,204469,204469,4,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+pickup location,str,text/category,204469,88855,16,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+pickup method,str,text/category,204469,204469,10,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+date,str,collection date,204469,204469,878,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED
+corridor,str,text/category,204469,204469,372,2016Q2,2025Q3,collection clock observed; historical public availability UNVERIFIED

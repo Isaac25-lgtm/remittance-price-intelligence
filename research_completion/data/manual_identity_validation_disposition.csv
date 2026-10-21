@@ -1,0 +1,4 @@
+stratum,n_sampled,public_historical_bundle_confirmation,links_promoted,status,reason
+speed_changed,10,0,0,UNRESOLVED,public historical service-level metadata not established; label difference alone cannot verify same economic bundle
+coverage_changed,10,0,0,UNRESOLVED,public historical service-level metadata not established; label difference alone cannot verify same economic bundle
+ambiguous_origin,10,0,0,UNRESOLVED,public historical service-level metadata not established; label difference alone cannot verify same economic bundle

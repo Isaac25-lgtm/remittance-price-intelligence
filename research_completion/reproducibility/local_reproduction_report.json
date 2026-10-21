@@ -1,0 +1,84 @@
+{
+  "what": "raw-to-result reproduction from cached official workbook (real data, not synthetic)",
+  "run_at_utc": "2026-10-20T20:37:00+00:00",
+  "code_commit": "90498346e1547e14215d4a67409416de083f5303",
+  "code_dirty_in_src_scripts_configs": false,
+  "source_file": "data\\raw\\rpw_dataset_2011_2025_q3.xlsx",
+  "source_sha256": "f1d7265b1856d61812c158d3d03fae686dbff58735deabe016a6bfe23482d2a8",
+  "source_downloaded_in_this_run": false,
+  "python": "3.12.10",
+  "pandas": "3.0.6",
+  "numpy": "2.5.4",
+  "sklearn": "1.9.1",
+  "seed": 20261017,
+  "threads": 2,
+  "steps": [
+    {
+      "command": "python -c from rpi.preprocess import load_clean; load_clean(rebuild=True)",
+      "returncode": 0,
+      "seconds": 170.4,
+      "stderr_tail": ""
+    },
+    {
+      "command": "python -m rpi.audit",
+      "returncode": 0,
+      "seconds": 9.7,
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/run_phase1.py --release-lag 0",
+      "returncode": 0,
+      "seconds": 199.6,
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/run_phase1.py --release-lag 1",
+      "returncode": 0,
+      "seconds": 202.3,
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/run_descriptive.py",
+      "returncode": 0,
+      "seconds": 108.9,
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/subgroup_metrics.py",
+      "returncode": 0,
+      "seconds": 5.4,
+      "stderr_tail": ""
+    }
+  ],
+  "frozen_tables_restored": true,
+  "tolerance": {
+    "atol": 1e-09,
+    "rtol": 1e-09
+  },
+  "timing_columns_ignored_for_status": [
+    "fit_seconds"
+  ],
+  "n_tables": 30,
+  "n_match": 14,
+  "n_match_except_timing": 2,
+  "n_differs": 14,
+  "non_matching": [
+    "model_capacity_diff_lag1.csv",
+    "model_capacity_lag0.csv",
+    "model_capacity_lag1.csv",
+    "model_metrics_lag0.csv",
+    "model_metrics_lag1.csv",
+    "model_paired_diffs_lag0.csv",
+    "model_paired_diffs_lag1.csv",
+    "model_registry_lag0.csv",
+    "model_registry_lag1.csv",
+    "model_reliability_lag0.csv",
+    "model_reliability_lag1.csv",
+    "reobservation_metrics_lag0.csv",
+    "reobservation_metrics_lag1.csv",
+    "run_meta_lag0.json",
+    "run_meta_lag1.json",
+    "subgroup_model_metrics_lag0.csv"
+  ],
+  "source_downloaded_in_completion_phase": true
+}

@@ -1,0 +1,7 @@
+# N2_MODEL bounded feasibility protocol
+
+Written 2026-10-17T05:36:30.320881+00:00 before this run's new metrics. Previously inspected evidence remains exploratory.
+
+Exploratory counterfactual quote-information backtest conditional on exact CORE reobservation, origin cost <=3%. No alias matching. Reobservation is separately assessed with prevalence/logistic. Two expanding temporal evaluations: train origins <=2021 / evaluate2022; train<=2022 / evaluate2023; train<=2023 / evaluate2024. All these periods have been inspected in aggregate: EXPLORATORY_BACKTEST, not untouched confirmation. Predictors current quote cost/FX/fee/quarter and contemporary service types/income bins, no future attributes. Fixed logistic C1 and histogram gradient boosting 60 iterations, 7 leaves, minleaf40, learningrate.07. Comparator current-cheap persistence p1 and shrinkage empirical corridor/provider rates, global training prevalence and logistic. Primary paired Brier vs logistic and best training-only baseline; logloss/calibration/AUROC/PR secondary, corridor-cluster bootstrap1999. Group bootstrap does not fully resolve provider/time cross-dependence. No causal welfare, public-release as-of deployment or claimed first-ever model. Stop AI promotion unless incremental benefit and practical consequence survive these limits.
+
+Seed 20261017. Local CPU, one heavy worker. No manuscript, paid service or external message. Stop on invalid endpoint/access or no additional identifiable contribution.

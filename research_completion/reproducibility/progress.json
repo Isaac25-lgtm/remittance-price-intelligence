@@ -1,0 +1,1019 @@
+{
+  "stages": {
+    "source_acquisition": {
+      "stage": "source_acquisition",
+      "evidence_type": "REAL-DATA EXECUTION",
+      "command": [
+        "python",
+        "scripts/completion_fetch.py",
+        "https://datacatalogfiles.worldbank.org/ddh-published/0037898/DR0095523/rpw_dataset_2011_2025_q3.xlsx",
+        "data/raw/rpw_dataset_2011_2025_q3.xlsx",
+        "--expected",
+        "f1d7265b1856d61812c158d3d03fae686dbff58735deabe016a6bfe23482d2a8"
+      ],
+      "started_utc": "2026-10-20T20:15:40.058247+00:00",
+      "ended_utc": "2026-10-20T20:16:34.729025+00:00",
+      "exit_code": 0,
+      "seconds": 54.67,
+      "peak_rss_mb": 29.3,
+      "code_sha": "d4ccbf91c3adac56418f60ad63afc9e85a07ca82"
+    },
+    "baseline_tests": {
+      "stage": "baseline_tests",
+      "evidence_type": "SYNTHETIC UNIT TEST AND REUSED PRIOR OUTPUT INTEGRITY",
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "-q",
+        "--tb=line"
+      ],
+      "started_utc": "2026-10-20T20:16:58.672606+00:00",
+      "ended_utc": "2026-10-20T20:17:25.010307+00:00",
+      "exit_code": 1,
+      "seconds": 26.33,
+      "peak_rss_mb": 219.7,
+      "code_sha": "f1e9da998273f57917c750aca87b9c0d65695433"
+    },
+    "literature_timing_acquisition": {
+      "stage": "literature_timing_acquisition",
+      "evidence_type": "PUBLIC SOURCE INVESTIGATION",
+      "command": [
+        "python",
+        "scripts/completion_sources.py"
+      ],
+      "started_utc": "2026-10-20T20:19:55.500439+00:00",
+      "ended_utc": "2026-10-20T20:20:18.817470+00:00",
+      "exit_code": 0,
+      "seconds": 23.31,
+      "peak_rss_mb": 27.6,
+      "code_sha": "f1e9da998273f57917c750aca87b9c0d65695433"
+    },
+    "install_environment": {
+      "stage": "install_environment",
+      "evidence_type": "ENVIRONMENT SETUP",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "install",
+        "--upgrade",
+        "-e",
+        ".[dev,dashboard]",
+        "pandas==3.0.6",
+        "numpy==2.5.4",
+        "scikit-learn==1.9.1",
+        "streamlit==1.66.0",
+        "altair==6.3.0"
+      ],
+      "started_utc": "2026-10-20T20:17:51.516483+00:00",
+      "ended_utc": "2026-10-20T20:21:21.886528+00:00",
+      "exit_code": 0,
+      "seconds": 210.36,
+      "peak_rss_mb": 137.7,
+      "code_sha": "f1e9da998273f57917c750aca87b9c0d65695433"
+    },
+    "additional_source_evidence": {
+      "stage": "additional_source_evidence",
+      "evidence_type": "PUBLIC SOURCE INVESTIGATION",
+      "command": [
+        "python",
+        "scripts/completion_sources.py",
+        "borra2026.pdf",
+        "rpw2025q3_catalogue.pdf",
+        "archive_reports.json"
+      ],
+      "started_utc": "2026-10-20T20:21:27.144327+00:00",
+      "ended_utc": "2026-10-20T20:22:22.778814+00:00",
+      "exit_code": 0,
+      "seconds": 55.64,
+      "peak_rss_mb": 63.2,
+      "code_sha": "f1e9da998273f57917c750aca87b9c0d65695433"
+    },
+    "corrected_baseline_tests": {
+      "stage": "corrected_baseline_tests",
+      "evidence_type": "SYNTHETIC UNIT TEST AND AGGREGATE INTEGRITY",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "--tb=short"
+      ],
+      "started_utc": "2026-10-20T20:21:46.550536+00:00",
+      "ended_utc": "2026-10-20T20:23:19.552873+00:00",
+      "exit_code": 0,
+      "seconds": 93.0,
+      "peak_rss_mb": 242.1,
+      "code_sha": "f1e9da998273f57917c750aca87b9c0d65695433"
+    },
+    "bootstrap_statistics_tests": {
+      "stage": "bootstrap_statistics_tests",
+      "evidence_type": "SYNTHETIC UNIT TEST",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests/test_completion_stats.py",
+        "tests/test_completion_reproduction.py",
+        "-q",
+        "--tb=short"
+      ],
+      "started_utc": "2026-10-20T20:24:31.073351+00:00",
+      "ended_utc": "2026-10-20T20:24:34.177066+00:00",
+      "exit_code": 1,
+      "seconds": 3.11,
+      "peak_rss_mb": 88.9,
+      "code_sha": "f1e9da998273f57917c750aca87b9c0d65695433"
+    },
+    "bootstrap_statistics_tests_corrected": {
+      "stage": "bootstrap_statistics_tests_corrected",
+      "evidence_type": "SYNTHETIC UNIT TEST",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests/test_completion_stats.py",
+        "tests/test_completion_reproduction.py",
+        "-q",
+        "--tb=short"
+      ],
+      "started_utc": "2026-10-20T20:24:57.462904+00:00",
+      "ended_utc": "2026-10-20T20:25:00.554928+00:00",
+      "exit_code": 0,
+      "seconds": 3.09,
+      "peak_rss_mb": 89.9,
+      "code_sha": "f1e9da998273f57917c750aca87b9c0d65695433"
+    },
+    "literature_and_timing_ledgers": {
+      "stage": "literature_and_timing_ledgers",
+      "evidence_type": "PUBLIC SOURCE INVESTIGATION AND REUSED LEGACY COVERAGE",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "scripts/completion_evidence.py"
+      ],
+      "started_utc": "2026-10-20T20:34:34.129563+00:00",
+      "ended_utc": "2026-10-20T20:34:36.219117+00:00",
+      "exit_code": 0,
+      "seconds": 2.09,
+      "peak_rss_mb": 62.7,
+      "code_sha": "90498346e1547e14215d4a67409416de083f5303"
+    },
+    "new_leakage_and_future_tests": {
+      "stage": "new_leakage_and_future_tests",
+      "evidence_type": "SYNTHETIC UNIT TEST",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests/test_completion_leakage.py",
+        "tests/test_future_wave.py",
+        "-q",
+        "--tb=short"
+      ],
+      "started_utc": "2026-10-20T20:36:08.160085+00:00",
+      "ended_utc": "2026-10-20T20:36:15.295784+00:00",
+      "exit_code": 0,
+      "seconds": 7.14,
+      "peak_rss_mb": 171.8,
+      "code_sha": "90498346e1547e14215d4a67409416de083f5303"
+    },
+    "independent_legacy_reproduction": {
+      "stage": "independent_legacy_reproduction",
+      "evidence_type": "REAL-DATA EXECUTION",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "scripts/completion_reproduce.py"
+      ],
+      "started_utc": "2026-10-20T20:25:18.967397+00:00",
+      "ended_utc": "2026-10-20T20:37:01.383689+00:00",
+      "exit_code": 1,
+      "seconds": 702.41,
+      "peak_rss_mb": 942.8,
+      "code_sha": "90498346e1547e14215d4a67409416de083f5303"
+    },
+    "phase2_software_smoke": {
+      "stage": "phase2_software_smoke",
+      "evidence_type": "SYNTHETIC UNIT TEST",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests/test_completion_leakage.py",
+        "tests/test_completion_stats.py",
+        "tests/test_future_wave.py",
+        "tests/test_completion_reproduction.py",
+        "-q",
+        "--tb=short"
+      ],
+      "started_utc": "2026-10-20T20:40:28.833823+00:00",
+      "ended_utc": "2026-10-20T20:40:35.975355+00:00",
+      "exit_code": 0,
+      "seconds": 7.14,
+      "peak_rss_mb": 172.1,
+      "code_sha": "90498346e1547e14215d4a67409416de083f5303",
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "620b2181cb2b4f7236476375739277aa79b70ebe23f8fb1f6af5553f219889eb",
+      "code_fingerprint_end": "620b2181cb2b4f7236476375739277aa79b70ebe23f8fb1f6af5553f219889eb"
+    },
+    "independent_data_measurement": {
+      "stage": "independent_data_measurement",
+      "evidence_type": "REAL-DATA EXECUTION",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "scripts/completion_data.py"
+      ],
+      "started_utc": "2026-10-20T20:37:22.554865+00:00",
+      "ended_utc": "2026-10-20T20:47:22.523010+00:00",
+      "exit_code": 0,
+      "seconds": 599.97,
+      "peak_rss_mb": 1286.1,
+      "code_sha": "869af85479e43844d4a32fb7c5655906662dd46e"
+    },
+    "additional_identity_and_component_audit": {
+      "stage": "additional_identity_and_component_audit",
+      "evidence_type": "REAL-DATA EXECUTION",
+      "command": [
+        "F:\\MY FILES\\DATA SCIENCE\\PUBLISHING\\Remittance AI\\remittance-price-intelligence\\.venv\\Scripts\\python.exe",
+        "scripts/completion_diagnostics.py"
+      ],
+      "started_utc": "2026-10-20T20:47:57.775986+00:00",
+      "ended_utc": "2026-10-20T20:49:36.956156+00:00",
+      "exit_code": 0,
+      "seconds": 99.19,
+      "peak_rss_mb": 822.7,
+      "code_sha": "a740a86360408ff7f9b48dca78023ac2597a9446",
+      "code_files_changed_during_run": [
+        "src\\rpi\\evaluate.py"
+      ],
+      "code_fingerprint_start": "cd1e1d45639c2274cdcf143bd505e1fe3e8461d24b503b8fb7edfdc9581e502f",
+      "code_fingerprint_end": "9e57d88d0486d8b383f3ae9f8491f094038723da69f82688641b389f9c91f607"
+    },
+    "calibration_extreme_probability_regression": {
+      "stage": "calibration_extreme_probability_regression",
+      "evidence_type": "SYNTHETIC UNIT TEST",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests/test_evaluate.py",
+        "-q",
+        "--tb=short"
+      ],
+      "started_utc": "2026-10-20T20:49:31.330690+00:00",
+      "ended_utc": "2026-10-20T20:49:37.453706+00:00",
+      "exit_code": 0,
+      "seconds": 6.12,
+      "peak_rss_mb": 165.9,
+      "code_sha": "a740a86360408ff7f9b48dca78023ac2597a9446",
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "9e57d88d0486d8b383f3ae9f8491f094038723da69f82688641b389f9c91f607",
+      "code_fingerprint_end": "9e57d88d0486d8b383f3ae9f8491f094038723da69f82688641b389f9c91f607"
+    },
+    "independent_streaming_cohort_audit": {
+      "stage": "independent_streaming_cohort_audit",
+      "evidence_type": "REAL-DATA EXECUTION",
+      "command": [
+        "F:\\MY FILES\\DATA SCIENCE\\PUBLISHING\\Remittance AI\\remittance-price-intelligence\\.venv\\Scripts\\python.exe",
+        "scripts/independent_raw_audit.py"
+      ],
+      "started_utc": "2026-10-20T20:49:37.069344+00:00",
+      "ended_utc": "2026-10-20T20:51:28.313019+00:00",
+      "exit_code": 0,
+      "seconds": 111.25,
+      "peak_rss_mb": 225.9,
+      "code_sha": "bde1cc53596f212aeba41c9e58f2693c497706f7",
+      "code_files_changed_during_run": [
+        "scripts\\build_publication_handoff.py"
+      ],
+      "code_fingerprint_start": "9e57d88d0486d8b383f3ae9f8491f094038723da69f82688641b389f9c91f607",
+      "code_fingerprint_end": "266fc7af26640b6e6e5b07bf06650a055a987c0efd3bdbba5cb0c8eb9bb8b3ac"
+    },
+    "nested_model_selection": {
+      "stage": "nested_model_selection",
+      "evidence_type": "REAL-DATA EXECUTION",
+      "command": [
+        "F:\\MY FILES\\DATA SCIENCE\\PUBLISHING\\Remittance AI\\remittance-price-intelligence\\.venv\\Scripts\\python.exe",
+        "scripts/completion_models.py",
+        "nested"
+      ],
+      "started_utc": "2026-10-20T20:51:28.423362+00:00",
+      "ended_utc": "2026-10-20T20:53:48.085631+00:00",
+      "exit_code": 0,
+      "seconds": 139.66,
+      "peak_rss_mb": 444.8,
+      "code_sha": "bde1cc53596f212aeba41c9e58f2693c497706f7",
+      "code_files_changed_during_run": [
+        "scripts\\build_publication_handoff.py"
+      ],
+      "code_fingerprint_start": "266fc7af26640b6e6e5b07bf06650a055a987c0efd3bdbba5cb0c8eb9bb8b3ac",
+      "code_fingerprint_end": "7f3951d13a4bf381ce1a82512a00e6cc6aca2357f99f95aa5d4800c01704f123"
+    },
+    "recent_history_reference": {
+      "stage": "recent_history_reference",
+      "evidence_type": "REAL-DATA EXECUTION",
+      "command": [
+        "F:\\MY FILES\\DATA SCIENCE\\PUBLISHING\\Remittance AI\\remittance-price-intelligence\\.venv\\Scripts\\python.exe",
+        "scripts/completion_recent.py"
+      ],
+      "started_utc": "2026-10-20T20:53:48.197015+00:00",
+      "ended_utc": "2026-10-20T20:53:54.277724+00:00",
+      "exit_code": 0,
+      "seconds": 6.08,
+      "peak_rss_mb": 403.0,
+      "code_sha": "bde1cc53596f212aeba41c9e58f2693c497706f7",
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "7f3951d13a4bf381ce1a82512a00e6cc6aca2357f99f95aa5d4800c01704f123",
+      "code_fingerprint_end": "7f3951d13a4bf381ce1a82512a00e6cc6aca2357f99f95aa5d4800c01704f123"
+    },
+    "transfer_and_fitted_sensitivities": {
+      "stage": "transfer_and_fitted_sensitivities",
+      "evidence_type": "REAL-DATA EXECUTION",
+      "command": [
+        "F:\\MY FILES\\DATA SCIENCE\\PUBLISHING\\Remittance AI\\remittance-price-intelligence\\.venv\\Scripts\\python.exe",
+        "scripts/completion_models.py",
+        "transfer"
+      ],
+      "started_utc": "2026-10-20T20:53:54.387183+00:00",
+      "ended_utc": "2026-10-20T21:09:18.556236+00:00",
+      "exit_code": 0,
+      "seconds": 924.17,
+      "peak_rss_mb": 1284.1,
+      "code_sha": "2a25992e75cc2c364bd86b67f35e1ad2dab99e67",
+      "code_files_changed_during_run": [
+        "scripts\\completion_pipeline.py",
+        "scripts\\bootstrap_simulation.py",
+        "scripts\\recover_pilot.py",
+        "scripts\\final_scientific_audit.py",
+        "scripts\\completion_report.py",
+        "scripts\\completion_inference.py"
+      ],
+      "code_fingerprint_start": "7f3951d13a4bf381ce1a82512a00e6cc6aca2357f99f95aa5d4800c01704f123",
+      "code_fingerprint_end": "75dc22d222c84a0eee422d56990a6f65159fd5a67f796234e0f5ca780961d5bd"
+    },
+    "observation_and_mar_scenario": {
+      "stage": "observation_and_mar_scenario",
+      "evidence_type": "REAL-DATA EXECUTION",
+      "command": [
+        "F:\\MY FILES\\DATA SCIENCE\\PUBLISHING\\Remittance AI\\remittance-price-intelligence\\.venv\\Scripts\\python.exe",
+        "scripts/completion_models.py",
+        "observation"
+      ],
+      "started_utc": "2026-10-20T21:09:18.661613+00:00",
+      "ended_utc": "2026-10-20T21:09:47.043413+00:00",
+      "exit_code": 0,
+      "seconds": 28.38,
+      "peak_rss_mb": 395.6,
+      "code_sha": "2a25992e75cc2c364bd86b67f35e1ad2dab99e67",
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "75dc22d222c84a0eee422d56990a6f65159fd5a67f796234e0f5ca780961d5bd",
+      "code_fingerprint_end": "75dc22d222c84a0eee422d56990a6f65159fd5a67f796234e0f5ca780961d5bd"
+    },
+    "continuous_price_secondary": {
+      "stage": "continuous_price_secondary",
+      "evidence_type": "REAL-DATA EXECUTION",
+      "command": [
+        "F:\\MY FILES\\DATA SCIENCE\\PUBLISHING\\Remittance AI\\remittance-price-intelligence\\.venv\\Scripts\\python.exe",
+        "scripts/completion_models.py",
+        "continuous"
+      ],
+      "started_utc": "2026-10-20T21:09:47.146031+00:00",
+      "ended_utc": "2026-10-20T21:09:56.254446+00:00",
+      "exit_code": 0,
+      "seconds": 9.11,
+      "peak_rss_mb": 320.4,
+      "code_sha": "2a25992e75cc2c364bd86b67f35e1ad2dab99e67",
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "75dc22d222c84a0eee422d56990a6f65159fd5a67f796234e0f5ca780961d5bd",
+      "code_fingerprint_end": "75dc22d222c84a0eee422d56990a6f65159fd5a67f796234e0f5ca780961d5bd"
+    },
+    "score_and_package_safety_tests": {
+      "stage": "score_and_package_safety_tests",
+      "evidence_type": "SYNTHETIC UNIT TEST",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests/test_publication_package.py",
+        "tests/test_brier_decomposition.py",
+        "tests/test_evaluate.py",
+        "-q",
+        "--tb=short"
+      ],
+      "started_utc": "2026-10-20T21:12:28.552207+00:00",
+      "ended_utc": "2026-10-20T21:12:34.726738+00:00",
+      "exit_code": 0,
+      "seconds": 6.17,
+      "peak_rss_mb": 159.8,
+      "code_sha": "2a25992e75cc2c364bd86b67f35e1ad2dab99e67",
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "a965370f03f6f7ecb1c697351434cc4ac326701a4f77e3913000c5ec7572ec43",
+      "code_fingerprint_end": "a965370f03f6f7ecb1c697351434cc4ac326701a4f77e3913000c5ec7572ec43"
+    },
+    "paired_dependence_and_capacity": {
+      "stage": "paired_dependence_and_capacity",
+      "evidence_type": "REAL-DATA EXECUTION",
+      "command": [
+        "F:\\MY FILES\\DATA SCIENCE\\PUBLISHING\\Remittance AI\\remittance-price-intelligence\\.venv\\Scripts\\python.exe",
+        "scripts/completion_inference.py"
+      ],
+      "started_utc": "2026-10-20T21:09:56.356875+00:00",
+      "ended_utc": "2026-10-20T21:16:52.206253+00:00",
+      "exit_code": 0,
+      "seconds": 415.84,
+      "peak_rss_mb": 466.3,
+      "code_sha": "2a25992e75cc2c364bd86b67f35e1ad2dab99e67",
+      "code_files_changed_during_run": [
+        "scripts\\completion_score_supplement.py",
+        "scripts\\completion_report.py",
+        "scripts\\build_publication_handoff.py",
+        "scripts\\completion_inference.py"
+      ],
+      "code_fingerprint_start": "75dc22d222c84a0eee422d56990a6f65159fd5a67f796234e0f5ca780961d5bd",
+      "code_fingerprint_end": "89d7075138977b9637c8004d413c65e750b1ce0dafbd923b7f27602e96c7d081"
+    },
+    "associative_explainability": {
+      "stage": "associative_explainability",
+      "evidence_type": "REAL-DATA EXECUTION",
+      "command": [
+        "F:\\MY FILES\\DATA SCIENCE\\PUBLISHING\\Remittance AI\\remittance-price-intelligence\\.venv\\Scripts\\python.exe",
+        "scripts/completion_inference.py",
+        "explain"
+      ],
+      "started_utc": "2026-10-20T21:16:52.338166+00:00",
+      "ended_utc": "2026-10-20T21:17:19.679299+00:00",
+      "exit_code": 0,
+      "seconds": 27.34,
+      "peak_rss_mb": 270.5,
+      "code_sha": "2a25992e75cc2c364bd86b67f35e1ad2dab99e67",
+      "code_files_changed_during_run": [
+        "scripts\\completion_score_supplement.py"
+      ],
+      "code_fingerprint_start": "89d7075138977b9637c8004d413c65e750b1ce0dafbd923b7f27602e96c7d081",
+      "code_fingerprint_end": "60a2de0dd064f81b7881d5bd480addc7e10718026559a77c116c5ef1da663bc4"
+    },
+    "recovered_pilot_rerun": {
+      "stage": "recovered_pilot_rerun",
+      "evidence_type": "REAL-DATA EXECUTION",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "scripts/recover_pilot.py",
+        "--prior-parquet",
+        "F:\\MY FILES\\DATA SCIENCE\\PUBLISHING\\TESTS\\publication_feasibility_lab\\discovery_round3\\data\\rpw_post2016.parquet"
+      ],
+      "started_utc": "2026-10-20T21:18:47.449627+00:00",
+      "ended_utc": "2026-10-20T21:19:28.929857+00:00",
+      "exit_code": 0,
+      "seconds": 41.48,
+      "peak_rss_mb": 1176.0,
+      "code_sha": "2b3eb709d413160e7ee9dca89151550fb786793c",
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "60a2de0dd064f81b7881d5bd480addc7e10718026559a77c116c5ef1da663bc4",
+      "code_fingerprint_end": "60a2de0dd064f81b7881d5bd480addc7e10718026559a77c116c5ef1da663bc4"
+    },
+    "bootstrap_simulation_stress": {
+      "stage": "bootstrap_simulation_stress",
+      "evidence_type": "SYNTHETIC UNIT TEST",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "scripts/bootstrap_simulation.py"
+      ],
+      "started_utc": "2026-10-20T21:19:49.330739+00:00",
+      "ended_utc": "2026-10-20T21:20:04.543109+00:00",
+      "exit_code": 0,
+      "seconds": 15.2,
+      "peak_rss_mb": 83.8,
+      "code_sha": "2b3eb709d413160e7ee9dca89151550fb786793c",
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "6991f6e2bf7263b4bafd24e20fb963dfc6c7b316cbf01c015c5fc0777cdf9485",
+      "code_fingerprint_end": "6991f6e2bf7263b4bafd24e20fb963dfc6c7b316cbf01c015c5fc0777cdf9485"
+    },
+    "recovered_original_pilot_rerun": {
+      "stage": "recovered_original_pilot_rerun",
+      "evidence_type": "REAL-DATA EXECUTION",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "scripts/recover_pilot.py",
+        "--prior-parquet",
+        "F:\\MY FILES\\DATA SCIENCE\\PUBLISHING\\TESTS\\publication_feasibility_lab\\discovery_round3\\data\\rpw_post2016.parquet",
+        "--use-original-cache"
+      ],
+      "started_utc": "2026-10-20T21:22:08.999847+00:00",
+      "ended_utc": "2026-10-20T21:22:57.612811+00:00",
+      "exit_code": 0,
+      "seconds": 48.61,
+      "peak_rss_mb": 1259.7,
+      "code_sha": "2b3eb709d413160e7ee9dca89151550fb786793c",
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "e4ea855fec5013f69d81c5825543d843ccdbd6b5826e0678cbf043146cf511fc",
+      "code_fingerprint_end": "e4ea855fec5013f69d81c5825543d843ccdbd6b5826e0678cbf043146cf511fc"
+    },
+    "joint_resampler_structural_tests": {
+      "stage": "joint_resampler_structural_tests",
+      "evidence_type": "SYNTHETIC UNIT TEST",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests/test_completion_stats.py",
+        "-q",
+        "--tb=short"
+      ],
+      "started_utc": "2026-10-20T21:25:52.134055+00:00",
+      "ended_utc": "2026-10-20T21:25:55.240121+00:00",
+      "exit_code": 0,
+      "seconds": 3.11,
+      "peak_rss_mb": 84.9,
+      "code_sha": "2b3eb709d413160e7ee9dca89151550fb786793c",
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "475bfe014e079283015a443738e30c8a11ea0d5f5d4cac63bf8b8b3adb0057e5",
+      "code_fingerprint_end": "475bfe014e079283015a443738e30c8a11ea0d5f5d4cac63bf8b8b3adb0057e5"
+    },
+    "independently_rebuilt_pilot_reproduction": {
+      "stage": "independently_rebuilt_pilot_reproduction",
+      "evidence_type": "REAL-DATA EXECUTION",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "scripts/recover_pilot.py",
+        "--prior-parquet",
+        "F:\\MY FILES\\DATA SCIENCE\\PUBLISHING\\TESTS\\publication_feasibility_lab\\discovery_round3\\data\\rpw_post2016.parquet",
+        "--rebuild-original-encoding"
+      ],
+      "started_utc": "2026-10-20T21:23:47.473378+00:00",
+      "ended_utc": "2026-10-20T21:26:28.156051+00:00",
+      "exit_code": 0,
+      "seconds": 160.69,
+      "peak_rss_mb": 1254.1,
+      "code_sha": "32a50ca3662747212af9d2e439f1059f49c5b6b2",
+      "code_files_changed_during_run": [
+        "scripts\\bootstrap_simulation.py",
+        "src\\rpi\\completion_stats.py",
+        "scripts\\joint_dependence.py"
+      ],
+      "code_fingerprint_start": "3df70fc1ff8ddcc9ff7f20d72eba5691150a42814999f0d94b3a908d139af959",
+      "code_fingerprint_end": "475bfe014e079283015a443738e30c8a11ea0d5f5d4cac63bf8b8b3adb0057e5"
+    },
+    "joint_dependence_sensitivity": {
+      "stage": "joint_dependence_sensitivity",
+      "evidence_type": "REAL-DATA EXECUTION",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "scripts/joint_dependence.py"
+      ],
+      "started_utc": "2026-10-20T21:26:21.080316+00:00",
+      "ended_utc": "2026-10-20T21:26:35.312235+00:00",
+      "exit_code": 0,
+      "seconds": 14.23,
+      "peak_rss_mb": 115.6,
+      "code_sha": "32a50ca3662747212af9d2e439f1059f49c5b6b2",
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "475bfe014e079283015a443738e30c8a11ea0d5f5d4cac63bf8b8b3adb0057e5",
+      "code_fingerprint_end": "475bfe014e079283015a443738e30c8a11ea0d5f5d4cac63bf8b8b3adb0057e5"
+    },
+    "bootstrap_simulation_joint_stress": {
+      "stage": "bootstrap_simulation_joint_stress",
+      "evidence_type": "SYNTHETIC UNIT TEST",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "scripts/bootstrap_simulation.py"
+      ],
+      "started_utc": "2026-10-20T21:26:35.728422+00:00",
+      "ended_utc": "2026-10-20T21:26:55.989713+00:00",
+      "exit_code": 0,
+      "seconds": 20.27,
+      "peak_rss_mb": 83.6,
+      "code_sha": "32a50ca3662747212af9d2e439f1059f49c5b6b2",
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "475bfe014e079283015a443738e30c8a11ea0d5f5d4cac63bf8b8b3adb0057e5",
+      "code_fingerprint_end": "475bfe014e079283015a443738e30c8a11ea0d5f5d4cac63bf8b8b3adb0057e5"
+    },
+    "score_variable_and_artifact_supplements": {
+      "stage": "score_variable_and_artifact_supplements",
+      "evidence_type": "REAL-DATA EXECUTION",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "scripts/completion_score_supplement.py"
+      ],
+      "started_utc": "2026-10-20T21:26:56.330669+00:00",
+      "ended_utc": "2026-10-20T21:27:13.552030+00:00",
+      "exit_code": 0,
+      "seconds": 17.22,
+      "peak_rss_mb": 363.4,
+      "code_sha": "32a50ca3662747212af9d2e439f1059f49c5b6b2",
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "475bfe014e079283015a443738e30c8a11ea0d5f5d4cac63bf8b8b3adb0057e5",
+      "code_fingerprint_end": "475bfe014e079283015a443738e30c8a11ea0d5f5d4cac63bf8b8b3adb0057e5"
+    },
+    "all_origin_capacity_uncertainty": {
+      "stage": "all_origin_capacity_uncertainty",
+      "evidence_type": "REAL-DATA EXECUTION",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "scripts/all_origin_capacity.py"
+      ],
+      "started_utc": "2026-10-20T21:29:04.592137+00:00",
+      "ended_utc": "2026-10-20T21:29:12.737261+00:00",
+      "exit_code": 0,
+      "seconds": 8.14,
+      "peak_rss_mb": 270.8,
+      "code_sha": "32a50ca3662747212af9d2e439f1059f49c5b6b2",
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "1b5ae574c7f49f08359d9e9823421a62048b887ce5c50302d45de545886375c4",
+      "code_fingerprint_end": "1b5ae574c7f49f08359d9e9823421a62048b887ce5c50302d45de545886375c4"
+    },
+    "final_evidence_ledgers": {
+      "stage": "final_evidence_ledgers",
+      "evidence_type": "PUBLIC SOURCE INVESTIGATION AND REUSED LEGACY COVERAGE",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "scripts/completion_evidence.py"
+      ],
+      "started_utc": "2026-10-20T21:33:27.593749+00:00",
+      "ended_utc": "2026-10-20T21:33:29.675346+00:00",
+      "exit_code": 0,
+      "seconds": 2.08,
+      "peak_rss_mb": 68.1,
+      "code_sha": "32a50ca3662747212af9d2e439f1059f49c5b6b2",
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "f240a73ee1c9129ba73d6e0f21d037bfdc204077828aaa6196319234de8e0759",
+      "code_fingerprint_end": "f240a73ee1c9129ba73d6e0f21d037bfdc204077828aaa6196319234de8e0759"
+    },
+    "conditional_scientific_report": {
+      "stage": "conditional_scientific_report",
+      "evidence_type": "REPORT FROM LOCKED REAL-DATA OUTPUTS",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "scripts/completion_report.py"
+      ],
+      "started_utc": "2026-10-20T21:33:33.720989+00:00",
+      "ended_utc": "2026-10-20T21:33:36.813418+00:00",
+      "exit_code": 0,
+      "seconds": 3.09,
+      "peak_rss_mb": 86.9,
+      "code_sha": "32a50ca3662747212af9d2e439f1059f49c5b6b2",
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "f240a73ee1c9129ba73d6e0f21d037bfdc204077828aaa6196319234de8e0759",
+      "code_fingerprint_end": "f240a73ee1c9129ba73d6e0f21d037bfdc204077828aaa6196319234de8e0759"
+    },
+    "scientific_figures": {
+      "stage": "scientific_figures",
+      "evidence_type": "FIGURES FROM LOCKED REAL-DATA AGGREGATES",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "scripts/completion_figures.py"
+      ],
+      "started_utc": "2026-10-20T21:34:04.452264+00:00",
+      "ended_utc": "2026-10-20T21:34:24.732773+00:00",
+      "exit_code": 0,
+      "seconds": 20.28,
+      "peak_rss_mb": 359.3,
+      "code_sha": "32a50ca3662747212af9d2e439f1059f49c5b6b2",
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "f240a73ee1c9129ba73d6e0f21d037bfdc204077828aaa6196319234de8e0759",
+      "code_fingerprint_end": "f240a73ee1c9129ba73d6e0f21d037bfdc204077828aaa6196319234de8e0759"
+    },
+    "final_source_and_dominance_refits": {
+      "stage": "final_source_and_dominance_refits",
+      "evidence_type": "REAL-DATA EXECUTION",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "scripts/completion_final_stress.py"
+      ],
+      "started_utc": "2026-10-20T21:35:34.830732+00:00",
+      "ended_utc": "2026-10-20T21:43:31.587833+00:00",
+      "exit_code": 1,
+      "seconds": 476.75,
+      "peak_rss_mb": 1285.3,
+      "code_sha": "cafa7a7120dc37555c80006b905c74dc6cb171c9",
+      "code_files_changed_during_run": [
+        "scripts\\completion_figures.py",
+        "scripts\\completion_documentation.py",
+        "scripts\\completion_continuous_trend.py",
+        "scripts\\completion_report.py",
+        "scripts\\completion_sources.py",
+        "scripts\\build_publication_handoff.py",
+        "scripts\\final_scientific_audit.py",
+        "scripts\\completion_requirements.py"
+      ],
+      "code_fingerprint_start": "18d12d4f69f960590ff6ce3e168f28b491f94e331f2f610c93b8f53753296b9e",
+      "code_fingerprint_end": "b45fbbec35bb26ad418ff486e7fae255a7a358b8e1f1222ee75a4ab355d20a2f"
+    },
+    "final_source_and_dominance_diagnostics_resumed": {
+      "stage": "final_source_and_dominance_diagnostics_resumed",
+      "evidence_type": "REAL-DATA EXECUTION",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "scripts/completion_final_stress.py"
+      ],
+      "started_utc": "2026-10-20T21:43:50.422679+00:00",
+      "ended_utc": "2026-10-20T21:44:06.646012+00:00",
+      "exit_code": 0,
+      "seconds": 16.22,
+      "peak_rss_mb": 738.9,
+      "code_sha": "58fee9fb726bcf2e9746a7ac73bdbba0459fc056",
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "0b8aa178f81c953778353229b20307b997e6e60a48026f168a423c44990b09df",
+      "code_fingerprint_end": "0b8aa178f81c953778353229b20307b997e6e60a48026f168a423c44990b09df"
+    },
+    "no_provider_or_own_history_ablation": {
+      "stage": "no_provider_or_own_history_ablation",
+      "evidence_type": "REAL-DATA EXECUTION",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "scripts/completion_no_identity_history.py"
+      ],
+      "started_utc": "2026-10-20T21:44:22.191544+00:00",
+      "ended_utc": "2026-10-20T21:44:29.331004+00:00",
+      "exit_code": 1,
+      "seconds": 7.14,
+      "peak_rss_mb": 293.8,
+      "code_sha": "9e919181575411b25db6aec32f9a86599ac447e1",
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "53652dbe5baeae5a8c18f0c61b68283bb2cb17bc05b60802cea4c8e94e77ce6a",
+      "code_fingerprint_end": "53652dbe5baeae5a8c18f0c61b68283bb2cb17bc05b60802cea4c8e94e77ce6a"
+    },
+    "no_provider_or_own_history_ablation_corrected": {
+      "stage": "no_provider_or_own_history_ablation_corrected",
+      "evidence_type": "REAL-DATA EXECUTION",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "scripts/completion_no_identity_history.py"
+      ],
+      "started_utc": "2026-10-20T21:44:43.434443+00:00",
+      "ended_utc": "2026-10-20T21:45:45.179043+00:00",
+      "exit_code": 0,
+      "seconds": 61.75,
+      "peak_rss_mb": 404.2,
+      "code_sha": "cecc2a6bb8eabe3f3f1b7f527b3ad48db723c95a",
+      "code_files_changed_during_run": [
+        "scripts\\completion_report.py"
+      ],
+      "code_fingerprint_start": "248c3dd5ba3099dc4c472e90c479de4caae2e55d2226e364ff20307086ec25a1",
+      "code_fingerprint_end": "adf2a8a3b48339c761e0692d34eff947aad48971c46caa32b51a0a8c88e3b8e0"
+    },
+    "continuous_group_trend_reference": {
+      "stage": "continuous_group_trend_reference",
+      "evidence_type": "REAL-DATA EXECUTION",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "scripts/completion_continuous_trend.py"
+      ],
+      "started_utc": "2026-10-20T21:46:12.390383+00:00",
+      "ended_utc": "2026-10-20T21:46:17.513369+00:00",
+      "exit_code": 0,
+      "seconds": 5.12,
+      "peak_rss_mb": 262.2,
+      "code_sha": "cecc2a6bb8eabe3f3f1b7f527b3ad48db723c95a",
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "6ce44871418897a6c98918581d84d1555309c9bc53cb61aa98bab9bd3bd22943",
+      "code_fingerprint_end": "6ce44871418897a6c98918581d84d1555309c9bc53cb61aa98bab9bd3bd22943"
+    },
+    "final_conditional_report": {
+      "stage": "final_conditional_report",
+      "evidence_type": "REPORT FROM LOCKED REAL-DATA OUTPUTS",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "scripts/completion_report.py"
+      ],
+      "started_utc": "2026-10-20T21:46:30.516182+00:00",
+      "ended_utc": "2026-10-20T21:46:33.605451+00:00",
+      "exit_code": 0,
+      "seconds": 3.08,
+      "peak_rss_mb": 72.0,
+      "code_sha": "cecc2a6bb8eabe3f3f1b7f527b3ad48db723c95a",
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "6ce44871418897a6c98918581d84d1555309c9bc53cb61aa98bab9bd3bd22943",
+      "code_fingerprint_end": "6ce44871418897a6c98918581d84d1555309c9bc53cb61aa98bab9bd3bd22943"
+    },
+    "final_scientific_figures": {
+      "stage": "final_scientific_figures",
+      "evidence_type": "FIGURES FROM LOCKED REAL-DATA AGGREGATES",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "scripts/completion_figures.py"
+      ],
+      "started_utc": "2026-10-20T21:46:34.475359+00:00",
+      "ended_utc": "2026-10-20T21:46:55.863781+00:00",
+      "exit_code": 0,
+      "seconds": 21.39,
+      "peak_rss_mb": 337.5,
+      "code_sha": "cecc2a6bb8eabe3f3f1b7f527b3ad48db723c95a",
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "6ce44871418897a6c98918581d84d1555309c9bc53cb61aa98bab9bd3bd22943",
+      "code_fingerprint_end": "6ce44871418897a6c98918581d84d1555309c9bc53cb61aa98bab9bd3bd22943"
+    },
+    "final_navigation_and_metadata": {
+      "stage": "final_navigation_and_metadata",
+      "evidence_type": "DOCUMENTATION FROM EXECUTED OUTPUTS",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "scripts/completion_documentation.py"
+      ],
+      "started_utc": "2026-10-20T21:47:27.418989+00:00",
+      "ended_utc": "2026-10-20T21:47:29.518907+00:00",
+      "exit_code": 0,
+      "seconds": 2.09,
+      "peak_rss_mb": 66.4,
+      "code_sha": "cecc2a6bb8eabe3f3f1b7f527b3ad48db723c95a",
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "8f51618b2e30a49723f91ede03deb764d6d17e7a10ff7ca2fa8d8e59a222b071",
+      "code_fingerprint_end": "8f51618b2e30a49723f91ede03deb764d6d17e7a10ff7ca2fa8d8e59a222b071"
+    },
+    "master_requirements_and_tipping": {
+      "stage": "master_requirements_and_tipping",
+      "evidence_type": "REAL-DATA DERIVED SUMMARIES AND REQUIREMENT AUDIT",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "scripts/completion_requirements.py"
+      ],
+      "started_utc": "2026-10-20T21:47:30.350217+00:00",
+      "ended_utc": "2026-10-20T21:47:32.421557+00:00",
+      "exit_code": 0,
+      "seconds": 2.08,
+      "peak_rss_mb": 73.3,
+      "code_sha": "cecc2a6bb8eabe3f3f1b7f527b3ad48db723c95a",
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "8f51618b2e30a49723f91ede03deb764d6d17e7a10ff7ca2fa8d8e59a222b071",
+      "code_fingerprint_end": "8f51618b2e30a49723f91ede03deb764d6d17e7a10ff7ca2fa8d8e59a222b071"
+    },
+    "final_full_tests": {
+      "stage": "final_full_tests",
+      "evidence_type": "SYNTHETIC UNIT TEST AND PUBLIC AGGREGATE INTEGRITY / STREAMLIT APPTEST",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "--tb=short",
+        "--junitxml=research_completion/private_runtime/final_pytest.xml"
+      ],
+      "started_utc": "2026-10-20T21:54:46.828010+00:00",
+      "ended_utc": "2026-10-20T21:56:19.865741+00:00",
+      "exit_code": 0,
+      "seconds": 93.03,
+      "peak_rss_mb": 247.5,
+      "code_sha": "aa42965775d5c3ce57c3752f2996b8eebb764282",
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "348199fed9be72a0cabdd2ee199b8a42a32bbc4d074891f56c7469fdcf6870c1",
+      "code_fingerprint_end": "348199fed9be72a0cabdd2ee199b8a42a32bbc4d074891f56c7469fdcf6870c1"
+    },
+    "strong_reference_and_subgroup_uncertainty": {
+      "stage": "strong_reference_and_subgroup_uncertainty",
+      "evidence_type": "REAL-DATA EXECUTION",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "scripts/completion_metric_references.py"
+      ],
+      "started_utc": "2026-10-20T21:50:07.747800+00:00",
+      "ended_utc": "2026-10-20T21:51:42.884468+00:00",
+      "exit_code": 0,
+      "seconds": 95.12,
+      "peak_rss_mb": 123.3,
+      "code_sha": "aa42965775d5c3ce57c3752f2996b8eebb764282",
+      "code_files_changed_during_run": [
+        "scripts\\build_publication_handoff.py",
+        "scripts\\completion_report.py",
+        "scripts\\completion_figures.py"
+      ],
+      "code_fingerprint_start": "b06f55ae50f62e926989e82984c635557c4ebada9da71ef46ee2404596f0e141",
+      "code_fingerprint_end": "01b0184dab4eeba7a9a7ea8e9e43fb13cfced627bad9413c19aa3e4d24e1e240"
+    },
+    "canonical_report_lock": {
+      "stage": "canonical_report_lock",
+      "evidence_type": "REPORT FROM LOCKED REAL-DATA OUTPUTS",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "scripts/completion_report.py"
+      ],
+      "started_utc": "2026-10-20T21:53:14.645810+00:00",
+      "ended_utc": "2026-10-20T21:53:17.737149+00:00",
+      "exit_code": 0,
+      "seconds": 3.09,
+      "peak_rss_mb": 85.7,
+      "code_sha": "aa42965775d5c3ce57c3752f2996b8eebb764282",
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "acce06aaf281f967fe5f27643e931edf9d073d1c3eaa928887f68f2fb622b161",
+      "code_fingerprint_end": "acce06aaf281f967fe5f27643e931edf9d073d1c3eaa928887f68f2fb622b161"
+    },
+    "figure_presentation_lock": {
+      "stage": "figure_presentation_lock",
+      "evidence_type": "FIGURES FROM LOCKED REAL-DATA AGGREGATES",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "scripts/completion_figures.py"
+      ],
+      "started_utc": "2026-10-20T21:53:18.623958+00:00",
+      "ended_utc": "2026-10-20T21:53:39.897980+00:00",
+      "exit_code": 0,
+      "seconds": 21.27,
+      "peak_rss_mb": 336.6,
+      "code_sha": "aa42965775d5c3ce57c3752f2996b8eebb764282",
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "acce06aaf281f967fe5f27643e931edf9d073d1c3eaa928887f68f2fb622b161",
+      "code_fingerprint_end": "acce06aaf281f967fe5f27643e931edf9d073d1c3eaa928887f68f2fb622b161"
+    },
+    "independent_scientific_audit": {
+      "stage": "independent_scientific_audit",
+      "evidence_type": "SECOND-PASS SCIENTIFIC CLAIM AND ARTIFACT AUDIT",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "scripts/final_scientific_audit.py"
+      ],
+      "started_utc": "2026-10-20T21:54:42.728479+00:00",
+      "ended_utc": "2026-10-20T21:54:45.826913+00:00",
+      "exit_code": 0,
+      "seconds": 3.11,
+      "peak_rss_mb": 86.1,
+      "code_sha": "aa42965775d5c3ce57c3752f2996b8eebb764282",
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "348199fed9be72a0cabdd2ee199b8a42a32bbc4d074891f56c7469fdcf6870c1",
+      "code_fingerprint_end": "348199fed9be72a0cabdd2ee199b8a42a32bbc4d074891f56c7469fdcf6870c1"
+    },
+    "final_test_report": {
+      "stage": "final_test_report",
+      "evidence_type": "ACTUAL TEST REPORT FROM JUNIT",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "scripts/completion_test_report.py"
+      ],
+      "started_utc": "2026-10-21T02:14:37.711310+00:00",
+      "ended_utc": "2026-10-21T02:14:39.794079+00:00",
+      "exit_code": 0,
+      "seconds": 2.09,
+      "peak_rss_mb": 63.4,
+      "code_sha": "aa42965775d5c3ce57c3752f2996b8eebb764282",
+      "code_sha_start": "aa42965775d5c3ce57c3752f2996b8eebb764282",
+      "working_tree_dirty_start": true,
+      "working_tree_dirty_end": true,
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "290443530ec4b36105abbb3ca06c889012aa16952de51798ada73040d02abf68",
+      "code_fingerprint_end": "290443530ec4b36105abbb3ca06c889012aa16952de51798ada73040d02abf68"
+    },
+    "final_scientific_audit": {
+      "stage": "final_scientific_audit",
+      "evidence_type": "SECOND-PASS SCIENTIFIC CLAIM AND ARTIFACT AUDIT",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "scripts/final_scientific_audit.py"
+      ],
+      "started_utc": "2026-10-21T02:14:40.294318+00:00",
+      "ended_utc": "2026-10-21T02:14:42.373705+00:00",
+      "exit_code": 0,
+      "seconds": 2.08,
+      "peak_rss_mb": 72.9,
+      "code_sha": "aa42965775d5c3ce57c3752f2996b8eebb764282",
+      "code_sha_start": "aa42965775d5c3ce57c3752f2996b8eebb764282",
+      "working_tree_dirty_start": true,
+      "working_tree_dirty_end": true,
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "290443530ec4b36105abbb3ca06c889012aa16952de51798ada73040d02abf68",
+      "code_fingerprint_end": "290443530ec4b36105abbb3ca06c889012aa16952de51798ada73040d02abf68"
+    },
+    "publication_dossier_finalization": {
+      "stage": "publication_dossier_finalization",
+      "evidence_type": "REPORT FROM LOCKED REAL-DATA OUTPUTS",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "scripts/completion_report.py"
+      ],
+      "started_utc": "2026-10-21T02:15:33.393015+00:00",
+      "ended_utc": "2026-10-21T02:15:35.471783+00:00",
+      "exit_code": 0,
+      "seconds": 2.08,
+      "peak_rss_mb": 72.7,
+      "code_sha": "aa42965775d5c3ce57c3752f2996b8eebb764282",
+      "code_sha_start": "aa42965775d5c3ce57c3752f2996b8eebb764282",
+      "working_tree_dirty_start": true,
+      "working_tree_dirty_end": true,
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "4d0fde4b8786435294fe4e4fa41c3af5343c1c0008aa8a09f7a800b609e224cd",
+      "code_fingerprint_end": "4d0fde4b8786435294fe4e4fa41c3af5343c1c0008aa8a09f7a800b609e224cd"
+    },
+    "final_package_regressions": {
+      "stage": "final_package_regressions",
+      "evidence_type": "SYNTHETIC UNIT TEST AND PUBLIC AGGREGATE INTEGRITY",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests/test_publication_package.py",
+        "tests/test_completion_results.py",
+        "-q",
+        "--tb=short"
+      ],
+      "started_utc": "2026-10-21T02:17:37.792953+00:00",
+      "ended_utc": "2026-10-21T02:17:40.876834+00:00",
+      "exit_code": 0,
+      "seconds": 3.09,
+      "peak_rss_mb": 89.8,
+      "code_sha": "d25d4b01b8565e57063028ccad825be0ccb99ade",
+      "code_sha_start": "d25d4b01b8565e57063028ccad825be0ccb99ade",
+      "working_tree_dirty_start": true,
+      "working_tree_dirty_end": true,
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "63d5dc12f2f89b79552aa046b38d5429603bffe66dbe897b863ea10f3a2bcf93",
+      "code_fingerprint_end": "63d5dc12f2f89b79552aa046b38d5429603bffe66dbe897b863ea10f3a2bcf93"
+    }
+  },
+  "last_stage": "final_package_regressions"
+}
