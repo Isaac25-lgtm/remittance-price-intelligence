@@ -1,0 +1,13 @@
+{
+  "members": 488,
+  "payload_hashes_verified": 487,
+  "crc_verified": true,
+  "sha256": "6a7b7d0cfd837634ce3cda1906ab55c55c9804a1cd928dc4d9cca0682021c4fe",
+  "bytes": 11762482,
+  "source_commit": "02f830fede54c2254ae407bb2ac3bb112b16523d",
+  "original_phase3_sha256": "a01def0d701aae0b7f19a89d5ebbf28f7b2b683b2d33eb4ae629d5ba59b5665c",
+  "downloads_copy_verified": true,
+  "public_private_separation": "PASS",
+  "snapshot_note": "Original archive immutable; overlay payload hashes define this new handoff",
+  "two_unchanged_input_builds_byte_identical": true
+}
