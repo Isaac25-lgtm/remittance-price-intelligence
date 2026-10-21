@@ -35,6 +35,9 @@ external_review_not_invented,True,human task pending
 public_template_schema_only,True,"explicit empty review schema, no source/provider cases"
 verdict_consistency,True,no deployable model or submission readiness
 no_fake_manuscript,True,conditional branch supplies a complete dossier instead
+report_source_hash_literal,True,formatting must preserve exact provenance tokens
+verdict_baseline_hash_literal,True,baseline SHA must not be split by prose formatting
+verdict_generation_commit_literal,True,"exact generation SHA is preserved, not prose-spaced"
 claim_M01,True,label present in canonical dossier
 claim_source_M01_timing/source_acquisition.csv,True,exact cited evidence path exists
 claim_M02,True,label present in canonical dossier
@@ -157,9 +160,12 @@ safe_reproducibility\base_fixture_1.json,True,approved suffix/size/schema/creden
 safe_reproducibility\base_fixture_2.json,True,approved suffix/size/schema/credential scan
 safe_reproducibility\base_real_1.json,True,approved suffix/size/schema/credential scan
 safe_reproducibility\BASELINE_INVENTORY.json,True,approved suffix/size/schema/credential scan
+safe_reproducibility\ci_fixture_1.json,True,approved suffix/size/schema/credential scan
+safe_reproducibility\ci_fixture_2.json,True,approved suffix/size/schema/credential scan
 safe_reproducibility\commands.jsonl,True,approved suffix/size/schema/credential scan
 safe_reproducibility\ENVIRONMENT_MATRIX.md,True,approved suffix/size/schema/credential scan
 safe_reproducibility\FIXES_AND_REGRESSIONS.md,True,approved suffix/size/schema/credential scan
+safe_reproducibility\github_science_ci.json,True,approved suffix/size/schema/credential scan
 safe_reproducibility\LEGACY_DIFFERENCE_CAUSES.csv,True,approved suffix/size/schema/credential scan
 safe_reproducibility\LEGACY_FIELD_DIFFERENCES.csv,True,approved suffix/size/schema/credential scan
 safe_reproducibility\locked_fixture_1.json,True,approved suffix/size/schema/credential scan

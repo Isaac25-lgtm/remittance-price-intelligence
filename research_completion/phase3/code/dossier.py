@@ -163,7 +163,8 @@ The original conditional review benchmark ranks a sample defined using future re
 For a monitoring analyst, the useful result is that an81% matched-record statistic does not establish an80% all-origin guarantee, even when at least one affordable corridor quote often remains surveyed. Rechecking identity/coverage and reporting missing successors is justified as a measurement practice; efficacy of any priority queue is not established. No deployed or operational model is selected.
 ''')
     envs=[]
-    for name in ['locked_real_1','base_real_1','locked_fixture_1','base_fixture_1','tight_real_1']:
+    for name in ['locked_real_1','base_real_1','locked_fixture_1','base_fixture_1','tight_real_1','ci_fixture_1','ci_fixture_2']:
+        if not (OUT/f'reproducibility/{name}.json').exists():continue
         data=json.loads((OUT/f'reproducibility/{name}.json').read_text())
         envs.append(dict(run=name,**{k:data['environment'][k] for k in ['python','platform','numpy','pandas','scipy','sklearn']}))
     md('reproducibility/ENVIRONMENT_MATRIX.md',f'''# Environment matrix
@@ -179,6 +180,7 @@ All logged fits cap BLAS/OMP/MKL/NumExpr at two threads with PYTHONHASHSEED0. Fu
 {numeric}
 
 The older-stack real fold has identical input-row hashes but different transformed-array hashes and tiny Brier/probability differences. Tightening the solver changes individual probabilities substantially more than the original platform differences. This demonstrates preprocessing/termination sensitivity, not an identified causal explanation for the original Linux residual. Larger optimization precision is not uniformly better out of sample in the probe. Frozen scores remain scores of the declared algorithm/tolerance; mathematical optimum and stable individual decisions are not claimed. Reviving a predictive paper would require locked cross-platform row fingerprints and prespecified convergence/refit validation; it is not a reason to repeat the broad model search for TrackA.
+The GitHub Linux CI job 119023927695/run 39539558852 executed the tiny synthetic fixture twice, with identical input and prediction hashes within Linux. Its Python 3.11/scipy 1.17/numpy 2.4 environment differs from both the original Linux analysis and locked Windows. Cross-platform fixture prediction hashes differ despite essentially equal aggregate Brier scores; exact original-platform identity is not restored. Parsed fixture outputs and linked CI evidence are preserved. CI uses no RPW data or real research fits; all actual source analyses remain local Windows.
 ''')
     md('reproducibility/FIXES_AND_REGRESSIONS.md',f'''# Repairs and regressions
 
@@ -192,7 +194,7 @@ The private review aid was repaired to include alternate metadata candidates and
 ''')
     md('manuscript/conditional_research_dossier.md',f'''# Affordable surveyed remittance quotes: identity-sensitive continuity and unknown-successor bounds
 
-**Complete conditional research dossier for investigator review. Decision: CONDITIONAL_HOLD. This is not a submission-ready original manuscript.** Created{stamp}. Scientific code/source fingerprints are in the locked manifest. Keywords: remittance prices; longitudinal measurement; record linkage; partial identification; survey attrition.
+**Complete conditional research dossier for investigator review. Decision: CONDITIONAL_HOLD. This is not a submission-ready original manuscript.** Created {stamp}. Scientific code/source fingerprints are in the locked manifest. Keywords: remittance prices; longitudinal measurement; record linkage; partial identification; survey attrition.
 
 ## Scientific question and strongest supported statement
 
@@ -347,7 +349,7 @@ Recommendation: do one bounded external overlap/identity round, then decide. Arc
 ''')
     verdict=f'''# Final scientific verdict: CONDITIONAL_HOLD
 
-Phase3 decision at{stamp}. Baseline merged main c0ef4fddbef78a47f9f274df78ab68d622da8d8e; generation source commit{sha}, exact run/code hashes in LOCKED_RUN_MANIFEST.json. Publication track: retrospective finite-panel measurement. Operational model selected: NONE. TrackB: NOT_SUPPORTED. This is not peer-reviewed or submission-ready.
+Phase3 decision at {stamp}. Baseline merged main c0ef4fddbef78a47f9f274df78ab68d622da8d8e; generation source commit {sha}, exact run/code hashes in LOCKED_RUN_MANIFEST.json. Publication track: retrospective finite-panel measurement. Operational model selected: NONE. TrackB: NOT_SUPPORTED. This is not peer-reviewed or submission-ready.
 
 {conditional}
 

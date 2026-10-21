@@ -8,12 +8,14 @@ import pandas as pd
 ROOT=Path(__file__).resolve().parents[3];OUT=ROOT/'research_completion/phase3'
 
 def prose_spacing(text):
-    pieces=re.split(r'(`[^`]*`|\]\([^)]*\)|https?://\S+|\S*[/\\]\S*)',text)
+    pieces=re.split(r'(`[^`]*`|\b[a-f0-9]{32,64}\b|\d{4}-\d{2}-\d{2}T[\d:.+Z-]+|\]\([^)]*\)|https?://\S+|\S*[/\\]\S*)',text)
     for i in range(0,len(pieces),2):
         s=re.sub(r'(?<=[a-z])(?=\d)',' ',pieces[i])
         s=re.sub(r'(?<=\d)(?=[a-zA-Z])',' ',s)
         s=re.sub(r'(\d{4}) Q([1-4])',r'\1Q\2',s)
         s=re.sub(r'(\d) e([-+]\d+)',r'\1e\2',s)
+        s=re.sub(r',(?=[A-Za-z])',', ',s)
+        s=re.sub(r',(?=\d{1,2}(?:[^\d]|$))',', ',s)
         pieces[i]=s
     return ''.join(pieces)
 

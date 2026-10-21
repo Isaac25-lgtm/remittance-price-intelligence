@@ -47,6 +47,10 @@ def main():
     check('no_fake_manuscript',not (OUT/'manuscript/manuscript_for_author_review.md').exists(),'conditional branch supplies a complete dossier instead')
     claims=pd.read_csv(OUT/'assessment/claim_evidence_ledger.csv')
     report=(OUT/'manuscript/conditional_research_dossier.md').read_text(encoding='utf-8')
+    check('report_source_hash_literal','f1d7265b1856d61812c158d3d03fae686dbff58735deabe016a6bfe23482d2a8' in report,'formatting must preserve exact provenance tokens')
+    check('verdict_baseline_hash_literal','c0ef4fddbef78a47f9f274df78ab68d622da8d8e' in verdict,'baseline SHA must not be split by prose formatting')
+    generation=json.loads((OUT/'reproducibility/LOCKED_RUN_MANIFEST.json').read_text())['source_commit']
+    check('verdict_generation_commit_literal',generation in verdict,'exact generation SHA is preserved, not prose-spaced')
     for _,r in claims.iterrows():
         check('claim_'+r.claim_id,('['+r.claim_id+']') in report,'label present in canonical dossier')
         for name in r.evidence_artifact.split(';'):

@@ -102,6 +102,15 @@ def compare():
         for model in ['ridge','spline']:
             pa=np.load(PRIVATE/f'locked_fixture_1_{model}.npy');pb=np.load(PRIVATE/f'base_fixture_1_{model}.npy')
             runs.append(dict(comparison='cross_dependency_fixture_only',model=model,n=len(pa),exact_predictions=np.array_equal(pa,pb),max_abs_probability_difference=float(abs(pa-pb).max()),brier_difference=math_brier(a,model)-math_brier(b,model),strict_atol=1e-9,strict_rtol=1e-9))
+    ci1=OUT/'reproducibility/ci_fixture_1.json';ci2=OUT/'reproducibility/ci_fixture_2.json'
+    if ci1.exists() and ci2.exists():
+        aa=json.loads(ci1.read_text())['results'];bb=json.loads(ci2.read_text())['results']
+        ww=json.loads((OUT/'reproducibility/locked_fixture_1.json').read_text())['results']
+        for model in ['ridge','spline']:
+            a=next(x for x in aa if x['model']==model);b=next(x for x in bb if x['model']==model);w=next(x for x in ww if x['model']==model)
+            for label,ref in [('ci_linux_repeat',b),('windows_vs_ci_linux_fixture',w)]:
+                exact=a['prediction_hash']==ref['prediction_hash']
+                runs.append(dict(comparison=label,model=model,n=a['n_test'],same_input=a['train_input_hash']==ref['train_input_hash'],same_transformed_input=a['transformed_train_hash']==ref['transformed_train_hash'],exact_predictions=exact,max_abs_probability_difference=0 if exact else np.nan,brier_difference=a['brier']-ref['brier'],strict_atol=0,strict_rtol=0))
     pd.DataFrame(runs).to_csv(OUT/'reproducibility/RUN_COMPARISONS.csv',index=False)
     print(json.dumps(dict(strict_counts=CounterLike(comps),repeated_fits=runs),indent=2))
     return module.comparison_exit_code(comps)

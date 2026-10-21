@@ -1,6 +1,6 @@
 # Information-set audit
 
-The verified source contains 204,469 post-2016 quote records across 37 observed waves, 2016Q2-2025Q3; 2025Q2 is absent. The current official download has 50,780,339 bytes and the frozen SHA256 f 1 d 7265 b 1856 d 61812 c 158 d 3 d 03 fae 686 dbff 58735 deabe 016 a 6 bfe 23482 d 2 a 8. [M01]
+The verified source contains 204,469 post-2016 quote records across 37 observed waves, 2016Q2-2025Q3; 2025Q2 is absent. The current official download has 50,780,339 bytes and the frozen SHA256 f1d7265b1856d61812c158d3d03fae686dbff58735deabe016a6bfe23482d2a8. [M01]
 
 Current catalogue: [official dataset](https://datacatalog.worldbank.org/search/dataset/0037898/remittance-prices-worldwide), public CC BY4.0 classification and temporal coverage 2011-2025; source bytes/hash independently rechecked. Download-page text still says 2025Q1 while actual verified bytes extend to 2025Q3. Catalogue/HTTP modification dates are not new survey observations. Requests and errors are recorded separately from web-reader access. No credentials, login, payment or challenge bypass was used.
 

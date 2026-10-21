@@ -1,6 +1,6 @@
 # Affordable surveyed remittance quotes: identity-sensitive continuity and unknown-successor bounds
 
-**Complete conditional research dossier for investigator review. Decision: CONDITIONAL_HOLD. This is not a submission-ready original manuscript.** Created 2026-10-21 T03:34:40.828257+00:00. Scientific code/source fingerprints are in the locked manifest. Keywords: remittance prices; longitudinal measurement; record linkage; partial identification; survey attrition.
+**Complete conditional research dossier for investigator review. Decision: CONDITIONAL_HOLD. This is not a submission-ready original manuscript.** Created 2026-10-21T03:41:51.063649+00:00. Scientific code/source fingerprints are in the locked manifest. Keywords: remittance prices; longitudinal measurement; record linkage; partial identification; survey attrition.
 
 ## Scientific question and strongest supported statement
 
@@ -20,7 +20,7 @@ Beck and Martinez Peria's foundational 2011 journal article is distinguished fro
 
 ## Data, permissions and methods
 
-The verified source contains 204,469 post-2016 quote records across 37 observed waves, 2016Q2-2025Q3; 2025Q2 is absent. The current official download has 50,780,339 bytes and the frozen SHA256 f 1 d 7265 b 1856 d 61812 c 158 d 3 d 03 fae 686 dbff 58735 deabe 016 a 6 bfe 23482 d 2 a 8. [M01]
+The verified source contains 204,469 post-2016 quote records across 37 observed waves, 2016Q2-2025Q3; 2025Q2 is absent. The current official download has 50,780,339 bytes and the frozen SHA256 f1d7265b1856d61812c158d3d03fae686dbff58735deabe016a6bfe23482d2a8. [M01]
 
 Attribution: The World Bank, Remittance Prices Worldwide, available at http://remittanceprices.worldbank.org. Official catalogue classification is public CC BY4.0 with attribution and no endorsement. This package uses public-safe aggregates and reproducible code; raw workbooks, provider/service rows, reading-copy PDFs, identity cases and predictions are excluded.
 
@@ -73,7 +73,7 @@ The retrospective model comparison retains Brier/log loss, calibration, AUROC/fa
 
 ## Reproducibility and corrections
 
-The original strict 1e-9 comparator still has 14 exact matches,2 timing-only matches and 14 differing tables. Independent count checks match in all 20 fields tested. Separate locked Windows runs give exactly equal ridge and spline predictions on the selected 2022 fold; this is not proof of Linux numeric identity. [R01]
+The original strict 1e-9 comparator still has 14 exact matches, 2 timing-only matches and 14 differing tables. Independent count checks match in all 20 fields tested. Separate locked Windows runs give exactly equal ridge and spline predictions on the selected 2022 fold; this is not proof of Linux numeric identity. [R01]
 
 On the inspected 2022 legacy fold, tightening the fixed diagnostic tolerance from 1e-4 to 1e-10 changes ridge Brier from 0.156476196 to 0.156857164, and spline from 0.154414433 to 0.154575503. Maximum individual probability changes are 0.081154 and 0.041055. These probes are not new selected candidates. [R02]
 

@@ -1,0 +1,13 @@
+{
+  "commit": "d69afbf98bb65cc70fb0ac790019f6b89acdfaee",
+  "pr": 5,
+  "run_id": 39539558852,
+  "job_id": 119023927695,
+  "conclusion": "success",
+  "tests_passed": 169,
+  "tests_skipped": 1,
+  "skip_reason": "science checkpoint before ZIP build",
+  "fixture_source": "decoded GitHub job logs; only parsed synthetic environment/results saved",
+  "url": "https://github.com/Isaac25-lgtm/remittance-price-intelligence/actions/runs/39539558852",
+  "python": "3.11.17"
+}

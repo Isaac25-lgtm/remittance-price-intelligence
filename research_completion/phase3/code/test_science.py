@@ -148,3 +148,10 @@ def test_actual_phase3_zip_integrity():
     paths=list((HERE.parent/'deliverables').glob('REMITTANCE_R01_PHASE3_*.zip'))
     if not paths:pytest.skip('Phase3 science checkpoint precedes immutable ZIP build')
     for p in paths:assert load_packager().audit(p)['status']=='PASS'
+
+def test_report_provenance_tokens_survive_spacing():
+    from literature import prose_spacing
+    tokens=['c0ef4fddbef78a47f9f274df78ab68d622da8d8e',audit.EXPECTED,'2026-10-21T03:34:40.828257+00:00','https://example.org/phase3/file2.csv','2025Q3','1e-9']
+    result=prose_spacing(' '.join(tokens)+' Phase3 has14 tables,2 timing-only matches.')
+    assert all(token in result for token in tokens)
+    assert 'Phase 3 has 14 tables, 2 timing-only' in result
