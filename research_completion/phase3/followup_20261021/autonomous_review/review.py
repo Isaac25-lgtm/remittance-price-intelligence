@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 import re
 import subprocess
+import sys
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -171,8 +172,22 @@ def assess_and_freeze():
     ids = {row["case_id"] for row in rows}
     if len(proposals) != 60 or {r["case_id"] for r in proposals} != ids:
         raise ValueError("Every blinded case needs exactly one proposal")
-    if not set(SOURCE_FIELDS).issubset(evidence[0]) or not {r["case_id"] for r in evidence}.issubset(ids):
+    if not evidence or not set(SOURCE_FIELDS).issubset(evidence[0]) or {r["case_id"] for r in evidence} != ids:
         raise ValueError("Case-source ledger schema or IDs invalid")
+    source_manifest = json.loads((PRIVATE / "source_manifest.json").read_text(encoding="utf-8"))
+    sources_by_id = {s["source_id"]: s for s in source_manifest}
+    if len(sources_by_id) != len(source_manifest):
+        raise ValueError("Duplicate source identifiers")
+    for source in source_manifest:
+        if source.get("source_sha256"):
+            payload = PRIVATE / source["reading_copy"] if source.get("reading_copy") else PRIVATE / "sources" / (source["source_id"] + ".bin")
+            payload.resolve().relative_to(PRIVATE.resolve())
+            if sha(payload.read_bytes()) != source["source_sha256"]:
+                raise ValueError("Source reading-copy hash differs")
+    for row in evidence:
+        source = sources_by_id[row["source_id"]]
+        if any(row[field] != str(source.get(field, "")) for field in ["url", "source_sha256", "access_status"]):
+            raise ValueError("Ledger/source manifest differs")
     lookup = {r["case_id"]: r for r in proposals}
     output = []
     for case in rows:
@@ -196,6 +211,9 @@ def assess_and_freeze():
                     statuses=[dict(case_id=r["case_id"], machine_status=r["machine_status"], support_grade=r["support_grade"]) for r in output],
                     source_manifest_sha256=sha((PRIVATE / "source_manifest.json").read_bytes()),
                     key_opened_before_freeze=False, human_adjudications=0, external_validation=False)
+    manifest["methods_sha256"] = sha((HERE / "EVIDENCE_METHODS.md").read_bytes())
+    manifest["annotation_provenance_sha256"] = sha((PRIVATE / "annotation_provenance.json").read_bytes())
+    manifest["private_annotation_script_sha256"] = sha((PRIVATE / "prepare_private.py").read_bytes())
     frozen.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
     (PRIVATE / "machine_review_frozen.sha256").write_text(sha(frozen.read_bytes()) + "\n", encoding="ascii")
     public = dict(case_count=60, status_counts=dict(Counter(r["machine_status"] for r in output)),
@@ -211,6 +229,8 @@ def verify_freeze():
     if sha(path.read_bytes()) != (PRIVATE / "machine_review_frozen.sha256").read_text().strip():
         raise ValueError("Frozen manifest changed")
     frozen = json.loads(path.read_text())
+    if sha(INPUT.read_bytes()) != frozen["blind_input_sha256"]:
+        raise ValueError("Original blinded input changed")
     for filename, field in [("case_evidence.csv", "evidence_table_sha256"), ("case_source_log.csv", "case_source_log_sha256"),
                             ("pass1_proposals.json", "pass1_proposals_sha256"), ("source_manifest.json", "source_manifest_sha256")]:
         if sha((PRIVATE / filename).read_bytes()) != frozen[field]:
@@ -231,6 +251,7 @@ def unblind():
                    interpretation="DOCUMENTATION_FEASIBILITY_NOT_MATCHING_ACCURACY") for (s, status, grade), n in sorted(counts.items())]
     assert sum(r["cases"] for r in output) == frozen["case_count"]
     write_csv(HERE / "AUTOMATED_FINDINGS_AGGREGATED.csv", output)
+    write_csv(PRIVATE / "postfreeze_stratum_cases.csv", [dict(row, sampled_stratum=labels[row["case_id"]]) for row in evidence])
     (PRIVATE / "unblinding_event.json").write_text(json.dumps(dict(unblinded_at_utc=now(), freeze_verified=True,
          frozen_manifest_sha256=sha((PRIVATE / "machine_review_frozen.json").read_bytes()), key_sha256=sha((ROOT / "research_completion/phase3/private_runtime/IDENTITY_REVIEW_KEY.csv").read_bytes())), indent=2), encoding="utf-8")
     print(json.dumps(dict(unblinded_cases=60, sampled_strata=len(set(labels.values())), public_cells=len(output))))
@@ -239,11 +260,36 @@ def unblind():
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("stage", choices=["init", "acquire", "freeze", "unblind"])
+    parser.add_argument("stage", choices=["init", "acquire", "freeze", "unblind", "_one_source"])
+    parser.add_argument("--source-id")
     args = parser.parse_args()
-    if args.stage == "acquire":
+    if args.stage == "_one_source":
         registry = json.loads((PRIVATE / "source_registry.json").read_text(encoding="utf-8"))
-        manifest = [retrieve(source) for source in registry]
+        retrieve(next(source for source in registry if source["source_id"] == args.source_id))
+    elif args.stage == "acquire":
+        if (PRIVATE / "machine_review_frozen.json").exists():
+            raise ValueError("Do not mutate frozen source manifest; use a separate revision")
+        registry = json.loads((PRIVATE / "source_registry.json").read_text(encoding="utf-8"))
+        manifest = []
+        for source in registry:
+            meta = PRIVATE / "sources" / (source["source_id"] + ".json")
+            if not meta.exists():
+                # Socket timeouts alone do not bound slow responses or DNS resolution.
+                started = now()
+                try:
+                    subprocess.run([sys.executable, str(Path(__file__)), "_one_source", "--source-id", source["source_id"]],
+                                   check=True, timeout=60)
+                except subprocess.TimeoutExpired:
+                    meta.write_text(json.dumps(dict(source, checked_at_utc=started, access_status="TIMEOUT_NO_RETRY",
+                         http_status="", bytes=0, source_sha256="", error="60-second total acquisition deadline"), indent=2), encoding="utf-8")
+                except subprocess.CalledProcessError as error:
+                    meta.write_text(json.dumps(dict(source, checked_at_utc=started, access_status="FAILED_SOURCE_PROCESS",
+                         http_status="", bytes=0, source_sha256="", error=str(error)), indent=2), encoding="utf-8")
+            result = json.loads(meta.read_text(encoding="utf-8"))
+            if result.get("source_sha256"):
+                assert sha(meta.with_suffix(".bin").read_bytes()) == result["source_sha256"]
+            manifest.append(result)
+            print(json.dumps(dict(source_id=source["source_id"], access_status=result["access_status"])), flush=True)
         (PRIVATE / "source_manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
         print(json.dumps(dict(sources=len(manifest), statuses=dict(Counter(r["access_status"] for r in manifest))), indent=2))
     else:

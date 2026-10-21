@@ -72,3 +72,47 @@ def test_checkpoint_hash_tampering_detected(tmp_path, monkeypatch):
     frozen.write_text('{"altered":true}', encoding="utf-8")
     with pytest.raises(ValueError, match="manifest changed"):
         r.verify_freeze()
+
+
+def sensitivity_module():
+    spec = importlib.util.spec_from_file_location("measurement_sensitivity", HERE / "sensitivity.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+@pytest.mark.parametrize("origin,expected", [(2021*4-1,"before_target_2021Q2"),
+    (2021*4,"transition_target_2021Q2"), (2021*4+1,"between_classification_transitions"),
+    (2022*4+1,"between_classification_transitions"), (2022*4+2,"transition_target_2022Q4"),
+    (2022*4+3,"after_target_2022Q4")])
+def test_classification_era_uses_successor_not_origin_boundary(origin, expected):
+    assert sensitivity_module().era(origin) == expected
+
+
+@pytest.mark.parametrize("removed", [0,1,3,7,10])
+def test_false_positive_envelope_by_enumerating_allocations(removed):
+    # Enumerate possible removal allocations: an independent arithmetic check.
+    s = sensitivity_module()
+    result = s.adversarial_false_positive(14,7,3,removed)
+    possible = [(7-a,3-(removed-a)) for a in range(8) if 0 <= removed-a <= 3]
+    assert result["retained_valid"] + result["unknown"] == 14
+    assert result["all_origin_lower"] == min(stays/14 for stays, fails in possible)
+    assert result["all_origin_upper"] == max(1-fails/14 for stays, fails in possible)
+
+
+def test_false_positive_impossible_counts_rejected():
+    with pytest.raises(ValueError):
+        sensitivity_module().adversarial_false_positive(9,7,3,1)
+
+
+def test_partial_near_period_can_be_b_but_not_same():
+    source = exact_source(); source.update(bundle_scope="PARTIAL", target_coverage="NOT_ESTABLISHED", origin_coverage="PARTIAL_NEAR_PERIOD")
+    p = proposal(); p["proposed_grade"] = "B"
+    result = r.audit_proposal(dict(target_multiplicity="1"), p, [source])
+    assert result["support_grade"] == "B" and result["machine_status"] == r.UNRESOLVED
+
+
+def test_reader_hash_never_implies_full_period_coverage():
+    source = exact_source(); source.update(access_status="BROWSER_PARSED_SOURCE_TEXT", origin_coverage="NOT_ESTABLISHED")
+    result = r.audit_proposal(dict(target_multiplicity="1"), proposal(), [source])
+    assert result["machine_status"] == r.UNRESOLVED
