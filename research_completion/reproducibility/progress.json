@@ -988,7 +988,32 @@
       "code_files_changed_during_run": [],
       "code_fingerprint_start": "4d0fde4b8786435294fe4e4fa41c3af5343c1c0008aa8a09f7a800b609e224cd",
       "code_fingerprint_end": "4d0fde4b8786435294fe4e4fa41c3af5343c1c0008aa8a09f7a800b609e224cd"
+    },
+    "final_package_regressions": {
+      "stage": "final_package_regressions",
+      "evidence_type": "SYNTHETIC UNIT TEST AND PUBLIC AGGREGATE INTEGRITY",
+      "command": [
+        ".venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests/test_publication_package.py",
+        "tests/test_completion_results.py",
+        "-q",
+        "--tb=short"
+      ],
+      "started_utc": "2026-10-21T02:17:37.792953+00:00",
+      "ended_utc": "2026-10-21T02:17:40.876834+00:00",
+      "exit_code": 0,
+      "seconds": 3.09,
+      "peak_rss_mb": 89.8,
+      "code_sha": "d25d4b01b8565e57063028ccad825be0ccb99ade",
+      "code_sha_start": "d25d4b01b8565e57063028ccad825be0ccb99ade",
+      "working_tree_dirty_start": true,
+      "working_tree_dirty_end": true,
+      "code_files_changed_during_run": [],
+      "code_fingerprint_start": "63d5dc12f2f89b79552aa046b38d5429603bffe66dbe897b863ea10f3a2bcf93",
+      "code_fingerprint_end": "63d5dc12f2f89b79552aa046b38d5429603bffe66dbe897b863ea10f3a2bcf93"
     }
   },
-  "last_stage": "publication_dossier_finalization"
+  "last_stage": "final_package_regressions"
 }

@@ -19,6 +19,12 @@ def test_secret_is_rejected(tmp_path,monkeypatch):
     p=tmp_path/'README.md';p.write_text('ghp_'+'a'*36)
     with pytest.raises(ValueError,match='credential'):m.inspect_public_file(p)
 
+def test_archive_text_is_identical_across_windows_and_linux_newlines(tmp_path):
+    p=tmp_path/'safe.csv';p.write_bytes(b'count\r\n10\r\n')
+    windows=m.public_bytes(p)
+    p.write_bytes(b'count\n10\n')
+    assert windows==m.public_bytes(p)==b'count\n10\n'
+
 def test_handoff_integrity_when_present():
     root=Path(__file__).resolve().parents[1]
     archives=list((root/'research_completion/deliverables').glob('*.zip'))

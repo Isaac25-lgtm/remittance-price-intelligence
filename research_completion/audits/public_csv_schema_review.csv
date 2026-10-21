@@ -4,7 +4,7 @@ research_completion/assessment/publication_gates.csv,12,gate | requirement | sta
 research_completion/audits/final_independent_audit.csv,348,check | status | detail
 research_completion/audits/master_requirement_ledger.csv,66,requirement_id | directive_section | requirement | status | evidence | limitation
 research_completion/audits/pilot_source_content_comparison.csv,10,variable | n_mismatches_after_numeric_or_blank_normalisation | n_missing_flag_differences | pilot_dtype | current_typed_dtype
-research_completion/audits/public_csv_schema_review.csv,113,file | n_aggregate_rows | columns
+research_completion/audits/public_csv_schema_review.csv,114,file | n_aggregate_rows | columns
 research_completion/data/archive_report_captures.csv,125,timestamp | original | digest
 research_completion/data/cohort_by_wave.csv,37,qidx | n_quotes | n_corridors | n_providers | sample_start | sample_end | mean_cost | median_cost | share_transparent | negative_cost | negative_fx | digital_access_share | quarter | initially_cheap
 research_completion/data/identity_collision_audit.csv,1,scenario | eligible | matched | newly_linked | changed_target_among_legacy_matches | ambiguous_origins | interpretation

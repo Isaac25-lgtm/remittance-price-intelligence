@@ -17,7 +17,9 @@ def save(fig,name,title,source,note):
     fig.suptitle(title,x=.02,ha='left',fontsize=13,fontweight='bold')
     fig.text(.02,.018,note,fontsize=7,color='#444444',va='bottom',wrap=True)
     fig.tight_layout(rect=(.01,.09,.99,.94));FIG.mkdir(exist_ok=True)
-    for ext in ['png','svg']:fig.savefig(FIG/f'{name}.{ext}',dpi=300,facecolor='white')
+    for ext in ['png','svg']:
+        p=FIG/f'{name}.{ext}';fig.savefig(p,dpi=300,facecolor='white')
+        if ext=='svg':p.write_text('\n'.join(line.rstrip() for line in p.read_text(encoding='utf-8').splitlines())+'\n',encoding='utf-8')
     plt.close(fig);inventory.append(dict(figure=name,title=title,source=source,note=note,status='GENERATED'))
 
 def main():

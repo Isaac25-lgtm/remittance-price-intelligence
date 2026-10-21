@@ -35,6 +35,13 @@ def inspect_public_file(path):
         if re.search(r'gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{30,}|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----',text):
             raise ValueError(f'credential-like content: {rel}')
 
+
+def public_bytes(path):
+    data=path.read_bytes()
+    if path.suffix.lower()=='.png':return data
+    # Match Git's canonical text content across Windows CRLF/Linux LF checkouts.
+    return data.decode('utf-8').replace('\r\n','\n').replace('\r','\n').encode('utf-8')
+
 def payload():
     approved=ROOT/'research_completion/audits/public_artifact_allowlist.json'
     if not approved.exists():raise ValueError('missing reviewed explicit public artifact allowlist')
@@ -81,17 +88,17 @@ def audit_zip(path):
 def build():
     sha=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
     dirty_before=subprocess.check_output(['git','status','--porcelain'],cwd=ROOT,text=True).strip()
-    files=payload();mapped={p.relative_to(ROOT).as_posix():p.read_bytes() for p in files}
+    files=payload();mapped={p.relative_to(ROOT).as_posix():public_bytes(p) for p in files}
     start='research_completion/deliverables/START_HERE.md'
     if start not in mapped:raise ValueError('create verified START_HERE content first')
     mapped['START_HERE.md']=mapped.pop(start).decode('utf-8').replace('](../../README.md)','](README.md)').replace('](../','](research_completion/').encode('utf-8')
     rows=[]
     for name,data in sorted(mapped.items()):rows.append(dict(archive_path=name,bytes=len(data),sha256=hashlib.sha256(data).hexdigest()))
-    buf=io.StringIO();w=csv.DictWriter(buf,fieldnames=['archive_path','bytes','sha256']);w.writeheader();w.writerows(rows)
+    buf=io.StringIO();w=csv.DictWriter(buf,fieldnames=['archive_path','bytes','sha256'],lineterminator='\n');w.writeheader();w.writerows(rows)
     manifest=buf.getvalue().encode();mp='research_completion/reproducibility/file_hash_manifest.csv';mapped[mp]=manifest
     (ROOT/mp).write_bytes(manifest)
     sums='\n'.join(hashlib.sha256(data).hexdigest()+'  '+name for name,data in sorted(mapped.items()))+'\n'
-    sp='research_completion/deliverables/SHA256SUMS.txt';mapped[sp]=sums.encode();(ROOT/sp).write_text(sums,encoding='utf-8')
+    sp='research_completion/deliverables/SHA256SUMS.txt';mapped[sp]=sums.encode();(ROOT/sp).write_bytes(sums.encode())
     # Investigator's Africa/Kampala calendar date (UTC+3, no DST).
     date=dt.datetime.now(dt.timezone(dt.timedelta(hours=3))).strftime('%Y%m%d')
     path=OUT/'deliverables'/f'REMITTANCE_R01_PUBLICATION_HANDOFF_{date}_{sha[:7]}.zip'
