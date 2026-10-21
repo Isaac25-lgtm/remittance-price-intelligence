@@ -1,0 +1,14 @@
+{
+  "repository": "Isaac25-lgtm/remittance-price-intelligence",
+  "pr": 3,
+  "reviewed_head": "c9f8e5063785ff3afd31cba100dcbbbff0a1d71f",
+  "verified_scientific_main_commit": "ae7c977d87c7cf03d54f3e499ba3ef25beffbe5c",
+  "workflow_run_id": 39532272698,
+  "job_id": 119000707814,
+  "conclusion": "success",
+  "python": "3.11",
+  "log_summary": "140 passed, 1 skipped in 19.38s",
+  "skipped_reason": "ZIP integrity test awaits assembly",
+  "url": "https://github.com/Isaac25-lgtm/remittance-price-intelligence/actions/runs/39532272698",
+  "verification": "GitHub connector returned completed/success and decoded job log; git fetched main at the recorded merge commit."
+}

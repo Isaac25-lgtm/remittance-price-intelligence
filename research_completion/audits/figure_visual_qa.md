@@ -1,0 +1,7 @@
+# Figure visual QA
+
+All16 figures were inspected in the generated contact sheet; dependence and yearly-model panels were also inspected at larger size. PNGs are300dpi, and all16 have editable SVG companions. Flow states, explicit2025Q2 gap, bounds versus sampling intervals, near-threshold cost-bin ordering, all model families, reliability markers, supported/unsupported African subgroups, identity scenarios, joint zero crossing, permutation associations, scope gates, legacy comparison and all-origin review uncertainty were checked.
+
+Corrections retained: numeric ordering of cost bands; explicit legacy-RF versus selected-policy dependence labels; no empty selected-policy legend in the legacy annual panel; all-origin bands labelled extreme unknown-outcome allocations rather than CIs; future-reobserved queue membership labelled conditional; history lag labelled a proxy rather than verified public release. No blank panels or swapped axes observed. The large B0 log loss is shown with its actual scale; it compresses the other annual log-loss curves, whose precise values remain in the companion table.
+
+Matplotlib SVG trailing spaces were removed without changing whitespace-normalised XML tokens; original PNG content was preserved. Captions include data source, denominator/scope and relevant inference limitations. This is agent presentation QA, not independent scientific peer review or journal layout approval.

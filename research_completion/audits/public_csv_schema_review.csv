@@ -1,7 +1,7 @@
 file,n_aggregate_rows,columns
 research_completion/assessment/claim_evidence_ledger.csv,10,claim_id | claim | estimand | observed_result | uncertainty | pass_fail_unresolved | source_file_or_paper | eligible_manuscript_language | required_evidence | method | test_population | alternative_explanation | caveat | figure_or_table
 research_completion/assessment/publication_gates.csv,12,gate | requirement | status | supporting_artifact | reason
-research_completion/audits/final_independent_audit.csv,348,check | status | detail
+research_completion/audits/final_independent_audit.csv,349,check | status | detail
 research_completion/audits/master_requirement_ledger.csv,66,requirement_id | directive_section | requirement | status | evidence | limitation
 research_completion/audits/pilot_source_content_comparison.csv,10,variable | n_mismatches_after_numeric_or_blank_normalisation | n_missing_flag_differences | pilot_dtype | current_typed_dtype
 research_completion/audits/public_csv_schema_review.csv,114,file | n_aggregate_rows | columns

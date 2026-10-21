@@ -2,7 +2,7 @@
 
 This is a separate second-pass programmatic/claims audit, not external human peer review.
 
-348 checks; 0 failed. Scientific gates are not converted into an acceptance probability.
+349 checks; 0 failed. Scientific gates are not converted into an acceptance probability.
 
 Every master-directive phase is mapped to real artifacts in this audit; blocked scientific evidence remains explicitly unresolved in publication_gates.csv.
 
