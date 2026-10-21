@@ -1,5 +1,15 @@
 # Deployment readiness: R01 research dashboard
 
+## Presentation redesign — 21 October 2026 (Kampala)
+
+The dashboard was rebuilt for presentation only: no scientific table, estimate or allowlist rule changed. Charts moved
+from Altair to **Plotly 6.3** (interactive hover, PNG export) and a design layer (`dashboard/ui.py`: tokens, CSS, hero,
+stat cards, callouts, gate rows) was added. Navigation grew to 14 pages, adding *Background & question*, *Measurement
+audit (Phase 3)* and *Verdict & publication gates* (which absorbs the former *Publication completion* page). Ten Phase 3
+public aggregate tables were added to `ALLOWLIST` through `COMPLETION_FILES`; all ten are already listed in
+`research_completion/phase3/assessment/public_artifact_allowlist.json` and contain no row-level identifiers (checked by
+`tests/test_results_integrity.py`). `dashboard/requirements.txt` now pins `plotly==6.3.0` in place of `altair==6.3.0`.
+
 ## Local completion update — 21 October 2026 (Kampala)
 
 The local app adds a Publication completion section with verified aggregate model scores, all named ridge/spline references, joint dependence sensitivity, all-origin capacity bounds and publication gates. The CSV allowlist in dashboard/app.py maps seven additional filenames into research_completion/models or assessment; tests verify the exact committed download bytes and every section/control. No raw data, training, predictions, provider input or secrets at startup. Analysis date/cutoff and no-operational-model/confirmation notices remain visible. Local Python3.12 tests use Streamlit1.66 and Altair6.3; GitHub CI checks Python3.11.
@@ -17,7 +27,7 @@ Live app: https://isaac-remittance-research.streamlit.app/ . Deployed by the coo
 | Item | Value |
 |---|---|
 | Entry point | `dashboard/app.py` |
-| Requirements | `dashboard/requirements.txt`: `streamlit==1.66.0`, `altair==6.3.0`, `pandas==3.0.6`, `numpy>=1.26,<3`, `pyarrow>=15,<27,!=25.0.0`. All support Python 3.11; numpy is a range because numpy 2.5.x requires Python ≥3.12. |
+| Requirements | `dashboard/requirements.txt`: `streamlit==1.66.0`, `plotly==6.3.0`, `pandas==3.0.6`, `numpy>=1.26,<3`, `pyarrow>=15,<27,!=25.0.0`. All support Python 3.11; numpy is a range because numpy 2.5.x requires Python ≥3.12. |
 | Python | 3.11 (CI), 3.13 (tested in the cloud session) |
 | Config | `.streamlit/config.toml`: headless, XSRF protection on, usage stats off, error details hidden, viewer toolbar, light accessible theme |
 | Startup behaviour | Reads committed CSV/JSON aggregates only. **No training, no source download, no `data/raw` or `data/processed` access, no `rpi` package import** (enforced by `tests/test_results_integrity.py::test_app_reads_no_row_level_sources`). |
@@ -57,6 +67,7 @@ The app may read or offer for download **only** these files. This is the `ALLOWL
 | Estimands | `estimand_bounds_by_year.csv`, `estimand_bounds_by_year_5pct.csv`, `estimand_bounds_overall.csv`, `estimand3_corridor_level_by_year.csv` |
 | Models (lag0/lag1) | `model_metrics_*`, `model_paired_diffs_*`, `model_capacity_*`, `model_capacity_diff_*`, `model_reliability_*`, `model_registry_*`, `reobservation_metrics_*` |
 | Subgroups | `subgroup_support.csv`, `subgroup_model_metrics_lag0.csv` |
+| Phase 3 measurement (via `COMPLETION_FILES`) | `LINKAGE_SCENARIO_RESULTS.csv`, `PAIRED_MEASUREMENT_EFFECTS.csv`, `PUBLICATION_GATE_MATRIX.csv`, `wave_measurement.csv`, `paired_wave_identity.csv`, `unknown_flow.csv`, `core_strict_transition.csv`, `measurement_sensitivities.csv`, `corridor_monitoring.csv`, `independent_unit_support.csv` |
 | Presentation aggregates | `presentation_model_brier_ci.csv`, `presentation_region_metrics_lag0.csv`, `presentation_corridor_metrics_lag0.csv` (ISO3 corridor pairs, gated n≥100 and ≥20 failures), `presentation_provider_distribution_lag0.csv` (anonymous quantiles only), `presentation_capacity_by_year_lag0.csv` |
 | Reproduction | `results/reproduction/table_comparison.csv` |
 

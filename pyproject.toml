@@ -20,7 +20,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8"]
-dashboard = ["streamlit>=1.66,<2", "altair>=6.3,<7"]
+dashboard = ["streamlit>=1.66,<2", "plotly>=6.3,<7"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

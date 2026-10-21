@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software or its aggregate results, please cite it as below, and cite the World Bank Remittance Prices Worldwide data separately."
+title: "Remittance quote continuity: identity-sensitive continuity and unknown-successor bounds in World Bank Remittance Prices Worldwide (R01)"
+type: software
+authors:
+  - family-names: Omoding
+    given-names: Isaac
+version: 0.1.0
+repository-code: "https://github.com/Isaac25-lgtm/remittance-price-intelligence"
+url: "https://isaac-remittance-research.streamlit.app/"
+keywords:
+  - remittance prices
+  - SDG 10.c
+  - longitudinal measurement
+  - record linkage
+  - partial identification
+references:
+  - type: data
+    title: "Remittance Prices Worldwide"
+    authors:
+      - name: "The World Bank"
+    url: "http://remittanceprices.worldbank.org"
+    license: CC-BY-4.0

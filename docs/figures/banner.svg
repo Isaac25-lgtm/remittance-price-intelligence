@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="300" viewBox="0 0 1280 300" role="img" aria-label="Remittance quote continuity: when a remittance quote is cheap, does it stay cheap?">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d2240"/>
+      <stop offset="1" stop-color="#163a6b"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.85" cy="-0.1" r="0.7">
+      <stop offset="0" stop-color="#3987e5" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#3987e5" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="300" rx="18" fill="url(#bg)"/>
+  <rect width="1280" height="300" rx="18" fill="url(#glow)"/>
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <text x="56" y="74" fill="#9ec5f4" font-size="14" font-weight="700" letter-spacing="2.4">R01 · WORLD BANK REMITTANCE PRICES WORLDWIDE · 2016–2025</text>
+    <text x="56" y="128" fill="#ffffff" font-size="40" font-weight="800">When a remittance quote is cheap,</text>
+    <text x="56" y="176" fill="#ffffff" font-size="40" font-weight="800">does it stay cheap?</text>
+    <text x="56" y="222" fill="#d5e1f1" font-size="17">Identity-sensitive continuity of 45,343 affordable quotes across 359 corridors,</text>
+    <text x="56" y="246" fill="#d5e1f1" font-size="17">with honest bounds for the quotes that are never seen again.</text>
+  </g>
+  <!-- chart motif: core vs strict identification bounds (USD 200, 3%) on a 50–100% scale -->
+  <g transform="translate(860,92)" font-family="'Segoe UI', Arial, sans-serif">
+    <line x1="0" y1="0" x2="0" y2="140" stroke="#ffffff" stroke-opacity="0.18"/>
+    <line x1="120" y1="0" x2="120" y2="140" stroke="#ffffff" stroke-opacity="0.18"/>
+    <line x1="240" y1="0" x2="240" y2="140" stroke="#ffffff" stroke-opacity="0.18"/>
+    <line x1="360" y1="0" x2="360" y2="140" stroke="#ffffff" stroke-opacity="0.18"/>
+    <text x="0" y="160" fill="#9fb0c8" font-size="12" text-anchor="middle">50%</text>
+    <text x="120" y="160" fill="#9fb0c8" font-size="12" text-anchor="middle">67%</text>
+    <text x="240" y="160" fill="#9fb0c8" font-size="12" text-anchor="middle">83%</text>
+    <text x="360" y="160" fill="#9fb0c8" font-size="12" text-anchor="middle">100%</text>
+    <text x="0" y="22" fill="#9ec5f4" font-size="12.5" font-weight="600">Core identity</text>
+    <line x1="109" y1="42" x2="251" y2="42" stroke="#6da7ec" stroke-width="12" stroke-linecap="round" stroke-opacity="0.75"/>
+    <circle cx="224" cy="42" r="8" fill="#3987e5" stroke="#ffffff" stroke-width="2.5"/>
+    <text x="0" y="86" fill="#f4b49a" font-size="12.5" font-weight="600">Strict identity</text>
+    <line x1="33" y1="106" x2="268" y2="106" stroke="#f08a5d" stroke-width="12" stroke-linecap="round" stroke-opacity="0.75"/>
+    <circle cx="224" cy="106" r="8" fill="#eb6834" stroke="#ffffff" stroke-width="2.5"/>
+  </g>
+</svg>

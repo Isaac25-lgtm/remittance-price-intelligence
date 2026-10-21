@@ -56,7 +56,10 @@ def test_context_ribbon_and_caveats():
 @pytest.mark.parametrize("section", C["SECTIONS"])
 def test_section_renders_with_allowlisted_downloads(section):
     at = _app(section)
-    assert at.header[0].value
+    if section == "Overview":  # the landing page opens with an HTML hero instead of st.header
+        assert any("does it stay cheap?" in m.value for m in at.markdown)
+    else:
+        assert at.header[0].value
     offered = _offered(at)
     if section != "Overview":
         assert offered, section
@@ -88,7 +91,9 @@ def test_download_payload_is_the_committed_file():
     ("Model comparison", "mc_lag", LAG_VALUES), ("Model comparison", "mc_subset", SUBSET_VALUES),
     ("Calibration", "cal_lag", LAG_VALUES), ("Review capacity", "cap_lag", LAG_VALUES),
     ("Review capacity", "cap_subset", ["pooled_2022_2025", "pooled_2022_2024"]),
-    ("Reobservation (negative result)", "reob_lag", LAG_VALUES)])
+    ("Reobservation (negative result)", "reob_lag", LAG_VALUES),
+    ("Measurement audit (Phase 3)", "ms_field", ["region", "provider_type", "fixed_sensitivity", "dominance",
+                                                  "weighting"])])
 def test_every_formatted_selectbox_value(section, key, values):
     at = _app(section)
     for v in values:  # raw values: displayed options are format_func labels
@@ -108,6 +113,7 @@ def test_every_plain_selectbox_option(section, key):
 
 @pytest.mark.parametrize("section,key,values", [
     ("Continuity & bounds", "thr", ["3% (primary)", "5% (secondary)"]),
+    ("Measurement audit (Phase 3)", "ms_product", ["cc1_3pct", "cc1_5pct", "cc2_3pct", "cc2_5pct"]),
     ("Model comparison", "mc_cluster", ["corridor", "provider"]),
     ("Geography & support", "sg_scope", ["all years", "test targets 2022-2025"])])
 def test_every_radio_option(section, key, values):

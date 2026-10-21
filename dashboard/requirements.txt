@@ -1,7 +1,7 @@
 # Minimal runtime for the aggregate-only research dashboard (Python 3.11-3.13).
 # The app reads committed CSV/JSON aggregates; it does not install or import the modelling package.
 streamlit==1.66.0
-altair==6.3.0
+plotly==6.3.0
 pandas==3.0.6
 numpy>=1.26,<3
 pyarrow>=15,<27,!=25.0.0
