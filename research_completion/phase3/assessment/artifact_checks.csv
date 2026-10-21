@@ -108,7 +108,10 @@ safe_code\reproduction.py,True,approved suffix/size/schema/credential scan
 safe_code\run.py,True,approved suffix/size/schema/credential scan
 safe_code\sources.py,True,approved suffix/size/schema/credential scan
 safe_code\test_science.py,True,approved suffix/size/schema/credential scan
+safe_deliverables\file_manifest.csv,True,approved suffix/size/schema/credential scan
 safe_deliverables\README.md,True,approved suffix/size/schema/credential scan
+safe_deliverables\SHA256SUMS.txt,True,approved suffix/size/schema/credential scan
+safe_deliverables\zip_verification.json,True,approved suffix/size/schema/credential scan
 safe_EXECUTION_LEDGER.md,True,approved suffix/size/schema/credential scan
 safe_figures\figure_01_identity_bounds.png,True,approved suffix/size/schema/credential scan
 safe_figures\figure_01_identity_bounds.svg,True,approved suffix/size/schema/credential scan
@@ -164,6 +167,7 @@ safe_reproducibility\ci_fixture_1.json,True,approved suffix/size/schema/credenti
 safe_reproducibility\ci_fixture_2.json,True,approved suffix/size/schema/credential scan
 safe_reproducibility\commands.jsonl,True,approved suffix/size/schema/credential scan
 safe_reproducibility\ENVIRONMENT_MATRIX.md,True,approved suffix/size/schema/credential scan
+safe_reproducibility\final_local_tests.json,True,approved suffix/size/schema/credential scan
 safe_reproducibility\FIXES_AND_REGRESSIONS.md,True,approved suffix/size/schema/credential scan
 safe_reproducibility\github_science_ci.json,True,approved suffix/size/schema/credential scan
 safe_reproducibility\LEGACY_DIFFERENCE_CAUSES.csv,True,approved suffix/size/schema/credential scan
