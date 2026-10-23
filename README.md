@@ -37,6 +37,10 @@
 
 ## At a glance
 
+**Project closed by the investigator on 23 October 2026. Research execution is complete; the original article will not be submitted on the present evidence.** This repository remains available for researchers to inspect the methods, reproduce the record-based findings, learn from the negative results, or develop a genuinely new contribution. The historical scientific verdicts and immutable handoffs are preserved.
+
+For continuation, start with the [completed research dossier](research_completion/phase3/followup_20261021/autonomous_review/README.md), [final scientific decision](research_completion/phase3/followup_20261021/autonomous_review/FINAL_PUBLICATION_DECISION.md), and [research handoff](research_completion/phase3/followup_20261021/autonomous_review/HANDOFF.md), then follow [the reproduction instructions](#reproduce-it). Further work should bring new historical corroboration or a clearly differentiated research question; repeating the same model searches does not resolve the documented scientific limits. Public outputs contain aggregates only; confidential case files and private evidence packages must remain local.
+
 | | Result | What it is |
 |---|---|---|
 | **81.1%** | 29,546 of 36,429 matched quotes stay ≤3% | Continuity among cheap quotes linked by the specified recorded key next quarter |
